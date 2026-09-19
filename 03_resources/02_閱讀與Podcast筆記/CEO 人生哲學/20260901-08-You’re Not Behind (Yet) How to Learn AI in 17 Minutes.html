@@ -1,0 +1,187 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>You’re Not Behind (Yet): How to Learn AI in 17 Minutes</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>You’re Not Behind (Yet): How to Learn AI in 17 Minutes</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                    <span>•</span>
+                    <a href="https://youtu.be/EWFFaKxsz_s?si=YxQXpEco7rPEuVZv" target="_blank" class="video-link">🔗 觀看原始影片</a>
+                    
+                </div>
+            </div>
+            
+            
+            <!-- 自動載入 YouTube 最高畫質封面圖，若失敗則降級載入標準畫質 -->
+            <img src="https://img.youtube.com/vi/EWFFaKxsz_s/maxresdefault.jpg" alt="Video Thumbnail" class="hero-image" onerror="this.src='https://img.youtube.com/vi/EWFFaKxsz_s/hqdefault.jpg';">
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li>AI 生成的核心原理是<strong>基於機率與多維向量距離預測下一個 Token</strong>，而非真正理解語意；若提示詞模糊，系統便只會回傳模糊的機率猜測。</li>
+    <li>掌握兩大提示結構：運用 <strong>AIM 框架（角色 Actor、輸入 Input、任務 Mission）</strong>可使產出品質提升 <strong>5 到 10 倍</strong>，並搭配 <strong>MAP 框架（記憶 Memory、資產 Assets、動作 Actions、提示 Prompt）</strong>建立完整脈絡地圖。</li>
+    <li>精通 AI 的關鍵在於<strong>「除錯自己的思維」與多輪迭代</strong>，而非單向輸入指令；善用思維鏈、驗證者與優化模式，將提問視為與 AI 共同學習的對話過程。</li>
+    <li>避免平庸的樣板回覆，必須主動<strong>將模型導向頂尖專家與理論架構</strong>，並落實<strong>假設、來源、反向證據、數據審計與跨模型比對</strong>等 5 種檢驗機制來防範幻覺。</li>
+    <li>最高層次的應用是將 AI 當作<strong>思維對練夥伴（Sparring Partner）</strong>，透過 <strong>OCEAN 框架（原創、具體、論證、立場、敘事）</strong>注入個人品味，實現<strong>「AI 不是取代人類工作，而是重塑人類價值」</strong>。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>講者具備超過 <strong>20 年科技與 AI 領域經驗</strong>，曾擔任執行長、董事會成員與投資人。他指出目前高達 <strong>99% 的人都在錯誤地使用 AI</strong>，導致懂與不懂 AI 者的差距正急速拉大。為此，他提出一套可在 <strong>30 天內掌握 AI 核心能力</strong>的七步驟完整藍圖。</p>
+  <p>第一週著重於掌握「機器英語」與工具選擇。大型語言模型（如 ChatGPT、Gemini）運作方式是將文字拆解為 <strong>Token 並轉換為多維向量（Embedding Space）</strong>，依據機率預測下一個詞。學習者應使用 <strong>AIM 框架</strong>（指定角色 Actor、提供輸入數據 Input、指派明確任務 Mission），並<strong>專注深耕單一工具（如 ChatGPT、Gemini 或 Claude）</strong>以掌握模型節奏，切忌在數十種工具間盲目切換。</p>
+  <p>進入第二週與第三週，重點轉向脈絡建構、思維除錯與品質校準。透過 <strong>MAP 框架（記憶、資產、工具動作、提示詞）</strong>提供堅實背景；當產出不佳時，<strong>問題往往在於使用者的思維盲點</strong>，可運用思維鏈（Chain of Thought）要求「逐步思考」、驗證者模式（要求 AI 反問釐清問題）或優化模式來調校輸入。同時，為擺脫平庸的大眾化內容，提問時應主動<strong>引用頂尖專家策略（如皮克斯智囊團、薩帝亞·納德拉、哈佛研究）</strong>，並執行 <strong>5 大驗證法（檢視假設、查核來源 URL、尋找反向論點、重新計算數據、跨模型交叉驗證）</strong>以嚴格過濾幻覺。</p>
+  <p>第四週則著重於建立個人品味。講者強調不要把 AI 當成產出垃圾內容的自動販賣機，而應運用 <strong>OCEAN 框架（原創性 Original、具體性 Concrete、邏輯可見 Evident、堅定立場 Assertive、敘事流暢 Narrative）</strong>與 AI 進行深度辯論，雕琢出真正具備個人深度與風格的洞見。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (待辦事項 / 關鍵行動)</h2>
+  <ul>
+    <li><strong>第 1 週（工具深耕與提示結構化）</strong>：選定單一核心模型（<strong>ChatGPT、Gemini 或 Claude</strong>），全面改用 <strong>AIM 框架（Actor, Input, Mission）</strong>撰寫提示詞，練習直到能不假思索寫出結構化指令。</li>
+    <li><strong>第 2 週（脈絡注入與思維除錯）</strong>：導入 <strong>MAP 框架</strong>（整合過往記憶、夾帶資產檔案、調用工具動作）；遭遇不良輸出時，使用<strong>「逐步思考（Think step by step）」</strong>或要求 AI 提出 3 個問題反向釐清需求。</li>
+    <li><strong>第 3 週（專家引導與嚴格驗證）</strong>：在提示詞中明確指定<strong>權威專家、經典理論或最新文獻</strong>；對關鍵數據要求<strong>列出假設、提供可查核來源、反向論證</strong>，並將產出丟入另一款模型進行<strong>跨模型交叉比對</strong>。</li>
+    <li><strong>第 4 週（品味注入與思維對練）</strong>：運用 <strong>OCEAN 框架</strong>要求 AI 提供非顯而易見的視角、提供真實數據案例、明確選邊站並以故事結構呈現，<strong>將 AI 作為對練夥伴</strong>以淬鍊出獨特洞見。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

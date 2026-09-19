@@ -1,0 +1,200 @@
+﻿<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>實用工具庫：隨身碟本地 AI、公共 API 資源與 2D 卡通 Prompt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif TC', "Songti TC", Georgia, serif;
+            line-height: 1.85;
+            color: #222222;
+            background-color: #faf9f6;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container {
+            max-width: 760px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 45px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e5e5e0;
+        }
+        .header h1 {
+            font-family: 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: #111111;
+            font-size: 2.1rem;
+            font-weight: 800;
+            line-height: 1.35;
+            margin: 0 0 15px 0;
+        }
+        .meta-tag {
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.9rem;
+            color: #666666;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .badge {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 3px 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.82rem;
+        }
+        .content-section .card {
+            background: #ffffff;
+            border: 1px solid #eae7df;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 35px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+        .content-section h2 {
+            font-family: 'Noto Sans TC', sans-serif;
+            color: #111111;
+            font-size: 1.45rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        .content-section h2::before {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 1.2em;
+            background-color: #0284c7;
+            margin-right: 12px;
+            border-radius: 3px;
+        }
+        .content-section h3 {
+            font-family: 'Noto Sans TC', sans-serif;
+            color: #1e293b;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+        .content-section p {
+            margin-bottom: 1.2rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        .content-section ul, .content-section ol {
+            margin-bottom: 1.2rem;
+            padding-left: 1.5rem;
+        }
+        .content-section li {
+            margin-bottom: 0.8rem;
+            font-size: 1.08rem;
+        }
+        pre {
+            background-color: #1e293b;
+            color: #f8fafc;
+            padding: 18px 20px;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.92rem;
+            line-height: 1.6;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-all;
+            margin: 15px 0 20px 0;
+        }
+        .highlight-box {
+            background-color: #f0fdf4;
+            border-left: 4px solid #16a34a;
+            padding: 16px 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 1.05rem;
+        }
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            font-family: 'Noto Sans TC', sans-serif;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            border-top: 1px solid #e5e5e0;
+            padding-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>實用工具庫：隨身碟本地 AI、公共 API 資源與 2D 卡通 Prompt</h1>
+            <div class="meta-tag">
+                <span class="badge">🛠️ 技術與提示詞</span>
+                <span>來源：Telegram 靈感速遞 (@MR693_Bot)</span>
+                <span>整理時間：2026-09-13</span>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <!-- 卡片 1: 重點整理 -->
+            <div class="card">
+                <h2>重點整理 (Key Takeaways)</h2>
+                <ul>
+                    <li><strong>USB 隨身碟本地 AI (Uncensored AI Studio)</strong>：開源模型技術成熟，透過 llama.cpp / Ollama 可將 LLM、生圖與語音封裝進二手隨身碟，實現插上即用的斷網離線智能環境。</li>
+                    <li><strong>Public APIs 全球開源免費介面庫</strong>：收錄全球數千個免註冊/免費的開放 API，涵蓋天氣、金融、遊戲、交通等，是電腦科技 PBL 與個人小專案的最佳資料集。</li>
+                    <li><strong>2D 卡通插畫生圖 Prompt 語法範本</strong>：掌握「視角設定 (POV) + 混亂誇張氛圍 + 負向約束 (NOT photorealistic)」的結構化提示詞架構。</li>
+                </ul>
+            </div>
+
+            <!-- 卡片 2: 內容摘要 -->
+            <div class="card">
+                <h2>內容摘要 (Summary)</h2>
+                
+                <h3>一、 USB 隨身碟跑整套本地 AI (Uncensored AI Studio)</h3>
+                <p>隨著小參數量化模型（Small Language Models, SLM）與 GGUF 格式的普及，原本昂貴的 AI 運算已被壓縮到消費級硬體即可流暢運行：</p>
+                <div class="highlight-box">
+                    <strong>架構特色：</strong><br>
+                    • <strong>零依賴雲端</strong>：斷網狀態下依舊具備基本寫作、翻譯、程式輔助能力。<br>
+                    • <strong>極致隱私</strong>：個人數據不傳送至外部伺服器。<br>
+                    • <strong>教育啟蒙</strong>：向浩浩展示「電腦大腦的運作機制」，不必高昂訂閱費也能親自動手實踐。
+                </div>
+
+                <h3>二、 Public APIs 全球開放資料庫</h3>
+                <p>專案連結：<a href="https://github.com/public-apis/public-apis" target="_blank" style="color:#0284c7;font-weight:600;">github.com/public-apis/public-apis</a></p>
+                <p>這是一個集結全球開源社群力量維持的免費 API 字典。初學者或自動化開發者常見的瓶頸是「不知道做什麼專案」，而 Public APIs 提供了源源不絕的素材：</p>
+                <ul>
+                    <li><strong>公共生活</strong>：各國即時氣象、日出日落時間、大眾運輸動態。</li>
+                    <li><strong>科技與娛樂</strong>：寶可夢/卡牌數值資料、隨機名言、NASA 太空每日照片。</li>
+                    <li><strong>學習路徑</strong>：浩浩學習 Python 時，只需 10 行程式碼呼叫一個 API 並印出畫面，就能獲得巨大的實作成就感。</li>
+                </ul>
+
+                <h3>三、 2D 美式海綿寶寶風格生圖 Prompt 範本</h3>
+                <p>這組提示詞展示了精確的視覺導引技巧，特別適合用於生動幽默的插畫或教學素材：</p>
+                <pre>2D cartoon illustration, classic American cartoon style, SpongeBob SquarePants-inspired underwater restaurant world, Mr. Krabs-like red cartoon crab restaurant owner POV, first-person perspective from behind the cash register, looking out at an insanely crowded restaurant, customers packed everywhere, huge line extending outside, every table completely full, piles of cartoon money and coins overflowing from the cash register, banknotes scattered across the counter and floor, money flying through the air, employees running around frantically, hilarious chaotic atmosphere, exaggerated successful business, absurdly rich restaurant owner, colorful underwater cartoon setting, bold black outlines, expressive cartoon characters, playful exaggerated proportions, vibrant colors, humorous visual storytelling, clearly animated 2D cartoon, NOT photorealistic, NOT realistic, NOT live action</pre>
+            </div>
+
+            <!-- 卡片 3: 關鍵行動 -->
+            <div class="card">
+                <h2>關鍵行動 (Action Items)</h2>
+                <ul>
+                    <li><strong>PBL 專案庫</strong>：將 Public APIs 網址加入浩浩的自學素材清單，作為科技專案的實作起點。</li>
+                    <li><strong>AI 備援工具</strong>：挑選一支 64GB 隨身碟，嘗試燒錄一套 Ollama 離線模型作為極端情境備用工具。</li>
+                    <li><strong>生圖提示詞保存</strong>：將美式卡通 prompt 架構記錄至 Google AI Studio / 常用提示詞備忘庫中。</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            MR693 智慧圖書館・03_resources 永久館藏
+        </div>
+    </div>
+</body>
+</html>

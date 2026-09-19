@@ -1,0 +1,203 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My conversation with Pierre Poilievre</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>My conversation with Pierre Poilievre</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                    <span>•</span>
+                    <a href="https://youtu.be/hS-xso4Nmo4?si=pqdGgbnXbYGgjvB1" target="_blank" class="video-link">🔗 觀看原始影片</a>
+                    
+                </div>
+            </div>
+            
+            
+            <!-- 自動載入 YouTube 最高畫質封面圖，若失敗則降級載入標準畫質 -->
+            <img src="https://img.youtube.com/vi/hS-xso4Nmo4/maxresdefault.jpg" alt="Video Thumbnail" class="hero-image" onerror="this.src='https://img.youtube.com/vi/hS-xso4Nmo4/hqdefault.jpg';">
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li>講者將其政治生涯的「為什麼」定義為<strong>「讓每個人都能擁有像我一樣的機會」</strong>，堅信加拿大是一個<strong>「從任何起點都能抵達任何終點的國家」</strong>。</li>
+    <li>他提倡<strong>「加拿大優先再投資減稅」</strong>政策，凡在加拿大境內再投資（如蓋房、創業、購買設備等），將享有<strong>零資本利得稅</strong>的稅務優惠，並承諾將<strong>平均勞工和老年人的所得稅降低 15%</strong>。</li>
+    <li>面對經濟發展瓶頸，講者主張<strong>大幅簡化法規與許可程序</strong>，目標是讓加拿大成為 <strong>OECD 國家中「取得建築許可最快的國家」</strong>，並提出設立<strong>「現成工區」</strong>，預先完成環評，明確條件與預發許可。</li>
+    <li>針對不斷攀升的犯罪率，他將<strong>廢除自由黨的「即捕即放」保釋法（C75法案）與重罪居家監禁（C5法案）</strong>，並引入<strong>「三振出局法」</strong>：凡犯三次嚴重暴力罪行者，將<strong>永久不得保釋、假釋、緩刑或居家監禁，並處以至少 10 年的監禁</strong>。</li>
+    <li>在醫療體系方面，講者將維持加拿大醫療轉移支付的資金增長，並透過設立<strong>「全國統一的執照考試」</strong>，來解決 <strong>20,000 名移民醫生和 32,000 名移民護士</strong>無法執業的問題，以快速增加醫療人力。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>主持人開場點出政治對話日益惡化，特邀加拿大保守黨黨魁暨官方反對黨領袖 Pierre Poilievre 參與訪談，探討物價上漲、關稅、移民、健保及人工智慧等民生議題，並強調<strong>問題未經事前提供，亦無編輯審核權</strong>。Pierre Poilievre 駁斥外界將他與川普相比的說法，強調自己的出身背景謙遜，政策理念與川普有異，並稱自己是<strong>「獨特的加拿大人」</strong>。他闡述投身政治的動力是來自其個人經歷（被學校老師收養、妻子是委內瑞拉難民），旨在<strong>「為每個人提供他曾擁有的機會」</strong>，堅信加拿大是個<strong>「可以從任何起點達到任何成就的國家」</strong>。</p>
+  <p>面對國家分裂，Poilievre 主張透過<strong>「加拿大承諾」</strong>來團結國民，讓人們相信在加拿大努力奮鬥就能有所成就，並堅決反對<strong>「認同政治」</strong>，強調應<strong>「以個人品格與行為而非群體出身來判斷一個人」</strong>。他指出，目前的政府政策似乎有意造成分裂，導致街頭抗議活動，尤其針對猶太社區，這與過去中東移民融入加拿大社會的模式不同。成為父親後，Poilievre 對於社會挑戰更具同理心，尤其關注擁有身心障礙孩童的家庭所面臨的困境。</p>
+  <p>在政策上，Poilievre 嚴厲批評現任自由黨政府，稱其近期政策僅是<strong>「模仿自己的淺薄版本」</strong>。他承諾<strong>「徹底廢除碳稅」</strong>，而非自由黨透過法規命令暫時使其從加油泵消失的做法。他主張廢除<strong>「C69法案」（零開發法）</strong>，認為該法扼殺了採礦、輸油管和液化天然氣廠等重大開發案的推動。他提出<strong>「加拿大優先再投資減稅」</strong>，凡在加拿大境內進行再投資，如建造住宅、開辦企業等，可享<strong>「零資本利得稅」</strong>，並承諾將<strong>平均勞工與老年人的所得稅降低 15%</strong>，以刺激經濟並鼓勵資本回流。</p>
+  <p>Poilievre 強調自然資源是加拿大最大的出口產業及稅收來源，其繁榮能提升國民購買力與生活水準。他認為國家經濟下滑是「一種選擇」，並承諾透過<strong>加速許可、讓原住民參與特許權收益、培訓 350,000 名年輕技工</strong>，將加拿大打造成全球最富裕的國家。他反對世界經濟論壇（WEF）的<strong>「由上而下」</strong>決策模式，認為專家「無法準確預測經濟走向」，並主張政府應謙遜，賦予人民更多金錢、自由和選擇權。他駁斥「自由市場會犧牲弱勢」的觀點，認為政府過度擴張反而<strong>「將財富從工人階級轉移到極富階級」</strong>，並舉例政府在顧問服務上花費 <strong>210 億加幣</strong>（約每戶家庭 1,400 加幣），以及印鈔導致通膨使貧困加劇、食物銀行排隊人數增加逾 <strong>100%</strong> 的現象。他希望能恢復<strong>「機會均等」</strong>的加拿大承諾。</p>
+  <p>為平衡預算，Poilievre 將實施<strong>「一比一支出抵銷法」</strong>，要求任何新支出都需有同等金額的節省來平衡，並透過<strong>裁減官僚體制、減少顧問費用、削減援外資金</strong>等方式，力求<strong>降低通膨</strong>。他主張加拿大應<strong>優於美國</strong>以吸引投資，提出<strong>降低投資稅、加快建築許可</strong>（目標將主要項目審批時間縮短至 <strong>6-7 個月</strong>）以及建立<strong>「現成工區」</strong>，預先完成環境評估以消除投資不確定性。他還建議<strong>大幅削減冗餘法規（初期削減 25%，之後實施「一換二」政策）</strong>，並由審計長而非政府監督執行，以確保法規的實際削減。他強調，繁瑣的法規並未帶來額外的環境保護，反而僅是為顧問和官僚創造工作。</p>
+  <p>在應對美國關稅問題上，Poilievre 認為<strong>「以牙還牙」</strong>式的報復是必要的，以形成威懾力。他提議與美國總統商議，<strong>「暫緩關稅」100 到 120 天</strong>，迅速重新談判《北美自由貿易協定》，並可考慮以<strong>「加強國防開支」</strong>作為談判籌碼，共同防禦北美大陸。為降低對美國的經濟依賴，他計畫<strong>興建多條輸油管線、發展液化天然氣（LNG）產業</strong>，利用加拿大寒冷氣候和豐富水電的優勢，將天然氣出口至歐洲和亞洲。他也指出<strong>省際貿易壁壘</strong>導致物價上漲與工資下降，提議與各省合作，將因消除壁壘而增加的聯邦收入回饋給該省，以鼓勵自由貿易。針對中國問題，他強調應<strong>「反對中國干預」</strong>，加強國防，並認為美加兩國不應內鬥，而應團結應對中國威脅。</p>
+  <p>對於媒體，Poilievre 承諾<strong>廢除「C11審查法案」</strong>，反對政府資助媒體，主張<strong>「開放、讓陽光照進來」</strong>，讓社群媒體和網路帶來更多聲音。他認為政府不應管制言論，僅需依據<strong>《刑事法》</strong>處理煽動暴力與仇恨的極端言論，並警惕<strong>「由上而下」的毒性意識形態蔓延</strong>。針對犯罪問題，他將<strong>廢除「即捕即放」保釋法、重罪居家監禁</strong>，並引入<strong>「三振出局法」</strong>，三次嚴重暴力罪行者將被判處<strong>至少十年監禁</strong>，且需<strong>「透過無可挑剔的行為、通過藥物檢測並學習可就業技能」</strong>才能獲釋。此外，他還計畫<strong>增加邊境掃描器和邊境服務局官員</strong>，並投入資源<strong>治療 50,000 名成癮者</strong>。他認為<strong>「缺乏機會」</strong>是導致毒品危機和犯罪的部分原因，呼籲為年輕一代<strong>「帶回希望感」</strong>。</p>
+  <p>醫療方面，Poilievre 承諾維護<strong>《加拿大健康法》</strong>並確保全民健保的原則。他提出透過<strong>「全國統一的執照考試」</strong>，來解決 <strong>20,000 名移民醫生和 32,000 名移民護士</strong>無法執業的問題，並加快藥品審批速度，借鑒其他先進國家的治療方案。在國防方面，他主張<strong>投資人工智慧、機器人、先進航空、無人機和網路安全</strong>，以應對未來威脅，並將軍事訓練作為經濟發展的<strong>「科技跳板」</strong>。對於氣候變遷，他強調應避免<strong>「碳洩漏」</strong>，即因加拿大高稅負導致產業外移至汙染更嚴重的國家，反而增加全球排放。他計畫為<strong>「低排放的加拿大產業提供減稅」</strong>，鼓勵本地生產，同時降低全球碳排放。</p>
+  <p>最後，Poilievre 認為人們對他最大的誤解是，其「積極進取的態度」源於<strong>「對受苦人民的關愛」</strong>。他對加拿大成功的願景是，在四年後，<strong>「每個孩子都能在成長過程中知道，只要努力，他們就能實現任何夢想」</strong>。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (待辦事項 / 關鍵行動)</h2>
+  <ul>
+    <li><strong>廢除《C11法案》</strong>（現行審查法）。</li>
+    <li>實施<strong>「加拿大優先再投資減稅」政策</strong>：凡在加拿大境內再投資的資本利得將享有<strong>零稅率</strong>。</li>
+    <li>將<strong>平均勞工和老年人的所得稅降低 15%</strong>。</li>
+    <li>設立目標，使加拿大在 <strong>OECD 國家中「取得建築許可最快」</strong>，將主要項目審批時間縮短至<strong>6-7個月</strong>。</li>
+    <li>廢除<strong>《C69法案》和《C48法案》</strong>（被稱為「零開發法」）。</li>
+    <li>推出<strong>法規削減政策</strong>：首先削減 <strong>25%</strong> 的法規，之後實施<strong>「一換二」</strong>（新增一項法規，就必須廢除兩項）的規則，並由審計長監督。</li>
+    <li><strong>廢除《C75法案》</strong>（自由黨的保釋法）。</li>
+    <li><strong>廢除嚴重罪犯的居家監禁</strong>（C5法案）。</li>
+    <li>引入<strong>「三振出局法」</strong>：三次嚴重暴力犯罪將<strong>永久不得保釋、假釋、緩刑或居家監禁</strong>，並處以<strong>至少 10 年</strong>的監禁，且需<strong>「努力爭取」</strong>方能獲釋。</li>
+    <li><strong>治療 50,000 名成癮者</strong>。</li>
+    <li>建立<strong>全國統一的醫療執照考試</strong>，讓 <strong>20,000 名移民醫生和 32,000 名移民護士</strong>能快速執業。</li>
+    <li><strong>加快藥品審批速度</strong>，認可其他先進國家的治療方案。</li>
+    <li>加強軍事投資於<strong>人工智慧、機器人、網路安全和無人機技術</strong>。</li>
+    <li>為<strong>低排放的加拿大產業提供減稅</strong>，鼓勵將生產遷回國內，同時減少全球排放。</li>
+    <li>與各省協商，將<strong>因消除省際貿易壁壘而增加的聯邦收入</strong>回饋給相關省份，作為激勵措施。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

@@ -1,0 +1,180 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>什麼是時間管理的秘訣「時間方塊」？《深度工作力實作本》的使用示範</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>什麼是時間管理的秘訣「時間方塊」？《深度工作力實作本》的使用示範</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                </div>
+            </div>
+            
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li>工作價值二分法：真正能創造極高價值的是需要長時間專注的<strong>深度工作</strong>（如撰寫程式、完整企劃案）；而寄 Email、即時訊息溝通、報帳與填表等<strong>淺薄工作無法帶來實質高價值</strong>。</li>
+    <li>時間主控權法則：<strong>「如果你沒有提前規劃自己的時間，別人就會來幫你規劃時間。」</strong>必須主動分配時段，避免行程被他人零碎切割。</li>
+    <li>時間方塊（Time Blocking）核心機制：筆記本每 30 分鐘為一格，<strong>右頁設計四個欄位鼓勵隨時動態修改</strong>，遇突發急件或優先級變更時可直接劃掉並在下一欄重新排程。</li>
+    <li>專注與心理卸載架構：透過<strong>「收集欄」暫存雜事與靈感</strong>以沉澱心緒、利用<strong>「指標追蹤」觀察深度工作時數趨勢</strong>，並在下班時執行<strong>「關機儀式」徹底切換工作與生活邊界</strong>。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>講者介紹《深度工作力》及其延伸工具書《深度工作力實作本》（包含舊版與新版書目）。全書核心在於培養深度工作的習慣，並透過「時間方塊」方法進行精準的時間管理與規劃。實作本前約 20 頁為使用說明，後續提供<strong>總共 13 週的實作版面</strong>，每週起始皆附有書中金句與週計畫頁，供使用者於週日預先規劃週一至週五的五個工作天重點與大型專案突破目標。</p>
+  <p>實作本的每日核心操作分為兩大頁面：右頁為<strong>時間方塊格線</strong>（以 30 分鐘為一單位，示範時段為早上 8 點至晚上 6 點），操作原則是<strong>先填入既定會議與報告行程，再於精神最佳時段（如上午或下午）填入深度工作</strong>，瑣碎的淺薄工作則透過編號標註並集中於特定時段（如晨間或下班前 30 分鐘）批次處理。右側預留四個欄位，目的在於<strong>歡迎使用者彈性修改計畫</strong>，當老闆交辦急件或任務優先級變更時，可直接在舊計畫劃叉，並在相鄰欄位重新調配時段與壓縮任務。</p>
+  <p>左頁則涵蓋三個功能模組：下方為<strong>「收集欄」</strong>（區分工作與想法區塊），隨手記錄突發任務與靈感，避免當下分心或遺忘；左上角為<strong>「指標追蹤」</strong>，記錄如每日深度工作時數（如範例之 2.5 小時）、業績、聯絡客戶數或閱讀論文數，用以<strong>追蹤長期表現趨勢並調整工時配置</strong>；最後則是<strong>「關機儀式」</strong>，於下班前檢視進度並將未完成事項移至收集欄留待明日，<strong>確保工作思緒不被帶回家中或睡眠中</strong>，以維持長期的生產力與生活品質。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (待辦事項 / 關鍵行動)</h2>
+  <ul>
+    <li><strong>每週日規劃重點任務</strong>：利用實作本每週起始頁，預先設定接下來 5 個工作天的核心任務與大型專案目標。</li>
+    <li><strong>每日預先劃分時間方塊</strong>：以 30 分鐘為單位填寫工作時段，<strong>優先鎖定精神最佳時段進行深度工作</strong>，並集中零碎時間處理淺薄事務。</li>
+    <li><strong>即時紀錄與動態調配</strong>：遇到突發急件時<strong>善用右側相鄰欄位重新排程</strong>，臨時靈感與雜事則統一寫入<strong>收集欄</strong>暫存，不中斷當前專注。</li>
+    <li><strong>每日追蹤關鍵生產力指標</strong>：記錄每日深度工作總時數或其他產出數據（如業績、客戶數、論文數），<strong>定期檢視數據趨勢以優化時間配置</strong>。</li>
+    <li><strong>下班前嚴格執行關機儀式</strong>：檢視當日清單，將未完成事項記錄至明日待辦，<strong>準時切換下班心態</strong>，避免工作思緒干擾休息與家庭生活。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

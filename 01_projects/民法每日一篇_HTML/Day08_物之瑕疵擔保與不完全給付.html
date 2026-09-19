@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>民法精解 - Day 08: 物之瑕疵擔保與不完全給付</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            padding: 25px;
+        }
+        h1, h2, h3 {
+            color: #1a3a6a;
+        }
+        .btn-back {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .btn-back:hover {
+            background-color: #218838;
+        }
+        .tag {
+            background-color: #007bff;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            margin-right: 10px;
+        }
+        .scenario-toggle {
+            background-color: #e9ecef;
+            color: #495057;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-bottom: 15px;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .scenario-toggle:hover {
+            background-color: #dee2e6;
+        }
+        .solution {
+            background-color: #f8f9fa;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin-top: 15px;
+            display: none; /* Hidden by default */
+        }
+        .irac-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .irac-table th, .irac-table td {
+            border: 1px solid #dee2e6;
+            padding: 12px;
+            text-align: left;
+            vertical-align: top;
+        }
+        .irac-table th {
+            background-color: #e9ecef;
+            font-weight: bold;
+            color: #495057;
+        }
+        .irac-table td.conclusion {
+            background-color: #fff3cd;
+            font-weight: bold;
+            color: #856404;
+        }
+        .tip-card {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .tip-card h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #155724;
+        }
+        .model-box {
+            background-color: #e2e3e5;
+            border: 1px solid #d6d8db;
+            color: #383d41;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+        .model-box h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #383d41;
+        }
+        .quiz-container {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        .question {
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #495057;
+        }
+        .options button {
+            display: block;
+            width: 100%;
+            text-align: left;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ced4da;
+            background-color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .options button:hover {
+            background-color: #e9ecef;
+        }
+        .options button.correct {
+            background-color: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+            font-weight: bold;
+        }
+        .options button.incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+            font-weight: bold;
+        }
+        .feedback {
+            font-size: 0.9em;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .feedback.correct-feedback {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .feedback.incorrect-feedback {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> 返回民法知識庫總覽</a>
+        <div class="mb-4">
+            <span class="tag">Day 08</span>
+            <span class="tag">債編</span>
+            <span class="tag">2026-08-26</span>
+        </div>
+        <h1 class="text-4xl font-bold mb-6">物之瑕疵擔保與不完全給付</h1>
+
+        <!-- 區塊一：經典案例情境 -->
+        <div class="section">
+            <h2 class="text-3xl font-semibold mb-4">經典案例情境 (The Scenario)</h2>
+            <p class="text-lg mb-4">
+                阿財向中古車行「跑跑車」購買一輛聲稱僅跑五萬公里的二手轎車。牽車後不久，阿財發現該車的里程數遭調表，實際里程已超過十五萬公里，且引擎有嚴重的漏油問題。阿財認為這與銷售時的說明嚴重不符，且車輛狀況遠不如預期。
+            </p>
+            <button class="scenario-toggle" onclick="toggleSection('scenario-solution')">
+                點擊展開解答 <i class="fas fa-chevron-down"></i>
+            </button>
+            <div id="scenario-solution" class="solution">
+                <h3 class="text-2xl font-semibold mb-3">情境解析</h3>
+                <p class="text-lg">
+                    本案例涉及買賣契約中「物之瑕疵擔保」與「不完全給付」的問題。阿財購買的汽車，其「里程數被調表」與「引擎漏油」顯然是該車輛的「瑕疵」，且該瑕疵影響了車輛的正常使用及阿財的交易利益。由於銷售時對里程數的說明是契約的重要內容，此處可能構成「不符約定之品質」，並進一步探討其是否構成民法上的「瑕疵」。
+                </p>
+            </div>
+        </div>
+
+        <!-- 區塊二：三段論法拆解 -->
+        <div class="section">
+            <h2 class="text-3xl font-semibold mb-4">三段論法拆解 (IRAC Method)</h2>
+            <table class="irac-table">
+                <thead>
+                    <tr>
+                        <th>大前提 (Rule)</th>
+                        <th>小前提 (Analysis)</th>
+                        <th>結論 (Conclusion)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="text-lg">
+                            <strong>§ 354 (物之瑕疵擔保責任)：</strong>
+                            <br>出賣人應擔保所交付之物，於危險移轉時，無滅失或減少其價值之瑕疵，亦無滅失或減少通常效用或契約預定效用之瑕疵。
+                            <br><strong>§ 227 (債務不履行之一般規定)：</strong>
+                            <br>債務人因可歸責於自己之事由，致不履行債務者，負損害賠償之責。
+                            <br><strong>§ 359 (買賣標的物瑕疵擔保之買受人權利)：</strong>
+                            <br>買受人發現買賣之物有瑕疵時，得按減少之價額請求減少價金。
+                            <br>（若瑕疵係由可歸責於出賣人之事由所致，買受人亦得依第227條規定請求損害賠償；若買受人能證明其因瑕疵所受損害，除減少價金外，得另行請求之。）
+                        </td>
+                        <td class="text-lg">
+                            <strong>事實：</strong>
+                            <br>1. 阿財與跑跑車訂立買賣契約，購買二手車。
+                            <br>2. 跑跑車交付之車輛，其里程數被調表（實際超過15萬公里，非約定之5萬公里），且引擎有漏油問題。
+                            <br>3. 里程數與實際不符，顯然是「減少通常效用或契約預定效用之瑕疵」。
+                            <br>4. 引擎漏油亦屬「減少通常效用或契約預定效用之瑕疵」。
+                            <br>5. 跑跑車作為出賣人，未交付具約定品質（里程數）及通常效用（無引擎漏油）之標的物。
+                            <br>6. 這些瑕疵應屬「危險移轉時」（即交付時）即存在。
+                        </td>
+                        <td class="text-lg conclusion">
+                            <strong>效果：</strong>
+                            <br>1. 跑跑車應負物之瑕疵擔保責任 (§ 354)。
+                            <br>2. 阿財得主張：
+                            <br>   a) 減少價金 (§ 359)：因里程數與約定不符，或引擎漏油，導致車輛價值減少。
+                            <br>   b) 請求損害賠償 (§ 227)：若可證明跑跑車可歸責（例如知情而隱瞞），阿財可就其因瑕疵所受之額外損害（例如維修費、無法使用車輛的損失）請求賠償。
+                            <br>   c) 契約之解除 (§ 359 但書)：若瑕疵情節重大，影響車輛之通常使用，阿財亦可能得解除契約。
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 區塊三：生活與職場防禦錦囊 -->
+        <div class="section">
+            <h2 class="text-3xl font-semibold mb-4">生活與職場防禦錦囊 (Self-Protection Tips)</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="tip-card">
+                    <h4 class="text-xl font-bold"><i class="fas fa-user-cog me-2"></i> 買家/租客自保</h4>
+                    <ul class="list-disc list-inside">
+                        <li><strong>審慎驗收：</strong> 購買或承租任何重大標的物（房屋、汽車、設備）前，務必仔細檢查。對於關鍵部分（如機械性能、結構安全、水電管線）可委託專業技師或鑑定師陪同驗證。</li>
+                        <li><strong>契約明載：</strong> 在契約中詳細載明標的物的品質、規格、使用年限、重要功能、非瑕疵狀態等，避免模糊不清的描述。</li>
+                        <li><strong>保留證據：</strong> 驗收時發現任何疑慮，應立即拍照、錄影存證，並要求對方（賣家/出租人）出具書面說明或承認。</li>
+                        <li><strong>明確告知：</strong> 一旦發現瑕疵，應儘速以書面（存證信函為佳）方式通知對方，詳述瑕疵內容，並表明主張（如要求修繕、減少價金、解約）。</li>
+                        <li><strong>釐清責任：</strong> 爭議時，釐清瑕疵是「原有」的（出賣人/出租人負責）還是「使用中」產生的（買家/承租人負責），或屬於「不可歸責」的自然損耗。</li>
+                    </ul>
+                </div>
+                <div class="tip-card">
+                    <h4 class="text-xl font-bold"><i class="fas fa-handshake me-2"></i> 簽約方自保</h4>
+                    <ul class="list-disc list-inside">
+                        <li><strong>盡職調查：</strong> 在簽訂重要契約（尤其是涉及財產權移轉、長期合作、技術授權等）前，充分調查對方公司的信用、履約能力、過往紀錄，以及標的物（若有）的真實狀況。</li>
+                        <li><strong>約定修繕權：</strong> 契約中可約定，若標的物有瑕疵，買受人有權要求出賣人限期修繕。修繕期滿仍有瑕疵，則可主張減少價金或解除契約。</li>
+                        <li><strong>違約條款：</strong> 明確約定何種情況構成「重大瑕疵」或「不完全給付」，以及相應的違約責任（如違約金、損害賠償範圍）。</li>
+                        <li><strong>管轄法院：</strong> 考量未來可能發生的爭議，契約中可預先約定發生爭議時的管轄法院，以節省訴訟成本。</li>
+                        <li><strong>專業諮詢：</strong> 對於複雜或金額龐大的契約，務必諮詢律師意見，確保自身權益。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 區塊四：底層思維模型提煉 -->
+        <div class="section">
+            <h2 class="text-3xl font-semibold mb-4">底層思維模型提煉 (Underlying Principles)</h2>
+            <div class="model-box">
+                <h4 class="text-2xl font-bold"><i class="fas fa-lightbulb me-2"></i> 風險分配與交易成本</h4>
+                <p class="text-lg">
+                    「物之瑕疵擔保」與「不完全給付」的核心，在於如何有效地分配與管理交易過程中潛藏的「標的物風險」。法律規定出賣人（或服務提供者）負有瑕疵擔保責任，是將「標的物固有瑕疵」的風險，在交付前主要分配給出賣人。這是因為出賣人通常對標的物更為熟悉，且在製造、檢查、組裝過程中，更有能力控制與預防瑕疵的發生。
+                    <br><br>
+                    此外，法律也要求買受人（或服務接受者）在發現瑕疵時，應「及時」通知出賣人，並主張權利，這是在平衡「交易成本」的考量。若買受人過度延遲通知，可能導致瑕疵惡化、難以判斷原因，增加雙方辨識與處理瑕疵的成本。因此，及時發現、及時通知、及時主張，是順利解決瑕疵問題的關鍵。
+                    <br><br>
+                    從「資訊不對稱」的觀點來看，出賣人通常掌握更多關於標的物真實狀況的資訊，而買受人則處於相對劣勢。瑕疵擔保責任的設計，旨在降低這種資訊不對稱帶來的風險，確保市場交易的公平性與效率。
+                </p>
+            </div>
+        </div>
+
+        <!-- 區塊五：牛刀小試・考點隨堂測驗 -->
+        <div class="section">
+            <h2 class="text-3xl font-semibold mb-4">牛刀小試・考點隨堂測驗 (Quick Quiz)</h2>
+            <div class="quiz-container">
+                <div id="quiz">
+                    <div class="question mb-4">
+                        1. 依民法規定，買賣契約成立後，出賣人所負之物之瑕疵擔保責任，其主要法源依據為何？
+                    </div>
+                    <div class="options">
+                        <button data-correct="false" data-id="1">A. 民法第184條（侵權行為）</button>
+                        <button data-correct="false" data-id="1">B. 民法第218條（損害賠償之計算）</button>
+                        <button data-correct="true" data-id="1">C. 民法第354條（物之瑕疵擔保）</button>
+                        <button data-correct="false" data-id="1">D. 民法第408條（租賃物之瑕疵）</button>
+                    </div>
+                    <div class="feedback mb-4" id="feedback-1"></div>
+
+                    <div class="question mb-4">
+                        2. 買受人發現買賣之物有瑕疵時，若其瑕疵非可歸責於出賣人之事由，買受人得主張以下何種權利？
+                    </div>
+                    <div class="options">
+                        <button data-correct="true" data-id="2">A. 減少價金（§359）</button>
+                        <button data-correct="false" data-id="2">B. 請求損害賠償（§227）</button>
+                        <button data-correct="false" data-id="2">C. 解除契約（§359）</button>
+                        <button data-correct="false" data-id="2">D. 請求更換同種類無瑕疵之物</button>
+                    </div>
+                    <div class="feedback mb-4" id="feedback-2"></div>
+
+                    <div class="question mb-4">
+                        3. 買受人發現買賣之物有瑕疵，下列何種情況下，該瑕疵應屬「無通常效用或契約預定效用之瑕疵」？
+                    </div>
+                    <div class="options">
+                        <button data-correct="false" data-id="3">A. 買受人未注意外觀，發現箱子有輕微凹痕。</button>
+                        <button data-correct="false" data-id="3">B. 購買之手機，因製造商停止提供更新服務，導致部分APP無法正常使用。</button>
+                        <button data-correct="true" data-id="3">C. 購買之房屋，牆壁出現嚴重壁癌，影響居住品質。</button>
+                        <button data-correct="false" data-id="3">D. 購買之二手書，封面有泛黃現象。</button>
+                    </div>
+                    <div class="feedback mb-4" id="feedback-3"></div>
+
+                    <div class="question mb-4">
+                        4. 關於不完全給付與物之瑕疵擔保責任的關係，下列敘述何者較為正確？
+                    </div>
+                    <div class="options">
+                        <button data-correct="false" data-id="4">A. 物之瑕疵擔保責任僅限於買賣契約，與不完全給付無關。</button>
+                        <button data-correct="false" data-id="4">B. 不完全給付為債務不履行之一種，瑕疵擔保責任僅是特定類型之不完全給付。</button>
+                        <button data-correct="true" data-id="4">C. 買賣標的物有瑕疵，可視為一種「不符約定內容之給付」，屬於不完全給付，此時得適用§227及§354、§359等規定。</button>
+                        <button data-correct="false" data-id="4">D. 瑕疵擔保責任優先於不完全給付，不完全給付僅在無瑕疵擔保規定時適用。</button>
+                    </div>
+                    <div class="feedback mb-4" id="feedback-4"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSection(id) {
+            var element = document.getElementById(id);
+            var icon = element.previousElementSibling.querySelector('.fas');
+            if (element.style.display === "block") {
+                element.style.display = "none";
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            } else {
+                element.style.display = "block";
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            }
+        }
+
+        function checkAnswer(button) {
+            const quizContainer = button.closest('.quiz-container');
+            const questionDiv = button.closest('.options').previousElementSibling;
+            const questionId = questionDiv.dataset.questionId || button.dataset.id; // Use dataset if available, else fallback
+            const isCorrect = button.dataset.correct === 'true';
+            const feedbackDiv = quizContainer.querySelector(`#feedback-${questionId}`);
+
+            // Disable all buttons for this question
+            button.closest('.options').querySelectorAll('button').forEach(btn => {
+                btn.disabled = true;
+                btn.style.cursor = 'not-allowed';
+            });
+
+            if (isCorrect) {
+                button.classList.add('correct');
+                feedbackDiv.innerHTML = '<div class="correct-feedback"><i class="fas fa-check-circle"></i> 答對了！</div>';
+                button.style.backgroundColor = '#d4edda';
+                button.style.borderColor = '#28a745';
+                button.style.color = '#155724';
+            } else {
+                button.classList.add('incorrect');
+                feedbackDiv.innerHTML = '<div class="incorrect-feedback"><i class="fas fa-times-circle"></i> 答錯了。</div>';
+                button.style.backgroundColor = '#f8d7da';
+                button.style.borderColor = '#dc3545';
+                button.style.color = '#721c24';
+
+                // Highlight the correct answer
+                button.closest('.options').querySelectorAll('button').forEach(btn => {
+                    if (btn.dataset.correct === 'true') {
+                        btn.classList.add('correct');
+                        btn.style.backgroundColor = '#d4edda';
+                        btn.style.borderColor = '#28a745';
+                        btn.style.color = '#155724';
+                    }
+                });
+            }
+
+            // Add detailed explanation
+            let explanation = '';
+            switch (parseInt(questionId)) {
+                case 1:
+                    explanation = '<strong>詳解：</strong>民法第354條明確規定了出賣人對於所交付之物應負擔保其無瑕疵之責任，是此類爭議的主要法律依據。§227為一般債務不履行，§408為租賃，§184為侵權行為。';
+                    break;
+                case 2:
+                    explanation = '<strong>詳解：</strong>民法第359條第一項規定，買受人發現買賣之物有瑕疵時，得按減少之價額請求減少價金。§227（損害賠償）需可歸責，§359但書（解除契約）通常需瑕疵重大，更換同種類無瑕疵之物則非我國民法§359直接賦予之權利。';
+                    break;
+                case 3:
+                    explanation = '<strong>詳解：</strong>「通常效用或契約預定效用之瑕疵」，是指物品的本質性功能受損。牆壁嚴重壁癌（C）明顯影響居住的通常效用。A、D屬輕微外觀瑕疵；B的APP無法使用，雖然影響效用，但原因可能出在手機製造商停止服務，且不一定影響手機「本身」的通常效用，爭議性較高，需進一步判斷。';
+                    break;
+                case 4:
+                    explanation = '<strong>詳解：</strong>物之瑕疵擔保責任，實質上是債務不履行的一種特定類型，即「給付不符約定」。因此，當標的物有瑕疵時，可視為不完全給付 (§227)。我國民法在此情況下，將§354、§359等特別規定與§227競合適用，以提供買受人更周全的權利。';
+                    break;
+            }
+            feedbackDiv.innerHTML += `<div class="mt-2 p-2 border-t border-gray-300 text-sm">${explanation}</div>`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.options button').forEach(button => {
+                button.addEventListener('click', () => checkAnswer(button));
+            });
+        });
+    </script>
+
+</body>
+</html>

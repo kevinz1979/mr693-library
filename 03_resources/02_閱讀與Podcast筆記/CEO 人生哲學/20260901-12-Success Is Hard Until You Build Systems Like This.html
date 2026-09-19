@@ -1,0 +1,190 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Success Is Hard Until You Build Systems Like This</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Success Is Hard Until You Build Systems Like This</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                    <span>•</span>
+                    <a href="https://youtu.be/p3F-1QyvHnY?si=D1o5e9eI_xkZTLHs" target="_blank" class="video-link">🔗 觀看原始影片</a>
+                    
+                </div>
+            </div>
+            
+            
+            <!-- 自動載入 YouTube 最高畫質封面圖，若失敗則降級載入標準畫質 -->
+            <img src="https://img.youtube.com/vi/p3F-1QyvHnY/maxresdefault.jpg" alt="Video Thumbnail" class="hero-image" onerror="this.src='https://img.youtube.com/vi/p3F-1QyvHnY/hqdefault.jpg';">
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li><strong>頂尖 1% 的成功不在於更努力或更有紀律，而在於設計出能替你承擔苦工的「系統」</strong>；單純依賴意志力是注定失敗的生物學陷阱。</li>
+    <li>透過「強制約束機制」（Forcing Functions）<strong>切斷所有退路（破釜沉舟），大腦在沒有 Plan B 的情況下自然會全力實現 Plan A</strong>。</li>
+    <li>心理學家證實<strong>「如果……就……」（If-Then）演算法能將失敗率從 62% 驟降至 9%</strong>，藉由抽離情緒與爭辯，將行動轉化為自動執行的程式碼。</li>
+    <li>專家與頂尖高手善用「核對清單」將決策外包，<strong>WHO 的 19 步驟手術清單使併發症降低 36%、死亡率降低 47%</strong>，證明結構化系統能解放認知頻寬。</li>
+    <li>核心破局思維：<strong>「不是動力驅動重複，而是重複驅動動力」</strong>，長期的重複會重塑大腦與神經系統，讓做困難的事從內耗變成渴望與自然節奏。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>講者從過去露宿街頭的失敗者，蛻變為身價數百萬美元的投資人、董事會成員及兩家估值數十億美元科技公司的顧問，其核心關鍵並非付出更多工時，而是<strong>建立一套能自動化處理困難任務的行為系統</strong>。講者提出克服逃避心態、持續執行高難度任務的五大原則：</p>
+  <p><strong>第一原則：自我封閉退路（強制約束機制）</strong>。如同 1519 年西班牙征服者埃爾南·科爾特斯（Hernán Cortés）率領數百人登陸墨西哥征服阿茲特克帝國時下令「沉船斷後」，當退路被切斷，大腦就會全力讓 Plan A 成功。講者以自身擔任大型公司營運長（COO）時主導跨城企業併購為例，執行長一句「我不去，由你全權負責」，便使每週出差整合兩家公司從負擔變成唯一的必然選項。實踐方式包含：<strong>公開承諾、財務下注（如預先付費）、切斷干擾存取權限，以及設定 90 分鐘的時間箱（Time Box）</strong>。</p>
+  <p><strong>第二原則：不要依賴意志力，善用生物節奏與設計</strong>。心理學家羅伊·鮑邁斯特（Roy Baumeister）的研究指出，壓抑吃餅乾慾望的受試者在後續解題中<strong>放棄速度快了 50%</strong>，證明意志力如同油箱會隨決策與抵抗誘惑而耗盡（如法官下午駁回假釋比例更高）。世界頂尖短跑選手諾亞·萊爾斯（Noah Lyles）身患注意力不足過動症（ADHD），卻透過固定跑道、暖身與歌單等一致節奏，在 <strong>1/500 秒的金牌差距中勝出</strong>。將任務鎖定「時間、地點、觸發點」三要素，即可將困難任務轉入無痛的自動導航模式。</p>
+  <p><strong>第三原則：執行心理演算法（If-Then 規劃）</strong>。紐約大學心理學家彼得·戈爾維策（Peter Gollwitzer）研究發現，設定模糊目標者失敗率達 62%，而設定<strong>「如果 X 發生，就執行 Y」條件句者，失敗率僅 9%</strong>。逃避困難本質上是逃避焦慮、冒牌者症候群等情緒，透過預先設定程式碼（如：週四下午 3 點即啟動深度工作；吃完午餐即散步 15 分鐘），能完全剔除腦中的談判與戲劇化情緒。</p>
+  <p><strong>第四原則：將決策外包給核對清單</strong>。知名外科醫師阿圖·葛文德（Atul Gawande）與世界衛生組織（WHO）合作推行 <strong>19 步驟手術核對清單</strong>，在頂尖醫師承受極限認知負荷時提供防護網，使<strong>術後併發症降低 36%、死亡率大幅下降 47%</strong>。飛行時數達 10,000 小時的資深機師依然依賴清單。講者建議建立三種清單：<strong>執行層面的「待辦清單」（To-do list）、拓展層面的「想要清單」（To-want list），以及個人進化的「成為清單」（To-be list）</strong>。</p>
+  <p><strong>第五原則：讓自己化身為系統</strong>。哈佛大學研究顯示，西藏僧侶在冥想時腦波會高度自然同步，這並非依賴當下的動機，而是多年重複帶來的神經共振。<strong>「動機不驅動重複，重複才會驅動動機」</strong>，如同網球名將羅傑·費德勒（Roger Federer）看似毫不費力的發球，背後是無數次的重複。當大腦適應節奏後，便不再追逐外在獎勵，轉而渴望重複本身。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (待辦事項 / 關鍵行動)</h2>
+  <ul>
+    <li><strong>設計一項不可逆的「強制約束」</strong>：針對拖延已久的目標，採取公開宣示、預先支付課程/會員費用，或設定 <strong>90 分鐘工作時間箱並切斷網路與社群存取</strong>。</li>
+    <li><strong>鎖定深度工作的三大變數</strong>：選定一項核心任務，<strong>嚴格綁定固定的「時間、地點、觸發條件」</strong>（如：每週四上午 9:00、固定書桌、開啟特定歌單並將手機設為飛航模式）。</li>
+    <li><strong>編寫「If-Then」心理演算法</strong>：消除大腦的自我討價還價，<strong>將本週重點行動全面轉換為「如果 [情境/時間]，我就 [具體動作]」</strong>的執行指令。</li>
+    <li><strong>建立個人化三層核對清單</strong>：著手建立<strong>「To-do（執行）」、「To-want（擴展目標）」與「To-be（心態與個人進化）」清單</strong>，釋放認知大腦頻寬。</li>
+    <li><strong>今晚落實一項微型系統規則</strong>：不求瞬間改變整個人生，<strong>專注設計一項改變明天行為的極小規則</strong>，藉由持續重複重塑神經迴路。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

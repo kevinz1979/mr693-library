@@ -1,0 +1,191 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>If You Don't Understand First Principles, You Can't Think Clearly</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>If You Don't Understand First Principles, You Can't Think Clearly</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                    <span>•</span>
+                    <a href="https://youtu.be/jPSirKTGTfo?si=z9g1pIx2VcARe-A2" target="_blank" class="video-link">🔗 觀看原始影片</a>
+                    
+                </div>
+            </div>
+            
+            
+            <!-- 自動載入 YouTube 最高畫質封面圖，若失敗則降級載入標準畫質 -->
+            <img src="https://img.youtube.com/vi/jPSirKTGTfo/maxresdefault.jpg" alt="Video Thumbnail" class="hero-image" onerror="this.src='https://img.youtube.com/vi/jPSirKTGTfo/hqdefault.jpg';">
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li><strong>大型語言模型（LLM）本質是機率與模式比對工具，若不加以約束，只會提供最平庸的常規解答</strong>，使用者必須主動利用提示詞架構強制 AI 進行第一原理思考。</li>
+    <li>第一原理思維的核心四步驟為：<strong>拆解（Decompose）、審查假設（Audit）、重新組合（Recombine）、實驗驗證（Experiment）</strong>。</li>
+    <li>創新並不是尋求「第 13 個音符」，而是<strong>利用既有的基礎元素（如音樂的 12 個音符）進行前所未有的重組</strong>；顛覆性突破往往來自於對「存活下來的習慣與假設」進行大膽審查。</li>
+    <li>在人機協作中，<strong>「AI 負責運算與展示推導過程，人類必須保留最終的判斷與決策權」</strong>。</li>
+    <li>第一原理的目標並非保證百發百中，而是快速驗證並從錯誤中學習；<strong>即使在現實中面臨 98% 的失敗率，只要掌握那關鍵 2% 的突破，就足以徹底改變局勢</strong>。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>講者曾任全美前 20 大成長最快公司的執行長，長達 12 年每晚僅睡 4 至 6 小時且常態性感到精疲力竭。即使在 3 年前退下全職管理職務，疲憊感依然未解，直到進行專業睡眠檢查才發現<strong>每小時在睡眠中驚醒高達 34 次，主因為下顎結構壓迫呼吸道</strong>。這個案例揭示多數人常將問題歸咎於表面慣性（如喝更多咖啡、減少工時），而<strong>第一原理思維（First Principles Thinking）則是停止編造故事，將系統徹底拆解至最根本的事實</strong>。</p>
+  <p>面對 AI 時代，大型語言模型並無實體世界經驗，僅會輸出看似最合理的大眾解答。為避免思考被 AI 拉向平庸，講者提出了<strong>四步驟 D-A-R-E 框架</strong>，並結合 AIM（角色 Actor、意圖/輸入 Intention、任務 Mission）提示詞架構：</p>
+  <p><strong>1. 拆解（Decompose）：</strong>將問題層層剝離至不可再分的要素（例如經營頻道本質僅需「一支手機與一個故事」），並嚴格禁止 AI 在此階段直接提供建議或解方。<br>
+  <strong>2. 審查假設（Audit）：</strong>質疑既有常規。如同二戰後豐田（Toyota）打破底特律的大規模量產假設而發展出及時生產（JIT）並超越通用汽車（GM），以及特斯拉（Tesla）在 2020 年因質疑內燃機必要性而躍升為全球市值最高車廠，<strong>真正的突破必須主動揪出被包裝成常識的未驗證假設</strong>。<br>
+  <strong>3. 重新組合（Recombine）：</strong>如同西方音樂僅以 12 個音符便能由巴哈、披頭四到碧昂絲創造出無數經典，創新在於<strong>運用 AI 的龐大搜尋能力，將已驗證的基礎構件進行極大規模的全新組合</strong>。<br>
+  <strong>4. 實驗驗證（Experiment）：</strong>效法詹姆士·戴森（James Dyson）歷時 5 年打造 5,127 個原型機以及 Google 測試藍色連結的精神，指派 AI 擔任懷疑論科學家，<strong>在投入真實的時間、金錢與聲譽前，設計出成本最低、速度最快的驗證測試</strong>。</p>
+  <p>講者引述喜劇演員馬丁·肖特（Martin Short）縱橫業界 40 年的洞察，強調<strong>「在真實世界中承擔 98% 的失敗率是常態，人生不需要 100 次勝利，只需要關鍵的那 1 次成功」</strong>。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (待辦事項 / 關鍵行動)</h2>
+  <ul>
+    <li><strong>建立結構化提示詞（AIM 架構）</strong>：在向 AI 提問時，明確設定角色（Actor）、輸入背景與意圖（Intention/Input）、交付任務（Mission），<strong>嚴禁 AI 在拆解階段擅自提供解決方案或既定套路</strong>。</li>
+    <li><strong>執行現狀假設審查（Red Team Audit）</strong>：針對目前卡關的專案或商業模式，<strong>指派 AI 扮演紅隊懷疑分析師</strong>，列出所有「理所當然」的環節並逐一驗證其背後是硬性事實還是未經證實的慣例。</li>
+    <li><strong>設計最低可行測試（Cheapest/Fastest Experiment）</strong>：在執行新方案前，<strong>要求 AI 列出明確的「淘汰條件」與「保留指標」</strong>，用最低的時間與資源成本驗證構想。</li>
+    <li><strong>掌握決策主導權</strong>：維持<strong>「AI 負責梳理邏輯與選項，人類承擔最終價值判斷」</strong>的協作邊界。</li>
+    <li><strong>獲取完整資源</strong>：講者於影片說明欄中提供<strong>免費的 4 步驟框架與完整提示詞 PDF 文件</strong>，可直接下載作為實務操作指南。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 05：不當得利之成立要件與返還客體 - 民法精解</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        /* 自定義額外樣式或覆蓋 Tailwind 樣式 */
+        .quiz-option {
+            transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans leading-relaxed">
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+
+        <!-- 頂部導航與標籤 -->
+        <header class="mb-8 flex flex-col md:flex-row items-start md:items-center justify-between">
+            <a href="index.html" class="inline-flex items-center text-blue-600 hover:text-blue-800 transition duration-300 mb-4 md:mb-0 text-lg">
+                <i class="fas fa-arrow-left mr-2"></i> 返回民法知識庫總覽
+            </a>
+            <span class="bg-blue-100 text-blue-800 text-sm font-semibold px-4 py-1.5 rounded-full shadow-sm tracking-wide">債編</span>
+        </header>
+
+        <!-- 主要內容區塊 -->
+        <main class="bg-white p-6 md:p-8 rounded-lg shadow-xl">
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-6 border-b-4 border-blue-500 pb-3">
+                Day 05：不當得利之成立要件與返還客體
+            </h1>
+            <p class="text-gray-600 mb-8 text-lg">日期：2026-08-23 | 主講：民法教授「六九三」</p>
+
+            <!-- 區塊一：經典案例情境 -->
+            <section class="mb-10 p-6 bg-blue-50 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-blue-700 mb-4 flex items-center">
+                    <i class="fas fa-scroll mr-3 text-blue-500"></i>區塊一：經典案例情境 - 「誤會大了，多領薪水誰之過？」
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-5">
+                    小明是一名剛離職的軟體工程師，他於2026年3月31日正式與「創新科技公司」終止僱傭關係。然而，到了4月底，小明卻意外發現自己的銀行帳戶竟多了一筆公司匯入的薪水，金額與他過去的月薪完全一致。小明心想：「公司是不是搞錯了？這筆錢我該拿嗎？如果公司發現了，我會不會有法律責任？」
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    起初小明有些猶豫，但他最近手頭有點緊，加上公司一直沒有聯絡他，他便將這筆錢用於償還信用卡帳單。直到兩個月後，也就是6月底，創新科技公司的人資部門才發現帳務異常，並立即聯繫小明，要求他返還多領的薪資。小明這下慌了，他已經把錢花掉了，該怎麼辦呢？
+                </p>
+
+                <button class="mt-8 px-8 py-4 bg-blue-600 text-white font-semibold rounded-lg shadow-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105 flex items-center justify-center text-xl" onclick="toggleSection('scenarioAnalysis')">
+                    展開情境分析與法條解析 <i class="fas fa-chevron-down ml-3 text-lg"></i>
+                </button>
+
+                <div id="scenarioAnalysis" class="hidden mt-8 pt-6 border-t border-blue-200">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-4">法條指引：民法 §179、§181、§182</h3>
+                    <div class="space-y-4 text-gray-700 text-lg">
+                        <p><strong class="text-blue-600">§179：無法律上原因而受利益</strong></p>
+                        <blockquote class="border-l-4 border-blue-400 pl-4 py-2 italic bg-blue-50 rounded-r-lg">
+                            <p>無法律上之原因而受利益，致他人受損害者，應返還其利益。雖有法律上之原因，而其後已不存在者，亦同。</p>
+                        </blockquote>
+                        <p class="mt-4">
+                            這條是<strong>不當得利</strong>的核心定義。在本案例中，「創新科技公司」對離職員工小明給付薪資，顯然缺乏「僱傭契約」這個法律上原因（因為契約已終止）。因此，公司給付的薪資對於小明而言，就是無法律上原因而受的利益。
+                        </p>
+
+                        <p><strong class="text-blue-600">§181：返還客體與善意受益人免責</strong></p>
+                        <blockquote class="border-l-4 border-blue-400 pl-4 py-2 italic bg-blue-50 rounded-r-lg">
+                            <p>不當得利之受領人，除返還其所受之利益外，如本於該利益更有所取得者，並應返還。但依其利益之性質或其他情形，不能返還者，應償還其價額。</p>
+                            <p class="mt-2">受領人於受領時，知無法律上之原因，或其後知之者，應將受領時所得之利益，或知悉時起之利益，一併加計利息償還之。如有損害，並應賠償。</p>
+                        </blockquote>
+                        <p class="mt-4">
+                            這裡處理的是「怎麼還」的問題。公司多給小明錢，小明除了要還錢本身，如果用這筆錢又賺了什麼（例如投資獲利，但本案似乎沒有），也要一併返還。但本案的關鍵是：小明是「善意」還是「惡意」？
+                        </p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li><strong class="text-blue-600">善意受益人：</strong>小明剛收到錢時，可能不知道公司是「無法律上原因」給付，或是「不知道」公司匯錯。他直到公司通知才知悉。如果小明是善意受領，且已經將利益「不存在」（花光了），則在「現存利益」的範圍內免予返還。這是保護善意者的規定。</li>
+                            <li><strong class="text-blue-600">惡意受益人：</strong>如果小明在收到錢時就「知道」這不是他應得的，或是事後知悉卻仍執意花用，那就變成惡意受益人。惡意受益人不僅要返還利益，還要加計利息，甚至賠償損害。</li>
+                        </ul>
+                        <p class="mt-4">
+                            本案中，小明雖然一開始可能疑惑，但他將錢用於償還信用卡，且過了兩個月公司才發現。關鍵在於他「何時知悉無法律上原因」。如果他收到錢當下就知道不對勁，卻仍花用，那可能被認定為惡意。若他僅是合理地認為可能只是公司延遲付款，直到公司通知才真正知悉，則在收到通知前可主張善意。然而，判斷他是否知無法律上原因，法院會考量一般社會經驗與他的職務背景。作為一個離職員工，收到前公司的薪資，應有高度警覺。
+                        </p>
+
+                        <p><strong class="text-blue-600">§182：善意受益人利益不存在之免責</strong></p>
+                        <blockquote class="border-l-4 border-blue-400 pl-4 py-2 italic bg-blue-50 rounded-r-lg">
+                            <p>不當得利之受領人，以其所受利益於其受領時，原係存在，而其後已不存在者，免負返還義務。但以其不存在，係因其過失所致者，不在此限。</p>
+                            <p class="mt-2">受領人於受領時，知無法律上之原因，或其後知之者，不得主張其利益於其受領時，原係存在，而其後已不存在者，免負返還義務。</p>
+                        </blockquote>
+                        <p class="mt-4">
+                            這條是針對善意受益人的「免責條款」。如果小明是善意（不知道是公司錯誤匯款），且他把錢花光了（利益不存在），原則上可以免責。但這裡有兩個但書：
+                        </p>
+                        <ul class="list-disc list-inside ml-4 space-y-2">
+                            <li><strong>過失導致利益不存在：</strong>如果小明花錢的方式是揮霍無度、恣意浪費，導致錢財不存在，那可能無法主張免責。償還信用卡帳單通常不被認為是過失。</li>
+                            <li><strong>知悉後才花光：</strong>如果小明在公司通知他之後，才故意把錢花掉，那即便錢「不存在」了，他也不能主張免責，因為這時他已經是惡意了。</li>
+                        </ul>
+                        <p class="mt-4">
+                            綜合來看，小明在收到錢時，作為一個離職員工，理應察覺到這筆錢不合理，因此他很可能被認定為惡意受益人，或至少是在收到公司通知時變為惡意。惡意受益人無法主張利益不存在的免責，必須返還所受全部利益並加計利息。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 區塊二：三段論法拆解 -->
+            <section class="mb-10 p-6 bg-green-50 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-green-700 mb-4 flex items-center">
+                    <i class="fas fa-gavel mr-3 text-green-500"></i>區塊二：民法三段論法拆解 - 不當得利的核心邏輯
+                </h2>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-green-200 rounded-lg shadow-sm">
+                        <thead>
+                            <tr class="bg-green-100 text-green-800 text-left text-xl font-bold">
+                                <th class="py-4 px-6 border-b-2 border-green-200 w-1/3">大前提：法規（Rule）</th>
+                                <th class="py-4 px-6 border-b-2 border-green-200 w-1/3">小前提：事實涵攝（Application）</th>
+                                <th class="py-4 px-6 border-b-2 border-green-200 w-1/3">結論：法律效果（Conclusion）</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-gray-50">
+                                <td class="py-4 px-6 border-b border-green-200 text-gray-800 text-lg">
+                                    <p class="font-semibold text-green-700">1. 無法律上之原因</p>
+                                    <p>指受益人受領利益，與給付人給付之間，不具備法律關係（如契約、法律規定）。</p>
+                                    <p class="font-semibold text-green-700 mt-3">2. 受有利益</p>
+                                    <p>指受益人財產增加或應減少而未減少，且此利益具有經濟價值。</p>
+                                    <p class="font-semibold text-green-700 mt-3">3. 致他人受損害</p>
+                                    <p>指給付人財產減少，且與受益人受有利益之間，有因果關係。</p>
+                                    <p class="font-semibold text-green-700 mt-3">4. 返還客體</p>
+                                    <p>原則返還原物或價額。區分善意/惡意受領：善意受益人利益不存在免責（§182）；惡意受益人不得免責，並負利息與損害賠償（§181 II）。</p>
+                                </td>
+                                <td class="py-4 px-6 border-b border-green-200 text-gray-800 text-lg">
+                                    <p class="font-semibold text-green-700">1. 無法律上之原因</p>
+                                    <p>創新科技公司與小明之僱傭關係已於3/31終止，4月薪資給付已無僱傭契約作為法律原因。</p>
+                                    <p class="font-semibold text-green-700 mt-3">2. 小明受有利益</p>
+                                    <p>小明銀行帳戶多出一筆薪資金額，其財產增加，屬受有利益。</p>
+                                    <p class="font-semibold text-green-700 mt-3">3. 創新科技公司受損害</p>
+                                    <p>公司帳戶減少該筆薪資款項，且此減少與小明受有利益具有直接因果關係。</p>
+                                    <p class="font-semibold text-green-700 mt-3">4. 小明之善惡意判斷</p>
+                                    <p>小明為離職員工，於收到薪資時，應已知悉無受領之法律上原因（或至少有相當程度之懷疑）。故極可能被認定為「惡意受益人」。</p>
+                                </td>
+                                <td class="py-4 px-6 border-b border-green-200 text-gray-800 text-lg">
+                                    <p class="font-semibold text-green-700">1. 不當得利成立</p>
+                                    <p>創新科技公司對小明之「不當得利返還請求權」成立。</p>
+                                    <p class="font-semibold text-green-700 mt-3">2. 返還義務</p>
+                                    <p>小明應返還該筆薪資之「價額」。</p>
+                                    <p class="font-semibold text-green-700 mt-3">3. 惡意受益人效果</p>
+                                    <p>若小明被認定為惡意受益人，則：</p>
+                                    <ul class="list-disc list-inside ml-4 space-y-1">
+                                        <li>不得主張利益已不存在而免責（§182 II）。</li>
+                                        <li>應返還自受領時起之利益（即該筆薪資），並加計利息償還（§181 II）。</li>
+                                        <li>若公司有其他損害，亦應賠償（§181 II）。</li>
+                                    </ul>
+                                    <p class="font-semibold text-red-700 mt-3">結論：小明必須返還多領的薪資，並可能需支付利息。</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 區塊三：生活與職場防禦錦囊 -->
+            <section class="mb-10 p-6 bg-yellow-50 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-yellow-700 mb-4 flex items-center">
+                    <i class="fas fa-shield-alt mr-3 text-yellow-500"></i>區塊三：生活與職場防禦錦囊 - 不當得利實務自保術
+                </h2>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- 給付人自保錦囊 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-yellow-500">
+                        <h3 class="text-2xl font-semibold text-yellow-800 mb-4 flex items-center">
+                            <i class="fas fa-lightbulb mr-3 text-yellow-600"></i>給付人 (公司/付款方) 自保指南
+                        </h3>
+                        <ul class="list-disc list-inside space-y-3 text-gray-700 text-lg">
+                            <li><strong>建立嚴謹的核薪與撥款流程：</strong>定期檢核離職員工名單，確保系統自動停止相關款項撥付。</li>
+                            <li><strong>即時帳務核對：</strong>每月至少一次核對銀行帳務與內部支出明細，越早發現越能減少損失及舉證困難。</li>
+                            <li><strong>發現錯誤立即通知：</strong>一旦發現誤撥款項，應立即以書面（存證信函、email）通知受領人，明確告知款項性質及返還要求，將對方從「善意」轉為「惡意」，確保未來可主張利息及損害賠償。</li>
+                            <li><strong>保留匯款證明：</strong>所有款項往來證明都需妥善保存。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 受益人注意錦囊 -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg border-t-4 border-yellow-500">
+                        <h3 class="text-2xl font-semibold text-yellow-800 mb-4 flex items-center">
+                            <i class="fas fa-exclamation-triangle mr-3 text-yellow-600"></i>受益人 (收款方) 注意事項
+                        </h3>
+                        <ul class="list-disc list-inside space-y-3 text-gray-700 text-lg">
+                            <li><strong>定期檢查帳戶：</strong>留意非預期入帳，特別是與過去工作、交易相關的款項。</li>
+                            <li><strong>收到不明款項應立即查證：</strong>若發現不明或異常款項，應主動聯繫匯款方確認原因。切勿抱持僥倖心態。</li>
+                            <li><strong>款項處理態度：</strong>在確認款項性質前，避免動用。若已使用，要保留相關單據證明用途，以備不時之需（作為善意受益人主張現存利益的依據）。</li>
+                            <li><strong>面對催討：</strong>若被要求返還，應積極配合釐清，避免置之不理。若對金額或權利義務有爭議，應尋求法律諮詢。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 區塊四：底層思維模型提煉 -->
+            <section class="mb-10 p-6 bg-purple-50 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-purple-700 mb-4 flex items-center">
+                    <i class="fas fa-brain mr-3 text-purple-500"></i>區塊四：底層思維模型提煉 - 為何要有不當得利？
+                </h2>
+                <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                    不當得利制度的底層邏輯，在於維護社會的<strong>公平正義 (Corrective Justice)</strong> 與<strong>財產秩序</strong>。其核心思維模型可以從以下幾個角度理解：
+                </p>
+                <ul class="list-disc list-inside space-y-4 text-gray-700 text-lg">
+                    <li>
+                        <strong class="text-purple-600">阻止「無因管理」：</strong>民法上的契約行為，必須有「合法原因」才能產生債權債務關係。不當得利制度，正是為了阻止任何人在「沒有合法原因」的情況下，透過他人的給付或其他方式，不勞而獲地增加自身財產。這是一種對「私力救濟」的反制，避免財富在沒有合法依據的情況下自由流轉。
+                    </li>
+                    <li>
+                        <strong class="text-purple-600">「應然」與「實然」的偏差修正：</strong>當財產的變動不符合法律上「應然」的狀態（例如，你本不該拿到這筆錢），不當得利制度就提供了將其拉回「實然」軌道的機制。它不是懲罰，而是一種「回復原狀」的公平機制，將錯誤造成的財產移轉導正回歸正確的歸屬。
+                    </li>
+                    <li>
+                        <strong class="text-purple-600">風險分配與資訊不對稱：</strong>在現代交易中，錯誤難以避免。不當得利制度試圖在給付人（常為錯誤的一方）與受益人之間，分配因錯誤導致的風險。透過「善意/惡意」的區分，它鼓勵受益人對接收的利益保持警覺與誠實，以減少資訊不對稱帶來的潛在損害。善意受益人的免責，正是對不知情者的合理保護；惡意受益人的加重責任，則是對明知故犯者的制裁，以維護交易的誠信。
+                    </li>
+                    <li>
+                        <strong class="text-purple-600">效率與交易成本：</strong>想像如果沒有不當得利制度，當發生錯誤給付時，給付人可能需要透過其他更複雜、成本更高的訴訟途徑（如侵權行為或債務不履行）來追討。不當得利提供了一個相對直接且專門的法律途徑，降低了錯誤糾正的交易成本，提高了財產流轉的效率與安全性。
+                    </li>
+                </ul>
+                <p class="text-lg text-gray-700 leading-relaxed mt-4">
+                    總之，不當得利制度是一種「補充性」的債之關係，它在契約、侵權行為等法律關係無法涵蓋的範圍內，填補了財產變動合法性的空白，確保任何財產的取得都必須有其正當性，進而維護社會經濟秩序的穩定與公平。
+                </p>
+            </section>
+
+            <!-- 區塊五：牛刀小試・考點隨堂測驗 -->
+            <section class="mb-10 p-6 bg-red-50 rounded-lg shadow-md">
+                <h2 class="text-3xl font-bold text-red-700 mb-4 flex items-center">
+                    <i class="fas fa-pen-fancy mr-3 text-red-500"></i>區塊五：牛刀小試・考點隨堂測驗
+                </h2>
+
+                <div class="quiz-question mb-6 p-5 bg-white rounded-lg shadow-sm border border-red-200">
+                    <p class="text-xl font-semibold text-gray-900 mb-4">
+                        <span class="bg-red-100 text-red-800 text-base font-bold px-3 py-1 rounded-full mr-2">Q1</span>
+                        關於民法不當得利返還義務與受領人善惡意之判斷，下列敘述何者正確？
+                    </p>
+                    <div class="space-y-3">
+                        <button id="optionA" class="quiz-option w-full text-left p-4 border border-gray-300 rounded-lg bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg flex items-center" onclick="checkAnswer(this, 'optionD')">
+                            <i class="far fa-circle mr-3 text-gray-600"></i> (A) 善意受領人即使將所受利益揮霍殆盡，仍應負返還義務。
+                        </button>
+                        <button id="optionB" class="quiz-option w-full text-left p-4 border border-gray-300 rounded-lg bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg flex items-center" onclick="checkAnswer(this, 'optionD')">
+                            <i class="far fa-circle mr-3 text-gray-600"></i> (B) 惡意受領人返還利益時，僅需返還所受之利益本金，不需加計利息。
+                        </button>
+                        <button id="optionC" class="quiz-option w-full text-left p-4 border border-gray-300 rounded-lg bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg flex items-center" onclick="checkAnswer(this, 'optionD')">
+                            <i class="far fa-circle mr-3 text-gray-600"></i> (C) 判斷受益人是否惡意，以其主觀上是否知悉為準，客觀上之可歸責性不予考量。
+                        </button>
+                        <button id="optionD" class="quiz-option w-full text-left p-4 border border-gray-300 rounded-lg bg-blue-100 hover:bg-blue-200 focus:outline-none focus:ring-2 focus:ring-blue-500 text-lg flex items-center" onclick="checkAnswer(this, 'optionD')">
+                            <i class="far fa-circle mr-3 text-gray-600"></i> (D) 受領人於受領時不知無法律上之原因，但於其後知之者，應將知悉時起之利益一併加計利息償還。
+                        </button>
+                    </div>
+                    <div id="feedback1" class="quiz-feedback hidden mt-5 p-4 bg-gray-100 border border-gray-300 rounded-lg text-lg leading-relaxed"
+                         data-correct="<p class='mt-2'>根據民法 §181 II 規定：「受領人於受領時，知無法律上之原因，或其後知之者，應將受領時所得之利益，或知悉時起之利益，一併加計利息償還之。如有損害，並應賠償。」故本選項敘述完全符合法條意旨。</p>"
+                         data-incorrect="<p class='mt-2'>選錯了！讓我們來看看正確答案的解析：</p><ul><li class='mt-2'><strong class='text-green-700'>選項 (A) 錯誤：</strong>依民法 §182 I 但書規定，善意受益人若因「過失」致利益不存在，則不在此限。換言之，若揮霍殆盡是因其「過失」所致，則仍須負責。但若非因過失（如花在生活必需品上），原則上可在現存利益範圍內免責。</li><li class='mt-2'><strong class='text-green-700'>選項 (B) 錯誤：</strong>依民法 §181 II 規定，惡意受領人應將受領時所得之利益「一併加計利息償還之」，且如有損害並應賠償。</li><li class='mt-2'><strong class='text-green-700'>選項 (C) 錯誤：</strong>雖然惡意判斷以知悉與否為主觀認定，但實務上常會參酌客觀情事（如受益人職業、受領金額與其職務之合理性等）判斷其主觀上是否有「應知而不知」的過失，進而影響其惡意認定。如本案例中，小明作為離職員工收到薪資，應有高度警覺性。</li></ul><p class='mt-2'><strong class='text-green-700'>正確選項 (D) 解析：</strong>依民法 §181 II 規定，受領人若於事後才知悉無法律上原因，其惡意狀態自知悉時起算，因此應就知悉時起之利益加計利息償還。此為法條明文規定。</p>">
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        function toggleSection(id) {
+            const element = document.getElementById(id);
+            const button = document.querySelector(`[onclick*="${id}"]`); // Get the button that triggered this
+            const icon = button.querySelector('i');
+
+            if (element.classList.contains('hidden')) {
+                element.classList.remove('hidden');
+                element.classList.add('animate-fadeIn'); // Optional: Add a fade-in animation
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                element.classList.add('hidden');
+                element.classList.remove('animate-fadeIn');
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        }
+
+        function checkAnswer(selectedElement, correctOptionId) {
+            const questionContainer = selectedElement.closest('.quiz-question');
+            const options = questionContainer.querySelectorAll('.quiz-option');
+            const feedback = questionContainer.querySelector('.quiz-feedback');
+
+            options.forEach(option => {
+                option.classList.remove('bg-blue-100', 'hover:bg-blue-200', 'focus:ring-2'); // Remove interactive styles
+                option.classList.add('cursor-not-allowed', 'transition-none'); // Disable clicking after selection
+                option.onclick = null; // Remove click handler
+                option.classList.add('bg-gray-100', 'border-gray-300', 'text-gray-600'); // Default styling for all options
+                option.querySelector('i').classList.remove('far', 'fa-circle').classList.add('fas'); // Change icon style
+
+                if (option.id === correctOptionId) {
+                    option.classList.remove('bg-gray-100', 'text-gray-600');
+                    option.classList.add('bg-green-200', 'border-green-600', 'text-green-800');
+                    option.querySelector('i').classList.add('fa-check-circle', 'text-green-600');
+                } else if (option === selectedElement) {
+                    option.classList.remove('bg-gray-100', 'text-gray-600');
+                    option.classList.add('bg-red-200', 'border-red-600', 'text-red-800');
+                    option.querySelector('i').classList.add('fa-times-circle', 'text-red-600');
+                } else {
+                    option.querySelector('i').classList.add('fa-circle'); // Keep gray circle for other wrong answers
+                }
+            });
+
+            if (selectedElement.id === correctOptionId) {
+                feedback.innerHTML = '<span class="text-green-700 font-bold"><i class="fas fa-check-circle mr-2"></i>恭喜你，答對了！</span>' + feedback.dataset.correct;
+            } else {
+                feedback.innerHTML = '<span class="text-red-700 font-bold"><i class="fas fa-times-circle mr-2"></i>答錯了！</span>' + feedback.dataset.incorrect;
+            }
+            feedback.classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>

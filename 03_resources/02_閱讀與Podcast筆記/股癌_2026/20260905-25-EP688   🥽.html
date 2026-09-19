@@ -1,0 +1,206 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EP688   🥽</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>EP688   🥽</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                </div>
+            </div>
+            
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li><strong>功能性訓練與步態校正改善下背痛</strong>：長期久坐導致大腿前側緊繃與雙腿肌力失衡，下背長期代償發力。透過<strong>單腳訓練（如保加利亞分腿蹲）提升兩側關節活動度</strong>，並將走路步態由外八（Duck feet）調整為<strong>以大拇指與第二腳趾朝前推蹬</strong>，能顯著消除代償性下背痠痛。</li>
+    <li><strong>Cerebras 與 AMD 合作解耦推論架構</strong>：Agentic AI 與 Reasoning 架構細分為 Prefill（著重長 Context 總吞吐量）與 Decode（逐 Token 生成，極度依賴記憶體頻寬與延遲）。雙方合作由 <strong>AMD Helios 處理 Prefill，搭配 Cerebras 晶圓級晶片（WSE）超高頻寬 SRAM 負責低延遲 Decode</strong>，展現新一代推論架構優勢。</li>
+    <li><strong>AI 機架功耗激增推動 800V DC 架構升級</strong>：單機架功耗從過去百 kW 邁向 <strong>330kW 至 570kW</strong>，傳統 54V 架構在電流達 <strong>6.1kA</strong> 下面臨 Busbar 截面過大、線纜彎折半徑過寬及連接器插拔力過高等物理瓶頸；升級至 800V 後電流驟降至 <strong>0.4kA</strong>，能大幅釋放機櫃運算空間並降低散熱負擔。</li>
+    <li><strong>資料中心電力架構三階段演進與受惠族群</strong>：
+      <ul>
+        <li><strong>2026-2027 年（Power Rack 階段）</strong>：<strong>AC 轉 800V PSU、800V 轉 54V 轉換模組、電容、連接器及 BBU（由選配轉為標配）</strong>為核心受惠者。</li>
+        <li><strong>2028-2030 年（Power Center 階段）</strong>：受惠集中於<strong>集中式整流器、SiC / GaN（氮化鎵需求超乎預期）、DC UPS、Busway 匯流排與 SSCB 固態斷路器</strong>。</li>
+        <li><strong>2030 年以後（DC Power Block 階段）</strong>：擴大至 <strong>SST 固態變壓器、BESS 儲能系統、直流配電盤及超大安培 Busduct</strong>。</li>
+      </ul>
+    </li>
+    <li><strong>市場投資心態與籌碼釋出效應</strong>：SpaceX 與 Cerebras 等大型標的解禁釋出股票，雖短期具賣壓，但<strong>流動性擴大有助於股價回歸基本面共識與技術分析常態</strong>；面對市場劇烈回檔時，<strong>切勿妄想抓到絕對底部，應以資金分批布局相對低點</strong>，並觀察是否出現罕見的強勁反彈走勢作為底部確立訊號。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>講者首先分享近期以每個月約 <strong>15 堂課</strong>的高頻率投入功能性訓練的心得。過去長期受下背痛困擾，就醫確認非脊椎骨骼病變，主因為<strong>久坐造成大腿肌群縮短、兩側受力不均引發下背長期代償發力</strong>。過往墊枕頭或更換人體工學椅僅能治標，直至透過單邊肌力訓練（如保加利亞單腿蹲）改善雙側髖關節活動度落差，並修正日常行走步態（從外八 Duck feet 修正為<strong>第二腳趾朝前、足跟至足側再由大拇指推蹬</strong>發力），才使下背緊繃顯著緩解。講者強調：<strong>「長期習慣錯誤姿勢後，所有讓人感到舒服的姿勢往往都是有害的。」</strong>破除代償與建立本體感覺才是根本之道。</p>
+  <p>在市場動態方面，講者解析了 <strong>SpaceX 與 Cerebras 的股權解禁釋出潮</strong>。市場原預期解禁將引發重挫，但多數賣壓在解禁前即已反映，解禁後反而打底回升。講者指出，<strong>籌碼由少數人集中轉為廣泛市場流通，能有效提升流動性並減少人為控盤失真</strong>。在技術面上，Cerebras 的晶圓級晶片（WSE）憑藉極致的 SRAM 頻寬，與 AMD Helios 合作推出解耦推論架構（Disaggregated Inference），分別分工處理長 Context 的 Prefill 與極速 Decode，為 Reasoning AI 時代提供了關鍵硬體解方。</p>
+  <p>針對近期投資圈熱議的 <strong>NVIDIA 800V DC 白皮書</strong>，講者深度剖析了伺服器機架功耗由 100-200kW 狂飆至 <strong>350kW-570kW</strong> 所帶來的物理限制。維持傳統 54V 架構會面臨 <strong>6.1kA 低壓大電流</strong>導致的 Busbar 過粗、線纜體積過大及嚴重佔用伺服器運算與冷卻空間等難題；轉向 800V 架構可將電流降至 <strong>0.4kA</strong>，是解決機架高功耗與全面液冷化瓶頸的必然路徑。該發展將循序推進：<strong>2026-2027 年以 Power Rack（PSU、BBU）為主，2028-2030 年演進至 Power Center（集中式整流、GaN / SiC、DC UPS），2030 年後邁向 DC Power Block（SST、BESS、重電系統整合）</strong>。即便研調機構估算短期滲透率僅約 5%，在長期高成長趨勢下已具備極高的關注價值。</p>
+  <p>最後在聽眾 QA 環節，講者針對被動元件與功率半導體（如日系 Murata、Taiyo Yuden 及 STM、VSH 等）發表看法，指出<strong>基本面持續受 AI 需求帶動而調漲價格，獲利成長幅度高於營收成長</strong>，長線基本面無虞。針對如何判定市場底部，講者直言<strong>市場不存在百分之百的絕對低點預測</strong>，投資人應分批進場控制風險，並搭配具歷史罕見強度的報復性反彈走勢作為輔助判斷。面對育兒與生活焦慮，講者建議<strong>遠離過度資訊干擾，屏除「尋求人生與育兒標準答案」的迷思</strong>，依循專業醫師建議與自身直覺節奏生活即可。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (待辦事項 / 關鍵行動)</h2>
+  <ul>
+    <li><strong>投資人 / 研究員</strong>：
+      <ul>
+        <li>追蹤 <strong>NVIDIA 800V DC 供應鏈</strong>在不同階段的受惠廠商營收認列時程，重點評估 <strong>AC/800V PSU、800V/54V 轉換器、BBU（評估標配滲透率）及 GaN / SiC 功率元件廠</strong>之獲利彈性。</li>
+        <li>持續追蹤 <strong>SpaceX 與 Cerebras</strong> 在後續批次股權釋出後的籌碼沉澱狀況，觀察流動性放大後的技術面支撐與市場估值重估。</li>
+        <li>建立<strong>分批布局與資金控管機制</strong>，面對市場大幅修正時設定承接梯次，嚴禁單一價位單筆重押。</li>
+      </ul>
+    </li>
+    <li><strong>長期久坐 / 下背痛族群</strong>：
+      <ul>
+        <li><strong>檢視個人行走與站立步態</strong>：避免雙腳外八（Duck feet），調整為<strong>第二腳趾朝向正前方</strong>，行進時依序由腳跟、外側、肉球過渡至<strong>大拇指推蹬</strong>。</li>
+        <li><strong>導入功能性單側訓練</strong>：加強<strong>保加利亞分腿蹲與單腿蹲</strong>等動作，自主檢測並平衡兩側髖關節活動度，消除下背代償機制。</li>
+      </ul>
+    </li>
+    <li><strong>生活與育兒心態調整</strong>：
+      <ul>
+        <li><strong>退出造成焦慮的非專業社群與群組</strong>，重大問題以合格醫師與專業文獻為準，停止尋找不存在的完美公式。</li>
+      </ul>
+    </li>
+    <li><strong>行李箱團購專案（原廠/活動資訊）</strong>：
+      <ul>
+        <li><strong>消費者注意截止時間</strong>：ROWANA 河馬 2.0 前開/側開行李箱團購優惠價 <strong>NT$2,880 元起</strong>（台灣本島免運），活動截止日為 <strong>9 月 15 日</strong>。</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

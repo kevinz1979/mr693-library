@@ -1,0 +1,863 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>企業管理大意 — 強化版個人筆記</title>
+<style>
+  :root{
+    --primary:#1a56db;--primary-dark:#1e429f;--accent:#f59e0b;
+    --red:#ef4444;--green:#16a34a;--purple:#7c3aed;
+    --bg:#f8fafc;--card:#fff;--border:#e2e8f0;
+    --must:#fef3c7;--must-border:#f59e0b;
+    --exam:#fee2e2;--exam-border:#ef4444;
+    --key:#ede9fe;--key-border:#7c3aed;
+    --tip:#d1fae5;--tip-border:#16a34a;
+    --diagram:#e0f2fe;--diagram-border:#0284c7;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif;background:var(--bg);color:#1e293b;font-size:15px;line-height:1.7}
+  /* ── NAV ── */
+  nav{position:sticky;top:0;z-index:100;background:var(--primary-dark);padding:10px 16px;overflow-x:auto;white-space:nowrap;display:flex;gap:6px;align-items:center}
+  nav a{color:#fff;text-decoration:none;font-size:12px;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.15);flex-shrink:0;transition:.2s}
+  nav a:hover{background:var(--accent);color:#1e293b}
+  /* ── LEGEND ── */
+  .legend{max-width:960px;margin:16px auto;padding:10px 16px;background:#fff;border-radius:10px;border:1px solid var(--border);display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px}
+  .legend span{padding:2px 10px;border-radius:12px;font-weight:600}
+  .lg-must{background:var(--must);border:1px solid var(--must-border)}
+  .lg-exam{background:var(--exam);border:1px solid var(--exam-border)}
+  .lg-key{background:var(--key);border:1px solid var(--key-border)}
+  .lg-tip{background:var(--tip);border:1px solid var(--tip-border)}
+  .lg-dia{background:var(--diagram);border:1px solid var(--diagram-border)}
+  /* ── CHAPTER ── */
+  .chapter{max-width:960px;margin:24px auto 0;padding:0 12px}
+  .chapter-header{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:14px 22px;border-radius:12px 12px 0 0;display:flex;align-items:center;gap:10px}
+  .chapter-header h2{font-size:18px;font-weight:700}
+  .chapter-header .ch-num{background:rgba(255,255,255,.25);border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-weight:800;flex-shrink:0}
+  .chapter-body{background:var(--card);border:1px solid var(--border);border-top:none;border-radius:0 0 12px 12px;padding:20px;margin-bottom:8px}
+  /* ── SECTION ── */
+  .section{margin-bottom:22px}
+  .section-title{font-size:14px;font-weight:700;color:var(--primary);border-left:4px solid var(--primary);padding:4px 10px;background:#eff6ff;border-radius:0 6px 6px 0;margin-bottom:10px}
+  /* ── TABLE ── */
+  .tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table{width:100%;border-collapse:collapse;font-size:14px;min-width:340px}
+  th{background:var(--primary);color:#fff;padding:9px 12px;text-align:left;font-weight:600;white-space:nowrap}
+  td{padding:8px 12px;border-bottom:1px solid var(--border);vertical-align:top}
+  tr:nth-child(even) td{background:#f8fafc}
+  tr:hover td{background:#eff6ff}
+  /* ── BADGES ── */
+  .must{background:var(--must);border-left:3px solid var(--must-border);padding:6px 10px;border-radius:0 6px 6px 0;margin:6px 0;font-size:13px}
+  .exam-tag{display:inline-block;background:var(--exam);border:1px solid var(--exam-border);color:#b91c1c;font-size:11px;font-weight:700;padding:1px 7px;border-radius:10px;margin-left:4px;vertical-align:middle}
+  .key-tag{display:inline-block;background:var(--key);border:1px solid var(--key-border);color:#5b21b6;font-size:11px;font-weight:700;padding:1px 7px;border-radius:10px;margin-left:4px;vertical-align:middle}
+  .tip{background:var(--tip);border:1px solid var(--tip-border);border-radius:8px;padding:8px 12px;margin:10px 0;font-size:13px}
+  .tip::before{content:"💡 速記 ";font-weight:700;color:var(--green)}
+  .warn{background:#fff7ed;border:1px solid #fb923c;border-radius:8px;padding:8px 12px;margin:10px 0;font-size:13px}
+  .warn::before{content:"⚠️ 易混淆 ";font-weight:700;color:#ea580c}
+  /* ── DIAGRAM ── */
+  .diagram{background:var(--diagram);border:1px solid var(--diagram-border);border-radius:10px;padding:14px;margin:12px 0}
+  .diagram-title{font-weight:700;color:#0369a1;margin-bottom:10px;font-size:13px}
+  /* Flow */
+  .flow{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+  .flow-box{background:var(--primary);color:#fff;padding:6px 12px;border-radius:8px;font-size:13px;font-weight:600;white-space:nowrap}
+  .flow-arr{color:var(--primary);font-size:18px;font-weight:700}
+  /* Pyramid */
+  .pyramid{display:flex;flex-direction:column;align-items:center;gap:3px;margin:8px 0}
+  .py-row{display:flex;justify-content:center;align-items:center;color:#fff;font-weight:600;font-size:13px;border-radius:4px;text-align:center;padding:6px 0}
+  /* 2x2 grid */
+  .grid2x2{display:grid;grid-template-columns:1fr 1fr;gap:6px;margin:8px 0}
+  .g-box{border-radius:8px;padding:10px;text-align:center;font-size:13px}
+  .g-box strong{display:block;font-size:14px;margin-bottom:2px}
+  /* BCG */
+  .bcg-star{background:#fef9c3;border:2px solid #eab308}
+  .bcg-q{background:#fee2e2;border:2px solid #ef4444}
+  .bcg-cow{background:#d1fae5;border:2px solid #16a34a}
+  .bcg-dog{background:#f3f4f6;border:2px solid #9ca3af}
+  /* ── RESPONSIVE ── */
+  @media(max-width:640px){
+    .chapter-header h2{font-size:15px}
+    th,td{font-size:13px;padding:6px 8px}
+    .flow-box{font-size:12px;padding:5px 8px}
+    .grid2x2{grid-template-columns:1fr 1fr}
+    nav a{font-size:11px;padding:3px 8px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#ch1">第一章</a><a href="#ch2">第二章</a><a href="#ch3">第三章</a>
+  <a href="#ch4">第四章</a><a href="#ch5">第五章</a><a href="#ch6">第六章</a>
+  <a href="#ch7">第七章</a><a href="#ch8">第八章</a><a href="#ch9">第九章</a>
+  <a href="#ch10">第十章</a>
+</nav>
+
+<div class="legend">
+  <strong>標註說明：</strong>
+  <span class="lg-must">⭐ 必背考點</span>
+  <span class="lg-exam">🔴 常考</span>
+  <span class="lg-key">🟣 關鍵字</span>
+  <span class="lg-tip">💡 速記</span>
+  <span class="lg-dia">📊 圖解</span>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     第一章
+═══════════════════════════════════════════════ -->
+<div class="chapter" id="ch1">
+  <div class="chapter-header"><div class="ch-num">1</div><h2>企業管理概論</h2></div>
+  <div class="chapter-body">
+
+    <div class="section">
+      <div class="section-title">企業類型</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>類型</th><th>說明</th><th>優點</th><th>缺點</th></tr>
+        <tr><td><strong>獨資</strong></td><td>個人出資獨立經營</td><td>自主、成果獨享</td><td>規模受限、<span class="exam-tag">無限清償責任</span>、壽命有限</td></tr>
+        <tr><td><strong>合夥</strong></td><td>二人以上共同出資</td><td>財務來源多、生命較長</td><td>合夥人負<span class="exam-tag">無限清償責任</span></td></tr>
+        <tr><td><strong>公司</strong></td><td>依公司法成立之社團法人</td><td><span class="exam-tag">有限清償責任</span>、資金廣、存續長</td><td>組織複雜、決策慢</td></tr>
+      </table></div>
+      <div class="tip">獨資＝無限責任；公司＝有限責任 — 考試常考！</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">效率 vs 效能 <span class="exam-tag">常考比較</span></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>項目</th><th>效率 (Efficiency)</th><th>效能 (Effectiveness)</th></tr>
+        <tr><td>定義</td><td>最少投入換取最大產出</td><td>是否達成原訂目標</td></tr>
+        <tr><td>焦點</td><td>降低資源浪費</td><td>目標是否達成</td></tr>
+        <tr><td>目的</td><td><strong>把事情做對</strong></td><td><strong>做對的事情</strong></td></tr>
+      </table></div>
+      <div class="warn">效率=方法正確；效能=目標達成，兩者方向不同！</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">管理功能（循環）<span class="exam-tag">常考</span></div>
+      <div class="diagram">
+        <div class="diagram-title">📊 管理循環流程圖</div>
+        <div class="flow">
+          <div class="flow-box">規劃<br><small>定目標策略</small></div><div class="flow-arr">→</div>
+          <div class="flow-box">組織<br><small>分派協調</small></div><div class="flow-arr">→</div>
+          <div class="flow-box">領導<br><small>激勵指導</small></div><div class="flow-arr">→</div>
+          <div class="flow-box">控制<br><small>監控修正</small></div><div class="flow-arr">→</div>
+          <div class="flow-box" style="background:var(--accent);color:#1e293b">回到規劃 🔄</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">管理者的角色（Mintzberg）<span class="exam-tag">常考</span></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>類型</th><th>角色</th><th>說明</th></tr>
+        <tr><td rowspan="3"><strong>人際角色</strong></td><td>代表人</td><td>象徵性領導者</td></tr>
+        <tr><td>領導者</td><td>激勵、動員、訓練部屬</td></tr>
+        <tr><td><span class="key-tag">聯絡人</span></td><td>維持與外界互動關係</td></tr>
+        <tr><td rowspan="3"><strong>資訊角色</strong></td><td>監督者</td><td>接收組織及環境訊息</td></tr>
+        <tr><td><span class="key-tag">傳訊人</span></td><td>將訊息傳播給組織內成員</td></tr>
+        <tr><td>發言人</td><td>將成果或績效傳播給外界</td></tr>
+        <tr><td rowspan="4"><strong>決策角色</strong></td><td>創業家</td><td>承擔風險創立新事業</td></tr>
+        <tr><td>危機處理者</td><td>提出計畫並處理危機</td></tr>
+        <tr><td><span class="key-tag">資源分配者</span></td><td>負責組織內所有資源分配</td></tr>
+        <tr><td>談判者</td><td>代表組織與他人談判</td></tr>
+      </table></div>
+      <div class="tip">人際→代領聯；資訊→監傳發；決策→創危資談</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">管理者的能力 <span class="exam-tag">常考</span></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>能力</th><th>說明</th><th>最重要層級</th></tr>
+        <tr><td><span class="key-tag">技術能力</span></td><td>特定領域的專業知識/技能</td><td>基層管理者</td></tr>
+        <tr><td><span class="key-tag">人際能力</span></td><td>與他人相處的能力</td><td>所有層級</td></tr>
+        <tr><td><span class="key-tag">概念化能力</span></td><td>將複雜情境系統化歸納</td><td>高階管理者</td></tr>
+      </table></div>
+      <div class="diagram">
+        <div class="diagram-title">📊 管理者能力三角圖（階層→能力需求）</div>
+        <div class="pyramid">
+          <div class="py-row" style="background:#1a56db;width:45%">高階：概念化能力最重要</div>
+          <div class="py-row" style="background:#2563eb;width:65%">中階：三種能力均衡</div>
+          <div class="py-row" style="background:#3b82f6;width:85%">基層：技術能力最重要</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     第二章
+═══════════════════════════════════════════════ -->
+<div class="chapter" id="ch2">
+  <div class="chapter-header"><div class="ch-num">2</div><h2>管理理論與學派</h2></div>
+  <div class="chapter-body">
+
+    <div class="section">
+      <div class="section-title">學派分類總覽</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>時期</th><th>學派</th></tr>
+        <tr><td>傳統理論時期</td><td>科學管理學派、一般行政學派</td></tr>
+        <tr><td>修正理論時期</td><td>組織行為學派、管理科學學派</td></tr>
+        <tr><td>新進理論時期</td><td>系統觀念學派、<span class="key-tag">權變學派</span></td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">科學管理學派 — 代表人物 <span class="exam-tag">常考</span></div>
+      <div class="must">⭐ 3S原則：標準化、專業化、簡單化（注意：系統化≠3S）</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>人物</th><th>稱號</th><th>貢獻</th></tr>
+        <tr><td><span class="key-tag">泰勒</span></td><td>科學管理之父</td><td>科學管理四原則、例外管理、論件計酬制、時間研究</td></tr>
+        <tr><td><span class="key-tag">吉爾伯斯夫婦</span></td><td>動作研究之父（其妻=管理第一夫人）</td><td>「動素」概念、砌磚研究、影片分析</td></tr>
+        <tr><td><span class="key-tag">甘特</span></td><td>—</td><td>發明甘特圖（縱軸=活動，橫軸=時間）</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">費堯 14 原則（一般行政學派）<span class="exam-tag">常考</span></div>
+      <div class="must">⭐ 費堯=現代經營管理之父、管理程序之父</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>#</th><th>原則</th><th>重點</th></tr>
+        <tr><td>1</td><td>分工</td><td>專業化分工</td></tr>
+        <tr><td>2</td><td><span class="exam-tag">統一指揮</span></td><td>每位員工只受<strong>一位</strong>主管命令</td></tr>
+        <tr><td>3</td><td><span class="exam-tag">統一目標</span></td><td>一個部門只有一個目標</td></tr>
+        <tr><td>4</td><td>權責</td><td>避免有權無責或有責無權</td></tr>
+        <tr><td>5</td><td>共同利益優先</td><td>組織利益 > 個人利益</td></tr>
+        <tr><td>6</td><td>集權</td><td>權力集中在管理者</td></tr>
+        <tr><td>7</td><td>指揮鏈</td><td>員工有明確指揮路線</td></tr>
+        <tr><td>8-14</td><td>獎酬、秩序、公平、穩定人事、主動、紀律、團隊精神</td><td>—</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">組織行為學派 — 代表人物</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>人物</th><th>重要理論/效應</th></tr>
+        <tr><td><span class="key-tag">梅岳</span></td><td><strong>霍桑研究</strong>；霍桑效應：被觀察時會改變行為</td></tr>
+        <tr><td><span class="key-tag">巴納德</span></td><td>職權接受論：員工願接受職權的四大前提</td></tr>
+        <tr><td>慕斯特伯格</td><td>工業心理學之父</td></tr>
+      </table></div>
+      <div class="must">⭐ 韋伯(Weber)=官僚組織（科層組織）；特徵：專業分工、層級明確、不講私人、正式規範</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">其他學派速記</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>學派</th><th>核心主張</th></tr>
+        <tr><td>管理科學學派</td><td>用統計/數量方法解決營運問題</td></tr>
+        <tr><td>系統觀念學派</td><td>組織=開放式系統，因應外在環境</td></tr>
+        <tr><td><span class="key-tag">權變學派</span></td><td>沒有一個管理原則可以普遍適用所有情況</td></tr>
+      </table></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     第三章
+═══════════════════════════════════════════════ -->
+<div class="chapter" id="ch3">
+  <div class="chapter-header"><div class="ch-num">3</div><h2>組織環境與文化</h2></div>
+  <div class="chapter-body">
+
+    <div class="section">
+      <div class="section-title">組織環境分類</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>類型</th><th>包含要素</th></tr>
+        <tr><td>外部－特定環境</td><td>顧客、供應商、競爭者、壓力團體</td></tr>
+        <tr><td>外部－一般環境</td><td><span class="exam-tag">PEST</span>：政治(P)、經濟(E)、社會(S)、科技(T)</td></tr>
+        <tr><td>內部環境</td><td>員工、職權責、企業文化</td></tr>
+      </table></div>
+      <div class="warn">企業文化屬於「內部環境」，不是外部環境！</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">ISO 標準速查</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>代號</th><th>對應領域</th></tr>
+        <tr><td>ISO 9000</td><td>品質保證</td></tr>
+        <tr><td><span class="exam-tag">ISO 14000</span></td><td>企業環境管理</td></tr>
+        <tr><td>ISO 22000</td><td>食品安全</td></tr>
+        <tr><td>ISO 45001</td><td>職業安全衛生</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">Hofstede 國家文化五大構面 <span class="exam-tag">常考</span></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>構面</th><th>說明</th></tr>
+        <tr><td>個人主義 vs 群體主義</td><td>重視個人 or 以群體身分行動</td></tr>
+        <tr><td><span class="key-tag">權力距離</span></td><td>對權力分配不均的容忍程度；越高代表接受頭銜/地位差異越大</td></tr>
+        <tr><td>對不確定性規避</td><td>越高代表越不喜歡非結構性事物</td></tr>
+        <tr><td>生活量（量）vs 質</td><td>量=物質獲得；質=關心他人/建立關係</td></tr>
+        <tr><td>短期 vs 長期取向</td><td>短期=重傳統；長期=重未來與變革</td></tr>
+      </table></div>
+      <div class="must">⭐ 注意：「表現導向」不是 Hofstede 的五大構面之一（考試陷阱！）</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">組織文化四大類型</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>類型</th><th>特徵</th></tr>
+        <tr><td>官僚文化（科層）</td><td>權責劃分明確，政府/大型組織</td></tr>
+        <tr><td>市場文化</td><td>強調競爭力與利潤，重視行銷財務</td></tr>
+        <tr><td><span class="key-tag">派閥文化</span></td><td>以忠誠、傳統、承諾影響員工，員工認同感高</td></tr>
+        <tr><td>創新文化</td><td>鼓勵創新、容忍模糊與衝突、低度外部控制</td></tr>
+      </table></div>
+      <div class="must">⭐ 創新文化特徵：接受模糊性、高風險容忍、低外部控制（非高外部控制！）</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">組織文化學習方式</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>方式</th><th>說明</th></tr>
+        <tr><td>故事</td><td>組織過去的事跡</td></tr>
+        <tr><td>儀式</td><td>一系列重複活動</td></tr>
+        <tr><td>象徵/符號</td><td>裝潢、制服等傳達意念</td></tr>
+        <tr><td>語言</td><td>組織/產業慣用話語</td></tr>
+        <tr><td><span class="key-tag">社會化</span></td><td>員工適應組織文化的過程</td></tr>
+        <tr><td>價值觀與規範</td><td>成員對某些事情的看法</td></tr>
+      </table></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     第四章
+═══════════════════════════════════════════════ -->
+<div class="chapter" id="ch4">
+  <div class="chapter-header"><div class="ch-num">4</div><h2>企業倫理與社會責任</h2></div>
+  <div class="chapter-body">
+
+    <div class="section">
+      <div class="section-title">四大道德觀點</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>觀點</th><th>核心</th><th>優點</th><th>缺點</th></tr>
+        <tr><td><span class="exam-tag">功利觀</span></td><td>最多數人最大利益（結果論）</td><td>與利潤最大化一致</td><td>犧牲少數人</td></tr>
+        <tr><td>權利觀</td><td>尊重並保護個人權利</td><td>權利受保障</td><td>可能降低生產力</td></tr>
+        <tr><td>正義觀</td><td>遵守法律、公平對待</td><td>保障弱勢</td><td>過度保障降創造力</td></tr>
+        <tr><td>整合觀</td><td>社會準則＋企業規則為決策依據</td><td>資源有效利用</td><td>喪失優勢資源</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">社會責任相關名詞 <span class="exam-tag">常考</span></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>縮寫</th><th>全文</th><th>中文</th></tr>
+        <tr><td><span class="key-tag">CSR</span></td><td>Corporate Social Responsibility</td><td>企業社會責任</td></tr>
+        <tr><td><span class="key-tag">ESG</span></td><td>Environment, Social, Governance</td><td>環境、社會、公司治理</td></tr>
+        <tr><td><span class="key-tag">SDGs</span></td><td>Sustainable Development Goals</td><td>永續發展目標</td></tr>
+        <tr><td>SROI</td><td>Social Return on Investment</td><td>社會投資報酬率</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">綠化途徑（四階段）</div>
+      <div class="diagram">
+        <div class="diagram-title">📊 企業綠化程度（由低到高）</div>
+        <div class="flow">
+          <div class="flow-box" style="background:#94a3b8">守法途徑<br><small>只做法律最低要求</small></div><div class="flow-arr">→</div>
+          <div class="flow-box" style="background:#3b82f6">市場途徑<br><small>回應顧客環保偏好</small></div><div class="flow-arr">→</div>
+          <div class="flow-box" style="background:#16a34a">利害關係人<br><small>回應多方利害關係人</small></div><div class="flow-arr">→</div>
+          <div class="flow-box" style="background:#15803d">積極途徑<br><small>主動維護自然資源</small></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     第五章
+═══════════════════════════════════════════════ -->
+<div class="chapter" id="ch5">
+  <div class="chapter-header"><div class="ch-num">5</div><h2>決策的重要性</h2></div>
+  <div class="chapter-body">
+
+    <div class="section">
+      <div class="section-title">決策過程</div>
+      <div class="diagram">
+        <div class="diagram-title">📊 決策八步驟</div>
+        <div class="flow" style="flex-wrap:wrap">
+          <div class="flow-box">確認問題</div><div class="flow-arr">→</div>
+          <div class="flow-box">決定標準</div><div class="flow-arr">→</div>
+          <div class="flow-box">標準權重</div><div class="flow-arr">→</div>
+          <div class="flow-box">發展方案</div><div class="flow-arr">→</div>
+          <div class="flow-box">分析方案</div><div class="flow-arr">→</div>
+          <div class="flow-box">選擇方案</div><div class="flow-arr">→</div>
+          <div class="flow-box">執行方案</div><div class="flow-arr">→</div>
+          <div class="flow-box">評估結果</div>
+        </div>
+      </div>
+      <div class="must">⭐ 決策第一步 = 確認問題</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">問題類型</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>類型</th><th>特徵</th><th>對應決策</th></tr>
+        <tr><td><span class="key-tag">結構化問題</span></td><td>直接、重複、發生率高</td><td>程式化/例行性決策（依程序、規則、政策）</td></tr>
+        <tr><td><span class="key-tag">非結構化問題</span></td><td>不明確、罕見、全新</td><td>非程式化/非預設決策</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">決策情境與報償矩陣四準則 <span class="exam-tag">常考</span></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>情境</th><th>說明</th></tr>
+        <tr><td>確定情況</td><td>所有結果都已知，選最高報酬</td></tr>
+        <tr><td>風險情況</td><td>失敗機率可推估，用期望值</td></tr>
+        <tr><td>不確定情況</td><td>完全未知，用報償矩陣</td></tr>
+      </table></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>準則</th><th>別名</th><th>方法</th></tr>
+        <tr><td><span class="exam-tag">樂觀準則</span></td><td>極大極大（大中取大）</td><td>選每個方案中最大值，再取最大</td></tr>
+        <tr><td><span class="exam-tag">悲觀準則</span></td><td>極大極小（小中取大）</td><td>選每個方案中最小值，再取最大</td></tr>
+        <tr><td>機會損失準則</td><td>極小極大遺憾（大中取小）</td><td>最大損失最小化</td></tr>
+        <tr><td>拉普拉斯準則</td><td>等機率準則</td><td>假設各情境等機率，選最高期望值</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">決策偏誤</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>偏誤</th><th>說明</th></tr>
+        <tr><td>樣本代表性錯誤</td><td>選用錯誤樣本</td></tr>
+        <tr><td><span class="key-tag">承諾升高</span></td><td>明知決策有誤，仍繼續投資</td></tr>
+        <tr><td>控制假象</td><td>高估對情況的掌控能力</td></tr>
+        <tr><td>先前認知錯誤</td><td>先入為主的觀念</td></tr>
+        <tr><td><span class="key-tag">月暈效應</span></td><td>根據單一特質形成整體印象</td></tr>
+        <tr><td><span class="key-tag">贏家詛咒</span></td><td>未充分考量競爭者行為，導致損失</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">群體決策改善方法 <span class="exam-tag">常考</span></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>方法</th><th>說明</th></tr>
+        <tr><td><span class="key-tag">名目團體</span></td><td>禁止互相討論，維持獨立思考</td></tr>
+        <tr><td><span class="key-tag">腦力激盪</span></td><td>可隨意發表意見，但禁止批評</td></tr>
+        <tr><td>德菲爾法</td><td>問卷蒐集意見，直到一致結論</td></tr>
+        <tr><td>電子會議</td><td>匿名發言，可隨時討論</td></tr>
+      </table></div>
+      <div class="must">⭐ 群體迷思=為維持一致性，成員不敢發表意見 → 用名目團體法改善</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     第六章
+═══════════════════════════════════════════════ -->
+<div class="chapter" id="ch6">
+  <div class="chapter-header"><div class="ch-num">6</div><h2>策略管理</h2></div>
+  <div class="chapter-body">
+
+    <div class="section">
+      <div class="section-title">策略層次總覽</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>層次</th><th>功能</th><th>主要工具</th></tr>
+        <tr><td><span class="key-tag">總體層次</span></td><td>決定未來方向</td><td>BCG矩陣、產品生命週期</td></tr>
+        <tr><td><span class="key-tag">事業單位層次</span></td><td>維持單位優勢</td><td>五力分析、SWOT、價值鏈、鑽石競爭模型</td></tr>
+        <tr><td>功能層次</td><td>支援事業單位</td><td>生產、行銷、財務、人資、研發</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">BCG 矩陣 <span class="exam-tag">常考</span></div>
+      <div class="diagram">
+        <div class="diagram-title">📊 BCG 矩陣四象限（橫軸=相對市占率，縱軸=市場成長率）</div>
+        <div style="text-align:center;font-size:12px;margin-bottom:6px;color:#64748b">↑ 市場成長率高</div>
+        <div class="grid2x2">
+          <div class="g-box bcg-q"><strong>❓ 問題事業</strong>高成長率<br>低市占率</div>
+          <div class="g-box bcg-star"><strong>⭐ 明星事業</strong>高成長率<br>高市占率</div>
+          <div class="g-box bcg-dog"><strong>🐕 落水狗事業</strong>低成長率<br>低市占率</div>
+          <div class="g-box bcg-cow"><strong>🐄 金牛事業</strong>低成長率<br>高市占率</div>
+        </div>
+        <div style="text-align:center;font-size:12px;color:#64748b">← 低市占率 ｜ 高市占率 →</div>
+      </div>
+      <div class="tip">金牛：低成長+高市占 → 現金母牛，穩定獲利；明星：高+高 → 最理想</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">產品生命週期 <span class="exam-tag">常考</span></div>
+      <div class="diagram">
+        <div class="diagram-title">📊 產品生命週期四階段</div>
+        <div class="flow">
+          <div class="flow-box" style="background:#94a3b8">導入期<br><small>銷量成長慢</small></div><div class="flow-arr">→</div>
+          <div class="flow-box" style="background:#16a34a">成長期<br><small>銷量急速上升 ⭐</small></div><div class="flow-arr">→</div>
+          <div class="flow-box" style="background:#f59e0b">成熟期<br><small>銷量飽和、穩定</small></div><div class="flow-arr">→</div>
+          <div class="flow-box" style="background:#ef4444">衰退期<br><small>銷量持續下滑</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">波特三大競爭策略 <span class="exam-tag">常考</span></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>策略</th><th>核心做法</th><th>方法</th></tr>
+        <tr><td><span class="key-tag">成本領導</span></td><td>成為產業最低成本企業</td><td>規模經濟、學習曲線、專業分工</td></tr>
+        <tr><td><span class="key-tag">差異化</span></td><td>提供與競爭者不同的產品</td><td>高品質、優良服務、創新設計</td></tr>
+        <tr><td><span class="key-tag">集中策略</span></td><td>鎖定特定市場</td><td>搭配差異化或成本領導</td></tr>
+      </table></div>
+      <div class="warn">藍海策略≠波特三策略！考題陷阱：「藍海策略是波特提出的」→ 錯誤！</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">密集式成長策略</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>策略</th><th>市場</th><th>產品</th></tr>
+        <tr><td><span class="exam-tag">市場滲透</span></td><td>現有市場</td><td>現有產品（增加使用頻率）</td></tr>
+        <tr><td>產品開發</td><td>現有市場</td><td>新產品</td></tr>
+        <tr><td>市場開發</td><td>新市場</td><td>現有產品</td></tr>
+        <tr><td><span class="exam-tag">多角化</span></td><td>新市場</td><td>新產品</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">適應策略四類型</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>策略</th><th>特點</th></tr>
+        <tr><td>防禦型</td><td>有限產品維持市場，力求穩定</td></tr>
+        <tr><td><span class="key-tag">探勘型</span></td><td>積極開發新市場/新產品，持續創新</td></tr>
+        <tr><td>分析型</td><td>模仿市場領導者</td></tr>
+        <tr><td>反應型</td><td>不知道採什麼策略，被動因應</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">SWOT 分析</div>
+      <div class="grid2x2" style="max-width:500px">
+        <div class="g-box" style="background:#d1fae5;border:2px solid #16a34a"><strong>S 優勢</strong>內部正面</div>
+        <div class="g-box" style="background:#fee2e2;border:2px solid #ef4444"><strong>W 劣勢</strong>內部負面</div>
+        <div class="g-box" style="background:#dbeafe;border:2px solid #3b82f6"><strong>O 機會</strong>外部正面</div>
+        <div class="g-box" style="background:#fef9c3;border:2px solid #eab308"><strong>T 威脅</strong>外部負面</div>
+      </div>
+      <div class="tip">SW=內部分析；OT=外部分析</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     第七章
+═══════════════════════════════════════════════ -->
+<div class="chapter" id="ch7">
+  <div class="chapter-header"><div class="ch-num">7</div><h2>管理循環（規劃、組織、領導、控制）</h2></div>
+  <div class="chapter-body">
+
+    <div class="section">
+      <div class="section-title">目標管理（MBO）<span class="exam-tag">常考</span></div>
+      <div class="must">⭐ MBO 四要素：清楚目標、員工參與決策、期限明確、績效回饋</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>項目</th><th>說明</th></tr>
+        <tr><td>傳統目標設定</td><td>高階主管設定 → 下級達成</td></tr>
+        <tr><td>MBO</td><td>主管＋員工「共同」設定目標</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">規劃技術</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>技術</th><th>方式</th></tr>
+        <tr><td>預測技術（定量）</td><td>時間序列分析、回歸模型、替代效果、經濟指標</td></tr>
+        <tr><td>預測技術（定性）</td><td>專家意見、銷售人員意見、顧客評量</td></tr>
+        <tr><td><span class="key-tag">標竿學習</span></td><td>學習他人長處；分內部/外部/功能三種</td></tr>
+        <tr><td>情境發展</td><td>針對未來情境提出不同假設</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">組織設計六方向</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>方向</th><th>說明</th></tr>
+        <tr><td>工作專業化</td><td>任務細分，提高效率</td></tr>
+        <tr><td>部門化</td><td>依功能、產品、地理、顧客等分組</td></tr>
+        <tr><td>指揮鏈</td><td>上下階層的命令關係</td></tr>
+        <tr><td><span class="exam-tag">控制幅度</span></td><td>一位主管可有效督導的部屬人數</td></tr>
+        <tr><td>集權 vs 分權</td><td>決策集中在上級 or 分散給下級</td></tr>
+        <tr><td>正式化程度</td><td>組織依賴規範/程序的程度</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">機械式 vs 有機式組織 <span class="exam-tag">常考比較</span></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>項目</th><th>機械式</th><th>有機式</th></tr>
+        <tr><td>正式化</td><td>高</td><td>低</td></tr>
+        <tr><td>集權化</td><td>高</td><td>低（分權）</td></tr>
+        <tr><td>控制幅度</td><td>窄（少部屬）</td><td>寬（多部屬）</td></tr>
+        <tr><td>決策</td><td>由上而下</td><td>分散各層</td></tr>
+        <tr><td>適合環境</td><td>穩定環境</td><td>變動環境</td></tr>
+        <tr><td>溝通方式</td><td>垂直（正式）</td><td>橫向（非正式）</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">領導理論</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>理論類型</th><th>代表</th><th>核心</th></tr>
+        <tr><td>特質理論</td><td>屬性論</td><td>先天特質才能成為領導者</td></tr>
+        <tr><td>行為理論</td><td>管理方格、雙構面</td><td>後天培養</td></tr>
+        <tr><td><span class="key-tag">權變理論</span></td><td>費德勒模型、情境領導</td><td>因情境不同而採不同領導</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">情境領導理論 <span class="exam-tag">常考</span></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>成員成熟度</th><th>領導型態</th><th>任務/關係</th></tr>
+        <tr><td>沒能力、沒意願</td><td><span class="exam-tag">告知型</span></td><td>高任務、低關係</td></tr>
+        <tr><td>沒能力、有意願</td><td><span class="exam-tag">銷售型</span></td><td>高任務、高關係</td></tr>
+        <tr><td>有能力、沒意願</td><td><span class="exam-tag">參與型</span></td><td>低任務、高關係</td></tr>
+        <tr><td>有能力、有意願</td><td><span class="exam-tag">授權型</span></td><td>低任務、低關係</td></tr>
+      </table></div>
+      <div class="diagram">
+        <div class="diagram-title">📊 領導者五種權力來源</div>
+        <div class="flow" style="flex-wrap:wrap">
+          <div class="flow-box" style="background:#1a56db">法制權<br><small>最基本</small></div>
+          <div class="flow-box" style="background:#16a34a">獎賞權<br><small>給獎勵</small></div>
+          <div class="flow-box" style="background:#ef4444">強制權<br><small>給懲罰</small></div>
+          <div class="flow-box" style="background:#7c3aed">專家權<br><small>專業知識</small></div>
+          <div class="flow-box" style="background:#f59e0b;color:#1e293b">參考權<br><small>個人魅力</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">管理方格理論</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>座標</th><th>名稱</th><th>特點</th></tr>
+        <tr><td>(1,1)</td><td>放任管理（赤貧管理）</td><td>最少努力</td></tr>
+        <tr><td>(1,9)</td><td>鄉村俱樂部</td><td>重視員工需求</td></tr>
+        <tr><td>(9,1)</td><td>任務管理（權威管理）</td><td>重任務不重人際</td></tr>
+        <tr><td>(5,5)</td><td>中庸管理</td><td>取得平衡</td></tr>
+        <tr><td><span class="exam-tag">(9,9)</span></td><td>團隊管理</td><td>互信尊重（最理想）</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">控制類型</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>類型</th><th>時機</th><th>說明</th></tr>
+        <tr><td><span class="key-tag">事前控制</span></td><td>事前</td><td>預測問題並提出方案</td></tr>
+        <tr><td>事中控制</td><td>進行中</td><td>同步採取行動（走動式管理）</td></tr>
+        <tr><td>事後控制</td><td>事後</td><td>結束後控制，作為未來參考</td></tr>
+      </table></div>
+      <div class="must">⭐ 控制程序：建立標準→衡量→比較→採取行動</div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     第八章
+═══════════════════════════════════════════════ -->
+<div class="chapter" id="ch8">
+  <div class="chapter-header"><div class="ch-num">8</div><h2>人性與激勵理論</h2></div>
+  <div class="chapter-body">
+
+    <div class="section">
+      <div class="section-title">XY 理論 <span class="exam-tag">常考</span></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>項目</th><th>X 型人</th><th>Y 型人</th></tr>
+        <tr><td>人性觀</td><td>人性本惡</td><td>人性本善</td></tr>
+        <tr><td>工作態度</td><td>討厭工作、懶惰</td><td>享受工作</td></tr>
+        <tr><td>責任感</td><td>逃避責任</td><td>尋求與接受責任</td></tr>
+        <tr><td>動機</td><td>重視安全穩定</td><td>具有創造力、企圖心</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">激勵理論分類</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>類型</th><th>說明</th><th>相關理論</th></tr>
+        <tr><td>內容論</td><td>引起激勵的來源</td><td>馬斯洛需求層級、赫茲伯格雙因子、ERG理論</td></tr>
+        <tr><td>程序論</td><td>需求激勵轉化成行為的過程</td><td>期望理論、公平理論</td></tr>
+        <tr><td>強化論</td><td>透過外在機制影響行為</td><td>操作制約理論</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">馬斯洛需求層級 <span class="exam-tag">常考</span></div>
+      <div class="diagram">
+        <div class="diagram-title">📊 馬斯洛需求金字塔（由低到高）</div>
+        <div class="pyramid">
+          <div class="py-row" style="background:#7c3aed;width:36%">自我實現<br><small>發揮潛能、成長</small></div>
+          <div class="py-row" style="background:#2563eb;width:50%">自尊需求<br><small>頭銜、名譽、成就感</small></div>
+          <div class="py-row" style="background:#0891b2;width:63%">社會需求<br><small>與他人建立關係</small></div>
+          <div class="py-row" style="background:#16a34a;width:77%">安全需求<br><small>生命財產不受威脅</small></div>
+          <div class="py-row" style="background:#64748b;width:90%">生理需求<br><small>維持身體機能</small></div>
+        </div>
+      </div>
+      <div class="must">⭐「學習的需求」不是馬斯洛五層之一！（常見陷阱）</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">赫茲伯格雙因子理論 <span class="exam-tag">常考</span></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>項目</th><th>激勵因子</th><th>保健因子</th></tr>
+        <tr><td>例子</td><td>成就感、個人成長、責任、認同感</td><td>薪酬、人際關係、工作環境、監督</td></tr>
+        <tr><td>存在時</td><td>提高工作滿足感</td><td>讓員工不會不滿</td></tr>
+        <tr><td>不存在時</td><td>沒有滿足感（但不會不滿）</td><td>讓員工感到不滿</td></tr>
+      </table></div>
+      <div class="must">⭐ 缺乏激勵因子≠不滿足；缺乏保健因子=不滿足</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">期望理論 vs 公平理論</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>理論</th><th>核心概念</th></tr>
+        <tr><td><span class="key-tag">期望理論</span></td><td>努力→績效→獎賞→目標（四要素）</td></tr>
+        <tr><td><span class="key-tag">公平理論</span></td><td>比較自己 vs 他人的「產出/投入」比，決定努力程度</td></tr>
+      </table></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>公平理論情境</th><th>採取行為</th></tr>
+        <tr><td>自己比率 < 他人</td><td>增加產出 或 降低投入</td></tr>
+        <tr><td>自己比率 > 他人</td><td>降低產出 或 增加投入</td></tr>
+      </table></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     第九章
+═══════════════════════════════════════════════ -->
+<div class="chapter" id="ch9">
+  <div class="chapter-header"><div class="ch-num">9</div><h2>溝通與衝突</h2></div>
+  <div class="chapter-body">
+
+    <div class="section">
+      <div class="section-title">溝通類型</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>分類</th><th>類型</th><th>說明</th></tr>
+        <tr><td rowspan="3">方向</td><td>向下溝通</td><td>主管→部屬（指令）</td></tr>
+        <tr><td>向上溝通</td><td>部屬→主管（回報）</td></tr>
+        <tr><td>橫向溝通</td><td>同層級間溝通</td></tr>
+        <tr><td rowspan="2">形式</td><td><span class="key-tag">正式溝通</span></td><td>依組織架構的溝通</td></tr>
+        <tr><td>非正式溝通（小道消息）</td><td>走私溝通，常稱葡萄藤效應</td></tr>
+        <tr><td rowspan="2">語言</td><td>口語溝通</td><td>面談、電話、會議</td></tr>
+        <tr><td>非口語溝通</td><td>肢體語言、表情、語調</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">溝通障礙</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>障礙</th><th>說明</th></tr>
+        <tr><td>過濾</td><td>發訊者刻意篩選訊息</td></tr>
+        <tr><td>選擇性知覺</td><td>收訊者依自身需要選擇性接收</td></tr>
+        <tr><td>資訊超載</td><td>訊息量超出處理能力</td></tr>
+        <tr><td>情緒</td><td>心情影響訊息的解讀</td></tr>
+        <tr><td><span class="key-tag">語言</span></td><td>文字意義因人而異</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">衝突處理五種方式 <span class="exam-tag">常考</span></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>方式</th><th>自身關切</th><th>對方關切</th><th>適用時機</th></tr>
+        <tr><td><span class="exam-tag">競爭</span></td><td>高</td><td>低</td><td>緊急且必須快速決定</td></tr>
+        <tr><td><span class="exam-tag">合作</span></td><td>高</td><td>高</td><td>雙方利益都重要（雙贏）</td></tr>
+        <tr><td>妥協</td><td>中</td><td>中</td><td>雙方都接受部分讓步</td></tr>
+        <tr><td>迴避</td><td>低</td><td>低</td><td>衝突不重要或無解</td></tr>
+        <tr><td>順應</td><td>低</td><td>高</td><td>維持關係比獲勝重要</td></tr>
+      </table></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════
+     第十章
+═══════════════════════════════════════════════ -->
+<div class="chapter" id="ch10">
+  <div class="chapter-header"><div class="ch-num">10</div><h2>企業機能</h2></div>
+  <div class="chapter-body">
+
+    <div class="section">
+      <div class="section-title">人力資源管理流程</div>
+      <div class="diagram">
+        <div class="diagram-title">📊 人資管理流程</div>
+        <div class="flow" style="flex-wrap:wrap">
+          <div class="flow-box">人力規劃</div><div class="flow-arr">→</div>
+          <div class="flow-box">招募</div><div class="flow-arr">→</div>
+          <div class="flow-box">甄選</div><div class="flow-arr">→</div>
+          <div class="flow-box">訓練發展</div><div class="flow-arr">→</div>
+          <div class="flow-box">績效評估</div><div class="flow-arr">→</div>
+          <div class="flow-box">薪酬福利</div>
+        </div>
+      </div>
+      <div class="tbl-wrap"><table>
+        <tr><th>甄選工具</th><th>說明</th></tr>
+        <tr><td>應用表格</td><td>基本資料篩選</td></tr>
+        <tr><td><span class="key-tag">筆試</span></td><td>能力、性向、人格測驗</td></tr>
+        <tr><td><span class="key-tag">面談</span></td><td>結構式、非結構式、壓力面談</td></tr>
+        <tr><td>背景調查</td><td>確認過去資歷</td></tr>
+        <tr><td>體能測驗</td><td>特定職位需求</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">三大財務報表 <span class="exam-tag">常考</span></div>
+      <div class="tbl-wrap"><table>
+        <tr><th>報表</th><th>目的</th><th>主要項目</th></tr>
+        <tr><td><span class="key-tag">資產負債表</span></td><td>某時間點企業財務狀況</td><td>資產＝負債＋權益</td></tr>
+        <tr><td><span class="key-tag">損益表</span></td><td>某期間企業營運績效</td><td>收入－費用＝淨利</td></tr>
+        <tr><td><span class="key-tag">現金流量表</span></td><td>現金的流入與流出</td><td>營業、投資、融資活動</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">常見財務比率</div>
+      <div class="tbl-wrap"><table>
+        <tr><th>比率</th><th>公式</th><th>衡量</th></tr>
+        <tr><td><span class="exam-tag">流動比率</span></td><td>流動資產 ÷ 流動負債</td><td>短期償債能力</td></tr>
+        <tr><td><span class="exam-tag">負債比率</span></td><td>總負債 ÷ 總資產</td><td>財務槓桿</td></tr>
+        <tr><td>存貨週轉率</td><td>銷貨成本 ÷ 平均存貨</td><td>存貨管理效率</td></tr>
+        <tr><td>資產報酬率（ROA）</td><td>淨利 ÷ 總資產</td><td>資產運用效率</td></tr>
+        <tr><td>淨利率</td><td>淨利 ÷ 營收</td><td>獲利能力</td></tr>
+      </table></div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">行銷 4P <span class="exam-tag">常考</span></div>
+      <div class="diagram">
+        <div class="diagram-title">📊 行銷組合 4P</div>
+        <div class="grid2x2">
+          <div class="g-box" style="background:#dbeafe;border:2px solid #3b82f6"><strong>Product 產品</strong>品質、設計、品牌、包裝</div>
+          <div class="g-box" style="background:#d1fae5;border:2px solid #16a34a"><strong>Price 定價</strong>訂價策略、折扣</div>
+          <div class="g-box" style="background:#fef9c3;border:2px solid #eab308"><strong>Place 通路</strong>分銷管道、地點</div>
+          <div class="g-box" style="background:#ede9fe;border:2px solid #7c3aed"><strong>Promotion 推廣</strong>廣告、促銷、公關</div>
+        </div>
+      </div>
+      <div class="must">⭐ 4P = 產品、定價、通路、推廣（注意：公關不是第四個P！）</div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">STP 行銷策略 <span class="exam-tag">常考</span></div>
+      <div class="diagram">
+        <div class="diagram-title">📊 STP 三步驟</div>
+        <div class="flow">
+          <div class="flow-box">S：市場區隔<br><small>Segmentation</small></div><div class="flow-arr">→</div>
+          <div class="flow-box">T：目標市場<br><small>Targeting</small></div><div class="flow-arr">→</div>
+          <div class="flow-box">P：市場定位<br><small>Positioning</small></div>
+        </div>
+      </div>
+      <div class="tbl-wrap"><table>
+        <tr><th>市場結構</th><th>說明</th></tr>
+        <tr><td>完全競爭</td><td>多賣家、同質產品、價格接受者</td></tr>
+        <tr><td>獨占競爭</td><td>多賣家、異質產品</td></tr>
+        <tr><td>寡占</td><td>少數大廠競爭</td></tr>
+        <tr><td>獨占</td><td>單一賣家控制市場</td></tr>
+      </table></div>
+    </div>
+
+  </div>
+</div>
+
+<div style="max-width:960px;margin:24px auto 40px;padding:16px;text-align:center;color:#94a3b8;font-size:12px">
+  📝 本筆記為個人讀書整理版，僅供自身備考使用。
+</div>
+
+</body>
+</html>

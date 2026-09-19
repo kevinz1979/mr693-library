@@ -1,0 +1,191 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>在黑客松中得獎的Hermes Agent玩法顛覆想像！拿來種香菇、開公司、寫出50萬字歷史？｜Kelly Tsai</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>在黑客松中得獎的Hermes Agent玩法顛覆想像！拿來種香菇、開公司、寫出50萬字歷史？｜Kelly Tsai</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                    <span>•</span>
+                    <a href="https://youtu.be/8L_yLB3wbFE?si=d2AV97PZ4oCgv1Rm" target="_blank" class="video-link">🔗 觀看原始影片</a>
+                    
+                </div>
+            </div>
+            
+            
+            <!-- 自動載入 YouTube 最高畫質封面圖，若失敗則降級載入標準畫質 -->
+            <img src="https://img.youtube.com/vi/8L_yLB3wbFE/maxresdefault.jpg" alt="Video Thumbnail" class="hero-image" onerror="this.src='https://img.youtube.com/vi/8L_yLB3wbFE/hqdefault.jpg';">
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li><strong>Hermes Agent 突破傳統助理框架</strong>：由 Nous Research 開發，目前在 GitHub 上累積 <strong>21.9 萬顆星星與 4 萬多個 Fork</strong>，於 7 月 20 日發布 v0.19.0 版本，並傳出正以 <strong>15 億美元估值</strong>洽談新一輪融資（官方尚未證實）。</li>
+    <li><strong>完全自主運作的虛擬文明出版</strong>：專案 <strong>Chronicron</strong> 打造無人撰寫的文明百科全書，由 <strong>Kimi 與 Hermes 兩個 Agent</strong> 自主推進時間、撰寫 1,000 篇文章（共 54 萬字、涵蓋 88 個時代與 87 種語言），<strong>將人類完全排除在內容生產之外</strong>。</li>
+    <li><strong>零人類干預的 AI 公司商業對決</strong>：專案 <strong>Gladiator</strong> 讓兩家全自主 AI 公司（Growth-first 的 Blitz 與 Quality-first 的 Craft）競逐 GitHub 星星，在測試 Demo 中 <strong>Craft 以 40 顆星勝過 Blitz 的 32 顆星</strong>，各自花費約 3 塊多美金。</li>
+    <li><strong>硬體結合與現實接軌</strong>：透過樹梅派、感測器與繼電器，Hermes Agent 能<strong>取代人腦全自動養殖香菇</strong>，每 30 分鐘決策一次並支援 6 種菇類、6 個生長階段，已<strong>成功完成兩輪完整的猴頭菇栽培</strong>。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>許多人在接觸開源 AI 代理工具時，往往侷限於回信、整理待辦事項或會議紀錄等傳統任務。然而，Nous Research 開發的 Hermes Agent 展示了<strong>多智能體自主運作與實體串接的龐大潛力</strong>。在虛擬世界中，專案 <strong>Chronicron</strong> 透過人類給予的單一引子（Seed），便能<strong>自主生成並演進長達數百年的虛構文明百科全書</strong>，具備交叉連結、事實查核與配圖能力。</p>
+  <p>在商業與程式競爭層面，Hackathon 專案 <strong>Gladiator</strong> 展示了兩家自主 AI 公司在完全沒有人類操控下，分別採取「成長優先」與「品質優先」策略修改程式碼，競逐社群影響力。而在個人端應用方面，YC 2026 春季梯隊（Spring 26）新創開發的 <strong>Screenpipe</strong> 則作為 MCP 工具，以<strong>完全本地端且保護隱私的方式記錄螢幕事件</strong>，打造具備完整操作記憶的個人萬能助理。</p>
+  <p>最令人驚豔的實體落地應用則是<strong>自主香菇培育技能（Autonomous Mushroom Cultivation Skill）</strong>。該專案將 Hermes Agent 作為實體環境的大腦，透過樹梅派串接溫濕度、二氧化碳感測器、排風扇與加濕器，<strong>每 30 分鐘自主分析環境數據並進行硬體調控</strong>，成功完成了兩輪猴頭菇從種植到採收的全自動化閉環，證明了 <strong>AI Agent 跨足實體環境監控與自動化操作的無限可能性</strong>。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (待辦事項 / 關鍵行動)</h2>
+  <ul>
+    <li><strong>部署 Hermes Agent 運行環境</strong>：建議透過 VPS 主機（如講者推薦之 Hostinger）進行<strong>一鍵部署（One-click deploy）</strong>，確保 Agent 能 <strong>24/7 不中斷運行</strong>且本地檔案與憑證安全隔離。</li>
+    <li><strong>硬體規格配置建議</strong>：若選擇 VPS 方案，建議採用 <strong>KVM 2 規格（配置 2 核心 vCPU、8GB RAM、100GB 硬碟空間）</strong>以滿足一般運行負載，結帳可輸入折扣碼 <strong>keli-tai 1O</strong>（注意結尾為大寫 O）享九折優惠。</li>
+    <li><strong>探索開源專案程式庫</strong>：
+      <ul>
+        <li>探索 <strong>Chronicron</strong> 體驗多 Agent 協同生成虛構世界觀。</li>
+        <li>研究 <strong>Gladiator</strong> 觀察自主 AI 公司策略對決（需搭配 Paperclip 相關設定）。</li>
+        <li>評估 <strong>Screenpipe</strong> MCP 工具於個人工作流的應用（企業端需考量機密與客戶資料外洩風險）。</li>
+        <li>參考<strong>香菇培育專案</strong>架構，嘗試將 Agent 連接樹梅派感測器，拓展至個人硬體自動化場景。</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

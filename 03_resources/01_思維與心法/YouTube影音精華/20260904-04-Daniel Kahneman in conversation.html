@@ -1,0 +1,187 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Daniel Kahneman in conversation</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Daniel Kahneman in conversation</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                    <span>•</span>
+                    <a href="https://youtu.be/I-R3W5GNqxM?si=vnYWIMf0-vJuuGuS" target="_blank" class="video-link">🔗 觀看原始影片</a>
+                    
+                </div>
+            </div>
+            
+            
+            <!-- 自動載入 YouTube 最高畫質封面圖，若失敗則降級載入標準畫質 -->
+            <img src="https://img.youtube.com/vi/I-R3W5GNqxM/maxresdefault.jpg" alt="Video Thumbnail" class="hero-image" onerror="this.src='https://img.youtube.com/vi/I-R3W5GNqxM/hqdefault.jpg';">
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li><strong>雜訊（Noise）是系統判斷中「不想要的變異」</strong>，與源於個人心理歷程的偏誤（Bias）不同；偏誤具備因果性且容易被察覺，而<strong>雜訊本質上是統計概念</strong>，導致其長期在公眾意識中被忽視。</li>
+    <li>面對直覺判斷，講者提出核心策略：<strong>直覺不應被廢除，而是必須被「告知、訓練與延後」（delayed intuition）</strong>。決策者應先依據各項客觀維度獨立評分，最後再進行全盤的直覺評估。</li>
+    <li>演算法與簡單規則因具備<strong>「完全無雜訊」（noise-free）</strong>的特性，在許多情境下的判斷表現大幅優於人類；然而因社會抗拒與技術尚未全面成熟，當務之急仍是<strong>優先改善人類自身的判斷品質</strong>。</li>
+    <li>群體智慧能降低雜訊的前提是<strong>「判斷必須保持絕對獨立」</strong>；<strong>雜訊的減少速度與觀察數量的平方根（square root）成正比</strong>，未經獨立思考的群體討論反而會因過度自信者的主導而放大雜訊。</li>
+    <li>行為經濟學的「推力」（Nudging）屬於低成本、無強制性的介入手段，<strong>無法單獨解決氣候變遷或疫情等重大社會危機</strong>，面對宏觀難題必須仰賴社會體制透過<strong>修改法規與強制力（coercion）</strong>進行結構性改革。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>本場對談由雪梨新南威爾斯大學（UNSW Sydney）認知心理學教授 Ben Newell 主持，邀請 2002 年諾貝爾經濟學獎得主、普林斯頓大學心理學教授 Daniel Kahneman，針對其與 Olivier Sibony、Cass Sunstein 合著的新書《雜訊》（Noise）及認知決策理論展開深度探討。</p>
+  <p>Kahneman 首先釐清，《快思慢想》（Thinking, Fast and Slow）中所提及的「系統一」（快速、自動）與「系統二」（費力、受控）僅是為了<strong>便於理解兩種心理歷程的「虛構代理人」</strong>，大眾不應字面化地誤解為大腦中真有兩個實體系統。談及理性時，他指出<strong>經濟學定義的邏輯理性對有限的人類心智而言完全不可行</strong>，因此爭論人類是否理性並無實質意義。</p>
+  <p>針對新書核心，Kahneman 闡述「系統雜訊」（System Noise）普遍存在於司法量刑、保險核保、專利審查及急診診斷中。由於人類偏好因果思考，使得具備統計特性的雜訊難以被察覺。他強調，改善組織決策比改變個人容易得多，並主張採用源自他 1950 年代在以色列軍隊建立的面試評估法——<strong>「中介評估協定」（Mediating Assessments Protocol, MAP）</strong>：將決策拆解為客觀指標獨立評分，以<strong>延後直覺（delay intuition）與保持積極開放性思考（actively open-minded thinking）</strong>來抵抗不具可靠性的過度自信。</p>
+  <p>最後，Kahneman 談及人工智慧與行為經濟學的局限。雖然現代 AI（如 Alpha Zero）已展現出高度的創造力與無雜訊優勢，但在 AI 全面接管前，組織必須先做好<strong>「決策衛生」（decision hygiene）</strong>。對於全球重大危機，他直言<strong>推力僅能在邊際上提供潤滑與輔助，唯有結合體制法規與強制手段才能達成根本變革</strong>。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (待辦事項 / 關鍵行動)</h2>
+  <ul>
+    <li><strong>組織管理者</strong>應導入<strong>「中介評估協定」（MAP）</strong>流程：在招募、投資或重大決策中，先將評估案件拆解為獨立的客觀指標（如資產、負債或各項能力特質）分別評分，<strong>嚴格要求評估者在完成數據分析前「延後使用直覺」</strong>。</li>
+    <li><strong>決策團隊</strong>在進行群體決策時，<strong>必須確保各成員在討論前獨立提交判斷結果</strong>，嚴禁直接開啟開放式討論，以防高自信但錯誤的意見主導並放大雜訊。</li>
+    <li><strong>政策制定者與行政體系</strong>在推動重大法案時，應將行為經濟學的「推力」定位為邊際改善工具，<strong>主動使用清晰易懂的語言向公眾溝通</strong>，並針對重大系統性挑戰搭配明確的法規規範與執行機制。</li>
+    <li><strong>學術研究人員</strong>應持續落實心理學界在 2012 年後建立之嚴謹研究規範，包含<strong>實施研究預先註冊（pre-registration）並提高樣本數</strong>，以確保科學研究具備可重複性。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>用生活搞懂期貨與選擇權</title>
+<style>
+:root{--ink:#172033;--muted:#526176;--line:#dbe3ef;--blue:#1769aa;--bluebg:#eaf5ff;--purple:#6941c6;--purplebg:#f4efff;--green:#157347;--greenbg:#eaf8ef;--orange:#9a4b00;--orangebg:#fff2df;--red:#b42318;--redbg:#fff0ef}
+*{box-sizing:border-box} body{margin:0;background:#f7fbff;color:var(--ink);font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.75;font-size:17px}.wrap{max-width:980px;margin:auto;padding:34px 20px 60px}header{background:linear-gradient(135deg,#e8f5ff,#f3efff);border:1px solid #cfe0f4;border-radius:24px;padding:36px 30px;margin-bottom:24px}h1{margin:0 0 10px;font-size:clamp(30px,5vw,46px);line-height:1.25;color:#103b66}.lead{font-size:20px;margin:0;color:#273a55}.badge{display:inline-block;background:#fff;color:#24527f;border:1px solid #bcd7ef;padding:4px 12px;border-radius:999px;font-size:14px;font-weight:700;margin-bottom:14px}section{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;margin:18px 0;box-shadow:0 4px 16px rgba(35,69,110,.06)}h2{font-size:25px;margin:0 0 14px;color:#173a63}h3{font-size:19px;margin:18px 0 8px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.card{border-radius:16px;padding:20px;border:1px solid}.future{background:var(--bluebg);border-color:#b9dcf8}.option{background:var(--purplebg);border-color:#d8cafb}.term{font-weight:800;color:#164c78}.quote{margin:16px 0;padding:16px 18px;border-left:6px solid #1f7abf;background:#f1f8fd;border-radius:0 12px 12px 0}.callout{padding:18px;border-radius:14px;margin-top:16px}.tip{background:var(--greenbg);border:1px solid #bde4ca}.warning{background:var(--redbg);border:1px solid #f0c1bd}.orange{background:var(--orangebg);border:1px solid #f1d3a8}table{width:100%;border-collapse:collapse;margin:14px 0;font-size:16px}th,td{padding:12px;border:1px solid #cfdbea;text-align:left;vertical-align:top}th{background:#edf5ff;color:#173a63}ul,ol{padding-left:1.35em}li{margin:7px 0}.formula{font-weight:800;text-align:center;background:#f5f8fc;border:1px dashed #adbfda;padding:16px;border-radius:12px;margin:16px 0}.small{font-size:14px;color:var(--muted)}.footer{font-size:14px;color:#53657a;padding:8px 4px}@media(max-width:680px){.grid{grid-template-columns:1fr}header,section{padding:22px 18px}body{font-size:16px}table{font-size:14px}th,td{padding:9px}}
+@media print{body{background:#fff}.wrap{max-width:none;padding:0}section{box-shadow:none;break-inside:avoid}header{break-after:avoid}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<header>
+<div class="badge">新手白話版・淺色閱讀設計</div>
+<h1>用生活搞懂<br>期貨與選擇權</h1>
+<p class="lead">它們不是「買空氣」：本質是把未來的價格風險，寫成一份有規則、有代價的契約。</p>
+</header>
+<section>
+<h2>先記住這一句</h2>
+<div class="grid">
+<div class="card future"><h3>🚚 期貨：一定要照約定交易</h3><p>現在先談好未來的價格、數量和日期。到期時，<b>雙方都有義務</b>依約處理。</p></div>
+<div class="card option"><h3>🎟️ 選擇權：花錢買「可選擇」的權利</h3><p>買方付一筆<b>權利金</b>後，可選擇履約或放棄；賣方收錢後，必須配合買方的決定。</p></div>
+</div>
+<div class="formula">期貨 = 正式採購／供貨合約　｜　選擇權 = 訂金＋保險式的保留權</div>
+</section>
+<section>
+<h2>生活例子一：便當店先鎖米價</h2>
+<p>你在台中開便當店，三個月後需要 10 噸白米。現在每公斤 50 元，但你擔心米價上漲；於是和供應商約定：<b>三個月後仍以每公斤 50 元買 10 噸。</b></p>
+<div class="quote">這就是期貨的核心：不是預言未來，而是把「未來可能亂跳的價格」，先換成今天可接受的確定價格。</div>
+<table><thead><tr><th>三個月後的米價</th><th>便當店老闆</th><th>供應商</th></tr></thead><tbody><tr><td>漲到 65 元</td><td>仍以 50 元買到，避開成本上漲</td><td>必須以較低的約定價供貨</td></tr><tr><td>跌到 40 元</td><td>仍須以 50 元買，成本相對較高</td><td>合約對他較有利</td></tr></tbody></table>
+<p><span class="term">避險</span>是它的原始用途：農民怕收成時價格下跌，餐飲業者怕原料上漲，雙方都可用事先約定的價格降低不確定性。</p>
+</section>
+<section>
+<h2>生活例子二：預售屋保留權</h2>
+<p>你看中一戶預售屋，現在價格 1,000 萬元，但兩個月後資金才會到位。建商同意你先付 10 萬元保留費，讓你在兩個月內<b>有權利</b>用 1,000 萬元購買。</p>
+<div class="grid">
+<div class="card option"><h3>房價漲到 1,200 萬</h3><p>你可以依約用 1,000 萬買。這份保留權變得有價值。</p></div>
+<div class="card option"><h3>房價跌到 900 萬</h3><p>你可以放棄原約定，改找市場上更便宜的房子；損失主要是 10 萬元保留費。</p></div>
+</div>
+<table><tbody><tr><th>生活情境</th><th>選擇權名詞</th></tr><tr><td>預售屋</td><td>標的物</td></tr><tr><td>10 萬元保留費</td><td>權利金</td></tr><tr><td>1,000 萬元約定價格</td><td>履約價</td></tr><tr><td>兩個月後</td><td>到期日</td></tr></tbody></table>
+<p>這種「可用固定價格買進」的權利，叫做<span class="term">買權（Call）</span>。</p>
+</section>
+<section>
+<h2>生活例子三：農民替價格買保險</h2>
+<p>農民怕稻米收成時價格大跌，因此付一筆錢，取得「未來可以每公斤 50 元賣出」的權利。</p>
+<div class="quote">市價跌到 35 元：農民使用權利，以 50 元賣出。<br>市價漲到 65 元：農民直接在市場以 65 元賣，放棄這份權利即可。</div>
+<p>這種「可用固定價格賣出」的權利，叫做<span class="term">賣權（Put）</span>。它很像替手上的農產品、股票或其他資產，買一份最低售價保險。</p>
+</section>
+<section>
+<h2>為什麼不是「賣虛」？</h2>
+<p>保險公司賣的不是一台車，而是「出車禍時願意賠償」的承諾。期貨與選擇權交易的也是類似東西：<b>未來價格變動所造成的風險與承諾。</b></p>
+<div class="callout orange"><b>你看到的合約雖然無形，但合約條件很具體：</b>標的是什麼、每口多少、何時到期、怎麼結算、保證金要多少，都有明確規則。</div>
+<div class="callout tip"><b>真正重要的提問：</b>「這筆交易，是我想替哪一種風險買保護？還是我正在替別人承擔哪一種風險？」</div>
+</section>
+<section>
+<h2>新手最重要的風險地圖</h2>
+<table><thead><tr><th>角色／商品</th><th>最大損失的直覺</th><th>新手提醒</th></tr></thead><tbody><tr><td>買期貨或賣期貨</td><td>價格若持續往不利方向走，損失可能很大，且可能超過原先保證金</td><td>槓桿高，不能只看「一口保證金」</td></tr><tr><td>買選擇權</td><td>通常以付出的權利金為主要最大損失</td><td>有到期日；方向、幅度與時間都會影響價值</td></tr><tr><td>賣選擇權</td><td>收取權利金有限，但遇劇烈行情可能有很大損失</td><td>不宜把它誤解成穩定收租</td></tr></tbody></table>
+<div class="callout warning"><b>特別提醒：</b>「保證金低」不代表「風險低」。它只是履約擔保的一部分，不是商品真正的總價值。</div>
+</section>
+<section>
+<h2>先懂再做：建議學習順序</h2>
+<ol>
+<li><b>先找一個你熟悉的風險：</b>例如持有股票怕下跌、未來要換外幣、店家怕原料漲價。</li>
+<li><b>把它翻成契約：</b>標的是什麼？我希望鎖住哪個價格？期限多長？</li>
+<li><b>先用紙筆算兩種情境：</b>大漲／大跌時，我會賺或賠多少？最壞狀況是什麼？</li>
+<li><b>觀察或模擬：</b>連續追蹤同一個期貨或選擇權合約，記錄標的價格、合約價格與剩餘天數。</li>
+<li><b>實作時控制規模：</b>不因「一口看起來便宜」就放大部位，也不要未理解保證金機制就做賣方。</li>
+</ol>
+</section>
+<section>
+<h2>最後的口訣</h2>
+<div class="formula">期貨：我承諾未來一定交易。<br>選擇權：我付費取得未來可以交易、也可以不交易的權利。</div>
+<p>當每筆交易都能回答「我付了什麼代價？我得到什麼保障？最壞會怎樣？」你就在用理解，而不是用猜測，接近這個市場。</p>
+</section>
+<p class="footer">閱讀設計採淺色背景與高對比文字，以提升可讀性；一般文字的 WCAG 建議最低對比為 4.5:1。[web:16][web:17]</p>
+</main>
+</body>
+</html>

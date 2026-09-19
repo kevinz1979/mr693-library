@@ -1,0 +1,192 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Think Again: Adam Grant</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Think Again: Adam Grant</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                    <span>•</span>
+                    <a href="https://youtu.be/CbqqIYTHuwM?si=KeDhQuIMr7j9PSJG" target="_blank" class="video-link">🔗 觀看原始影片</a>
+                    
+                </div>
+            </div>
+            
+            
+            <!-- 自動載入 YouTube 最高畫質封面圖，若失敗則降級載入標準畫質 -->
+            <img src="https://img.youtube.com/vi/CbqqIYTHuwM/maxresdefault.jpg" alt="Video Thumbnail" class="hero-image" onerror="this.src='https://img.youtube.com/vi/CbqqIYTHuwM/hqdefault.jpg';">
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li><strong>「重新思考」（Rethinking）既是技能也是心態</strong>：在劇烈變動的時代，阻礙組織與個人的往往不是缺乏思考，而是未能及時重新思考；義大利新創研究證實，具備<strong>「科學家思維」</strong>（將策略視為假說並依數據靈活轉向）的創業者，其<strong>平均營收是對照組的 40 倍以上，業務樞紐轉換（Pivot）的機率高出 2 倍以上</strong>。</li>
+    <li><strong>以「自信的謙遜」（Confident Humility）重塑領導力</strong>：頂尖領導者對自身能力具備充分安全感，因而敢於坦承「我不知道」與「我犯了錯」；研究證實，領導者<strong>主動公開檢討自身弱點與考績缺失</strong>，能為團隊建立並<strong>維持長達一年以上的心理安全感</strong>，且完全不會損害其專業威信。</li>
+    <li><strong>頂尖預測家（Super Forecasters）的核心機制在於頻繁修正與前置條件清單</strong>：頂尖預測家修正預測的頻率是常人的 <strong>2 倍（平均修正 4 次對比一般人的 2 次）</strong>；關鍵做法是在做預測時<strong>預先列出「哪些條件發生會讓我改變心意」的清單</strong>，藉此避免自我意識（Totalitarian Ego）與承諾綁架。</li>
+    <li><strong>建立「挑戰網絡」（Challenge Network）防範隧道視野</strong>：支持網絡提供鼓勵，但挑戰網絡提供刺耳的真話；最理想的挑戰網絡成員是<strong>「不隨和的付出者」（Disagreeable Givers）</strong>——外表嚴格批判、勇於質疑現狀，內在動機卻是出於真誠關心與追求卓越。</li>
+    <li><strong>促進「任務衝突」並延遲直覺以提升決策品質</strong>：健康的團隊需要<strong>「任務衝突而非關係衝突」</strong>（對事不對人，如同萊特兄弟爭辯螺旋槳設計）；面對重大決策應<strong>「延遲直覺」</strong>先完成理性數據分析，並依循<strong>「決策重要性與可逆性」</strong>矩陣決定應事前深思還是事後快速修正。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>華頓商學院知名組織心理學教授 Adam Grant 在專訪中深入探討其暢銷著作《逆思維》（<em>Think Again</em>）的核心概念。他指出，許多大型企業（如 Blockbuster、Blackberry、Kodak、Sears、Toys "R" Us）之所以失敗，並非因為領導者缺乏思考能力，而是<strong>未能重新思考並即時調整商業模式</strong>。在動態世界中，昨日促成成功的經驗，可能成為明日失敗的根源。許多人習慣以<strong>「傳教士」</strong>（深信自身掌握真理並對外宣講）、<strong>「檢察官」</strong>（致力於挑出他人錯誤以贏得辯論）或<strong>「政客」</strong>（迎合受眾以爭取認同卻不願改變深層信念）的模式思考；然而，真正能實現突破的是<strong>「科學家思維」——重視謙遜勝過驕傲、重視好奇勝過定見，不將想法與自我認同綁定</strong>，把策略當作假說，透過實驗驗證並勇於樞紐轉換。</p>
+  
+  <p>在決策與認知脫鉤（Detachment）方面，領導者常受制於「認知固化」（Cognitive Entrenchment）與「專制自我」（Totalitarian Ego）。研究顯示，獲致財務成功的組織中，高達 <strong>93% 採用的是「浮現策略」（Emergent Strategy）而非最初設定的審慎策略</strong>，僅有 <strong>7% 依靠原創策略成功</strong>。諾貝爾獎得主 Danny Kahneman 與 Adam Grant 均主張決策時應<strong>「延遲直覺」（Delay Intuition）</strong>，先進行數據與理性分析，再納入直覺輔助。此外，借鑑 Jeff Bezos 的決策模型，領導者應以<strong>「賭注高低（重要性）」與「決策可逆性」</strong>雙維度評估：面對高風險且不可逆的決策，必須在事前做好所有重新思考；面對可逆或後果輕微的決策，則應迅速行動並在事後持續調整。</p>
+  
+  <p>在領導與團隊文化層面，Adam Grant 提倡展現<strong>「自信的謙遜」</strong>，如紐西蘭總理 Jacinda Ardern 與 NBA 總裁 Adam Silver 在疫情初期面對未知時，勇於承認資訊不足並採取保護性行動。他與學者 Constantinos Coutifaris 的實驗指出，領導者<strong>主動公開自身考績評語與待改進缺點</strong>，比起單純徵求意見，更能有效且持久地建立團隊心理安全感。針對職場溝通，應追求<strong>「任務衝突而非關係衝突」</strong>，並透過情緒觸發點（如面對他人偽裝知情時）的自我覺察，以<strong>「什麼樣的證據能改變您的想法？」</strong>的探詢腳本取代對立爭辯。</p>
+  
+  <p>最後，針對防範職涯與戰略上的「隧道視野」與身份過早鎖定（Identity Foreclosure），Grant 強調建立<strong>「挑戰網絡」</strong>的重要性。基於超過 <strong>30,000 人</strong>的跨產業研究，個性隨和度與個人是「付出者」（Giver）或「索取者」（Taker）並無關聯；團隊中最具價值的夥伴是<strong>「不隨和的付出者」（Disagreeable Givers）</strong>，他們敢於說出關鍵真話與質疑現狀。在定義組織偉大之處時，Grant 總結：<strong>偉大的組織深信「員工就是公司本身」</strong>；偉大的文化致力於<strong>「彼此成就而非爭當全場最聰明的人」</strong>；而偉大的領導者則致力於<strong>「看見他人自身尚未察覺的潛力，並將專業視為分享的資源而非揮舞的武器」</strong>。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (待辦事項 / 關鍵行動)</h2>
+  <ul>
+    <li><strong>建立決策變更的前置條件清單（Condition List）</strong>：<strong>全體商業領導者</strong>在制定策略或進行預測時，必須同步列出「當發生哪些外部環境變化（如疫情、經濟衰退、數位顛覆）或數據證據時，我們必須重啟決策與重新思考」。</li>
+    <li><strong>落實「延遲直覺」與「決策可逆性矩陣」機制</strong>：<strong>管理決策層</strong>在拍板重大專案時，嚴禁僅憑「直覺」主導，應先完成嚴謹的數據分析與假設檢驗；針對高重要性且不可逆的決策進行事前充分覆盤，低風險或高可逆決策則加速推進並於事後反覆修正。</li>
+    <li><strong>領導者主動公開分享自身發展盲點與弱點</strong>：<strong>高階主管與專案經理</strong>應帶頭示範「自信的謙遜」，向團隊成員<strong>公開自身績效評核中的待改善領域（如時間管理、授權能力或傾聽技巧）</strong>，藉由展示脆弱度以建立至少維持一年的組織心理安全感。</li>
+    <li><strong>組建個人與組織的「挑戰網絡」（Challenge Network）</strong>：<strong>決策者與個人</strong>應主動尋找並邀請<strong>「不隨和的付出者」（Disagreeable Givers）</strong>加入諮詢核心，明確授權他們對計畫挑毛病、扮演魔鬼代言人，並給予保證「唯有不說真話才會損害關係」。</li>
+    <li><strong>實踐「自我同理心信件」（Self-Compassion Letter）以達成認知脫鉤</strong>：<strong>專業經理人</strong>在遭遇誤判或決策失敗時，應運用心理學家 Mark Leary 的方法，以對待好友般的理解與友善態度<strong>寫信給自己，剖析犯錯原因、萃取學習經驗並擬定預防機制</strong>，將「發現錯誤」轉化為「確認自己正在學習」的喜悅。</li>
+    <li><strong>預先排練情緒觸發點的應對腳本（Response Script）</strong>：<strong>團隊成員與主管</strong>應盤點引發個人情緒失控的熱鍵（Hot Buttons），並設定標準應對話術；當遭遇觀點衝突時，主動以<strong>「請問需要什麼樣的數據或證據才能改變您的看法？」</strong>進行提問，將爭論導向客觀探討的任務衝突。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

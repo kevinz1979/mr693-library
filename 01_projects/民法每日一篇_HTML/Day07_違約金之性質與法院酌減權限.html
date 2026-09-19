@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 07 - 違約金之性質與法院酌減權限</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1a202c;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        .btn-primary {
+            background-color: #4299e1;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #3182ce;
+        }
+        .btn-secondary {
+            background-color: #6b7280;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #4b5563;
+        }
+        .quiz-option {
+            background-color: #e2e8f0;
+            color: #333;
+            padding: 12px 15px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .quiz-option:hover {
+            background-color: #3182ce;
+            color: white;
+        }
+        .quiz-option.correct {
+            background-color: #48bb78;
+            color: white;
+        }
+        .quiz-option.incorrect {
+            background-color: #f56565;
+            color: white;
+        }
+        .explanation {
+            font-size: 0.9rem;
+            color: #4a5568;
+            margin-top: 5px;
+            display: none;
+            padding: 10px;
+            background-color: #f7fafc;
+            border-left: 3px solid #4299e1;
+        }
+        .table-responsive {
+            overflow-x: auto;
+        }
+        .three-column-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .three-column-grid > div {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+            padding: 15px;
+        }
+        @media (max-width: 768px) {
+            .three-column-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .nav-buttons button {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="flex justify-between items-center mb-6 nav-buttons">
+            <button onclick="window.location.href='index.html'" class="btn-primary flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i> 返回民法知識庫總覽
+            </button>
+            <span class="text-lg font-semibold text-gray-700">債編 | Day 07 | 2026-08-25</span>
+        </div>
+
+        <div class="card">
+            <h1 class="text-3xl font-bold text-center mb-4">違約金之性質與法院酌減權限</h1>
+            <p class="text-center text-gray-600">民法第 250 條、第 252 條深入解析</p>
+        </div>
+
+        <!-- 區塊一：經典案例情境 -->
+        <div class="card">
+            <h2 class="section-title">
+                <i class="fas fa-lightbulb mr-2"></i> 經典案例情境 (The Scenario)
+            </h2>
+            <p class="mb-4">
+                小明和小華簽訂了一份房屋租賃契約，約定租期兩年。契約中有一條特別約款：「若承租人（小華）提前終止租約，應支付出租人（小明）違約金新臺幣 10 萬元整。」
+                一年後，由於工作變動，小華不得不提前搬離，並主動告知小明。小明卻要求小華支付 10 萬元的違約金。
+                小華認為，他提前搬離造成的實際損害（例如：尋找新房客的費用、一小段時間的空置期損失）遠不及 10 萬元，這筆違約金是否顯失公平？小明是否能隨意主張？
+            </p>
+            <button class="btn-secondary flex items-center" onclick="toggleSection('scenario-answer')">
+                <i class="fas fa-question-circle mr-2"></i> 點擊展開解答
+            </button>
+            <div id="scenario-answer" class="mt-4" style="display: none;">
+                <h3 class="text-xl font-semibold mb-3">情境解析：</h3>
+                <p class="mb-3">
+                    這個案例聚焦於「違約金」的性質以及法院在何種情況下可以介入調整。小華面臨的問題是，他是否需要無條件支付約定的 10 萬元違約金，即使他認為這筆金額過高。
+                    重點在於，違約金並非一成不變，民法賦予了法院一定的審查和調整權限，以避免契約條款的失衡。
+                </p>
+                <p class="font-medium">
+                    <i class="fas fa-exclamation-triangle text-yellow-500 mr-2"></i>
+                    關鍵點：小華是否能主張法院減少違約金？
+                </p>
+            </div>
+        </div>
+
+        <!-- 區塊二：三段論法拆解 -->
+        <div class="card">
+            <h2 class="section-title">
+                <i class="fas fa-balance-scale mr-2"></i> 三段論法拆解 (IRAC)
+            </h2>
+            <div class="three-column-grid">
+                <div>
+                    <h3 class="text-lg font-semibold text-blue-600 mb-3">
+                        <i class="fas fa-book-open mr-2"></i> 大前提 (法規/Rule)
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        <strong>民法第 250 條：</strong>
+                        契約當事人約定，一方於契約成立後，應為給付，而約定其契約不履行時，應支付違約金者，無論其為「違約罰金」（賠償性違約金）或「違約預定損害」（預定性違約金），除有民法第 252 條至第 254 條之規定者外，無待於受損害，債權人得請求其履行。
+                        <br><br>
+                        <strong>民法第 252 條：</strong>
+                        約定之違約金，過高者，法院得因債務人之請求，酌予增減之。
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-green-600 mb-3">
+                        <i class="fas fa-file-alt mr-2"></i> 小前提 (事實/Analysis)
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        1. 租賃契約約定，若承租人提前終止租約，需支付 10 萬元違約金。此為當事人約定之違約金。<br>
+                        2. 承租人（小華）因工作變動，確實提前終止租約，構成契約約定之違約事由。<br>
+                        3. 小華主張，其提前搬離所造成的實際損害，遠低於 10 萬元，認為此約定「顯失公平」。
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-red-600 mb-3">
+                        <i class="fas fa-chess-king mr-2"></i> 結論 (效果/Conclusion)
+                    </h3>
+                    <p class="text-sm leading-relaxed">
+                        若法院審理認為，此 10 萬元違約金與小華提前終止租約的「實際情況」（包含實際損害、雙方經濟狀況、違約嚴重性等）相比，顯得「過高」且「顯失公平」，法院得依小華之請求，依據民法第 252 條規定，酌予減少違約金的金額。
+                        小明不能無條件要求支付 10 萬元，法院將會進行權衡。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 區塊三：生活與職場防禦錦囊 -->
+        <div class="card">
+            <h2 class="section-title">
+                <i class="fas fa-shield-alt mr-2"></i> 生活與職場防禦錦囊 (Practical Tips)
+            </h2>
+            <p class="mb-4">
+                簽訂契約時，對於違約金條款的約定，我們都應有基本的認識，以保護自身權益。以下針對常見情境提供自保建議：
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-3 text-blue-700">
+                        <i class="fas fa-handshake mr-2"></i> 租賃契約 (租客/房東)
+                    </h3>
+                    <ul class="list-disc list-inside text-sm space-y-2">
+                        <li><strong>租客：</strong> 簽約前，審慎評估提前解約的可能性。若可能，可嘗試與房東協商，將違約金約定為「相當於一定期間租金」或「實際造成之損害」，而非固定高額。若已約定，事後發現過高，可主張民法第 252 條。</li>
+                        <li><strong>房東：</strong> 違約金的約定應「合理」，應考量房屋空置、尋找新租客的成本等。過高的違約金有被法院酌減的風險。</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-3 text-green-700">
+                        <i class="fas fa-briefcase mr-2"></i> 職場與商務契約 (員工/公司)
+                    </h3>
+                    <ul class="list-disc list-inside text-sm space-y-2">
+                        <li><strong>員工：</strong> 離職違約金條款應極為謹慎。若非因重大過失或違反保密義務等，公司要求高額違約金，往往難以獲得法院支持。但若涉及競業禁止，則需仔細審閱條款。</li>
+                        <li><strong>公司：</strong> 離職違約金應與員工實際造成公司損失的「可能性」與「程度」相當，否則易被認定無效或被法院酌減。例如，若員工確實接觸過核心客戶名單，約定一定範圍內的競業禁止並賠償損失，相對較有保障。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 區塊四：底層思維模型提煉 -->
+        <div class="card">
+            <h2 class="section-title">
+                <i class="fas fa-brain mr-2"></i> 底層思維模型提煉 (Underlying Logic)
+            </h2>
+            <p class="mb-4">
+                違約金制度背後，隱含著「契約自由」與「公平原則」的拉扯。民法第 252 條的「法院酌減權限」，正是為了調和這兩者：
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                    <i class="fas fa-gavel text-4xl text-blue-600 mb-3"></i>
+                    <h3 class="font-semibold text-blue-800 mb-2">契約自由與保障</h3>
+                    <p class="text-sm text-gray-700">
+                        法律尊重當事人意思自治，允許當事人自由約定違約金，藉此提高契約履行的確定性，並作為一種「契約履行之督促」。
+                    </p>
+                </div>
+                <div class="text-center p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                    <i class="fas fa-balance-scale-right text-4xl text-yellow-600 mb-3"></i>
+                    <h3 class="font-semibold text-yellow-800 mb-2">公平原則與經濟效率</h3>
+                    <p class="text-sm text-gray-700">
+                        若約定金額過高，可能導致顯失公平，甚至扭曲了市場價格，造成經濟上的無效率。法院介入酌減，是為了維持契約的「正義性」與「合理性」。
+                    </p>
+                </div>
+                <div class="text-center p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <i class="fas fa-chart-line text-4xl text-red-600 mb-3"></i>
+                    <h3 class="font-semibold text-red-800 mb-2">風險分配與預期</h3>
+                    <p class="text-sm text-gray-700">
+                        違約金也涉及到契約雙方對風險的分配。當約定金額過度偏離實際風險時，就會引發法律的干預，確保契約的約定是「可預期」且「可承受」的。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 區塊五：牛刀小試・考點隨堂測驗 -->
+        <div class="card">
+            <h2 class="section-title">
+                <i class="fas fa-pencil-alt mr-2"></i> 牛刀小試・考點隨堂測驗 (Quiz)
+            </h2>
+            <div id="quiz-container">
+                <div class="quiz-question mb-4">
+                    <p class="font-semibold mb-3">1. 依民法第 252 條規定，法院得「酌減」違約金的前提是：</p>
+                    <div class="quiz-options" data-question="1">
+                        <div class="quiz-option" data-answer="B">A. 債務人證明其違約行為無過失</div>
+                        <div class="quiz-option" data-answer="B">B. 約定之違約金「過高」且經債務人請求</div>
+                        <div class="quiz-option" data-answer="B">C. 債權人有明顯獲利</div>
+                        <div class="quiz-option" data-answer="B">D. 違約金已超過實際損害</div>
+                    </div>
+                    <div class="explanation">
+                        <p><strong>詳解：</strong> 依民法第 252 條，法院得酌減違約金的唯一法定要件是「約定之違約金過高」。此外，必須由債務人「請求」，法院才會介入。選項 D 雖然與「過高」有關，但「過高」是判斷的標準，而「過高」本身才是法院介入的直接依據。</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question mb-4">
+                    <p class="font-semibold mb-3">2. 若契約約定違約金 50 萬元，但債權人實際僅受損 5 萬元，債務人請求法院酌減違約金，法院應如何處理？</p>
+                    <div class="quiz-options" data-question="2">
+                        <div class="quiz-option" data-answer="A">A. 法院應將違約金酌減至 5 萬元</div>
+                        <div class="quiz-option" data-answer="A">B. 法院應將違約金減至 50 萬元之 1/10</div>
+                        <div class="quiz-option" data-answer="A">C. 法院應依「顯失公平」原則，自行判斷</div>
+                        <div class="quiz-option" data-answer="A">D. 法院得依其裁量，酌減至顯失公平的程度</div>
+                    </div>
+                    <div class="explanation">
+                        <p><strong>詳解：</strong> 民法第 252 條規定法院得「酌」予增減，是賦予法院裁量權。雖然實際損害為重要考量因素，但法院並非僅以實際損害為唯一標準，而是綜合考量「違約的嚴重性、雙方經濟狀況、違約金是否顯失公平」等因素，進行「酌量」。因此 D 為最貼切答案。</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question mb-4">
+                    <p class="font-semibold mb-3">3. 關於違約金之性質，下列敘述何者正確？</p>
+                    <div class="quiz-options" data-question="3">
+                        <div class="quiz-option" data-answer="C">A. 違約金只能約定為預定損害賠償</div>
+                        <div class="quiz-option" data-answer="C">B. 違約金不得超過實際損害</div>
+                        <div class="quiz-option" data-answer="C">C. 違約金可約定為罰金性質（懲罰性）或預定損害性質（賠償性），或兩者兼具</div>
+                        <div class="quiz-option" data-answer="C">D. 請求違約金必須證明有實際損害</div>
+                    </div>
+                    <div class="explanation">
+                        <p><strong>詳解：</strong> 民法第 250 條明示，違約金無論是「預定損害」或「罰金（懲罰性）」性質，均屬有效。也可能約定為兩者兼具。請求違約金，依第 250 條規定，無待於受損害（即不需要證明實際損害）。</p>
+                    </div>
+                </div>
+
+                <div class="quiz-question mb-4">
+                    <p class="font-semibold mb-3">4. 小資女小美與房東約定，若小美提前終止租約，需支付違約金 15 萬元。小美實際只提前一個月搬家，房東僅花費 2 萬元尋找新房客並補租金差額。小美認為 15 萬元過高，主張法院酌減。下列何者為法院應考量之因素？</p>
+                    <div class="quiz-options" data-question="4">
+                        <div class="quiz-option" data-answer="D">A. 違約金的約定金額</div>
+                        <div class="quiz-option" data-answer="D">B. 房東尋找新租客的成本</div>
+                        <div class="quiz-option" data-answer="D">C. 租約剩餘期間的租金</div>
+                        <div class="quiz-option" data-answer="D">D. 以上皆是，且需綜合判斷是否顯失公平</div>
+                    </div>
+                    <div class="explanation">
+                        <p><strong>詳解：</strong> 法院在審理是否酌減違約金時，並非僅看單一因素，而是會綜合考量：約定金額的絕對值、實際損害（包含空置期、尋找新租客的費用、租金差額等）、承租人違約的「情況」（例如是否因重大事由）、雙方經濟能力等，以判斷該違約金是否「顯失公平」。因此，選項 D 最為完整。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSection(id) {
+            var element = document.getElementById(id);
+            if (element.style.display === "none") {
+                element.style.display = "block";
+            } else {
+                element.style.display = "none";
+            }
+        }
+
+        function checkAnswer(event) {
+            const selectedOption = event.target;
+            if (!selectedOption.classList.contains('quiz-option')) return;
+
+            const optionsContainer = selectedOption.closest('.quiz-options');
+            const questionNumber = optionsContainer.dataset.question;
+            const allOptions = optionsContainer.querySelectorAll('.quiz-option');
+            const correctAnswer = selectedOption.dataset.answer; // Assuming 'data-answer' holds the correct option letter (A, B, C, D)
+
+            allOptions.forEach(option => {
+                option.style.pointerEvents = 'none'; // Disable further clicks
+                option.classList.remove('correct', 'incorrect'); // Reset styles
+                option.style.backgroundColor = ''; // Reset background
+                option.style.color = ''; // Reset text color
+                option.style.borderColor = 'transparent'; // Reset border
+            });
+
+            const explanation = selectedOption.closest('.quiz-question').querySelector('.explanation');
+            explanation.style.display = 'block';
+
+            // Re-evaluate based on the actual correct answer stored in the data attribute (which is simplified here to always be 'B', 'A', 'C', 'D' matching the options for demonstration)
+            // In a real scenario, you'd map this to the correct choice.
+            let correctOptionIndex = -1;
+            switch (questionNumber) {
+                case '1': correctOptionIndex = 1; break; // 'B'
+                case '2': correctOptionIndex = 0; break; // 'A'
+                case '3': correctOptionIndex = 2; break; // 'C'
+                case '4': correctOptionIndex = 3; break; // 'D'
+            }
+
+            if (correctOptionIndex !== -1) {
+                const correctElement = optionsContainer.children[correctOptionIndex];
+                correctElement.classList.add('correct');
+                correctElement.style.backgroundColor = '#48bb78'; // Green
+                correctElement.style.color = 'white';
+                correctElement.style.borderColor = '#38a169';
+            }
+
+            // Mark the clicked option as incorrect if it wasn't the correct one
+            if (selectedOption !== optionsContainer.children[correctOptionIndex]) {
+                selectedOption.classList.add('incorrect');
+                selectedOption.style.backgroundColor = '#f56565'; // Red
+                selectedOption.style.color = 'white';
+                selectedOption.style.borderColor = '#e53e3e';
+            }
+        }
+
+        document.querySelectorAll('.quiz-options').forEach(container => {
+            container.addEventListener('click', checkAnswer);
+        });
+    </script>
+</body>
+</html>

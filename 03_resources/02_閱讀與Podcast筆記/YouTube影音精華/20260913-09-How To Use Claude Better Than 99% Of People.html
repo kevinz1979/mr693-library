@@ -1,0 +1,208 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>How To Use Claude Better Than 99% Of People</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>How To Use Claude Better Than 99% Of People</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                    <span>•</span>
+                    <a href="https://youtu.be/28TGfTZweqw?si=A0h2R4GE2elwX3P9" target="_blank" class="video-link">🔗 觀看原始影片</a>
+                    
+                </div>
+            </div>
+            
+            
+            <!-- 自動載入 YouTube 最高畫質封面圖，若失敗則降級載入標準畫質 -->
+            <img src="https://img.youtube.com/vi/28TGfTZweqw/maxresdefault.jpg" alt="Video Thumbnail" class="hero-image" onerror="this.src='https://img.youtube.com/vi/28TGfTZweqw/hqdefault.jpg';">
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li><strong>同一款 AI 工具，有人用來寫日常 Email，有人卻用它打造出估值上億美元的公司</strong>；決定未來十年職涯與企業競爭力差距的，不再是「是否使用 AI」，而是「如何駕馭 AI」。</li>
+    <li>Claude 不只是一個聊天視窗，而是一整套<strong>「AI 代理人團隊」生態系</strong>，由五大核心活動組成：<strong>思考（Chat）、記憶（Projects）、執行（Cowork）、構建（Code）與瀏覽（Chrome）</strong>。</li>
+    <li>打破傳統提問模式，掌握 <strong>PRIME 架構（目標 Purpose、研究 Research、反向訪談 Interview、結構機制 Mechanics、範例 Examples）</strong>，能讓 AI 從平庸的文字產生器，升級為具備頂級顧問水準的<strong>專業思考夥伴</strong>。</li>
+    <li>透過 <strong>MCP（模型上下文協定，Model Context Protocol）</strong>，Claude 能夠取得連結外部工具的鑰匙（如串接 Hicksfield 生成專業廣告素材），<strong>讓一人創業者能以單一工作階段，完成過去需要大型創意代理商與數千美元預算的工作</strong>。</li>
+    <li><strong>每個月只需花費 20 美元，你就能僱用超越多數 MBA 與博士的智慧</strong>；真正的破局點在於拋棄「我不是工程師/設計師」的自我限制標籤，並保持<strong>人類獨有的好奇心與穿越摩擦力的韌性</strong>。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary & Insights (內容摘要與論證脈絡)</h2>
+  <p>許多人使用 AI 的方式僅止於「輸入提示詞，然後複製貼上」，例如要求 AI「寫一篇關於領導力的 LinkedIn 貼文」，往往只會得到空洞且修飾過度的廢話。講者指出，若想超越 99% 的使用者，必須將 Claude 視為一個<strong>「分工精細的五人代理人團隊」</strong>，徹底重構工作流程：</p>
+
+  <p><strong>第一成員：思考夥伴（Claude Chat）</strong>。不要把 AI 當成廉價寫手，而是當作「商學院教授」。你可以將 Notion 筆記丟給它，要求它<strong>「挑出邏輯脆弱之處並強化真實洞見」</strong>。在此過程中建立「一邊飛行一邊組裝引擎」的實時學習循環——例如非財務背景的人在建構財務模型時，能隨時開另一個分頁詢問內部報酬率（IRR）或自由現金流，達成「做中學、學中做」的雙向強化。</p>
+
+  <p><strong>第二成員：長期記憶庫（Claude Projects）</strong>。解決複雜任務絕非單次對話能完成。透過專案（Projects）功能，你可以上傳履歷、過往寫作範本、目標公司職缺描述，並設定具體人設（如：具備 5 年 WPP 代理商經驗的品牌行銷人，討厭企業陳腔濫調）。這使 Claude <strong>從「單次拋棄式對話」轉化為「具備連續記憶的長期合作夥伴」</strong>。講者特別強調：<strong>請在「專案層級」進行自訂設定而非「帳戶層級」</strong>，因為規劃度假與規劃退休金需要完全不同的情境脈絡。</p>
+
+  <p><strong>第三成員：本機執行者（Claude Cowork）</strong>。Chat 是開啟思考的地方，Cowork 則是真正落實執行的桌面端工具。它適用於處理電腦本機的大量檔案（如訪談逐字稿、數據試算表），並直接在本地端輸出成品。更強大的是透過 <strong>MCP 協定</strong>，Claude 能跨界調用其他專屬 AI。以經營手工薰衣草蠟燭的小型創業者為例，只要串接獲 Accel 與 Menlo Ventures 投資、估值突破十億美元的創意生成工具 <strong>Hicksfield（擁有 1,800 萬創作者）</strong>，輸入一句指令即可一次生成 20 款包含 Instagram 圖文、官網特寫與垂直短影音的廣告素材，<strong>將過去需要專業攝影師、造型師及數週後製期（耗費數千美元）的龐大工程，壓縮至單次對話內完成</strong>。在資安維護上，講者提醒務必使用<strong>「沙盒機制（Sandboxing）」</strong>，只授權專屬子資料夾以保護本機其他機密檔案。</p>
+
+  <p><strong>第四與第五成員：建構者（Claude Code）與瀏覽者（Claude Chrome）</strong>。多數人誤以為寫程式是工程師的專利，但事實上<strong>「只要會打字，就能透過自然語言建構專屬工具」</strong>，例如一鍵打造能追蹤潛在客戶銷售管道（Sales Pipeline）與風險的儀表板。而 Chrome 擴充功能則讓 Claude 深入你 90% 的日常瀏覽器工作流，無論是快速提煉 40 頁的產業研究報告重點，或是針對招聘網站即時客製求職信，都能即時協作。</p>
+
+  <p>為了將整套團隊發揮至極致，講者提出 <strong>PRIME 提示工程框架</strong>：以<strong>精確目標（Purpose）</strong>為起點；提供<strong>經查證的內外部研究（Research）</strong>；善用<strong>反向訪談（Interview）</strong>要求 AI 先對你提問以收斂範圍；指定精準的<strong>輸出格式與機制（Mechanics）</strong>；並給予<strong>高品質範例（Examples）</strong>作為基準錨點。最後，講者提醒：<strong>AI 是極致的槓桿，但真正的核心優勢永遠在於人類自身的好奇心與探索未知的本能</strong>。</p>
+</div>
+
+<div class="card">
+  <h2>Everyday Connection (日常生活關聯與具體實踐)</h2>
+  <p>講者的這套代理人思維，能無縫降維應用於現代人的日常工作、個人學習與專案推進中：</p>
+  
+  <p><strong>1. 【日常工作與職場決策場景】：拒絕產出平庸報告，啟動「反向訪談」機制</strong><br>
+  當主管突然要求你在明天交出一份「跨部門溝通改善提案」時，不要直接叫 AI 寫草稿。請建立一個 Claude Project，丟入過往團隊會議紀錄，並下達指令：「<strong>請扮演嚴格的組織營運顧問，在動筆前先問我 3 個選擇題</strong>，釐清目前跨部門衝突的核心癥結點、牽涉的利害關係人與預算限制。」透過這個機制，AI 產出的簡報將不再是浮濫的理論，而是<strong>直擊痛點且具備落地可行性的高階決策備忘錄</strong>。</p>
+
+  <p><strong>2. 【個人習慣與心智管理】：打造專屬自我成長與職涯顧問</strong><br>
+  在進行個人年度回顧或職涯轉型時，不必再對著空白文件焦慮。利用 Claude Projects 建立「職涯躍升專案」，上傳你過去 3 年的專案成果、求職目標及理想主管的特質，設定指令：「<strong>請挑出我履歷中最平淡無奇的描述，並要求我提供具體數據來強化說服力</strong>」。這等於為自己<strong>全天候配備了一位頂尖獵頭顧問</strong>，隨時校準個人品牌定位。</p>
+
+  <p><strong>3. 【家庭教育與自學探索】：消除非本科生的「技術恐懼症」</strong><br>
+  陪伴孩子做科展專題或自己開展微型副業時，許多人常被「我不會寫程式」卡住。運用 Claude Code 的理念，你只需在視窗中描述需求：「我想做一個可以自動記錄全家每週閱讀時數並繪製成進度條的小工具」。<strong>將 AI 當作耐心無比的家教與技術夥伴</strong>，透過「做中學」帶著孩子一起觀察邏輯如何轉化為真實工具，徹底擺脫標籤束縛。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (關鍵行動指南)</h2>
+  <ul>
+    <li><strong>建立第一個專屬 Claude Project</strong>：為當前最重要的工作任務（如：新產品發布、求職轉職、財務規劃）建立獨立專案，上傳背景脈絡文件並<strong>設定專屬語氣與人設規範，停止在通用聊天視窗中每次從零開始</strong>。</li>
+    <li><strong>在下次提問時導入「反向訪談（Interview）」機制</strong>：在 Prompt 中加上一句：<strong>「在回答我的問題之前，請先向我提出 3 到 5 個關鍵問題以釐清背景」</strong>，體驗輸出品質的質變。</li>
+    <li><strong>建立本機「沙盒資料夾（Sandbox Folder）」</strong>：在電腦硬碟建立專用工作區，將需要處理的逐字稿、試算表歸檔其中，嘗試<strong>使用 Claude Cowork 進行多步驟的本地端自動化分析</strong>。</li>
+    <li><strong>練習「雙軌對話學習法」</strong>：在處理複雜任務時保持雙分頁運作——主分頁推進專案進度，<strong>次分頁隨時向 Claude 請教不懂的專業術語或功能操作</strong>，實踐「在飛行中組裝引擎」。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

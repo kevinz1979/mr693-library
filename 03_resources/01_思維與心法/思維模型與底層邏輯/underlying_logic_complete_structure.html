@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《底層邏輯》全書精華解析</title>
+    <style>
+        :root {
+            --bg-main: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --primary-navy: #0f172a;
+            --primary-blue: #1e40af;
+            --accent-blue-bg: #eff6ff;
+            --accent-blue-border: #bfdbfe;
+            --accent-green-bg: #f0fdf4;
+            --accent-green-border: #bbf7d0;
+            --accent-amber-bg: #fffbeb;
+            --accent-amber-border: #fef08a;
+            --accent-purple-bg: #faf5ff;
+            --accent-purple-border: #e9d5ff;
+            --accent-slate-bg: #f1f5f9;
+            --accent-slate-border: #cbd5e1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 20px 12px;
+        }
+
+        .container {
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        /* Top Header Card */
+        .top-banner {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            color: #ffffff;
+            padding: 24px 20px;
+            border-radius: 16px;
+            box-shadow: 0 10px 20px rgba(15, 23, 42, 0.15);
+            margin-bottom: 20px;
+        }
+
+        .top-banner .badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+        }
+
+        .top-banner h1 {
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .top-banner p {
+            font-size: 14.5px;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        /* Section Container Card */
+        .card-section {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-navy);
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border-bottom: 2px solid #f1f5f9;
+            padding-bottom: 8px;
+        }
+
+        /* Perspective 3-Column / Rows */
+        .perspective-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .p-card {
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .p-card.law { background: #f8fafc; border-color: #cbd5e1; }
+        .p-card.econ { background: #f0f9ff; border-color: #bae6fd; }
+        .p-card.biz { background: #f0fdf4; border-color: #bbf7d0; }
+
+        .p-title {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        .p-card.law .p-title { color: #334155; }
+        .p-card.econ .p-title { color: #0284c7; }
+        .p-card.biz .p-title { color: #16a34a; }
+
+        .p-desc {
+            font-size: 13.5px;
+            color: var(--text-muted);
+        }
+
+        /* 2x2 Matrix Grid */
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .m-card {
+            padding: 14px 16px;
+            border-radius: 12px;
+            border: 1px solid;
+        }
+
+        .m-card.fact { background: var(--accent-blue-bg); border-color: var(--accent-blue-border); }
+        .m-card.opinion { background: var(--accent-green-bg); border-color: var(--accent-green-border); }
+        .m-card.position { background: var(--accent-amber-bg); border-color: var(--accent-amber-border); }
+        .m-card.belief { background: var(--accent-purple-bg); border-color: var(--accent-purple-border); }
+
+        .m-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 6px;
+        }
+
+        .m-title {
+            font-size: 15px;
+            font-weight: 700;
+        }
+        .fact .m-title { color: #1e40af; }
+        .opinion .m-title { color: #166534; }
+        .position .m-title { color: #92400e; }
+        .belief .m-title { color: #6b21a8; }
+
+        .m-badge {
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+        .m-desc {
+            font-size: 13.5px;
+            color: #334155;
+            margin-bottom: 6px;
+        }
+
+        .m-example {
+            font-size: 12px;
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.6);
+            padding: 4px 8px;
+            border-radius: 6px;
+            color: #475569;
+        }
+
+        .warning-box {
+            background: #f8fafc;
+            border-left: 4px solid #64748b;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 13px;
+            color: #334155;
+            margin-top: 12px;
+        }
+
+        /* List Items */
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-item {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            font-size: 13.5px;
+            color: #334155;
+        }
+
+        .feature-item::before {
+            content: "•";
+            position: absolute;
+            left: 4px;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        /* Action Steps */
+        .step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .step-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            background: #f8fafc;
+            padding: 12px 14px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .step-num {
+            background: var(--primary-blue);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-content {
+            font-size: 13.5px;
+            color: #334155;
+        }
+
+        /* Footer Summary Card */
+        .footer-banner {
+            background: #1e293b;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 14px;
+            text-align: center;
+        }
+
+        .footer-banner h3 {
+            font-size: 16px;
+            color: #38bdf8;
+            margin-bottom: 6px;
+        }
+
+        .footer-banner p {
+            font-size: 13px;
+            color: #cbd5e1;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 600px) {
+            body { padding: 12px 8px; }
+            .top-banner { padding: 18px 16px; }
+            .top-banner h1 { font-size: 20px; }
+            .card-section { padding: 16px 14px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Top Banner: Core Takeaways -->
+    <div class="top-banner">
+        <span class="badge">書籍精華整理</span>
+        <h1>《底層邏輯》看清事物本質的思考指南</h1>
+        <p><b>一句話總結：</b>面對變幻莫測的世界，唯有找到那些「變中的不變」，才能看清事物的本質。這不是教你明天賺大錢的工具書，而是幫大腦重裝作業系統的思考指南。</p>
+    </div>
+
+    <!-- Section 1: 5 Dimensions Overview -->
+    <div class="card-section">
+        <div class="section-header">
+            <div class="section-title">📌 全書五大核心維度概覽</div>
+        </div>
+        <p style="font-size: 13.5px; color: #475569; margin-bottom: 12px;">劉潤為讀者建構的一套清晰思維系統：</p>
+        <ul class="feature-list">
+            <li class="feature-item"><b>是非對錯的底層邏輯：</b>切換不同視角，看待問題的格局與解決方式會截然不同。</li>
+            <li class="feature-item"><b>思考問題的底層邏輯：</b>精準區分事實、觀點、立場、信仰，避免踩坑與無意義爭辯。</li>
+            <li class="feature-item"><b>個體進化的底層邏輯：</b>把時間與能力化為槓桿，以「經營公司」的心態放大人生職涯高度。</li>
+            <li class="feature-item"><b>理解他人與社會協作：</b>商業本質是平等交換，建立清晰邊界感與利益分配機制是長期合作基礎。</li>
+            <li class="feature-item"><b>理解技能背後的運作機制：</b>看完本書不代表不需要學習具體技能，而是能理解技能背後的本質。</li>
+        </ul>
+    </div>
+
+    <!-- Section 2: 3 Perspectives on Right and Wrong -->
+    <div class="card-section">
+        <div class="section-title">⚖️ 1. 是非對錯的底層邏輯（三種視角）</div>
+        <p style="font-size: 13.5px; color: #475569;">同樣一件壞事發生，切換不同視角，結果截然不同：</p>
+        <div class="perspective-grid">
+            <div class="p-card law">
+                <div class="p-title">法官視角</div>
+                <div class="p-desc"><b>看法律：</b>專注於規則、道德與誰違法，判定是非對錯。</div>
+            </div>
+            <div class="p-card econ">
+                <div class="p-title">經濟學家視角</div>
+                <div class="p-desc"><b>看社會成本：</b>關注誰防止損失的成本最低，以優化整體社會效率。</div>
+            </div>
+            <div class="p-card biz">
+                <div class="p-title">商人視角</div>
+                <div class="p-desc"><b>看個體損失：</b>專注於誰在事件中遭受實際損失，並主動採取防範行動。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3: Fact, Opinion, Position, Belief -->
+    <div class="card-section">
+        <div class="section-title">🎯 2. 思考問題的底層邏輯（4 大區分）</div>
+        <p style="font-size: 13.5px; color: #475569;">一般人最常踩坑的地方，必須精準區分：</p>
+        
+        <div class="matrix-grid">
+            <div class="m-card fact">
+                <div class="m-header">
+                    <span class="m-title">事實 (Fact)</span>
+                    <span class="m-badge">客觀存在</span>
+                </div>
+                <div class="m-desc">客觀存在，不容爭辯。</div>
+                <div class="m-example">例：今天溫度 15 度</div>
+            </div>
+
+            <div class="m-card opinion">
+                <div class="m-header">
+                    <span class="m-title">觀點 (Opinion)</span>
+                    <span class="m-badge">主觀看法</span>
+                </div>
+                <div class="m-desc">個人對事實的看法。</div>
+                <div class="m-example">例：今天好冷</div>
+            </div>
+
+            <div class="m-card position">
+                <div class="m-header">
+                    <span class="m-title">立場 (Position)</span>
+                    <span class="m-badge">利益決定</span>
+                </div>
+                <div class="m-desc">被利益或身分決定的看法。</div>
+                <div class="m-example">例：物業公司說今天天氣剛剛好</div>
+            </div>
+
+            <div class="m-card belief">
+                <div class="m-header">
+                    <span class="m-title">信仰 (Belief)</span>
+                    <span class="m-badge">內部體系</span>
+                </div>
+                <div class="m-desc">邏輯無法說服的內部體系。</div>
+                <div class="m-example">例：個人價值與宗教信念</div>
+            </div>
+        </div>
+
+        <div class="warning-box">
+            <b>💡 避坑關鍵：</b>分不清這四者，人就容易掉入無意義的爭辯中。
+        </div>
+    </div>
+
+    <!-- Section 4: Individual Evolution & Collaboration -->
+    <div class="card-section">
+        <div class="section-title">🚀 3 & 4. 個體進化與社會協作</div>
+        <ul class="feature-list">
+            <li class="feature-item">
+                <b>經營名為自己的公司：</b>職場人要學會把時間與能力化為槓桿。運用能力、提高效率，並透過<b>資本</b>或<b>團隊</b>進行放大，決定職涯高度。
+            </li>
+            <li class="feature-item">
+                <b>商業本質是平等交換：</b>不論建立人脈或團隊管理，建立<b>清晰邊界感</b>與理解<b>利益分配機制</b>，才是實現長期合作的基礎。
+            </li>
+        </ul>
+    </div>
+
+    <!-- Section 5: Practical Action Flow -->
+    <div class="card-section">
+        <div class="section-title">💡 實踐應用：會議與日常溝通落地流程</div>
+        <div class="step-list">
+            <div class="step-card">
+                <div class="step-num">1</div>
+                <div class="step-content"><b>聽發言：</b>當有人拿「底層邏輯」作為發言或溝通口頭禪時。</div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">2</div>
+                <div class="step-text step-content"><b>過濾觀點：</b>不被對方表面說的「主觀觀點」所迷惑。</div>
+            </div>
+            <div class="step-card">
+                <div class="step-num">3</div>
+                <div class="step-text step-content"><b>洞察本質：</b>直擊背後的<b>客觀事實</b>與<b>利益立場</b>，看清問題真正本質。</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Summary Card -->
+    <div class="footer-banner">
+        <h3>🧠 大腦作業系統升級完成</h3>
+        <p>理解技能背後的運作機制，掌握變中的不變，看清事物本質。</p>
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <title>AI 反問法實用範例與技巧</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #22d3ee;
+      --accent-2: #a78bfa;
+      --border: #1f2937;
+      --code-bg: #0b1220;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background: linear-gradient(135deg, #0b1021 0%, #0f172a 100%);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 24px 16px 64px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: 0.3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: rgba(17, 24, 39, 0.7);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 20px;
+      margin-bottom: 22px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      margin-bottom: 12px;
+      color: #f3f4f6;
+    }
+
+    h3 {
+      font-size: 1.05rem;
+      margin: 18px 0 8px;
+      color: #f9fafb;
+    }
+
+    p {
+      margin-bottom: 10px;
+      color: #d1d5db;
+    }
+
+    ul, ol {
+      margin: 10px 0 10px 18px;
+      color: #d1d5db;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .highlight {
+      background: linear-gradient(90deg, rgba(34,211,238,0.12), rgba(167,139,250,0.12));
+      border-left: 3px solid var(--accent);
+      padding: 14px 14px;
+      border-radius: 10px;
+      margin: 14px 0;
+    }
+
+    .highlight strong {
+      color: #f9fafb;
+    }
+
+    .prompt-box {
+      background: var(--code-bg);
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 14px 14px;
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.9rem;
+      color: #e2e8f0;
+      white-space: pre-wrap;
+      overflow-x: auto;
+      margin: 12px 0;
+      line-height: 1.5;
+    }
+
+    .tips {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .tip-item {
+      background: rgba(30, 41, 59, 0.55);
+      border: 1px solid #1f2937;
+      border-radius: 10px;
+      padding: 12px 12px;
+      font-size: 0.92rem;
+    }
+
+    .tip-title {
+      font-weight: 700;
+      color: #f3f4f6;
+      margin-bottom: 4px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 28px;
+    }
+
+    @media (min-width: 768px) {
+      .tips {
+        grid-template-columns: 1fr 1fr;
+      }
+      body {
+        padding-top: 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>AI 反問法實用範例與技巧</h1>
+      <p class="subtitle">
+        在 AI 給答案之前，先讓它向你提問，把模糊的需求逼成清楚、可執行的規格。
+      </p>
+    </header>
+
+    <section class="card">
+      <h2>核心概念</h2>
+      <p>
+        AI「反問法」很簡單：<strong>在 AI 給答案之前，先讓它向你提問</strong>，透過一連串精準問題，把你的想法從模糊變成清晰。
+      </p>
+      <div class="highlight">
+        <strong>好處：</strong>減少來回修改、避免 AI 猜錯方向、讓產出更貼近你的真實需求。
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>一、基礎版：一句話啟動反問</h2>
+      <p>適合：任何你覺得「好像講不太清楚」的任務。</p>
+
+      <h3>範例提示詞</h3>
+      <div class="prompt-box">我想請你幫我［任務，例如：規劃一個為期三天的台北小旅行］。
+在你給我完整方案之前，請先問我 3–5 個關鍵問題，確保你了解我的需求。
+等我回答完，你再開始產出完整內容。</div>
+
+      <h3>小技巧</h3>
+      <div class="tips">
+        <div class="tip-item">
+          <div class="tip-title">明確寫出問題數量</div>
+          例如：「請先問我 3–5 個關鍵問題」或英文「ask me 3–5 clarifying questions first」。
+        </div>
+        <div class="tip-item">
+          <div class="tip-title">要求先問再執行</div>
+          加上「等我回答完，你再開始產出完整內容」，避免 AI 一邊問一邊就給答案。
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>二、進階版：理解 → 反問 → 規劃 → 執行</h2>
+      <p>適合：企劃、報告、學習計畫、產品設計等較複雜任務。</p>
+
+      <h3>範例提示詞</h3>
+      <div class="prompt-box">我要［任務：例如：為 25–35 歲受眾寫一份永續時尚行銷企劃］。
+在我要求你執行任務之前，請不要直接產出最終結果，依序做以下四件事：
+1. 用兩句話總結你對這個任務目標與受眾的理解。
+2. 列出至少 3 個你認為目前資訊不足、需要我確認的關鍵問題。
+3. 列出你準備採用的執行步驟或邏輯架構（例如：市場分析→受眾洞察→訊息策略→渠道規劃）。
+4. 回覆完以上三點後暫停，等我確認或回答問題後，再開始撰寫正式內容。</div>
+
+      <h3>小技巧</h3>
+      <div class="tips">
+        <div class="tip-item">
+          <div class="tip-title">先要「摘要理解」</div>
+          讓 AI 先用 1–2 句總結它對任務的理解，你可以立刻看出是否誤解。
+        </div>
+        <div class="tip-item">
+          <div class="tip-title">要求先給架構</div>
+          請 AI 列出「執行步驟／架構」，等於先給大綱，再細化內容。
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>三、學習與思考：蘇格拉底式反問</h2>
+      <p>適合：想真正搞懂一個主題，而不是只要結論。</p>
+
+      <h3>範例提示詞</h3>
+      <div class="prompt-box">我想深入理解［主題：例如：為什麼要分散投資］。
+請用蘇格拉底式提問的方式，一次只問我一個問題，引導我逐步思考這個主題。
+不要直接給我答案，而是透過提問幫我釐清概念、假設與結論。</div>
+
+      <h3>小技巧</h3>
+      <div class="tips">
+        <div class="tip-item">
+          <div class="tip-title">一次只問一個問題</div>
+          加上「一次只問我一個問題」，避免一次丟一堆問題造成壓力。
+        </div>
+        <div class="tip-item">
+          <div class="tip-title">指定角色</div>
+          可以說：「請扮演我的專屬家教／教練」，讓語氣更貼近學習情境。
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>四、決策與審視：讓 AI 當審查者／投資人</h2>
+      <p>適合：創業構想、職涯選擇、重大決策。</p>
+
+      <h3>範例提示詞</h3>
+      <div class="prompt-box">我有一個［構想：例如：做一個針對學生的二手書平台］。
+請扮演我的投資人，從「市場規模、商業模式、競爭優勢、風險」四個面向，向我提出尖銳問題。
+一次問一個問題，等我回答後再問下一個。
+最後幫我做一份簡短的「投資決策備忘錄」，列出你仍有的疑慮與建議。</div>
+
+      <h3>小技巧</h3>
+      <div class="tips">
+        <div class="tip-item">
+          <div class="tip-title">指定角色</div>
+          投資人、主管、客戶、審查委員等角色，會讓 AI 的提問角度更犀利。
+        </div>
+        <div class="tip-item">
+          <div class="tip-title">要求產出文件</div>
+          請 AI 最後產出「決策備忘錄／風險清單」，把對話收斂成可參考文件。
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>五、內容創作：先問清楚再寫稿</h2>
+      <p>適合：文章、貼文、簡報、影片腳本等。</p>
+
+      <h3>範例提示詞</h3>
+      <div class="prompt-box">我想請你幫我寫［內容類型：例如：一篇 LinkedIn 貼文］，主題是［主題］。
+在正式寫作前，請先問我 4 個問題，包含：
+- 目標受眾是誰？
+- 我希望讀者看完後做什麼行動？
+- 語氣要偏專業還是親切？
+- 有沒有不能提到或一定要提到的點？
+等我回答完，你再開始寫初稿。</div>
+
+      <h3>小技巧</h3>
+      <div class="tips">
+        <div class="tip-item">
+          <div class="tip-title">列出缺失資訊方向</div>
+          直接指定反問方向：受眾、目的、語氣、禁忌，避免 AI 問得太泛。
+        </div>
+        <div class="tip-item">
+          <div class="tip-title">後續微調三句</div>
+          若覺得不夠好，可用「澄清問題 → 補充情境 → 指定格式」三句追問來微調。
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>六、讓反問更有效的幾個小技巧</h2>
+      <div class="tips">
+        <div class="tip-item">
+          <div class="tip-title">控制問題數量</div>
+          通常 3–5 個就夠，太多會拖慢進度。
+        </div>
+        <div class="tip-item">
+          <div class="tip-title">要求問題具體</div>
+          可以加一句「問題要具體、可回答，避免太抽象」。
+        </div>
+        <div class="tip-item">
+          <div class="tip-title">設定優先順序</div>
+          例如「先問跟目標受眾和預算相關的問題，再問風格偏好」。
+        </div>
+        <div class="tip-item">
+          <div class="tip-title">提供範例答案（可選）</div>
+          若你希望 AI 知道你想回答多細，可以給一個示範：「例如：預算可回答『每人 5000 元以內』」。
+        </div>
+        <div class="tip-item">
+          <div class="tip-title">避免反問已知資訊</div>
+          如果你已經在提示詞寫很清楚，可以加一句「不要問我剛剛已經說過的資訊」。
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>可直接複製的通用模板</h2>
+      <p>遇到需要釐清需求的任務時，可以直接套用：</p>
+      <div class="prompt-box">我要請你幫我完成以下任務：［簡述任務］
+背景與限制：［受眾、時間、預算、資源等，能寫多少寫多少］
+
+在你開始正式產出之前，請先做三件事：
+1. 用 1–2 句話總結你對這個任務的理解。
+2. 提出 3–5 個你認為最關鍵、但目前資訊不足的問題，幫我釐清需求。
+3. 簡短說明你之後打算如何執行這個任務（步驟或架構）。
+
+請在回覆完以上三點後暫停，等我回答你的問題並確認後，再開始產出完整內容。</div>
+    </section>
+
+    <footer>
+      這份文件可在任何現代瀏覽器與多數平台直接開啟檢視，也可存成書籤或筆記備用。
+    </footer>
+  </div>
+</body>
+</html>

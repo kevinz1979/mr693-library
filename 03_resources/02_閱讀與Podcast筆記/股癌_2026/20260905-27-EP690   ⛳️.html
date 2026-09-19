@@ -1,0 +1,179 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EP690   ⛳️</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>EP690   ⛳️</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                </div>
+            </div>
+            
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li><strong>Google 與 Marvell 達成商業協議，標誌雲端巨頭加速轉向 COT（Customer-Owned Tooling）模式</strong>：Marvell 提供 TPU 周邊附加晶片（如 AI 推論晶片、記憶體控制器、NIC 等），並給予 Google 以每股約 206.8 美元認購約 7% 流通股的認股權證（至 2033 年底歸屬）；此舉顯示 Google 決心自行掌控主晶片設計與關鍵料件採購，降低對單一 Turnkey 廠商的依賴。</li>
+    <li><strong>ASIC 產業結構重組，博通（Broadcom）利空但其餘 IC 設計夥伴迎來利多</strong>：博通過去靠 Turnkey 統包（含 HBM 加價）賺取超額毛利的模式將被壓縮；但對聯發科（MTK）、Marvell 等設計服務夥伴而言，Google 開出更多周邊晶片新案（如代號 Frozen 的搜尋引擎專用特殊晶片，預估量級約在百萬顆），<strong>ASIC 總體潛在市場（TAM）實際上正在擴大而非縮減</strong>。</li>
+    <li><strong>紅酒投資與品飲的邊際效益遞減法則</strong>：Pinot Noir（黑皮諾）超過 1 萬至 1.5 萬元新台幣、Cabernet Sauvignon 超過 3.5 萬元後，<strong>價格主要是購買歷史文化與品牌符號而非實用性</strong>；推薦關注兼具品質與性價比的酒莊如 Hubert Lamy 或新世界產區，數千元即可達到盲飲高等級的水準。</li>
+    <li><strong>交易員「抱過一座山」的解法在於機械化均線停利</strong>：具備優秀買點直覺但缺乏賣點紀律的投資人，<strong>最有效且單純的出場機制即是設定「跌破 10 日線或月線」分批停利</strong>，無需過度糾結複雜的基本面預測。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p><strong>半導體與 ASIC 產業趨勢</strong>：本週市場核心聚焦於 Google 與 Marvell 的合作。Google 藉由提供認股權證換取 Marvell 針對 TPU 生態系周邊晶片的設計支援。這項合作並未侵蝕既有聯發科（處理 TPU V8/V9 之 I/O、SerDes、記憶體介面與 Intel 投片）或博通的主晶片（Main Die）既定路線，而是開拓了如 AI Overview 搜尋專用的專屬晶片（如代號 Frozen，量級約百萬顆）。<strong>此事件確立了 Google 全面走向 COT（客戶自主掌握設計、光罩與投片）的戰略決心</strong>，雖然壓縮了博通高毛利 Turnkey 的暴利空間，但因 Google 積極跨入雲端算力與硬體自研，開案量大幅提升，對整體 IC 設計服務業者反而是長線利多。</p>
+  <p><strong>盤勢與交易心理</strong>：當前盤面呈現震盪盤整與慢速墊高格局，市場專門修理追逐漲停的短線動能交易，但多數基本面良好的標的已逐步站上 5 日線並修復跌幅。面對全職投資的挑戰，<strong>全職交易並非沒有老闆的自由生活，而是直接面對市場波動帶來的巨大心理壓力</strong>。針對交易者容易面臨「買在最低點卻一路抱到獲利回吐」的困境，關鍵在於放棄主觀賣點執念，改採<strong>跌破 10 日均線或月線即分批（如 3 成至 5 成）出場的紀律化策略</strong>。</p>
+  <p><strong>生活風格與精緻品味</strong>：在影視方面，強烈推薦科幻電影《極限返航》（Project Hail Mary），其劇本與情感張力足以與《星際效應》（Interstellar）平起平坐。在葡萄酒品飲領域，勃根地 Pinot Noir 價格炒作劇烈，但若透過深入研究，可發現如 <strong>Hubert Lamy</strong> 落在 2,000 至 5,000 元新台幣的品項，盲飲品質即可媲美十萬元等級的膜拜酒。消費在跨過一定價格門檻後，追求的本質已轉變為文化與自我滿足，無需在消費選擇上互相爭奪優越感。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (關鍵行動)</h2>
+  <ul>
+    <li><strong>投資人檢視 ASIC/IC 設計持股邏輯</strong>：重新評估受 Google COT 趨勢影響的供應鏈標的，<strong>區分「高毛利 Turnkey 模式受侵蝕者（如 Broadcom）」與「受益於開案量大增的設計服務/IP 業者（如 MTK、Marvell、世芯、創意等）」</strong>，避免因市場短期情緒錯殺優質夥伴。</li>
+    <li><strong>建立嚴格的賣出停利紀律</strong>：針對「擅長抓進場點卻常抱上抱下」的交易部位，<strong>強制執行「跌破 10 日線出場 30%–50%」、「跌破月線全數清倉」的交易準則</strong>，鎖定波段利潤。</li>
+    <li><strong>未上市員工認股評估</strong>：若所屬公司具備高頻/射頻（RF）利基競爭力、營收持續成長且被具實力的母公司收購，<strong>在不影響日常開銷的閒置資金（如 30% 至全額餘裕）前提下，應積極把握上市前的認股增值機會</strong>。</li>
+    <li><strong>全職投資轉職準備</strong>：有意轉向全職交易的專業人士（如律師、工程師），應先建立<strong>至少覆蓋 1 至 2 年生活費的非交易流動資金緩衝</strong>，以抵禦行情低迷與資產回檔時的生計壓力。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

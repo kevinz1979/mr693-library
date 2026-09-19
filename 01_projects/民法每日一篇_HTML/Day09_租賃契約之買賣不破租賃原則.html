@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>民法精解 - Day 09: 租賃契約之買賣不破租賃原則</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .answer-feedback {
+            display: none;
+        }
+        .correct {
+            background-color: #d4edda !important; /* Light green */
+            color: #155724 !important;
+        }
+        .incorrect {
+            background-color: #f8d7da !important; /* Light red */
+            color: #721c24 !important;
+        }
+        .selected {
+            border-color: #3b82f6 !important; /* Blue */
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <div class="flex justify-between items-center mb-6">
+            <a href="index.html" class="text-blue-600 hover:underline font-semibold flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i> 返回民法知識庫總覽
+            </a>
+            <span class="text-sm font-medium text-gray-600 bg-blue-100 px-3 py-1 rounded-md">
+                債編
+            </span>
+        </div>
+
+        <h1 class="text-4xl font-bold text-center mb-8 text-blue-800">
+            Day 09: 租賃契約之買賣不破租賃原則
+        </h1>
+        <p class="text-xl text-center text-gray-700 mb-12">
+            §425 | 讓渡無礙，契約有效，保護你我權益！
+        </p>
+
+        <!-- Section 1: The Scenario -->
+        <section class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold text-blue-700">
+                    <i class="fas fa-lightbulb mr-2"></i> 經典案例情境：老王的小吃攤
+                </h2>
+                <button id="toggleScenarioBtn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded flex items-center">
+                    <i id="toggleIcon" class="fas fa-chevron-down mr-2"></i> 展開解答
+                </button>
+            </div>
+            <div id="scenarioContent" class="text-gray-700 space-y-4">
+                <p>
+                    王老闆在市中心經營一家生意興隆的小吃攤，租賃店面已有五年，與房東李先生簽有長期租賃契約，且租期尚未屆滿。王老闆為了永續經營，投入了大量資金重新裝潢店面，並購置了全新的設備。
+                </p>
+                <p>
+                    然而，在一年前，李先生因為個人財務狀況急需資金，遂將該店面出售給了陳太太。陳太太買下店面後，認為租賃契約將於年底到期，便急著要求王老闆搬離，並告知王老闆她的購買權利優於王老闆的租賃權，要求王老闆立即騰空房屋。
+                </p>
+                <p>
+                    王老闆感到非常錯愕，他的小吃攤生意穩定，若被迫搬離，將面臨鉅額的損失。他向您諮詢，他是否必須搬離？他的權益該如何保障？
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: IRAC Method -->
+        <section class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">
+                <i class="fas fa-balance-scale mr-2"></i> 三段論法 (IRAC) 拆解
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200 border border-gray-300 rounded-lg">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/3">
+                                <span class="font-bold">I - Issue (法律爭點)</span>
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/3">
+                                <span class="font-bold">R - Rule (法律規範)</span>
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/3">
+                                <span class="font-bold">A - Application (事實適用)</span>
+                            </th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/3">
+                                <span class="font-bold">C - Conclusion (結論法律效果)</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                租賃期間，出租人將租賃物所有權讓與第三人時，原租賃契約對受讓人是否繼續有效？
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                                <p class="font-semibold">民法第 425 條（買賣不破租賃原則）</p>
+                                <p>出租人於租賃物交付後，就其所有物為第三人設定抵押權或因其他類似行為，致不能為租賃物之使用收益者，承租人得請求出租人負擔無益之費用。</p>
+                                <p>租賃物因出賣、讓與或為其他方式移轉所有權於第三人時，租賃契約於有左列情形之一者，Notwithstanding 繼續存在：</p>
+                                <p>一、動產租賃，其占有之讓與，係在依第七百六十七條第一項規定，推定所有權移轉時，為依第七百六十七條第二項之規定，占有已依第七百七十一條之規定，占有之讓與，係在依第七百六十七條第一項規定，推定所有權移轉時，為依第七百六十七條第二項之規定，占有已依第七百七十一條之規定，為有效者。</p>
+                                <p>二、不動產租賃，租賃契約已登記者。</p>
+                                <p>（註：本題主要適用於不動產租賃，故依學說及實務見解，不動產未經登記之租賃，若符合「出租人與承租人約定，由承租人就租賃物取得占有，且已有占有，並有支付租金之約定」者，亦有買賣不破租賃原則之適用，此即通稱之「占有改定」或「無不動產登記之買賣不破租賃」。）</p>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                                <p>1. 租賃物為不動產（小吃攤店面）。</p>
+                                <p>2. 租賃契約有效成立，且租賃物已交付予承租人王老闆（租賃期間已有五年，租期尚未屆滿）。</p>
+                                <p>3. 出租人李先生已將所有權移轉予第三人陳太太。</p>
+                                <p>4. （關鍵點）不動產租賃契約，雖未經登記，但依實務見解，若符合「出租人與承租人約定，由承租人就租賃物取得占有，且已有占有，並有支付租金之約定」者，即已具備買賣不破租賃原則之適用基礎，王老闆已實際占有並使用店面五年，並支付租金。</p>
+                            </td>
+                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-700">
+                                <p>陳太太受讓該店面之所有權後，該不動產租賃契約對於陳太太繼續存在，王老闆得繼續依原租賃契約使用收益該店面，直至租期屆滿為止。陳太太主張其買賣權優於租賃權而要求王老闆搬離，於法無據。</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 3: Life & Workplace Self-Protection -->
+        <section class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">
+                <i class="fas fa-shield-alt mr-2"></i> 生活與職場防禦錦囊
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-blue-50 border border-blue-200 p-4 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-bold text-blue-800 mb-2">房東/出賣人 (出租者)</h3>
+                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                        <li>出租不動產前，應確認自身所有權是否穩固。</li>
+                        <li>若有出售意願，應提前告知承租人，協商租約處理方式。</li>
+                        <li>避免與承租人約定「無租賃登記」但又希望享有類似租賃權益之模糊地帶，以免日後爭議。</li>
+                    </ul>
+                </div>
+                <div class="bg-green-50 border border-green-200 p-4 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-bold text-green-800 mb-2">買家 (承接不動產者)</h3>
+                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                        <li>購買不動產前，務必詳查現有租賃狀況。</li>
+                        <li>若有租賃，可要求賣方提供租賃契約，確認租期、租金及其他約定。</li>
+                        <li>若欲購買之標的物有未登記之長期租約，應審慎評估，確保權益不受影響，或與賣方協調排除租賃。</li>
+                    </ul>
+                </div>
+                <div class="bg-yellow-50 border border-yellow-200 p-4 rounded-lg shadow-sm">
+                    <h3 class="text-lg font-bold text-yellow-800 mb-2">承租人 (租用者)</h3>
+                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                        <li>簽訂長期不動產租賃契約時，若租期超過五年，強烈建議辦理「預告登記」或「租賃權登記」，以強化權益保障。</li>
+                        <li>即使未登記，也要確保租賃契約明確，並實際占有使用標的物，且有支付租金的紀錄，以符合實務上「占有」之要件。</li>
+                        <li>若房東出售房屋，應主動告知買家租賃權益，並告知其租賃契約內容。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: Underlying Logic Model -->
+        <section class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-blue-700 mb-4">
+                <i class="fas fa-lightbulb-on mr-2"></i> 底層思維模型：風險分配與交易成本
+            </h2>
+            <div class="text-gray-700 space-y-4">
+                <p>
+                    「買賣不破租賃」原則，看似保護承租人，實則是在權衡不同法律關係下的風險與成本。
+                </p>
+                <p>
+                    <strong>法律經濟學觀點：</strong>
+                    這個原則旨在降低交易成本，並將風險更有效地分配給最能承受或最能預防風險的一方。
+                    <ul>
+                        <li><strong>對承租人：</strong> 確保其對租賃物的使用收益權不受房東單方面變更所有權影響，避免因臨時搬遷造成的巨大經濟損失（例如：裝潢、設備、商譽等沉沒成本）。</li>
+                        <li><strong>對買家：</strong> 買家在購買不動產時，應將「現有租賃」納入其盡職調查（Due Diligence）的一部分。如果買家在購買前未能審慎調查，導致購買到帶有長期租約的標的物，此風險即由買家自行承擔。這鼓勵買家在交易前進行更 thorough 的調查，降低其未來因承租人問題而產生的法律成本和營運中斷成本。</li>
+                        <li><strong>對出租人/賣家：</strong> 雖然賣家無法隨意終止租約，但他在決定出售時，其實可以預見此點，並在議價時將租約狀況反映在售價上。</li>
+                    </ul>
+                </p>
+                <p>
+                    <strong>風險分配邏輯：</strong>
+                    此原則將「承租人因租賃契約所投入的改良或期待利益」的風險，從承租人轉移給「有能力在購買前進行更周全調查並預見風險」的買家。這是一種效率導向的風險分配，認為買家在不動產交易中的資訊不對稱程度相對較低，且其專業能力與資源通常優於個別承租人。
+                </p>
+                <p>
+                    <strong>為何需要登記或占有？</strong>
+                    登記或占有，是承租人權益公開化、對抗第三人的重要方式。登記是物權行為的公示，占有則是對物的事實支配。這兩者都讓第三人在交易時，更容易知悉承租人的存在及其權益，從而降低「資訊不對稱」造成的風險。
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 5: Interactive Quiz -->
+        <section class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold text-blue-700 mb-6">
+                <i class="fas fa-question-circle mr-2"></i> 牛刀小試・考點隨堂測驗
+            </h2>
+            <div class="space-y-6">
+                <!-- Question 1 -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200">
+                    <p class="font-semibold text-lg mb-3">1. 關於民法第 425 條「買賣不破租賃」原則，下列敘述何者正確？</p>
+                    <div class="grid grid-cols-1 gap-3">
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="B">
+                            A. 僅適用於不動產租賃，動產租賃不適用。
+                        </button>
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="B">
+                            B. 不動產租賃，縱未辦理租賃權登記，但已合法占有並支付租金者，買賣後租賃契約對買受人仍繼續存在。
+                        </button>
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="B">
+                            C. 出租人於租賃物交付後，將所有權設定抵押權，買賣不破租賃原則即不適用。
+                        </button>
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="B">
+                            D. 買受人若於購買前不知有租賃存在，則不受租賃契約拘束。
+                        </button>
+                    </div>
+                    <div class="answer-feedback mt-4 p-3 rounded-lg text-sm font-medium hidden"></div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200">
+                    <p class="font-semibold text-lg mb-3">2. 小明承租甲公司廠房用於生產，租期五年。兩年後，甲公司將廠房出售給乙公司。此時，小明與乙公司之間的租賃關係，依據「買賣不破租賃」原則，下列敘述何者正確？</p>
+                    <div class="grid grid-cols-1 gap-3">
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="C">
+                            A. 乙公司可以立即要求小明搬離，不受租賃契約拘束。
+                        </button>
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="C">
+                            B. 小明必須補辦租賃權登記，否則契約對乙公司無效。
+                        </button>
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="C">
+                            C. 乙公司應繼續履行原租賃契約，直至租期屆滿。
+                        </button>
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="C">
+                            D. 小明可要求甲公司賠償因搬遷造成的損失。
+                        </button>
+                    </div>
+                    <div class="answer-feedback mt-4 p-3 rounded-lg text-sm font-medium hidden"></div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200">
+                    <p class="font-semibold text-lg mb-3">3. 關於不動產租賃權的登記，下列敘述何者正確？</p>
+                    <div class="grid grid-cols-1 gap-3">
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="A">
+                            A. 依民法第 425 條之規定，不動產租賃契約辦理登記，是租賃契約對抗第三人的重要方式。
+                        </button>
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="A">
+                            B. 租賃期間超過五年的不動產租賃，依法必須辦理登記。
+                        </button>
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="A">
+                            C. 未經登記的不動產租賃，一旦出租人將所有權移轉，承租人權益即完全喪失。
+                        </button>
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="A">
+                            D. 只有租期超過五年的不動產租賃，才得以申請登記。
+                        </button>
+                    </div>
+                    <div class="answer-feedback mt-4 p-3 rounded-lg text-sm font-medium hidden"></div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="bg-gray-50 p-4 rounded-lg shadow-inner border border-gray-200">
+                    <p class="font-semibold text-lg mb-3">4. 承租人小陳簽訂了一份為期三年之店面租賃契約，並已依約交付租金並實際占有使用。若出租人甲先生在租約期間將店面賣給乙先生，關於小陳的權益，下列何者最貼近「買賣不破租賃」原則的意旨？</p>
+                    <div class="grid grid-cols-1 gap-3">
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="D">
+                            A. 小陳必須搬離，因為乙先生是新所有權人。
+                        </button>
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="D">
+                            B. 小陳可要求甲先生賠償所有損失，但乙先生可以要求其搬離。
+                        </button>
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="D">
+                            C. 小陳必須重新與乙先生簽訂租賃契約，否則不能繼續使用。
+                        </button>
+                        <button class="quiz-option btn border border-gray-300 p-3 rounded-lg text-left hover:bg-gray-100" data-answer="D">
+                            D. 乙先生應繼續承受原租賃契約，小陳可繼續使用至租期屆滿。
+                        </button>
+                    </div>
+                    <div class="answer-feedback mt-4 p-3 rounded-lg text-sm font-medium hidden"></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        // Toggle Section JS
+        document.getElementById('toggleScenarioBtn').addEventListener('click', function() {
+            const scenarioContent = document.getElementById('scenarioContent');
+            const toggleIcon = document.getElementById('toggleIcon');
+            if (scenarioContent.classList.contains('hidden')) {
+                scenarioContent.classList.remove('hidden');
+                toggleIcon.classList.remove('fa-chevron-down');
+                toggleIcon.classList.add('fa-chevron-up');
+            } else {
+                scenarioContent.classList.add('hidden');
+                toggleIcon.classList.remove('fa-chevron-up');
+                toggleIcon.classList.add('fa-chevron-down');
+            }
+        });
+
+        // Quiz Check Answer JS
+        function checkAnswer(button, correctAnswer) {
+            const options = button.closest('.grid').querySelectorAll('.quiz-option');
+            const feedbackDiv = button.closest('.bg-gray-50').querySelector('.answer-feedback');
+            let correctButton = null;
+
+            options.forEach(option => {
+                option.classList.remove('selected');
+                option.classList.remove('correct');
+                option.classList.remove('incorrect');
+                option.disabled = true; // Disable further interaction after selection
+
+                if (option.getAttribute('data-answer') === correctAnswer) {
+                    correctButton = option;
+                }
+            });
+
+            if (button.getAttribute('data-answer') === correctAnswer) {
+                button.classList.add('selected', 'correct');
+                feedbackDiv.innerHTML = '<i class="fas fa-check-circle mr-2"></i> 答對了！此選項符合「買賣不破租賃」原則的意旨，因為即使不動產所有權變更，合法占有並有支付租金約定的租賃契約，原則上對新所有權人依然繼續存在。';
+                feedbackDiv.classList.remove('hidden');
+                feedbackDiv.classList.add('bg-green-100', 'text-green-800');
+            } else {
+                button.classList.add('selected', 'incorrect');
+                if (correctButton) {
+                    correctButton.classList.add('correct');
+                }
+                feedbackDiv.innerHTML = `<i class="fas fa-times-circle mr-2"></i> 答錯了。`;
+                feedbackDiv.classList.remove('hidden');
+                feedbackDiv.classList.add('bg-red-100', 'text-red-800');
+
+                // Provide specific feedback based on the question and selected answer
+                const questionNumber = button.closest('.bg-gray-50').querySelector('p').innerText.split('.')[0];
+                switch (questionNumber) {
+                    case '1':
+                        if (button.getAttribute('data-answer') === 'B') {
+                            feedbackDiv.innerHTML += ' 正確答案為 B。民法第 425 條原則涵蓋了未登記但已合法占有且支付租金之不動產租賃。';
+                        } else if (button.getAttribute('data-answer') === 'A') {
+                            feedbackDiv.innerHTML += ' 關於動產租賃，法律有特別規定（§425-1），但第 425 條主要處理不動產。';
+                        } else if (button.getAttribute('data-answer') === 'C') {
+                            feedbackDiv.innerHTML += ' 設定抵押權與買賣不破租賃是不同概念，抵押權設定本身不必然影響租賃契約，但若因抵押權執行拍賣則另當別論。';
+                        } else if (button.getAttribute('data-answer') === 'D') {
+                            feedbackDiv.innerHTML += ' 買受人若怠於審查，買賣不破租賃原則仍可能適用，故「不知」非絕對免責理由。';
+                        }
+                        break;
+                    case '2':
+                        if (button.getAttribute('data-answer') === 'C') {
+                            feedbackDiv.innerHTML += ' 正確答案為 C。不動產租賃未登記，只要符合占有等要件，對乙公司仍繼續存在。';
+                        } else if (button.getAttribute('data-answer') === 'A') {
+                            feedbackDiv.innerHTML += ' 乙公司作為新所有權人，原則上應承受原租賃契約。';
+                        } else if (button.getAttribute('data-answer') === 'B') {
+                            feedbackDiv.innerHTML += ' 雖然登記可強化對抗力，但非未登記不動產租賃對抗買受人的絕對要件（需有合法占有等）。';
+                        } else if (button.getAttribute('data-answer') === 'D') {
+                            feedbackDiv.innerHTML += ' 租賃契約對乙公司繼續存在，小明無須因賣給乙公司而要求甲賠償損失（除非甲有違反租約行為）。';
+                        }
+                        break;
+                    case '3':
+                        if (button.getAttribute('data-answer') === 'A') {
+                            feedbackDiv.innerHTML += ' 正確答案為 A。租賃權登記是強化對抗第三人之重要手段。';
+                        } else if (button.getAttribute('data-answer') === 'B') {
+                            feedbackDiv.innerHTML += ' 租賃期間超過五年才「得」登記，並非法定「必須」登記。';
+                        } else if (button.getAttribute('data-answer') === 'C') {
+                            feedbackDiv.innerHTML += ' 未經登記但不表示權益完全喪失，若符合民法第 425 條之其他要件（如合法占有）仍可對抗。';
+                        } else if (button.getAttribute('data-answer') === 'D') {
+                            feedbackDiv.innerHTML += ' 租賃權登記並無租期長度的限制，只要是合法的租賃契約皆可辦理。';
+                        }
+                        break;
+                    case '4':
+                        if (button.getAttribute('data-answer') === 'D') {
+                            feedbackDiv.innerHTML += ' 正確答案為 D。乙先生作為買受人，原則上應承受小陳的租賃契約直至租期屆滿。';
+                        } else if (button.getAttribute('data-answer') === 'A') {
+                            feedbackDiv.innerHTML += ' 買賣不破租賃原則的關鍵即在於此，乙先生原則上不能要求小陳搬離。';
+                        } else if (button.getAttribute('data-answer') === 'B') {
+                            feedbackDiv.innerHTML += ' 租賃契約對乙先生繼續存在，小陳無需因乙先生的買受而要求甲先生賠償（除非甲有其他違約行為）。';
+                        } else if (button.getAttribute('data-answer') === 'C') {
+                            feedbackDiv.innerHTML += ' 租賃契約是繼續存在的，小陳無需與乙先生重新簽訂契約。';
+                        }
+                        break;
+                }
+            }
+        }
+
+        document.querySelectorAll('.quiz-option').forEach(button => {
+            button.addEventListener('click', function() {
+                const correctAnswer = this.getAttribute('data-answer');
+                checkAnswer(this, correctAnswer);
+            });
+        });
+    </script>
+
+</body>
+</html>

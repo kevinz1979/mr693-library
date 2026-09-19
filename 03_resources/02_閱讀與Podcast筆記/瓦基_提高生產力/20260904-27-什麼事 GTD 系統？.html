@@ -1,0 +1,178 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>什麼事 GTD 系統？</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>什麼事 GTD 系統？</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                </div>
+            </div>
+            
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li>GTD 系統將事務處理流程明確劃分為<strong>五個關鍵步驟</strong>，每個步驟皆具備獨立且明確的執行目的。</li>
+    <li>前置核心在於清空大腦：先<strong>全面捕捉並收集所有分散的想法與未完成事項</strong>，再定期從收件匣中<strong>判斷性質並確立「下一步行動」</strong>。</li>
+    <li>維護系統運作的關鍵：完成分類整理後，必須<strong>定期回顧與更新系統，以確保其完整性與長期有效性</strong>。</li>
+    <li>最終落實於行動：在執行階段<strong>依據當下情境與客觀條件，採取最佳方式付諸行動</strong>。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>GTD 系統是一套嚴謹的事務管理方法論，透過五個明確的步驟建立高效工作流。第一步為<strong>「捕捉」：將腦海中所有想法、任務及未完成事項進行全面性收集</strong>；第二步為<strong>「釐清」：定期從收件匣逐項取出事務，重點在於判斷其性質並具體定義出「下一步行動」</strong>；第三步為<strong>「整理」：依據處理方式與性質，將事項歸納至最適當的清單或場所</strong>；第四步為<strong>「回顧」：定期檢視與更新整個系統以維持有效性與完整性</strong>；第五步則是<strong>「執行」：根據當下的實際狀況付出具體行動</strong>，確保事務得以高效推動。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (待辦事項 / 關鍵行動)</h2>
+  <ul>
+    <li><strong>全面捕捉</strong>：將腦中分散的所有想法、任務與未完成事項全數收集至收件匣（負責對象：<strong>使用者</strong> / 截止日：<strong>原文未說明</strong>）。</li>
+    <li><strong>定期釐清</strong>：定期從收件匣取出事項，<strong>精準判斷事件性質並決定「下一步行動」</strong>（負責對象：<strong>使用者</strong> / 截止日：<strong>原文未說明</strong>）。</li>
+    <li><strong>歸納整理</strong>：將已確立後續處理方式的事項，<strong>依性質分流歸納至對應的清單或場所</strong>（負責對象：<strong>使用者</strong> / 截止日：<strong>原文未說明</strong>）。</li>
+    <li><strong>系統回顧</strong>：建立定期機制<strong>檢視與更新整個 GTD 系統</strong>，維持系統的完整度與運作效能（負責對象：<strong>使用者</strong> / 截止日：<strong>原文未說明</strong>）。</li>
+    <li><strong>當下執行</strong>：在執行階段，<strong>綜合評估當前條件與環境，採取最佳行動方案</strong>（負責對象：<strong>使用者</strong> / 截止日：<strong>原文未說明</strong>）。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

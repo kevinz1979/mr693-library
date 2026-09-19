@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 04: 無因管理與適法性要件 - 民法精解</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .bg-gradient-header {
+            background-image: linear-gradient(to right, #6EE7B7, #34D399, #10B981);
+        }
+        .bg-gradient-section {
+            background-image: linear-gradient(to right, #FDE68A, #FCD34D);
+        }
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        .quiz-option {
+            transition: background-color 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header Section -->
+    <header class="bg-gradient-header text-white p-6 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center text-white hover:text-gray-100 transition-colors duration-300">
+                <i class="fas fa-arrow-alt-circle-left mr-2"></i>
+                <span class="font-semibold text-lg">返回民法知識庫總覽</span>
+            </a>
+            <div class="bg-yellow-500 text-yellow-900 px-4 py-2 rounded-full font-bold text-sm shadow-md">
+                債編
+            </div>
+        </div>
+        <div class="container mx-auto mt-4 text-center">
+            <h1 class="text-4xl font-extrabold text-shadow">Day 04: 無因管理與適法性要件</h1>
+            <p class="text-xl mt-2 italic">—— 你的「雞婆」是英雄行徑，還是越權多事？</p>
+            <p class="text-sm mt-1 opacity-80">發布日期: 226-08-22</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8 space-y-12">
+
+        <!-- Section 1: 經典案例情境 (The Scenario) -->
+        <section class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-indigo-500">
+            <h2 class="text-3xl font-bold mb-6 text-indigo-700 flex items-center">
+                <i class="fas fa-lightbulb mr-3 text-indigo-500"></i>
+                經典案例情境：無因管理中的「雞婆」與「英雄」一線之隔
+            </h2>
+            <div class="prose max-w-none text-gray-700 leading-relaxed text-lg">
+                <p>親愛的六九三同學，想像一下這個情境：</p>
+                <p>
+                    你期待已久的歐洲之旅終於成行，為期兩週。臨行前，你已經請鄰居「熱心王」幫忙照顧家裡的盆栽、順便收一下信件。然而，就在你抵達巴黎的第二天，一場突如其來的午後雷陣雨引發了你家陽台的排水孔堵塞，導致雨水倒灌，客廳地板開始積水！
+                </p>
+                <p>
+                    熱心王在幫你收信時，發現你家門口有水滲出，心知不妙。他第一時間打電話給你，但你因時差和手機靜音而未接聽。考量到情況緊急，水患若不即時處理，可能毀損你家裝潢，甚至波及樓下住戶。於是，熱心王在未經你明確同意下，直接找來了社區配合的水電師傅，花費了 <strong class="text-red-600">新台幣 3,500 元</strong> 清理了排水孔並吸乾積水。同時，熱心王為了監督工程，也錯過了半小時的工作打卡時間，導致他當天被扣了半薪 <strong class="text-red-600">新台幣 800 元</strong>。
+                </p>
+                <p>
+                    待你旅程結束返家，看到整潔的客廳，聽完熱心王的描述，你心頭一暖。但同時，熱心王也拿出水電師傅的收據和他的薪資扣款單，詢問你這筆錢該如何處理。
+                </p>
+                <p class="mt-6 p-4 bg-yellow-50 border-l-4 border-yellow-500 text-yellow-800">
+                    六九三，請問：熱心王的這些行為，在法律上該如何評價？他能向你請求這些費用和損失嗎？
+                </p>
+            </div>
+
+            <div class="mt-8 text-center">
+                <button onclick="toggleSection('solutionSection')" class="px-8 py-4 bg-indigo-600 text-white font-bold rounded-full shadow-lg hover:bg-indigo-700 transition-all duration-300 transform hover:scale-105 focus:outline-none focus:ring-4 focus:ring-indigo-300">
+                    <i class="fas fa-scroll mr-3"></i> 展開法律解析：揭開「無因管理」的神秘面紗
+                </button>
+            </div>
+
+            <div id="solutionSection" class="hidden mt-8 p-6 bg-indigo-50 rounded-lg shadow-inner border border-indigo-200">
+                <h3 class="text-2xl font-bold mb-4 text-indigo-800">教授解析：熱心王是你的「無因管理人」！</h3>
+                <div class="prose max-w-none text-gray-700 leading-relaxed">
+                    <p>
+                        熱心王在未經你事前委託或指示下，基於你的利益，主動處理了你家的水患，這正是民法上所謂的「<strong class="text-indigo-600">無因管理</strong>」。但他能不能向你請求回這些錢，則要看他的管理行為是否「適法」。讓我們用三段論法，一步步拆解這個情境！
+                    </p>
+                    <p class="mt-4 text-sm text-gray-600">
+                        （點擊下方區塊，繼續深入學習！）
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: 三段論法拆解 (IRAC Breakdown) -->
+        <section class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-green-500">
+            <h2 class="text-3xl font-bold mb-6 text-green-700 flex items-center">
+                <i class="fas fa-gavel mr-3 text-green-500"></i>
+                三段論法 IRAC 拆解：無因管理的法律拼圖
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
+                    <thead>
+                        <tr class="bg-green-100 text-green-800 text-left text-lg">
+                            <th class="py-3 px-6 border-b border-gray-200 w-1/3">大前提 (Major Premise) - 法規闡釋</th>
+                            <th class="py-3 px-6 border-b border-gray-200 w-1/3">小前提 (Minor Premise) - 事實涵攝</th>
+                            <th class="py-3 px-6 border-b border-gray-200 w-1/3">結論 (Conclusion) - 法律效果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 民法 §172: 無因管理之定義 -->
+                        <tr class="hover:bg-gray-50 transition-colors duration-200">
+                            <td class="py-4 px-6 border-b border-gray-200 align-top">
+                                <strong class="text-xl text-green-700">【民法 §172】</strong>
+                                <p class="text-gray-600 italic">「未受委任，無法律上義務，而為他人管理事務者，為無因管理。」</p>
+                                <p class="mt-2 text-sm">此條定義了無因管理的基本要件：</p>
+                                <ul class="list-disc list-inside ml-4 text-sm text-gray-600">
+                                    <li><strong class="text-green-600">未受委任：</strong> 管理人沒有委任契約或類似關係。</li>
+                                    <li><strong class="text-green-600">無法律上義務：</strong> 管理人對本人沒有法定的義務。</li>
+                                    <li><strong class="text-green-600">管理他人事務：</strong> 客觀上是為他人處理事務。</li>
+                                    <li><strong class="text-green-600">為本人利益之意思：</strong> 主觀上須有為本人管理事務之意思（管理意思）。</li>
+                                </ul>
+                            </td>
+                            <td class="py-4 px-6 border-b border-gray-200 align-top">
+                                <p>熱心王發現六九三家中漏水，主動聯繫水電處理。</p>
+                                <ul class="list-disc list-inside ml-4 text-sm">
+                                    <li><strong class="text-blue-600">未受委任：</strong> 六九三僅請熱心王顧盆栽，未委託處理漏水。</li>
+                                    <li><strong class="text-blue-600">無法律上義務：</strong> 熱心王對六九三無處理漏水的法定或約定義務。</li>
+                                    <li><strong class="text-blue-600">管理他人事務：</strong> 處理六九三家中漏水，屬六九三之事務。</li>
+                                    <li><strong class="text-blue-600">管理意思：</strong> 熱心王為避免六九三家財產受損而採取行動，顯有為本人利益之意思。</li>
+                                </ul>
+                            </td>
+                            <td class="py-4 px-6 border-b border-gray-200 align-top">
+                                <p class="font-semibold text-lg">熱心王的行為，成立民法上的<strong class="text-green-600">「無因管理」</strong>。</p>
+                                <p class="text-sm text-gray-600">接下來，我們需判斷此無因管理是否「適法」。</p>
+                            </td>
+                        </tr>
+
+                        <!-- 民法 §176: 適法無因管理 -->
+                        <tr class="hover:bg-gray-50 transition-colors duration-200">
+                            <td class="py-4 px-6 border-b border-gray-200 align-top">
+                                <strong class="text-xl text-green-700">【民法 §176】</strong>
+                                <p class="text-gray-600 italic">「管理事務，利於本人，並不違反本人明示或可得推知之意思者，管理人得請求本人償還因管理事務支出之必要或有益費用，及清償其所負擔管理事務所生之債務。」</p>
+                                <p class="text-gray-600 italic">「前項規定，於管理人為本人支出損害，而其支出就本人當時情形，可認為有利者，準用之。」</p>
+                                <p class="mt-2 text-sm">適法無因管理之要件：</p>
+                                <ul class="list-disc list-inside ml-4 text-sm text-gray-600">
+                                    <li><strong class="text-green-600">有利於本人：</strong> 管理行為客觀上能為本人帶來利益或避免損害。</li>
+                                    <li><strong class="text-green-600">不違反本人意思：</strong> 不違反本人明示或可得推知（依一般社會經驗判斷）的意思。</li>
+                                </ul>
+                                <p class="mt-2 text-sm text-gray-600">效果：管理人可向本人請求費用償還、債務清償，以及損害賠償。</p>
+                            </td>
+                            <td class="py-4 px-6 border-b border-gray-200 align-top">
+                                <ul class="list-disc list-inside ml-4 text-sm">
+                                    <li><strong class="text-blue-600">有利於本人：</strong> 處理漏水避免了你家裝潢進一步受損，甚至避免了對鄰居的侵權責任，明顯有利於你。</li>
+                                    <li><strong class="text-blue-600">不違反本人意思：</strong> 一般人發現家中水管破裂，通常都會希望盡快處理以避免損失擴大。在無法即時聯繫你的情況下，熱心王請水電處理，符合你「可得推知」的意願。</li>
+                                </ul>
+                            </td>
+                            <td class="py-4 px-6 border-b border-gray-200 align-top">
+                                <p class="font-semibold text-lg">熱心王的行為構成<strong class="text-green-600">「適法無因管理」</strong>。</p>
+                                <p class="mt-2">因此，熱心王有權向六九三請求：</p>
+                                <ul class="list-disc list-inside ml-4 text-sm">
+                                    <li><strong class="text-red-600">水電費 3,500 元：</strong> 屬於因管理事務支出之必要費用。</li>
+                                    <li><strong class="text-red-600">半薪損失 800 元：</strong> 屬於管理人為本人支出之損害，且就本人當時情形（避免水患擴大）可認為有利。</li>
+                                </ul>
+                            </td>
+                        </tr>
+
+                        <!-- 民法 §177: 不適法無因管理 (對照組) -->
+                        <tr class="hover:bg-gray-50 transition-colors duration-200">
+                            <td class="py-4 px-6 align-top">
+                                <strong class="text-xl text-green-700">【民法 §177 第1項】</strong>
+                                <p class="text-gray-600 italic">「管理事務，違反本人明示或可得推知之意思者，或管理事務，非利於本人者，管理人對於因管理所生之損害，雖無過失，亦應負賠償之責。」</p>
+                                <p class="mt-2 text-sm">不適法無因管理之要件：</p>
+                                <ul class="list-disc list-inside ml-4 text-sm text-gray-600">
+                                    <li><strong class="text-red-600">違反本人意思：</strong> 明示拒絕或顯然違背可得推知之意願。</li>
+                                    <li><strong class="text-red-600">不利於本人：</strong> 客觀上管理行為對本人造成損害或無益。</li>
+                                </ul>
+                                <p class="mt-2 text-sm text-gray-600">效果：管理人即使無過失，仍須對因此造成的本人損害負賠償責任。</p>
+                                <p class="mt-2 text-sm text-gray-600 font-bold">【教授補充】</p>
+                                <p class="text-sm text-gray-600">即便是不適法無因管理，若本人事後「承認」其管理（民法§178），則溯及既往發生委任之效力，管理人仍可請求報酬、費用等。</p>
+                            </td>
+                            <td class="py-4 px-6 align-top">
+                                <p><strong>【情境改編】</strong></p>
+                                <p>若熱心王發現六九三家漏水，但六九三事前曾明確交代：「我家的事，除了澆花收信，其他一律不准動！」或者，熱心王在未溝通下，將六九三家中的古董花瓶搬去拍賣，聲稱「替你變現！」</p>
+                                <ul class="list-disc list-inside ml-4 text-sm">
+                                    <li><strong class="text-red-600">違反本人意思：</strong> 顯然違反六九三「一律不准動」的明示意思。</li>
+                                    <li><strong class="text-red-600">不利於本人：</strong> 在未授權下出售古董，可能導致六九三財產損失或權利受損。</li>
+                                </ul>
+                            </td>
+                            <td class="py-4 px-6 align-top">
+                                <p class="font-semibold text-lg">熱心王的行為構成<strong class="text-red-600">「不適法無因管理」</strong>。</p>
+                                <p class="mt-2 text-sm">熱心王不僅無法請求費用，甚至可能要對六九三因此所受的損害負賠償責任。</p>
+                                <p class="mt-4 text-sm bg-blue-50 border-l-4 border-blue-400 p-2">
+                                    <strong class="text-blue-700">【情境補強】</strong> 但若六九三返家後，看見古董被高價拍賣，大喜過望，明確表示「感謝熱心王，這真是幫了大忙！」則熱心王可以主張民法§178，其管理行為溯及既往發生委任之效力，可請求其付出之合理費用或報酬。
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 3: 生活與職場防禦錦囊 -->
+        <section class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-yellow-500">
+            <h2 class="text-3xl font-bold mb-6 text-yellow-700 flex items-center">
+                <i class="fas fa-shield-alt mr-3 text-yellow-500"></i>
+                六九三專屬！生活與職場自保錦囊：無因管理攻防策略
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 自保錦囊一：我是「管理人」（熱心王） -->
+                <div class="bg-gradient-to-br from-yellow-50 to-orange-100 p-6 rounded-lg shadow-md border border-yellow-200 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-4 text-yellow-800 flex items-center">
+                        <i class="fas fa-hands-helping mr-3 text-yellow-600"></i> 情境一：我是「管理人」（當個聰明的熱心王）
+                    </h3>
+                    <ul class="list-none space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-yellow-700">先判斷、再行動：</strong> 在緊急狀況下，優先評估管理行為是否「有利於本人」，且是否符合本人「可得推知」的意願。例如，修補漏水通常是符合的，但幫人投資股票就不一定了。
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-receipt text-blue-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-yellow-700">保留證據、詳細記錄：</strong> 支付的費用（收據）、發生的損害（照片）、與本人的溝通嘗試（電話紀錄、簡訊截圖）、事發經過（時間、地點、原因），越詳細越好。這將是日後請求費用償還的關鍵。
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-bell text-red-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-yellow-700">事後即時通知：</strong> 處理完畢或狀況穩定後，應盡速告知本人，說明處理過程與費用，讓本人有機會承認或提出異議。
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-question-circle text-purple-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-yellow-700">非必要不介入：</strong> 若本人有明示拒絕，或情況並非緊急且可聯繫本人，切勿「雞婆」介入，以免落入不適法無因管理，反而需負賠償責任。
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 自保錦囊二：我是「被管理者」（六九三） -->
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-100 p-6 rounded-lg shadow-md border border-indigo-200 transform hover:scale-105 transition-transform duration-300">
+                    <h3 class="text-2xl font-bold mb-4 text-indigo-800 flex items-center">
+                        <i class="fas fa-user-shield mr-3 text-indigo-600"></i> 情境二：我是「被管理者」（當個清楚的六九三）
+                    </h3>
+                    <ul class="list-none space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <i class="fas fa-eye text-green-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-indigo-700">釐清情境、判斷適法性：</strong> 收到管理人請求時，仔細審視其行為是否確實「有利於你」，且「不違反你的意思」。若符合，則應支付合理費用。
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-handshake text-blue-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-indigo-700">善用「承認」權：</strong> 若管理行為雖不完全符合適法要件，但你事後認為對自己有利，可依民法 §178 承認其管理，使其溯及既往發生委任之效力，合理償還費用。
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-exclamation-triangle text-red-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-indigo-700">主張不適法管理：</strong> 若管理行為顯然違反你的意願或對你不利（例如，將你的寵物送養），你有權拒絕支付費用，甚至可依民法 §177 請求管理人賠償你因此所受的損害。
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-comment-dots text-purple-500 mt-1 mr-2 flex-shrink-0"></i>
+                            <div>
+                                <strong class="text-indigo-700">預設明確意願：</strong> 平日可就緊急狀況（如長期離家）預先與信任的親友溝通好處理方式，甚至留下書面指示，避免因意思不明而產生糾紛。
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: 底層思維模型提煉 -->
+        <section class="bg-white p-8 rounded-xl shadow-lg border-l-4 border-purple-500">
+            <h2 class="text-3xl font-bold mb-6 text-purple-700 flex items-center">
+                <i class="fas fa-brain mr-3 text-purple-500"></i>
+                法律底層思維模型：效率、公平與風險分配的權衡
+            </h2>
+            <div class="prose max-w-none text-gray-700 leading-relaxed text-lg">
+                <p>無因管理制度看似在處理「雞婆」行為，但其背後蘊含著深厚的法律哲學與經濟學考量，是法規設計者在社會互動中，對<strong>效率、公平與風險分配</strong>精巧權衡的體現：</p>
+
+                <h3 class="text-xl font-semibold mt-6 mb-3 text-purple-600">1. 提升社會整體效率（法律經濟學視角）：</h3>
+                <p>
+                    試想，若無人可以無因管理他人的緊急事務，當六九三的家發生漏水，在本人無法及時處理時，積水可能不斷擴大，家具、裝潢毀損，甚至波及鄰居，造成更大的社會成本浪費。無因管理制度鼓勵人們在「溝通成本過高」或「本人不在場」的緊急情況下，<strong class="text-purple-600">主動介入以避免更大的損害</strong>。這種制度設計，降低了社會整體資源的耗損，提升了社會的應變能力與效率。它獎勵了那些「見義勇為」的行為，使其在法律上具備請求費用償還的基礎，降低了其行動的「風險成本」。
+                </p>
+
+                <h3 class="text-xl font-semibold mt-6 mb-3 text-purple-600">2. 維護個人自治與財產權（自由與秩序的平衡）：</h3>
+                <p>
+                    然而，如果每個人都可以任意介入他人事務，將會嚴重侵犯個人自主權與財產權。因此，無因管理並非鼓勵「無限度雞婆」，而是設定了嚴格的「適法性」要件。必須符合「<strong class="text-purple-600">有利於本人</strong>」且「<strong class="text-purple-600">不違反本人意思</strong>」才能請求費用。這正是法律在鼓勵利他行為的同時，又劃清了個人界限，防止惡意或不當干預。若違反此原則，管理人甚至需負損害賠償責任，這是為了<strong class="text-purple-600">保障個人的意願自由與財產不受任意侵犯</strong>，維持社會秩序。
+                </p>
+
+                <h3 class="text-xl font-semibold mt-6 mb-3 text-purple-600">3. 公平原則與風險分配：</h3>
+                <p>
+                    無因管理也體現了<strong class="text-purple-600">公平原則</strong>。若本人因管理行為而受有利益，卻不需負擔任何費用，顯失公平。所以適法無因管理中，本人應償還管理人支出的必要費用與損害。這是一種<strong class="text-purple-600">風險的合理分配</strong>：管理人承擔了先行動的風險，但若行為合法且有利，風險（費用）則轉由受益的本人承擔；反之，若管理行為不當，則管理人需自負風險（損害賠償）。這種機制鼓勵了正確的管理行為，並懲戒了不當的介入，最終實現社會的公平正義。
+                </p>
+                <p class="mt-4 p-4 bg-purple-50 border-l-4 border-purple-400 text-purple-800 italic">
+                    <i class="fas fa-quote-left mr-2"></i> 六九三，理解這些底層思維，能讓你跳脫法條的字面意義，更深入地掌握法律制度的精髓，在國考與實務中都能融會貫通！
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 5: 牛刀小試・考點隨堂測驗 -->
+        <section class="bg-gradient-to-br from-blue-50 to-teal-50 p-8 rounded-xl shadow-lg border-l-4 border-teal-500">
+            <h2 class="text-3xl font-bold mb-6 text-teal-700 flex items-center">
+                <i class="fas fa-feather-alt mr-3 text-teal-500"></i>
+                牛刀小試・考點隨堂測驗：檢驗你的無因管理功力！
+            </h2>
+            <div class="prose max-w-none text-gray-700 leading-relaxed text-lg">
+                <p class="mb-6">六九三同學，恭喜你學習到這裡！現在，讓我們透過一個情境題，來檢驗你對「無因管理與適法性要件」的理解程度吧！</p>
+
+                <div class="bg-white p-6 rounded-lg shadow-md border border-teal-200">
+                    <p class="text-xl font-semibold mb-4 text-teal-800">【題目】</p>
+                    <p class="mb-6">
+                        小明與小華是室友，小華因為出國一個月，請小明幫忙收信澆花。不料，小華的房門鎖突然故障，無法上鎖，貴重物品有失竊風險。小明多次嘗試聯絡小華未果，為免小華財物損失，遂自作主張請鎖匠更換了門鎖，花費新台幣 2,000 元。更換完成後，小明將新鑰匙妥善保管。事後小華回國，發現門鎖被更換，感到有些不悅，認為小明未經同意。
+                    </p>
+                    <p class="font-bold mb-4 text-gray-800">請問，依我國民法之規定，下列敘述何者正確？</p>
+
+                    <div id="quiz-options" class="space-y-4">
+                        <div class="quiz-option p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 flex items-start" onclick="checkAnswer(this, 2, quizFeedback)">
+                            <span class="font-bold mr-3 text-teal-600">A.</span>
+                            <span class="flex-1">小明未受小華委任而擅自更換門鎖，成立不適法無因管理，應負賠償責任。</span>
+                        </div>
+                        <div class="quiz-option p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 flex items-start" onclick="checkAnswer(this, 2, quizFeedback)">
+                            <span class="font-bold mr-3 text-teal-600">B.</span>
+                            <span class="flex-1">由於小華對小明擅自更換門鎖感到不悅，表示其不承認管理，故小明無權請求償還 2,000 元費用。</span>
+                        </div>
+                        <div class="quiz-option p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 flex items-start" onclick="checkAnswer(this, 2, quizFeedback)">
+                            <span class="font-bold mr-3 text-teal-600">C.</span>
+                            <span class="flex-1">小明之行為有利於小華且不違反其可得推知之意思，成立適法無因管理，小明得向小華請求償還 2,000 元費用。</span>
+                        </div>
+                        <div class="quiz-option p-4 border border-gray-300 rounded-lg cursor-pointer hover:bg-gray-100 transition-colors duration-200 flex items-start" onclick="checkAnswer(this, 2, quizFeedback)">
+                            <span class="font-bold mr-3 text-teal-600">D.</span>
+                            <span class="flex-1">小明在未經小華同意下，擅自處分小華之門鎖（進行更換），故其行為屬於侵權行為。</span>
+                        </div>
+                    </div>
+
+                    <div id="quiz-feedback" class="mt-6 p-4 rounded-lg hidden">
+                        <!-- Feedback will be inserted here by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 mt-12 text-center text-sm">
+        <p>&copy; 2026 民法知識庫 - 專為六九三打造。保留所有權利。</p>
+        <p class="mt-2">民法是生活的智慧，更是國考的關鍵！持續努力，你將無往不利！</p>
+    </footer>
+
+    <script>
+        function toggleSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            section.classList.toggle('hidden');
+        }
+
+        const quizFeedback = [
+            `<strong>錯誤！</strong> 小明基於小華的利益（避免財物損失），且在緊急情況下聯繫不上小華，其行為是為了小華管理事務，符合民法 §172 無因管理的定義。且其行為有利於小華，不違反其可得推知之意思，應屬適法無因管理，而非不適法。`,
+            `<strong>錯誤！</strong> 雖然小華「感到有些不悅」，但這並不等同於「違反本人明示或可得推知之意思」。保護財產安全通常是所有人可得推知的意思。因此，小明仍可能構成適法無因管理，有權請求費用。`,
+            `<strong>正確！</strong> 小明為避免小華財物損失而更換門鎖，客觀上是「有利於本人」，且在無法聯繫的情況下，維護居家安全防止失竊是「可得推知之意思」。因此，符合民法 §176 的適法無因管理要件，小明得向小華請求償還必要費用 2,000 元。`,
+            `<strong>錯誤！</strong> 小明的行為雖然未經同意，但他是為了小華的利益而處理其事務，符合無因管理的構成要件，而非直接侵害小華權益的侵權行為。法律特別設有無因管理制度來處理這類情境。`
+        ];
+
+        function checkAnswer(element, correctAnswerIndex, feedbackTexts) {
+            const optionsContainer = document.getElementById('quiz-options');
+            const feedbackDiv = document.getElementById('quiz-feedback');
+            const allOptions = optionsContainer.children;
+            const clickedIndex = Array.from(allOptions).indexOf(element);
+
+            // Disable all options after first click
+            Array.from(allOptions).forEach(option => {
+                option.onclick = null;
+                option.classList.remove('hover:bg-gray-100', 'cursor-pointer');
+            });
+
+            if (clickedIndex === correctAnswerIndex) {
+                element.classList.add('bg-green-100', 'border-green-500');
+                feedbackDiv.innerHTML = `<h4 class="font-bold text-green-700 mb-2"><i class="fas fa-check-circle mr-2"></i> 太棒了！你答對了！</h4><p class="text-green-800">${feedbackTexts[clickedIndex]}</p>`;
+            } else {
+                element.classList.add('bg-red-100', 'border-red-500');
+                allOptions[correctAnswerIndex].classList.add('bg-green-100', 'border-green-500'); // Highlight correct answer
+                feedbackDiv.innerHTML = `<h4 class="font-bold text-red-700 mb-2"><i class="fas fa-times-circle mr-2"></i> 喔不，差一點！</h4><p class="text-red-800">你選擇的答案是錯誤的。</p><p class="mt-2 text-green-800"><strong>正確答案解析：</strong>${feedbackTexts[correctAnswerIndex]}</p>`;
+            }
+            feedbackDiv.classList.remove('hidden');
+            feedbackDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); // Scroll to feedback
+        }
+    </script>
+
+</body>
+</html>

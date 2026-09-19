@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 01 - 無權處分與善意受讓 | 民法每日一篇</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif; }
+        .collapse-content { transition: max-height 0.3s ease-out, opacity 0.3s ease-out; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+
+    <!-- 頂部導航列 -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200 shadow-sm">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="index.html" class="flex items-center space-x-2 text-indigo-600 hover:text-indigo-800 font-semibold transition">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>返回民法知識庫總覽</span>
+            </a>
+            <div class="flex items-center space-x-3">
+                <span class="bg-indigo-100 text-indigo-800 text-xs px-3 py-1 rounded-full font-medium">總則編 / 物權編</span>
+                <span class="text-xs text-slate-500">Day 01</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 py-8 space-y-8">
+
+        <!-- 標題卡片 -->
+        <section class="bg-gradient-to-r from-indigo-700 via-indigo-800 to-slate-900 text-white rounded-2xl p-6 md:p-8 shadow-lg">
+            <div class="flex items-center space-x-2 text-indigo-200 text-sm font-medium mb-2">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>民法法感精解・核心概念 01</span>
+            </div>
+            <h1 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">無權處分與善意受讓（動態交易安全）</h1>
+            <div class="flex flex-wrap gap-2 text-xs">
+                <span class="bg-white/20 px-3 py-1 rounded-md">民法 §118 (無權處分)</span>
+                <span class="bg-white/20 px-3 py-1 rounded-md">民法 §801 (善意受讓動產)</span>
+                <span class="bg-white/20 px-3 py-1 rounded-md">民法 §948 (占有之善意受讓)</span>
+                <span class="bg-white/20 px-3 py-1 rounded-md">民法 §345 (買賣契約)</span>
+            </div>
+        </section>
+
+        <!-- 一、 經典案例與情境思考 -->
+        <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+            <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
+                <div class="w-8 h-8 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center font-bold">1</div>
+                <h2 class="text-xl font-bold text-slate-900">經典案例情境（The Scenario）</h2>
+            </div>
+            
+            <div class="bg-amber-50/70 border-l-4 border-amber-500 p-4 rounded-r-lg text-slate-700 leading-relaxed text-sm md:text-base">
+                <p class="font-semibold text-amber-900 mb-1">【案件事實】</p>
+                甲向好友乙借用一台價值 4 萬元的專業相機。甲因急需用錢，未經乙同意，擅自以自己的名義將該相機以市價 3.8 萬元賣給不知情的攝影愛好者丙，並當場交付相機給丙收受。
+            </div>
+
+            <div class="bg-slate-50 p-4 rounded-xl space-y-2 border border-slate-200 text-sm">
+                <p class="font-semibold text-slate-800"><i class="fa-regular fa-circle-question text-indigo-600 mr-2"></i>關鍵爭點思考：</p>
+                <ol class="list-decimal list-inside space-y-1 text-slate-600 pl-2">
+                    <li>乙發現後，能不能向丙請求返還相機？</li>
+                    <li>甲與丙之間的「買賣契約」到底有沒有效力？</li>
+                    <li>相機現在的所有權人到底是誰？</li>
+                </ol>
+            </div>
+
+            <!-- 互動折疊按鈕 -->
+            <button onclick="toggleSection('solution-1')" class="w-full py-3 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-semibold rounded-xl flex items-center justify-center space-x-2 transition border border-indigo-200">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span>點擊展開 / 折疊「核心判斷與法律效果」</span>
+            </button>
+
+            <div id="solution-1" class="bg-indigo-50/50 p-5 rounded-xl border border-indigo-100 text-sm space-y-3 hidden">
+                <h4 class="font-bold text-indigo-900 flex items-center">
+                    <i class="fa-solid fa-circle-check text-emerald-600 mr-2"></i>結論速覽：
+                </h4>
+                <p class="text-slate-700 leading-relaxed">
+                    1. <strong>甲與丙的買賣契約有效</strong>（負擔行為不以有處分權為必要）。<br>
+                    2. <strong>丙確定取得相機所有權</strong>（丙符合善意受讓 §801+§948）。<br>
+                    3. <strong>乙不能向丙要回相機</strong>，乙只能向甲追討損害賠償（§184 侵權行為）或請求甲交出賣相機所得的 3.8 萬元（§179 不當得利）。
+                </p>
+            </div>
+        </section>
+
+        <!-- 二、 三段論法核心拆解 -->
+        <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+            <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
+                <div class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold">2</div>
+                <h2 class="text-xl font-bold text-slate-900">三段論法核心拆解（法理邏輯）</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-bold text-indigo-600 mb-1">大前提・法律規範</div>
+                        <h3 class="font-bold text-slate-800 mb-2">構成要件</h3>
+                        <ul class="space-y-1 text-slate-600 text-xs">
+                            <li>• <strong>§118 無權處分</strong>：無處分權人處分他人之物，原則效力未定。</li>
+                            <li>• <strong>§801/§948 善意受讓</strong>：動產占有人受讓占有，受善意保護即時取得所有權。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-bold text-indigo-600 mb-1">小前提・事實涵攝</div>
+                        <h3 class="font-bold text-slate-800 mb-2">案件事實比對</h3>
+                        <ul class="space-y-1 text-slate-600 text-xs">
+                            <li>• 甲借用占有中（具有占有外觀，但無處分權）。</li>
+                            <li>• 丙不知情且無重大過失，且以合理市價交易並已受領交付。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 p-4 rounded-xl border border-indigo-200 bg-indigo-50/30 flex flex-col justify-between">
+                    <div>
+                        <div class="text-xs font-bold text-emerald-600 mb-1">結論・法律效果</div>
+                        <h3 class="font-bold text-slate-800 mb-2">權利歸屬與救濟</h3>
+                        <ul class="space-y-1 text-slate-700 text-xs">
+                            <li>• <strong>丙</strong>：合法取得所有權。</li>
+                            <li>• <strong>乙</strong>：失去物上請求權（§767），轉向甲行使侵權損害賠償（§184）。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 三、 生活與職場防禦錦囊 -->
+        <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+            <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
+                <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">3</div>
+                <h2 class="text-xl font-bold text-slate-900">生活與職場自保錦囊（Practical Defense）</h2>
+            </div>
+
+            <div class="space-y-3 text-sm">
+                <div class="p-3 bg-slate-50 rounded-xl border-l-4 border-emerald-500">
+                    <span class="font-bold text-slate-800">🛡️ 物品借人自保法（避免成為受害所有人 乙）：</span>
+                    <p class="text-slate-600 mt-1">高價值設備（汽機車、高階筆電、相機）出借時，切記「誰出借誰承擔風險」。出借務必保留租借憑證與設備機身序號，且避免長時間交由信用不佳者保管。</p>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border-l-4 border-blue-500">
+                    <span class="font-bold text-slate-800">🛒 二手交易買家自保法（確保善意受讓有效 丙）：</span>
+                    <p class="text-slate-600 mt-1">購買二手高價品時，切勿以「遠低於市價」的異常價格收購（會被法院推定有重大過失而無法主張善意受讓）。務必索取購買證明、對話記錄與轉帳紀錄，以佐證善意。</p>
+                </div>
+                <div class="p-3 bg-slate-50 rounded-xl border-l-4 border-purple-500">
+                    <span class="font-bold text-slate-800">🏢 職場簽約自保法：</span>
+                    <p class="text-slate-600 mt-1">代表公司簽約或購買資產時，需確認對造是否具備「代理權」或「處分權」，審查授權書或公司登記謄本，避免落入無權代理或無權處分的糾紛中。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 四、 底層思維模型提煉 -->
+        <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-3">
+            <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
+                <div class="w-8 h-8 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center font-bold">4</div>
+                <h2 class="text-xl font-bold text-slate-900">底層思維模型提煉（Mental Model）</h2>
+            </div>
+            
+            <div class="bg-purple-50/60 p-4 rounded-xl border border-purple-100 text-sm text-slate-700 space-y-2">
+                <p class="font-bold text-purple-900 text-base">💡 思維模型：【動態交易安全 vs. 靜態所有權保護】</p>
+                <p>
+                    民法為什麼不幫原所有人乙追回相機，反而幫買家丙？
+                </p>
+                <p class="text-xs md:text-sm text-slate-600 leading-relaxed">
+                    法律的底層邏輯在於<strong>「風險分配理論」</strong>：乙自己選擇把相機交給甲，創造了「甲看起來像擁有者」的外觀風險，因此乙應該承擔識人不明的風險；如果法律每次都把東西判還給原主，那麼社會上沒有任何人敢買二手商品或做市場交易，整體商業市場的流通將全面癱瘓。
+                </p>
+            </div>
+        </section>
+
+        <!-- 五、 牛刀小試・隨堂互動測驗 -->
+        <section class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+            <div class="flex items-center space-x-3 border-b border-slate-100 pb-3">
+                <div class="w-8 h-8 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center font-bold">5</div>
+                <h2 class="text-xl font-bold text-slate-900">牛刀小試・考點隨堂測驗（Exam Quiz）</h2>
+            </div>
+
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 space-y-3">
+                <p class="font-semibold text-slate-800 text-sm">
+                    【模擬試題】甲將其所有之腳踏車借予乙使用，乙擅自以自己名義將該車賣給不知情之丙，並完成交付。下列敘述何者正確？
+                </p>
+
+                <div class="space-y-2 text-sm">
+                    <button onclick="checkAnswer(1, false)" class="w-full text-left p-3 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 transition flex items-center justify-between" id="opt-1">
+                        <span>(A) 乙與丙之買賣契約無效，因為乙無處分權</span>
+                        <i class="fa-regular fa-circle text-slate-400"></i>
+                    </button>
+                    <button onclick="checkAnswer(2, false)" class="w-full text-left p-3 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 transition flex items-center justify-between" id="opt-2">
+                        <span>(B) 丙不能取得腳踏車所有權，甲得依民法第 767 條請求丙返還</span>
+                        <i class="fa-regular fa-circle text-slate-400"></i>
+                    </button>
+                    <button onclick="checkAnswer(3, true)" class="w-full text-left p-3 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 transition flex items-center justify-between" id="opt-3">
+                        <span>(C) 丙依善意受讓規定取得腳踏車所有權，甲僅得向乙請求損害賠償</span>
+                        <i class="fa-regular fa-circle text-slate-400"></i>
+                    </button>
+                    <button onclick="checkAnswer(4, false)" class="w-full text-left p-3 rounded-lg border border-slate-200 bg-white hover:bg-slate-100 transition flex items-center justify-between" id="opt-4">
+                        <span>(D) 乙之處分行為自始有效，無須經甲承認</span>
+                        <i class="fa-regular fa-circle text-slate-400"></i>
+                    </button>
+                </div>
+
+                <div id="quiz-feedback" class="hidden p-4 rounded-xl text-sm mt-3"></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-6 text-xs text-slate-400 border-t border-slate-200">
+        MR693 個人知識庫・民法每日一篇 HTML 專案 | 建立於 2026-08-22
+    </footer>
+
+    <script>
+        function toggleSection(id) {
+            const el = document.getElementById(id);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+            } else {
+                el.classList.add('hidden');
+            }
+        }
+
+        function checkAnswer(optNum, isCorrect) {
+            const feedback = document.getElementById('quiz-feedback');
+            feedback.classList.remove('hidden');
+
+            for (let i = 1; i <= 4; i++) {
+                const btn = document.getElementById('opt-' + i);
+                btn.classList.remove('border-emerald-500', 'bg-emerald-50', 'border-rose-500', 'bg-rose-50');
+            }
+
+            const chosen = document.getElementById('opt-' + optNum);
+            if (isCorrect) {
+                chosen.classList.add('border-emerald-500', 'bg-emerald-50');
+                feedback.className = "p-4 rounded-xl text-sm mt-3 bg-emerald-100 text-emerald-900 border border-emerald-300";
+                feedback.innerHTML = "<strong>🎉 完全正確！</strong><br>解析：(1) 買賣契約為負擔行為，不以出賣人有處分權為必要，故買賣有效。(2) 動產讓與為處分行為，乙無權處分，但丙為善意第三人，依民法 §801、§948 善意取得所有權。(3) 甲喪失所有權，無法行使 §767，僅得向乙主張侵權行為 (§184) 或不當得利 (§179)。";
+            } else {
+                chosen.classList.add('border-rose-500', 'bg-rose-50');
+                feedback.className = "p-4 rounded-xl text-sm mt-3 bg-rose-100 text-rose-900 border border-rose-300";
+                feedback.innerHTML = "<strong>❌ 答案不對喔！</strong><br>提示：正確答案是 <strong>(C)</strong>。請牢記「買賣契約有效」＋「動產善意受讓有效取得」這兩大支柱！";
+            }
+        }
+    </script>
+</body>
+</html>

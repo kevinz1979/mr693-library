@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>不重複隨機出題器</title>
+    <style>
+        /* === 全局設定 === */
+        body {
+            font-family: "Microsoft JhengHei", "Heiti TC", sans-serif;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #2c3e50;
+            overflow: hidden;
+            user-select: none; /* 防止選取文字干擾 */
+        }
+
+        /* === 設定區域 (Setup Layer) === */
+        #setup-layer {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+            z-index: 10;
+            position: absolute;
+        }
+
+        h2 { margin-top: 0; color: #333; }
+
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 15px;
+            box-sizing: border-box;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            margin: 10px 0;
+            resize: none;
+        }
+
+        .input-group {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            font-size: 18px;
+            width: 80px;
+            text-align: center;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+        }
+
+        .btn {
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn:hover { background-color: #1abc9c; transform: scale(1.05); }
+
+        /* === 遊戲區域 (Game Layer) === */
+        #game-layer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #111;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 20;
+        }
+
+        /* 計數器顯示 (右上角) */
+        #status-bar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            text-align: right;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.2rem;
+            z-index: 30;
+        }
+        #counter-text {
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        /* 題目卡片 */
+        .question-card {
+            background-color: #000;
+            color: #fff;
+            width: 85%;
+            height: 55%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+            box-sizing: border-box;
+            border: 6px double #fff;
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+        }
+
+        #question-text {
+            font-size: 4vw;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        /* 倒數計時器 */
+        .timer-box {
+            margin-top: 30px;
+            background-color: #c0392b;
+            color: #fff;
+            font-size: 5rem;
+            font-weight: 800;
+            font-family: 'Courier New', monospace;
+            width: 180px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid #fff;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(231, 76, 60, 0.6);
+            animation: heartbeat 1s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn-small {
+            background: transparent;
+            border: 2px solid #555;
+            color: #888;
+            padding: 8px 20px;
+            font-size: 16px;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+        .btn-small:hover { border-color: #fff; color: #fff; }
+
+        /* 手機版調整 */
+        @media (max-width: 768px) {
+            #question-text { font-size: 2.5rem; }
+            .timer-box { width: 140px; height: 100px; font-size: 3.5rem; }
+            .question-card { width: 95%; height: 50%; padding: 20px; }
+            #status-bar { font-size: 1rem; top: 15px; right: 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 設定畫面 -->
+    <div id="setup-layer">
+        <h2>🎲 不重複出題程式</h2>
+        <p>請貼上題目（一行一題）：</p>
+        <textarea id="input-questions" placeholder="題目範例：
+請解釋什麼是光合作用
+英文單字 Apple 是什麼意思
+9 x 9 = ?
+台灣最高的山是哪一座"></textarea>
+        
+        <div class="input-group">
+            每題倒數 
+            <input type="number" id="input-time" value="10" min="3"> 
+            秒
+        </div>
+
+        <button class="btn" onclick="startGame()">🚀 開始出題</button>
+    </div>
+
+    <!-- 遊戲畫面 -->
+    <div id="game-layer">
+        
+        <!-- 右上角計數器 -->
+        <div id="status-bar">
+            <div>已作答：<span id="counter-text">0</span> 題</div>
+            <div style="font-size: 0.8em; margin-top:5px;">( 題庫剩餘：<span id="remaining-text">0</span> )</div>
+        </div>
+
+        <div class="question-card">
+            <div id="question-text">準備開始...</div>
+        </div>
+
+        <div class="timer-box" id="timer-display">10</div>
+
+        <div class="controls">
+            <button class="btn-small" onclick="stopGame()">⏹ 結束 / 設定</button>
+            <button class="btn-small" onclick="nextQuestion()">⏭ 跳下一題</button>
+        </div>
+    </div>
+
+    <script>
+        let allQuestions = [];      // 原始題目備份
+        let questionPool = [];      // 目前剩餘的題目池
+        let timeSetting = 10;
+        let currentTime = 0;
+        let timerInterval;
+        let answeredCount = 0;      // 已作答計數
+
+        const setupLayer = document.getElementById('setup-layer');
+        const gameLayer = document.getElementById('game-layer');
+        const questionText = document.getElementById('question-text');
+        const timerDisplay = document.getElementById('timer-display');
+        const inputQuestions = document.getElementById('input-questions');
+        const inputTime = document.getElementById('input-time');
+        const counterText = document.getElementById('counter-text');
+        const remainingText = document.getElementById('remaining-text');
+
+        function startGame() {
+            // 1. 取得並處理題目
+            const raw = inputQuestions.value;
+            allQuestions = raw.split('\n').map(q => q.trim()).filter(q => q !== '');
+
+            if (allQuestions.length === 0) {
+                alert("請至少輸入一題題目！");
+                return;
+            }
+
+            // 2. 初始化題目池 (複製一份)
+            questionPool = [...allQuestions];
+            
+            // 3. 設定時間與變數
+            timeSetting = parseInt(inputTime.value);
+            if (isNaN(timeSetting) || timeSetting < 1) {
+                alert("時間設定錯誤");
+                return;
+            }
+
+            answeredCount = 0; // 重置計數器
+
+            // 4. 切換畫面
+            setupLayer.style.display = 'none';
+            gameLayer.style.display = 'flex';
+
+            nextQuestion();
+        }
+
+        function stopGame() {
+            clearInterval(timerInterval);
+            gameLayer.style.display = 'none';
+            setupLayer.style.display = 'block';
+        }
+
+        function nextQuestion() {
+            clearInterval(timerInterval);
+
+            // === 核心邏輯：從池子裡抽題，不重複 ===
+            
+            // 如果池子空了，就重新補滿 (開啟新的一輪)
+            if (questionPool.length === 0) {
+                // 選項：您可以決定這裡要不要跳出提示 "所有題目已做完一輪，將重新開始"
+                // 這裡我們設計成無縫接軌，但避免立刻抽到上一題
+                let lastQuestion = questionText.innerText;
+                questionPool = [...allQuestions]; 
+                
+                // 簡單防重覆：如果補滿後的第一抽跟上一題一樣，就換一個
+                // (只有在題目數量大於1的時候才需要防)
+                if (questionPool.length > 1) {
+                     // 這裡不需要特別處理，下面的隨機邏輯會處理自然機率
+                }
+            }
+
+            // 從池子裡隨機選一個索引
+            const randomIndex = Math.floor(Math.random() * questionPool.length);
+            const selectedQuestion = questionPool[randomIndex];
+
+            // 將該題目從池子中移除 (Splice)
+            questionPool.splice(randomIndex, 1);
+
+            // 更新畫面資料
+            answeredCount++;
+            counterText.innerText = answeredCount;
+            remainingText.innerText = questionPool.length;
+
+            // 顯示題目 (淡入動畫)
+            questionText.style.opacity = 0;
+            setTimeout(() => {
+                questionText.innerText = selectedQuestion;
+                questionText.style.opacity = 1;
+                questionText.style.transition = 'opacity 0.3s';
+            }, 100);
+
+            // 重置倒數計時
+            currentTime = timeSetting;
+            updateTimerVisual();
+
+            timerInterval = setInterval(() => {
+                currentTime--;
+                updateTimerVisual();
+
+                if (currentTime < 0) {
+                    // 時間到效果
+                    timerDisplay.style.backgroundColor = '#fff';
+                    timerDisplay.style.color = '#c0392b';
+                    setTimeout(nextQuestion, 200); 
+                }
+            }, 1000);
+        }
+
+        function updateTimerVisual() {
+            timerDisplay.innerText = currentTime;
+            timerDisplay.style.backgroundColor = '#c0392b';
+            timerDisplay.style.color = '#fff';
+        }
+    </script>
+</body>
+</html>

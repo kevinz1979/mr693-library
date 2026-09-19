@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 15｜民法精解：意思表示錯誤與詐欺脅迫（§88、§92、§93）- 考生六九三專屬指南</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        law: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-100 text-slate-800 font-sans leading-relaxed pb-16">
+
+    <!-- 頂部導航列與篇章標籤 -->
+    <header class="bg-law-900 text-white shadow-md sticky top-0 z-50 border-b border-slate-700">
+        <div class="max-w-5xl mx-auto px-4 py-3 flex flex-wrap items-center justify-between gap-3">
+            <a href="index.html" class="inline-flex items-center gap-2 text-sm font-medium text-slate-300 hover:text-white transition-colors">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>返回民法知識庫總覽</span>
+            </a>
+            <div class="flex items-center gap-2">
+                <span class="bg-indigo-600/80 text-white text-xs px-2.5 py-1 rounded-full font-mono font-semibold tracking-wider">Day 15</span>
+                <span class="bg-slate-700 text-slate-200 text-xs px-2.5 py-1 rounded-full font-medium">總則編｜意思表示瑕疵</span>
+                <span class="text-xs text-slate-400 font-mono hidden sm:inline"><i class="fa-regular fa-calendar-check mr-1"></i>2026-09-03</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主標題區塊 -->
+    <main class="max-w-5xl mx-auto px-4 mt-8 space-y-8">
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-6 mb-6">
+                <div>
+                    <div class="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-1">Civil Code Mastery</div>
+                    <h1 class="text-2xl md:text-3xl font-extrabold text-slate-900">
+                        意思是真的，還是被騙了？意思表示錯誤與詐欺脅迫的撤銷攻防
+                    </h1>
+                    <p class="text-sm text-slate-500 mt-1">
+                        焦點法條：民法第 88 條（錯誤）、第 92 條（詐欺與脅迫）、第 93 條（除斥期間）
+                    </p>
+                </div>
+                <div class="bg-slate-50 border border-slate-200 rounded-xl p-3 flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center text-lg">
+                        <i class="fa-solid fa-user-graduate"></i>
+                    </div>
+                    <div>
+                        <div class="text-xs text-slate-400">專屬學習對象</div>
+                        <div class="text-sm font-bold text-slate-800">考生「六九三」</div>
+                    </div>
+                </div>
+            </div>
+            <p class="text-slate-600 leading-relaxed">
+                法律行為以「意思表示」為核心，但若表意人心裡想的跟嘴上說的不一致（<strong>錯誤</strong>），或是心智自由被外力扭曲干擾（<strong>詐欺、脅迫</strong>），民法該如何在「<strong>保護表意人意思自主</strong>」與「<strong>維護交易動態安全</strong>」之間劃出那道精準的界線？本講帶你徹底穿透實務與國考的核心爭點。
+            </p>
+        </section>
+
+        <!-- 區塊一：經典案例情境（The Scenario） -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-8 rounded-lg bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-sm">
+                    01
+                </span>
+                <h2 class="text-xl font-bold text-slate-900">經典案例情境：骨董商、調表老車與黑心鑑定師</h2>
+            </div>
+            
+            <div class="bg-slate-50 rounded-xl p-5 border-l-4 border-amber-500 mb-6 space-y-3 text-slate-700">
+                <p>
+                    <strong>【情境實況】</strong><br>
+                    創業者甲打算買一輛經典名車代步並彰顯門面，看中車主乙所持有的 1990 年產經典老保時捷。談判期間：
+                </p>
+                <ul class="list-disc list-inside space-y-1.5 text-sm text-slate-600 pl-2">
+                    <li><strong>情境 A（第三人詐欺）：</strong>乙之摯友丙（知名車壇網紅）偽造國際原廠保養紀錄簿，並信誓旦旦向甲保證：「這輛車全車原鈑件、實跑 3 萬公里！」車主乙對丙的作假「毫不知情」。甲深信不疑，遂以高達 300 萬元的原裝行情向乙簽約買下。</li>
+                    <li><strong>情境 B（當事人性質錯誤）：</strong>甲在點交後送交第三方專業單位查驗，發現里程數早在十年前就破 30 萬公里，且車身曾嚴重切骨焊接。甲氣急敗壞，主張乙詐欺或自己「重要性質錯誤」，要在交車 8 個月後撤銷該買賣契約；乙則抗辯：「是丙騙你的，我又不知道，而且合約簽了就該算數！」</li>
+                </ul>
+            </div>
+
+            <div class="text-center">
+                <button onclick="toggleSection('case-solution')" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-2.5 rounded-lg shadow transition-all duration-200 cursor-pointer">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <span>點擊展開名師深度法律解析</span>
+                </button>
+            </div>
+
+            <!-- 展開解析區塊 -->
+            <div id="case-solution" class="hidden mt-6 pt-6 border-t border-slate-200">
+                <div class="bg-blue-50/70 rounded-xl p-5 border border-blue-100 text-slate-800 space-y-3">
+                    <h3 class="font-bold text-blue-900 text-base flex items-center gap-2">
+                        <i class="fa-solid fa-gavel"></i> 名師診斷焦點
+                    </h3>
+                    <div class="text-sm leading-relaxed space-y-2">
+                        <p><strong>1. 第三人詐欺之特殊限制（§92 I 但書）：</strong><br>
+                        本案詐欺者為第三人丙，而契約相對人乙「不知情（善意無過失）」。依照民法第 92 條第 1 項但書，受詐欺而為意思表示者，<strong>以相對人明知或可得而知者為限，始得撤銷</strong>。因此，甲不得依第 92 條對乙主張詐欺撤銷！</p>
+                        
+                        <p><strong>2. 能否轉向主張「物之性質錯誤」（§88 II）：</strong><br>
+                        老車是否為「無事故原鈑件」，在骨董車交易市場屬於極其關鍵的品質判定，屬於「物之性質在交易上認為重要者」，視為意思表示內容之錯誤（§88 II）。但關鍵門檻在於：<strong>表意人自身須無過失（§88 I 但書）</strong>。若甲輕信無店鋪認證之網紅言論，未要求載入定型化契約保證條款，可能被認定有過失；若認定甲無過失，甲得於 1 年內（§90）行使撤銷權，但須賠償乙之信賴利益損失（§91）。</p>
+
+                        <p><strong>3. 救濟捷徑思考：</strong><br>
+                        民法錯誤與詐欺體系嚴密，若撤銷受阻，甲應直接訴諸<strong>民法物之瑕疵擔保責任（§354、§359 解除契約）</strong>或<strong>侵權行為損害賠償（對丙依 §184 I 後段）</strong>，此為民法競合實務最具殺傷力之策略。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊二：三段論法 IRAC 拆解 -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-8 rounded-lg bg-indigo-100 text-indigo-600 flex items-center justify-center font-bold text-sm">
+                    02
+                </span>
+                <h2 class="text-xl font-bold text-slate-900">國考標準 IRAC 三段論法對照表</h2>
+            </div>
+            <p class="text-sm text-slate-500 mb-6">以「第三人介入締約致意思瑕疵」為核心，拆解大前提、小前提與法律效果：</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- 大前提 (Rule) -->
+                <div class="bg-slate-50 rounded-xl p-5 border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-2 text-indigo-700 font-bold mb-3">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                            <span>大前提 (Rule & Law)</span>
+                        </div>
+                        <ul class="text-xs text-slate-600 space-y-2.5">
+                            <li><strong>§88 錯誤之撤銷：</strong>包含意思表示內容錯誤、表示行為錯誤，及「當事人資格或物之性質重要錯誤」（§88 II）。要件：<strong>表意人非因自己過失</strong>，且自意思表示起 <strong>1 年內</strong>為之（§90）。</li>
+                            <li><strong>§92 詐欺與脅迫：</strong>被詐欺或脅迫得撤銷。但<strong>第三人詐欺</strong>時，須「相對人明知或可得而知」始得撤銷；<strong>第三人脅迫</strong>則不問相對人是否知情皆可撤銷。</li>
+                            <li><strong>§93 除斥期間：</strong>發見詐欺或脅迫終止後，<strong>1 年內</strong>為之。但自意思表示後經過 <strong>10 年</strong>不得撤銷。</li>
+                        </ul>
+                    </div>
+                    <span class="mt-4 inline-block text-[11px] font-mono text-slate-400">規範依據：民法§88、§90、§92、§93</span>
+                </div>
+
+                <!-- 小前提 (Application/Facts) -->
+                <div class="bg-slate-50 rounded-xl p-5 border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-2 text-blue-700 font-bold mb-3">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                            <span>小前提 (Facts & Case)</span>
+                        </div>
+                        <ul class="text-xs text-slate-600 space-y-2.5">
+                            <li><strong>事實涵攝一（詐欺歸責）：</strong>加害人丙並非買賣契約之相對人，而係「第三人」。契約相對人乙主觀上為「善意且不知情」，難認其明知或可得而知丙之詐欺舉措。</li>
+                            <li><strong>事實涵攝二（性質錯誤與過失）：</strong>老保時捷里程數多出十倍且為切骨事故車，確實屬於物之性質交易上重大之事項；但甲未依通常程序送驗即簽約，其錯誤之發生是否具「過失」，成為撤銷爭議焦點。</li>
+                            <li><strong>事實涵攝三（時間進程）：</strong>甲於交車後 8 個月主張，若得撤銷，尚在知悉後 1 年、成立後 10 年之除斥期間內。</li>
+                        </ul>
+                    </div>
+                    <span class="mt-4 inline-block text-[11px] font-mono text-slate-400">具體涵攝：要件事實檢驗</span>
+                </div>
+
+                <!-- 結論效果 (Conclusion) -->
+                <div class="bg-slate-50 rounded-xl p-5 border border-slate-200 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center gap-2 text-emerald-700 font-bold mb-3">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                            <span>結論效果 (Conclusion)</span>
+                        </div>
+                        <ul class="text-xs text-slate-600 space-y-2.5">
+                            <li><strong>詐欺撤銷不成立：</strong>因乙不知情，依 §92 I 但書，甲<strong>不得撤銷</strong>意思表示。</li>
+                            <li><strong>錯誤撤銷高度受限：</strong>甲若欲依 §88 II 撤銷，實務對「無過失」採嚴格標準，甲難以舉證自己毫無怠忽；縱然能撤銷，依 §91 仍須賠償乙之信賴利益。</li>
+                            <li><strong>權利保護最優解：</strong>契約有效成立，甲轉向依<strong>民法第 359 條瑕疵擔保責任解除契約</strong>，或對丙依<strong>第 184 條第 1 項後段</strong>請求故意侵權損害賠償，方屬良策。</li>
+                        </ul>
+                    </div>
+                    <span class="mt-4 inline-block text-[11px] font-mono text-slate-400">效果判定：形成權行使阻卻</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊三：生活與職場防禦錦囊 -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold text-sm">
+                    03
+                </span>
+                <h2 class="text-xl font-bold text-slate-900">生活與職場防禦錦囊：白紙黑字的自我防護體系</h2>
+            </div>
+            <p class="text-sm text-slate-500 mb-6">
+                無論是房產交易、採購商務或轉職簽約，遇到「口惠不實」或「誤解條款」，請熟記這張自保檢核矩陣：
+            </p>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs md:text-sm border-collapse">
+                    <thead>
+                        <tr class="bg-slate-100 text-slate-700 border-b border-slate-200">
+                            <th class="p-3 font-semibold">瑕疵類型</th>
+                            <th class="p-3 font-semibold">法定發動要件</th>
+                            <th class="p-3 font-semibold">除斥期間起算點</th>
+                            <th class="p-3 font-semibold">生活／職場實務自保對策</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100 text-slate-600">
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-3 font-bold text-slate-800">
+                                意思表示錯誤<br><span class="text-xs font-normal text-slate-400">(民法§88)</span>
+                            </td>
+                            <td class="p-3">
+                                1. 內容/表示/性質錯誤<br>
+                                2. <strong class="text-rose-600">表意人自己無過失</strong>
+                            </td>
+                            <td class="p-3">
+                                自意思表示後 <strong>1 年內</strong>（§90）<br>
+                                <span class="text-xs text-rose-500 font-medium">※注意：客觀期間，非知悉起算</span>
+                            </td>
+                            <td class="p-3">
+                                <strong>「動機明文化」條款：</strong>重要的物之性質或個人資格條件，必須直接寫進契約合約中（如：「本合約係以該地具備乙種建地建築許可為前題」），將單純動機提升為契約內容或解除條件。
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-3 font-bold text-slate-800">
+                                被相對人詐欺<br><span class="text-xs font-normal text-slate-400">(民法§92 I 本文)</span>
+                            </td>
+                            <td class="p-3">
+                                1. 故意傳遞不實或隱匿<br>
+                                2. 致表意人陷於錯誤<br>
+                                3. 受詐欺人縱有過失亦可撤銷
+                            </td>
+                            <td class="p-3">
+                                發見詐欺後 <strong>1 年內</strong>；<br>
+                                但意思表示後經 <strong>10 年</strong>消滅（§93）
+                            </td>
+                            <td class="p-3">
+                                <strong>完整留存磋商對話：</strong>所有口頭承諾（如房仲宣稱「絕對可合法夾層」）應錄音、保留通訊軟體截圖，並要求在契約加註「現況說明書」，避免事後各說各話。
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-3 font-bold text-slate-800">
+                                被第三人詐欺<br><span class="text-xs font-normal text-slate-400">(民法§92 I 但書)</span>
+                            </td>
+                            <td class="p-3">
+                                詐欺者為非當事人之第三人，<strong>且相對人「明知或可得而知」</strong>
+                            </td>
+                            <td class="p-3">
+                                發見詐欺後 <strong>1 年內</strong>；<br>
+                                但意思表示後經 <strong>10 年</strong>消滅（§93）
+                            </td>
+                            <td class="p-3">
+                                <strong>穿透第三人關聯：</strong>向相對人發出「確認存證信函」，主動詢問其與該第三人（代書、仲介、鑑價人）之委任與分潤關係，鎖定相對人「可得而知」之證據鏈。
+                            </td>
+                        </tr>
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="p-3 font-bold text-slate-800">
+                                遭受脅迫<br><span class="text-xs font-normal text-slate-400">(民法§92、§93)</span>
+                            </td>
+                            <td class="p-3">
+                                1. 預告不法惡害造成恐怖<br>
+                                2. <strong class="text-emerald-600">第三人脅迫不論相對人知否均得撤銷</strong>
+                            </td>
+                            <td class="p-3">
+                                脅迫終止後 <strong>1 年內</strong>；<br>
+                                但意思表示後經 <strong>10 年</strong>消滅（§93）
+                            </td>
+                            <td class="p-3">
+                                <strong>脫離威脅立即行動：</strong>一旦身心恢復自由狀態（即脅迫終止），立即向警察局報案並寄存證信函主張撤銷，切勿拖延超過 1 年除斥期間。
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 區塊四：底層思維模型提煉 -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-8 rounded-lg bg-purple-100 text-purple-600 flex items-center justify-center font-bold text-sm">
+                    04
+                </span>
+                <h2 class="text-xl font-bold text-slate-900">底層思維模型提煉：法律經濟學與風險歸責天平</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                <div class="bg-purple-50/50 border border-purple-100 rounded-xl p-5 space-y-3">
+                    <h3 class="font-bold text-purple-900 flex items-center gap-2">
+                        <i class="fa-solid fa-scale-unbalanced"></i>
+                        思維模型一：信賴保護 vs. 意思自主的動態權衡
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        民法並非表意人的保姆。如果你說錯話（錯誤），法律優先保護的是相信你說法的老實人（相對人信賴利益），所以要求表意人必須「<strong>無過失</strong>」才准撤銷，撤銷了還得負<strong>信賴利益賠償責任（§91）</strong>；<br>
+                        反之，在<strong>脅迫</strong>場合，表意人的意思決定自由遭受重大侵害，法秩序給予絕對優先救援——即便是第三人脅迫，且相對人完全不知情，法律依然准許撤銷，甚至得以撤銷對抗善意第三人！
+                    </p>
+                </div>
+
+                <div class="bg-blue-50/50 border border-blue-100 rounded-xl p-5 space-y-3">
+                    <h3 class="font-bold text-blue-900 flex items-center gap-2">
+                        <i class="fa-solid fa-chart-line"></i>
+                        思維模型二：最低成本防範者原則 (Cheapest Cost Avoider)
+                    </h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        法律經濟學指出：「<strong>風險應分配給最能夠以最低成本避免損害發生的那一方。</strong>」<br>
+                        為什麼「第三人詐欺」，若相對人不知情就不准撤銷？因為表意人在簽約當下，是最接近該第三人、最能親自查證核實的人（查證成本最低）。表意人怠於查驗而受騙，不能將此風險強行甩包給毫不知情的契約相對人。法律用制度逼使締約者承擔自己的粗心成本。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊五：牛刀小試・考點隨堂測驗 -->
+        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 md:p-8">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="w-8 h-8 rounded-lg bg-rose-100 text-rose-600 flex items-center justify-center font-bold text-sm">
+                    05
+                </span>
+                <h2 class="text-xl font-bold text-slate-900">牛刀小試・考生六九三隨堂試煉</h2>
+            </div>
+            <p class="text-sm text-slate-500 mb-6">請仔細審題，點選最適當的選項，系統將即時診斷你的法學涵攝盲點：</p>
+
+            <!-- 題目卡片 -->
+            <div class="bg-slate-50 rounded-xl p-5 border border-slate-200">
+                <div class="font-semibold text-slate-800 text-base mb-4">
+                    【國考經典改編題】關於意思表示瑕疵之撤銷，下列敘述何者完全正確？
+                </div>
+
+                <div class="space-y-3" id="quiz-options">
+                    <button onclick="checkAnswer(1, false)" class="w-full text-left p-3.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-100 transition-colors text-sm text-slate-700 flex items-start gap-3 option-btn">
+                        <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 flex-shrink-0 flex items-center justify-center font-bold text-xs">A</span>
+                        <span>表意人因自己具重大過失而發生當事人資格錯誤者，仍得依民法第 88 條第 2 項規定行使撤銷權。</span>
+                    </button>
+
+                    <button onclick="checkAnswer(2, false)" class="w-full text-left p-3.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-100 transition-colors text-sm text-slate-700 flex items-start gap-3 option-btn">
+                        <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 flex-shrink-0 flex items-center justify-center font-bold text-xs">B</span>
+                        <span>第三人甲脅迫乙與丙簽訂房屋租賃契約，丙不知甲之脅迫行為亦無過失，乙因此不得撤銷該租賃契約。</span>
+                    </button>
+
+                    <button onclick="checkAnswer(3, true)" class="w-full text-left p-3.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-100 transition-colors text-sm text-slate-700 flex items-start gap-3 option-btn">
+                        <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 flex-shrink-0 flex items-center justify-center font-bold text-xs">C</span>
+                        <span>因受詐欺而為意思表示者，其撤銷權之行使，應自發見詐欺後 1 年內為之；但自意思表示後，經過 10 年者不得撤銷。</span>
+                    </button>
+
+                    <button onclick="checkAnswer(4, false)" class="w-full text-left p-3.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-100 transition-colors text-sm text-slate-700 flex items-start gap-3 option-btn">
+                        <span class="w-6 h-6 rounded-full bg-slate-200 text-slate-700 flex-shrink-0 flex items-center justify-center font-bold text-xs">D</span>
+                        <span>被詐欺而為意思表示之撤銷，其法律效果具有對世絕對性，縱第三人為善意，表意人仍得以此撤銷對抗之。</span>
+                    </button>
+                </div>
+
+                <!-- 測驗回饋詳解區塊 -->
+                <div id="quiz-feedback" class="hidden mt-6 p-4 rounded-xl text-sm leading-relaxed"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer class="max-w-5xl mx-auto px-4 mt-12 text-center text-xs text-slate-400">
+        <p>民法高分思維精解講義系列・考生「六九三」專屬複習檔案</p>
+        <p class="mt-1">Copyright &copy; 2026 國考民法研究小組. All rights reserved.</p>
+    </footer>
+
+    <!-- 互動 JavaScript 腳本 -->
+    <script>
+        // 摺疊展開解析
+        function toggleSection(id) {
+            const el = document.getElementById(id);
+            if (el.classList.contains('hidden')) {
+                el.classList.remove('hidden');
+            } else {
+                el.classList.add('hidden');
+            }
+        }
+
+        // 隨堂測驗判斷與回饋
+        function checkAnswer(optionIndex, isCorrect) {
+            const buttons = document.querySelectorAll('.option-btn');
+            const feedback = document.getElementById('quiz-feedback');
+            
+            // 重置所有選項樣式
+            buttons.forEach(btn => {
+                btn.className = "w-full text-left p-3.5 rounded-lg border border-slate-300 bg-white transition-colors text-sm text-slate-700 flex items-start gap-3 option-btn opacity-60 pointer-events-none";
+            });
+
+            // 高亮點選項目
+            const selectedBtn = buttons[optionIndex - 1];
+            selectedBtn.classList.remove('opacity-60');
+
+            if (isCorrect) {
+                selectedBtn.classList.add('bg-emerald-50', 'border-emerald-500', 'text-emerald-900');
+                feedback.className = "mt-6 p-5 rounded-xl text-sm leading-relaxed bg-emerald-50 border border-emerald-200 text-emerald-900 block";
+                feedback.innerHTML = `
+                    <div class="font-bold flex items-center gap-2 mb-2 text-base text-emerald-800">
+                        <i class="fa-solid fa-circle-check text-emerald-600"></i>
+                        恭喜考生「六九三」！回答完全正確！
+                    </div>
+                    <div class="space-y-2">
+                        <p><strong>【精準解析】</strong></p>
+                        <p><strong>C 選項正確：</strong>完全符合民法第 93 條之明文規定，主觀除斥期間為「發見詐欺後 1 年」，客觀極限期間為「意思表示後經過 10 年」。</p>
+                        <p><strong>【各選項陷阱排除】</strong></p>
+                        <ul class="list-disc list-inside space-y-1 text-xs">
+                            <li><strong>A 錯誤：</strong>民法第 88 條第 1 項但書明定，錯誤之撤銷以「非由表意人自己之過失者為限」。通說與實務認為表意人縱僅具<strong>輕過失</strong>即不得撤銷，遑論重大過失。</li>
+                            <li><strong>B 錯誤：</strong>民法第 92 條第 1 項但書之限制「僅適用於第三人詐欺」。在<strong>第三人脅迫</strong>之情形，表意人乙不論相對人丙是否知情，<strong>皆得依法撤銷</strong>！</li>
+                            <li><strong>D 錯誤：</strong>依民法第 92 條第 2 項，被詐欺而為之意思表示之撤銷，<strong>不得以之對抗善意第三人</strong>。</li>
+                        </ul>
+                    </div>
+                `;
+            } else {
+                selectedBtn.classList.add('bg-rose-50', 'border-rose-500', 'text-rose-900');
+                feedback.className = "mt-6 p-5 rounded-xl text-sm leading-relaxed bg-rose-50 border border-rose-200 text-rose-900 block";
+                feedback.innerHTML = `
+                    <div class="font-bold flex items-center gap-2 mb-2 text-base text-rose-800">
+                        <i class="fa-solid fa-circle-xmark text-rose-600"></i>
+                        觀念有盲點喔！再審查一次關鍵法條。
+                    </div>
+                    <p class="text-xs text-rose-700 leading-relaxed mb-3">
+                        注意：本題核心在於<strong>「第三人詐欺 vs 第三人脅迫」的區別</strong>，以及<strong>民法第 93 條除斥期間</strong>的法條精準度！
+                    </p>
+                    <button onclick="resetQuiz()" class="text-xs font-semibold bg-rose-600 hover:bg-rose-700 text-white px-3.5 py-1.5 rounded transition-colors cursor-pointer">
+                        重新作答
+                    </button>
+                `;
+            }
+        }
+
+        // 重置測驗
+        function resetQuiz() {
+            const buttons = document.querySelectorAll('.option-btn');
+            const feedback = document.getElementById('quiz-feedback');
+            
+            buttons.forEach(btn => {
+                btn.className = "w-full text-left p-3.5 rounded-lg border border-slate-300 bg-white hover:bg-slate-100 transition-colors text-sm text-slate-700 flex items-start gap-3 option-btn";
+            });
+
+            feedback.className = "hidden";
+            feedback.innerHTML = "";
+        }
+    </script>
+</body>
+</html>

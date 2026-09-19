@@ -1,0 +1,187 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>How To Manage Your Time Like a CEO</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>How To Manage Your Time Like a CEO</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                    <span>•</span>
+                    <a href="https://youtu.be/HwwqlLJAZhM?si=dXsmB9XBet7bw1zl" target="_blank" class="video-link">🔗 觀看原始影片</a>
+                    
+                </div>
+            </div>
+            
+            
+            <!-- 自動載入 YouTube 最高畫質封面圖，若失敗則降級載入標準畫質 -->
+            <img src="https://img.youtube.com/vi/HwwqlLJAZhM/maxresdefault.jpg" alt="Video Thumbnail" class="hero-image" onerror="this.src='https://img.youtube.com/vi/HwwqlLJAZhM/hqdefault.jpg';">
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li>頂尖 1% 菁英與一般人的核心差異：<strong>他們管理的不是「時間」，而是「注意力」與「信任」</strong>。</li>
+    <li><strong>「3-2-1 時間管理系統」架構</strong>：由<strong> 3 種角色（Maker 實作者、Marker 審閱者、Multiplier 倍增者）</strong>、<strong> 2 種狀態（War Time 戰時、Peace Time 平時）</strong>與 <strong> 1 個不可妥協的核心要務（One Non-negotiable）</strong>所組成。</li>
+    <li><strong>當前狀態決定你的工作角色</strong>：平時可擔任倍增者進行授權；但在戰時（如市場劇變、危機），領導者必須親自下場轉為審閱者或實作者。<strong>Airbnb 執行長 Brian Chesky 在 2020 年轉入戰時狀態親管產品細節，3 年內推動超過 500 項產品改進重返獲利</strong>。</li>
+    <li><strong>高效授權的本質是「信任管理」</strong>：對新手給予<strong>陪伴與安心感（Comfort）</strong>、對有經驗者給予<strong>明確性（Clarity）</strong>、對專家則著重於<strong>排除障礙與提供情境脈絡（Context）</strong>。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>每個人每週同樣擁有 160 小時，但像 Elon Musk 或 Jack Dorsey 等頂尖領導者能同時掌管多家企業而不倦怠，關鍵在於掌握了<strong>「3-2-1 系統」</strong>：</p>
+  <p>首先是<strong>「3 種角色」</strong>。工作者必須認清自己所處的階段：<strong>Maker（實作者）</strong>專注於深度工作與個人交付成果；<strong>Marker（審閱者）</strong>負責管理 10 至 20 項優先事項，轉為編輯者角色，負責審閱、提供回饋並建立自動化流程；<strong>Multiplier（倍增者）</strong>則管理 30 至 50 項以上職責，扮演「高階路由器（Router）」，專注於人才招募、組織對齊與策略下注。如 Marshall Goldsmith 所言：<strong>「讓你走到這裡的思維，不能帶你走到那裡」</strong>，若角色轉變卻未調整管理模式，將導致微觀管理或過度授權的失敗。</p>
+  <p>其次是<strong>「2 種狀態」</strong>。企業與個人處於<strong>平時狀態（Peace Time）</strong>時，應授權優秀人才發揮所長（倍增者）；但一旦進入<strong>戰時狀態（War Time）</strong>，如創立初期、陷入紅海競爭或面臨成長停滯時，<strong>領導者必須果斷回到前線掌握關鍵細節與產品決策</strong>，如 Airbnb 應對疫情危機的組織扁平化改革。</p>
+  <p>最後是<strong>「1 個不可妥協的核心要務」</strong>。當事情陷入混亂、領導者成為組織瓶頸時，必須問自己：<strong>「什麼是只有我能做、絕對無法授權的一件事？」</strong>講者以自身經營曾入選德勤高科技高成長 500 強（Deloitte Fast 500）前 20 名 AI 企業的 CEO 經驗為例，將其核心確立為<strong>「建立以使命為導向的關係（包含招募、文化與客戶夥伴關係）」</strong>，其餘事項則全數建立營運節奏並進行授權。</p>
+  <p>在執行授權時，<strong>「卓越的領導不在於時間管理，而在於信任管理」</strong>。如同 Steve Jobs 與 Jony Ive 的協作模式，領導者深入細節是為了學習與賦能而非控制；<strong>「給予新手過多自由會導致失敗，對專家進行微觀管理則會導致離職」</strong>，唯有依對象成熟度精準提供安心感、明確性或情境脈絡，才能在兼顧深度的同時實現高效規模化。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (待辦事項 / 關鍵行動)</h2>
+  <ul>
+    <li><strong>自我檢視定位</strong>：確認自己目前處於 <strong>Maker（實作者）、Marker（審閱者）還是 Multiplier（倍增者）</strong>，停止在錯誤的角色上使用不符層級的時間管理策略。</li>
+    <li><strong>判定所處狀態</strong>：評估目前的事業或專案屬於<strong>「平時（Peace Time）」還是「戰時（War Time）」</strong>，動態調整親自介入細節的程度。</li>
+    <li><strong>找出唯一核心要務</strong>：嚴肅回答<strong>「哪一件事是只有我能做、絕對不能授權的？」</strong>，將個人主力注意力聚焦於此（One Non-negotiable）。</li>
+    <li><strong>執行信任授權</strong>：本週選出<strong>一項具重複性的任務進行授權</strong>，並依照對象能力調整節奏：<strong>對新手給予安心感、對有經驗者給予明確性、對專家給予情境脈絡並協助排除障礙</strong>。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 11: 抵押權之從屬性與不可分性 - 民法精解</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .answer-feedback { display: none; margin-top: 8px; padding: 10px; border-radius: 8px; }
+        .correct { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .incorrect { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .option-button { transition: all 0.2s ease-in-out; }
+        .option-button:hover:not(.disabled) { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .disabled { pointer-events: none; opacity: 0.7; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-6 shadow-lg">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center text-lg hover:text-blue-200 transition-colors">
+                <i class="fas fa-arrow-alt-circle-left mr-2"></i> 返回民法知識庫總覽
+            </a>
+            <div class="text-right">
+                <span class="bg-blue-800 text-sm px-3 py-1 rounded-full mr-2">Day 11</span>
+                <span class="bg-indigo-800 text-sm px-3 py-1 rounded-full">物權</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-8 mt-6 bg-white rounded-lg shadow-xl">
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-4 text-center">
+            抵押權之從屬性與不可分性：穩固債權的雙生守護神
+        </h1>
+        <p class="text-lg text-gray-600 mb-8 text-center border-b pb-4">
+            獻給親愛的考生「六九三」，掌握民法物權精髓，考場無往不利！<br>
+            <span class="text-sm text-gray-500">更新日期：2026-08-29</span>
+        </p>
+
+        <!-- 區塊一：經典案例情境 (The Scenario) -->
+        <section class="mb-12 p-6 bg-blue-50 rounded-lg shadow-md border-l-4 border-blue-500">
+            <h2 class="text-3xl font-bold text-blue-800 mb-4 flex items-center">
+                <i class="fas fa-lightbulb text-blue-600 mr-3"></i> 經典案例情境：靜香的房子，大雄的債
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                大雄因創業急需資金，向胖虎借款新台幣 500 萬元。為表誠意並強化擔保，大雄的摯友靜香挺身而出，將其市值 800 萬元的房屋設定普通抵押權予胖虎，以擔保大雄這筆 500 萬元的債務。
+            </p>
+            <p class="text-lg leading-relaxed text-gray-700 mb-6">
+                幾個月後，大雄的事業小有起色，陸續償還了 300 萬元給胖虎。此時，靜香心想：「大雄已經還了將近一半的錢，我的房子是不是也可以解除一部分的抵押權設定了呢？」她於是向胖虎提出要求，希望將抵押權設定的金額從 500 萬元降至 200 萬元，或者至少能讓她的房屋在未來變賣時，有部分價值不受抵押權的限制。
+            </p>
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 text-yellow-800 p-4 mb-6 rounded-md">
+                <p class="font-semibold mb-2">【思考點】</p>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>靜香要求部分塗銷抵押權，法律上是否可行？</li>
+                    <li>如果大雄的借款契約因為某些原因被法院認定無效，靜香房屋上的抵押權會如何？</li>
+                </ul>
+            </div>
+            
+            <button onclick="toggleSection('solutionSection')" class="px-8 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 transition-all duration-300 ease-in-out flex items-center justify-center">
+                <i class="fas fa-puzzle-piece mr-2"></i> 展開解答與核心概念
+            </button>
+
+            <div id="solutionSection" class="mt-6 p-6 bg-blue-100 rounded-lg border-l-4 border-blue-600 shadow-inner hidden">
+                <h3 class="text-2xl font-bold text-blue-700 mb-3 flex items-center">
+                    <i class="fas fa-comment-dots mr-2"></i> 解答與概念解析
+                </h3>
+                <p class="text-lg leading-relaxed text-gray-800">
+                    靜香的提問觸及了抵押權最核心的兩大特性：<strong>從屬性（或稱附從性）</strong>與<strong>不可分性</strong>。
+                </p>
+                <ul class="list-disc list-inside text-lg leading-relaxed text-gray-800 space-y-3 mt-4">
+                    <li>
+                        <strong>關於部分塗銷：</strong> 依據抵押權的「不可分性」，只要主債務仍有餘額未清償，抵押權就仍然存在於抵押物的全部，不能因為部分清償而主張部分解除或部分塗銷。所以，靜香是無法主張只還了 300 萬元，就要求將抵押權的金額降低。
+                    </li>
+                    <li>
+                        <strong>關於主債務無效：</strong> 這涉及到抵押權的「從屬性」。抵押權是為擔保主債務而存在的，如果主債務（大雄與胖虎之間的借款契約）被認定無效，那麼抵押權也就失去了其存在依據，自然也就不再有效。此時，靜香的房屋將不再受到抵押權的拘束。
+                    </li>
+                </ul>
+                <p class="text-lg leading-relaxed text-gray-800 mt-4">
+                    這兩個特性，正是民法賦予抵押權的強大力量，確保債權人的權益。
+                </p>
+            </div>
+        </section>
+
+        <!-- 區塊二：三段論法拆解 (IRAC) -->
+        <section class="mb-12 p-6 bg-gray-50 rounded-lg shadow-md border-l-4 border-gray-400">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                <i class="fas fa-gavel text-gray-600 mr-3"></i> 三段論法 IRAC 拆解：法條與案例的對話
+            </h2>
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-sm">
+                    <thead>
+                        <tr class="bg-gray-200 text-gray-700 uppercase text-sm leading-normal">
+                            <th class="py-3 px-6 text-left border-b border-gray-300">大前提：法規（Rule）</th>
+                            <th class="py-3 px-6 text-left border-b border-gray-300">小前提：事實涵攝（Application）</th>
+                            <th class="py-3 px-6 text-left border-b border-gray-300">結論：法律效果（Conclusion）</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-700 text-base font-light">
+                        <!-- 從屬性 -->
+                        <tr class="hover:bg-gray-100 border-b border-gray-200">
+                            <td class="py-4 px-6 align-top">
+                                <h3 class="font-bold text-lg text-blue-700 mb-2">【抵押權之從屬性】</h3>
+                                <p class="mb-2"><strong>民法 §860：</strong>「稱普通抵押權者，謂債權人對於債務人或第三人不移轉占有而供其債權擔保之不動產，得就其賣得價金受清償之權。」</p>
+                                <p class="mb-2">此條文雖未明示「從屬性」，但學說及實務均認為，抵押權作為一種擔保物權，其存在目的係為擔保「主債務」之履行。故主債務若不存在、無效或消滅，抵押權亦隨之而生、隨之而滅，此即為從屬性。</p>
+                                <p class="font-medium text-gray-600"><strong>核心要旨：無債務，則無抵押權。抵押權與主債務共存亡。</strong></p>
+                            </td>
+                            <td class="py-4 px-6 align-top">
+                                <h3 class="font-bold text-lg text-green-700 mb-2">【靜香與大雄之案例】</h3>
+                                <p class="mb-2">案例中，靜香的房屋抵押權是為擔保「大雄對胖虎的 500 萬元借款債務」。</p>
+                                <p class="mb-2">如果大雄與胖虎之間的「借款契約」本身因故（例如意思表示不自由、違反公序良俗等）被法院認定為無效，則大雄根本不負有向胖虎償還 500 萬元的債務。</p>
+                            </td>
+                            <td class="py-4 px-6 align-top">
+                                <h3 class="font-bold text-lg text-red-700 mb-2">【法律效果】</h3>
+                                <p class="mb-2">既然主債務（借款契約）無效或不存在，則依據抵押權的「從屬性」原則，為擔保該債務而設定的抵押權，亦隨之失去其存在基礎而歸於消滅。</p>
+                                <p class="mb-2">靜香可主張抵押權不存在或請求塗銷抵押權登記，其房屋不再受該抵押權拘束。</p>
+                            </td>
+                        </tr>
+                        <!-- 不可分性 -->
+                        <tr class="hover:bg-gray-100">
+                            <td class="py-4 px-6 align-top">
+                                <h3 class="font-bold text-lg text-blue-700 mb-2">【抵押權之不可分性】</h3>
+                                <p class="mb-2"><strong>民法 §868：</strong>「抵押權除法律另有規定外，不得由債權分離而為讓與，或為其他債權之擔保。」</p>
+                                <p class="mb-2">雖然此條文主要規範的是抵押權與債權的不可分離，但學說及實務上更延伸出「<strong>物上不可分性</strong>」。意指即使主債務僅有部分清償，只要仍有餘額未清償，抵押權仍存在於抵押物的全部，不能因部分清償而主張抵押權僅存在於部分抵押物或請求部分塗銷。</p>
+                                <p class="font-medium text-gray-600"><strong>核心要旨：債務未完全清償，抵押物全部仍受拘束。</strong></p>
+                            </td>
+                            <td class="py-4 px-6 align-top">
+                                <h3 class="font-bold text-lg text-green-700 mb-2">【靜香與大雄之案例】</h3>
+                                <p class="mb-2">大雄對胖虎的 500 萬元借款債務，已償還 300 萬元，尚餘 200 萬元未清償。</p>
+                                <p class="mb-2">靜香欲主張因已部分清償，而要求部分塗銷其房屋上的抵押權。</p>
+                            </td>
+                            <td class="py-4 px-6 align-top">
+                                <h3 class="font-bold text-lg text-red-700 mb-2">【法律效果】</h3>
+                                <p class="mb-2">依據抵押權的「不可分性」原則，儘管主債務已部分清償，但因仍有 200 萬元未清償，故靜香房屋上的抵押權仍然存在於「房屋的全部」，胖虎有權拒絕靜香部分塗銷抵押權的要求。</p>
+                                <p class="mb-2">只有當大雄將全部 500 萬元債務清償完畢後，靜香才能請求塗銷抵押權登記。</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 區塊三：生活與職場防禦錦囊 -->
+        <section class="mb-12 p-6 bg-green-50 rounded-lg shadow-md border-l-4 border-green-500">
+            <h2 class="text-3xl font-bold text-green-800 mb-6 flex items-center">
+                <i class="fas fa-shield-alt text-green-600 mr-3"></i> 生活與職場防禦錦囊：自保策略
+            </h2>
+            <p class="text-lg text-gray-700 mb-4">
+                理解抵押權的從屬性與不可分性，不只是考試，更是現實生活中保護自身權益的利器。
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- 抵押權人/債權人 錦囊 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-green-200">
+                    <h3 class="text-xl font-bold text-green-700 mb-3 flex items-center">
+                        <i class="fas fa-hand-holding-usd mr-2 text-green-500"></i> 抵押權人 / 債權人（例如：胖虎）
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-3">
+                        <li>
+                            <strong>確認主債務有效：</strong> 設定抵押權前，務必仔細審查主債務（借款契約、買賣契約等）的合法性與有效性。主債務若有瑕疵，抵押權亦隨之無效。
+                        </li>
+                        <li>
+                            <strong>善用不可分性：</strong> 當債務人僅部分清償時，切勿輕易同意部分塗銷抵押權。抵押權的不可分性是保障您債權得以全額受償的重要屏障。
+                        </li>
+                        <li>
+                            <strong>確保登記完善：</strong> 抵押權需經登記始生效力，請務必確認已完成不動產抵押權設定登記，並保留相關文件。
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 抵押人/債務人/買家 錦囊 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg border border-green-200">
+                    <h3 class="text-xl font-bold text-green-700 mb-3 flex items-center">
+                        <i class="fas fa-home mr-2 text-green-500"></i> 抵押人 / 債務人 / 房產買家（例如：靜香、大雄、未來買家）
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-3">
+                        <li>
+                            <strong>釐清擔保範圍：</strong> 作為物上保證人（抵押人），應清楚自己擔保的債務金額、期間及範圍，避免陷入不必要的困境。
+                        </li>
+                        <li>
+                            <strong>注意主債務狀態：</strong> 如果您是抵押人而非債務人，應密切關注主債務的履行狀況。一旦主債務清償完畢，應立即請求債權人協同塗銷抵押權登記。
+                        </li>
+                        <li>
+                            <strong>部分清償勿期盼部分塗銷：</strong> 作為債務人或抵押人，理解只要債務未完全清償，抵押權就仍存在於抵押物全部，避免不切實際地要求部分塗銷。
+                        </li>
+                        <li>
+                            <strong>買家盡職調查：</strong> 購買不動產時，務必查詢地政事務所的登記謄本，確認有無抵押權設定。即使賣家聲稱「會處理」，也應在過戶前確保抵押權已塗銷，以免買到「帶抵押權」的房屋，日後若原債務未清償，您的房屋仍可能被拍賣。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊四：底層思維模型提煉 -->
+        <section class="mb-12 p-6 bg-purple-50 rounded-lg shadow-md border-l-4 border-purple-500">
+            <h2 class="text-3xl font-bold text-purple-800 mb-6 flex items-center">
+                <i class="fas fa-brain text-purple-600 mr-3"></i> 底層思維模型提煉：法律經濟學與風險分配
+            </h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                抵押權的「從屬性」與「不可分性」並非憑空而生，其背後蘊含著深刻的法律經濟學與風險分配邏輯。
+            </p>
+            <div class="space-y-6">
+                <div>
+                    <h3 class="text-xl font-bold text-purple-700 mb-2 flex items-center">
+                        <i class="fas fa-link mr-2 text-purple-500"></i> 從屬性：降低交易成本，確保法律關係純粹
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>
+                            <strong>避免無謂擔保：</strong> 若抵押權可以脫離主債務獨立存在，可能出現擔保一個不存在債務的荒謬情況。從屬性確保抵押權的存在意義，避免資源錯配。
+                        </li>
+                        <li>
+                            <strong>效率原則：</strong> 當主債務消滅，抵押權自動消滅，減少了額外的法律行為（例如：債權人需要額外發函解除擔保）。這降低了法律關係的複雜性，節省了交易成本。
+                        </li>
+                        <li>
+                            <strong>風險分配：</strong> 債權人僅需關注主債務的有效性與履行情況，而無需擔心抵押權會因其他複雜因素獨立存續。這簡化了風險評估。
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-purple-700 mb-2 flex items-center">
+                        <i class="fas fa-compress-alt mr-2 text-purple-500"></i> 不可分性：強化債權擔保，促進信用流通
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>
+                            <strong>保障債權完整性：</strong> 如果債務人可以因部分清償而要求部分解除抵押權，將會嚴重削弱抵押權對債權的擔保作用。債權人將面臨追討小額餘款時，擔保物價值不足的風險。
+                        </li>
+                        <li>
+                            <strong>降低違約成本：</strong> 抵押權的不可分性，使得債務人必須完全清償債務，才能取回其擔保物。這為債務人提供了強大的誘因，促使其履行債務，從而降低了債權人的違約成本。
+                        </li>
+                        <li>
+                            <strong>促進信用流通：</strong> 正是有了抵押權這樣強大的擔保機制，債權人（銀行等金融機構）才更願意提供資金。這種穩固的擔保結構降低了放款風險，鼓勵了資金的流動，對整體經濟發展有積極作用。
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <p class="text-lg leading-relaxed text-gray-700 mt-6 bg-purple-100 p-4 rounded-md border-l-4 border-purple-600">
+                簡言之，「從屬性」讓抵押權的產生合乎邏輯與目的，避免了無意義的擔保；「不可分性」則賦予抵押權足夠的強度，確保其擔保功能得以充分實現，共同為經濟活動中的債權人提供了堅實的保障。
+            </p>
+        </section>
+
+        <!-- 區塊五：牛刀小試・考點隨堂測驗 -->
+        <section class="mb-12 p-6 bg-yellow-50 rounded-lg shadow-md border-l-4 border-yellow-500">
+            <h2 class="text-3xl font-bold text-yellow-800 mb-6 flex items-center">
+                <i class="fas fa-pencil-alt text-yellow-600 mr-3"></i> 牛刀小試・考點隨堂測驗
+            </h2>
+            <p class="text-lg text-gray-700 mb-4">
+                六九三同學，恭喜你學習到這裡！現在讓我們透過一個小測驗，檢視你對抵押權「從屬性」與「不可分性」的掌握程度吧！
+            </p>
+
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <p class="text-xl font-semibold text-gray-800 mb-4">【單選題】下列關於抵押權之敘述，何者正確？</p>
+                
+                <div id="q1-options" class="space-y-4">
+                    <button class="option-button w-full text-left p-4 border border-gray-300 rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-200" onclick="checkAnswer(this, 'q1-c')">
+                        (A) 抵押權為獨立之物權，不受主債務之拘束，故主債務若消滅，抵押權仍得繼續存在。
+                    </button>
+                    <div id="q1-a-feedback" class="answer-feedback incorrect">
+                        <i class="fas fa-times-circle mr-2"></i> 錯誤！這是混淆了抵押權的「從屬性」。抵押權是為擔保主債務而存在的，主債務一旦消滅，抵押權亦隨之消滅。
+                    </div>
+
+                    <button class="option-button w-full text-left p-4 border border-gray-300 rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-200" onclick="checkAnswer(this, 'q1-c')">
+                        (B) 債務人清償部分債務後，即可要求抵押權人按比例塗銷部分抵押權設定。
+                    </button>
+                    <div id="q1-b-feedback" class="answer-feedback incorrect">
+                        <i class="fas fa-times-circle mr-2"></i> 錯誤！這是混淆了抵押權的「不可分性」。只要主債務仍有餘額未清償，抵押權就仍然存在於抵押物的全部，不能主張部分塗銷。
+                    </div>
+
+                    <button class="option-button w-full text-left p-4 border border-gray-300 rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-200" onclick="checkAnswer(this, 'q1-c')">
+                        (C) 抵押權所擔保之債權，因消滅時效完成而請求權消滅後，抵押權人仍得於抵押物拍賣所得價金中受清償。
+                    </button>
+                    <div id="q1-c-feedback" class="answer-feedback correct">
+                        <i class="fas fa-check-circle mr-2"></i> 正確！此為民法第 144 條第 2 項規定：「債權已適於為抵銷者，其請求權雖經時效消滅，仍得主張抵銷。其以抵押權、質權、留置權擔保者，亦同。」換言之，即使主債權的請求權因時效消滅，抵押權仍可繼續存在，其擔保效力不受影響，故抵押權人仍可就抵押物拍賣所得價金受清償。這在法律上被稱為從屬性的「緩和」，或稱「抗辯切斷」的效果。
+                    </div>
+
+                    <button class="option-button w-full text-left p-4 border border-gray-300 rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-200" onclick="checkAnswer(this, 'q1-c')">
+                        (D) 抵押權之從屬性意指抵押權與主債務必須同時成立，且同時消滅，無任何例外。
+                    </button>
+                    <div id="q1-d-feedback" class="answer-feedback incorrect">
+                        <i class="fas fa-times-circle mr-2"></i> 錯誤！從屬性雖是原則，但如選項 (C) 所示，主債權請求權因時效消滅時，抵押權仍不受影響，此即為從屬性的重要「例外」或「緩和」。此外，民法第 870 條就獨立擔保與最高限額抵押權，也為從屬性帶來一定程度的彈性。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 mt-12 text-center text-sm">
+        <p>&copy; 2026 民法知識庫 - 專為考生「六九三」打造。版權所有。</p>
+        <p class="mt-2">學習民法，掌握未來。祝您金榜題名！</p>
+    </footer>
+
+    <script>
+        function toggleSection(id) {
+            const section = document.getElementById(id);
+            if (section.classList.contains('hidden')) {
+                section.classList.remove('hidden');
+                section.classList.add('animate-fadeIn'); // 可選：添加動畫
+            } else {
+                section.classList.add('hidden');
+                section.classList.remove('animate-fadeIn');
+            }
+        }
+
+        function checkAnswer(selectedButton, correctAnswerId) {
+            const optionsContainer = selectedButton.closest('#q1-options');
+            const allOptions = optionsContainer.querySelectorAll('.option-button');
+            
+            allOptions.forEach(button => {
+                button.classList.add('disabled'); // 禁用所有選項
+                button.style.cursor = 'default';
+            });
+
+            const selectedFeedback = document.getElementById(selectedButton.nextElementSibling.id);
+            const correctFeedback = document.getElementById(correctAnswerId.replace('q1-', 'q1-') + '-feedback');
+
+            if (selectedButton.onclick.toString().includes(correctAnswerId)) {
+                selectedButton.classList.remove('bg-gray-50', 'hover:bg-gray-100');
+                selectedButton.classList.add('bg-green-200', 'border-green-500');
+                selectedFeedback.classList.remove('incorrect');
+                selectedFeedback.classList.add('correct');
+            } else {
+                selectedButton.classList.remove('bg-gray-50', 'hover:bg-gray-100');
+                selectedButton.classList.add('bg-red-200', 'border-red-500');
+                selectedFeedback.classList.remove('correct');
+                selectedFeedback.classList.add('incorrect');
+                
+                // Show the correct answer's feedback if a wrong answer was selected
+                const correctButton = document.querySelector(`[onclick*="${correctAnswerId}"]`);
+                if (correctButton) {
+                    correctButton.classList.remove('bg-gray-50', 'hover:bg-gray-100');
+                    correctButton.classList.add('bg-green-200', 'border-green-500');
+                    correctFeedback.classList.remove('incorrect');
+                    correctFeedback.classList.add('correct');
+                }
+            }
+
+            selectedFeedback.style.display = 'block';
+            if (selectedButton.onclick.toString().includes(correctAnswerId)) {
+                // If selected is correct, only show its feedback
+            } else {
+                // If selected is incorrect, show both selected feedback and correct feedback
+                if (correctFeedback && selectedFeedback !== correctFeedback) {
+                    correctFeedback.style.display = 'block';
+                }
+            }
+        }
+    </script>
+</body>
+</html>

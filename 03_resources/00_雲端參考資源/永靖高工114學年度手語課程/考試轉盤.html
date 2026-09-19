@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒數計時線上轉盤</title>
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f5f6fa;
+            --accent-color: #e74c3c;
+            --text-color: #2c3e50;
+        }
+
+        body {
+            font-family: 'Segoe UI', Microsoft JhengHei, sans-serif;
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* 左側控制面板 */
+        .sidebar {
+            width: 350px;
+            background: white;
+            padding: 20px;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 10;
+        }
+
+        h2, h3 { margin: 0; color: var(--primary-color); }
+
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        label { font-weight: bold; font-size: 0.9rem; }
+        
+        textarea {
+            width: 100%;
+            height: 150px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            resize: vertical;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        input[type="number"] {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .stats-box {
+            background: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stats-count {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        button:hover { background-color: #357abd; }
+        button.reset-btn { background-color: #95a5a6; }
+        button.spin-btn { font-size: 1.2rem; font-weight: bold; background-color: var(--accent-color); }
+
+        /* 右側轉盤區域 */
+        .main-area {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background-image: radial-gradient(#e0e0e0 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .wheel-container {
+            position: relative;
+            width: 500px;
+            height: 500px;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+        }
+
+        .pointer {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 40px solid var(--accent-color);
+            z-index: 5;
+            filter: drop-shadow(0 2px 2px rgba(0,0,0,0.3));
+        }
+
+        /* --- 彈出視窗樣式 (本次修改重點) --- */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85); /* 背景更暗一點，凸顯中間 */
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            width: 85%;
+            max-width: 600px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            animation: popIn 0.3s ease;
+            position: relative;
+            border: 5px solid #fff;
+        }
+
+        /* 標題小字 */
+        .result-label {
+            font-size: 1rem;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* 題目樣式：黑底白字，極為明顯 */
+        .result-question {
+            background-color: #000;
+            color: #fff;
+            font-size: 2.2rem;
+            font-weight: 800;
+            padding: 30px 20px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            line-height: 1.4;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            word-wrap: break-word;
+        }
+
+        /* 計時器樣式：紅底白字，字體較小 */
+        .timer-container {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #d63031;
+            color: white;
+            padding: 8px 25px;
+            border-radius: 50px; /* 膠囊形狀 */
+            box-shadow: 0 4px 10px rgba(214, 48, 49, 0.4);
+            margin-bottom: 30px;
+        }
+
+        .timer-icon {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .timer-display {
+            font-size: 1.8rem; /* 字體比題目小，但依然清晰 */
+            font-weight: bold;
+            font-variant-numeric: tabular-nums; /* 數字等寬，避免倒數時跳動 */
+        }
+
+        .timer-label {
+            font-size: 0.9rem;
+            margin-left: 8px;
+            opacity: 0.9;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+        
+        .modal-actions button {
+            min-width: 120px;
+            padding: 15px 20px;
+            font-size: 1.1rem;
+        }
+
+        @keyframes popIn {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        /* 倒數低於3秒時的閃爍動畫 */
+        .urgent-pulse {
+            animation: pulse-red 0.5s infinite alternate;
+        }
+        
+        @keyframes pulse-red {
+            from { background-color: #d63031; transform: scale(1); }
+            to { background-color: #ff0000; transform: scale(1.05); }
+        }
+
+        @media (max-width: 768px) {
+            body { flex-direction: column; height: auto; overflow-y: auto; }
+            .sidebar { width: 100%; box-sizing: border-box; }
+            .wheel-container { width: 300px; height: 300px; margin: 20px 0; }
+            .result-question { font-size: 1.5rem; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 左側設定區 -->
+    <div class="sidebar">
+        <h2>🎡 設定面板</h2>
+        
+        <div class="control-group">
+            <label for="inputData">輸入題目 (一行一個)</label>
+            <textarea id="inputData" oninput="updateWheel()">
+物理第一題
+歷史簡答題
+化學元素表背誦
+英文單字測驗
+地理首都問答
+數學計算題</textarea>
+        </div>
+
+        <div class="control-group">
+            <label for="timeSetting">倒數時間 (秒)</label>
+            <input type="number" id="timeSetting" value="10" min="1">
+        </div>
+
+        <div class="stats-box">
+            <div>已作答題目</div>
+            <div class="stats-count" id="answeredCount">0</div>
+        </div>
+
+        <button class="spin-btn" onclick="spinWheel()">🔥 開始旋轉</button>
+        
+        <div style="margin-top: auto; display: flex; gap: 10px;">
+            <button class="reset-btn" onclick="resetStats()" style="flex: 1">重置數據</button>
+            <button onclick="updateWheel()" style="flex: 1">更新轉盤</button>
+        </div>
+    </div>
+
+    <!-- 右側轉盤區 -->
+    <div class="main-area">
+        <div class="wheel-container">
+            <div class="pointer"></div>
+            <canvas id="wheelCanvas" width="500" height="500"></canvas>
+        </div>
+    </div>
+
+    <!-- 彈出視窗 (倒數計時用) -->
+    <div class="modal-overlay" id="resultModal">
+        <div class="modal-content">
+            <div class="result-label">你要作答的題目</div>
+            
+            <!-- 題目：黑底白字 -->
+            <div class="result-question" id="resultText">題目顯示區</div>
+            
+            <!-- 計時器：紅底白字膠囊 -->
+            <div class="timer-container" id="timerContainer">
+                <span class="timer-icon">⏱️</span>
+                <span class="timer-display" id="timerDisplay">10</span>
+                <span class="timer-label">秒</span>
+            </div>
+            
+            <div class="modal-actions">
+                <button onclick="closeModal(false)" style="background-color: #95a5a6;">關閉 (不計分)</button>
+                <button onclick="closeModal(true)" style="background-color: #27ae60;">完成 (移除此題)</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('wheelCanvas');
+        const ctx = canvas.getContext('2d');
+        const inputData = document.getElementById('inputData');
+        const timeInput = document.getElementById('timeSetting');
+        
+        let segments = [];
+        let colors = ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#8AC926', '#1982C4'];
+        let currentRotation = 0;
+        let isSpinning = false;
+        let answeredTotal = 0;
+        let countdownInterval;
+
+        updateWheel();
+
+        function updateWheel() {
+            const text = inputData.value.trim();
+            if (!text) {
+                segments = ['請輸入題目'];
+            } else {
+                segments = text.split('\n').filter(line => line.trim() !== '');
+            }
+            drawWheel();
+        }
+
+        function drawWheel() {
+            const numSegments = segments.length;
+            const arcSize = (2 * Math.PI) / numSegments;
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const radius = 240;
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < numSegments; i++) {
+                const angle = i * arcSize;
+                
+                ctx.beginPath();
+                ctx.fillStyle = colors[i % colors.length];
+                ctx.moveTo(centerX, centerY);
+                ctx.arc(centerX, centerY, radius, angle, angle + arcSize);
+                ctx.lineTo(centerX, centerY);
+                ctx.fill();
+                ctx.stroke();
+
+                ctx.save();
+                ctx.translate(centerX, centerY);
+                ctx.rotate(angle + arcSize / 2);
+                ctx.textAlign = "right";
+                ctx.fillStyle = "#fff";
+                ctx.font = "bold 20px Microsoft JhengHei";
+                ctx.fillText(segments[i], radius - 20, 10);
+                ctx.restore();
+            }
+        }
+
+        function spinWheel() {
+            if (isSpinning || segments.length === 0) return;
+
+            isSpinning = true;
+            
+            // 隨機旋轉角度
+            const minSpins = 5;
+            const extraDegrees = Math.floor(Math.random() * 360);
+            const totalDegrees = minSpins * 360 + extraDegrees;
+            
+            currentRotation += totalDegrees;
+            canvas.style.transform = `rotate(-${currentRotation}deg)`;
+            
+            setTimeout(() => {
+                showResult(currentRotation);
+                isSpinning = false;
+            }, 4000);
+        }
+
+        function showResult(rotation) {
+            const numSegments = segments.length;
+            const arcSize = 360 / numSegments;
+            const actualRotation = rotation % 360;
+            const pointerPos = (90 + actualRotation) % 360;
+            
+            let index = Math.floor(pointerPos / arcSize);
+            index = (numSegments - index) % numSegments;
+            
+            const winningText = segments[index];
+
+            document.getElementById('resultText').innerText = winningText;
+            document.getElementById('resultModal').style.display = 'flex';
+            
+            startTimer();
+        }
+
+        function startTimer() {
+            let timeLeft = parseInt(timeInput.value) || 10;
+            const display = document.getElementById('timerDisplay');
+            const container = document.getElementById('timerContainer');
+            
+            display.innerText = timeLeft;
+            container.classList.remove('urgent-pulse'); // 重置動畫
+
+            if (countdownInterval) clearInterval(countdownInterval);
+
+            const tick = () => {
+                if (timeLeft <= 0) {
+                    clearInterval(countdownInterval);
+                    display.innerText = "0";
+                    // 時間到的效果 (可選)
+                } else {
+                    timeLeft--;
+                    display.innerText = timeLeft;
+                    
+                    // 剩餘3秒時加入緊急閃爍效果
+                    if (timeLeft <= 3) {
+                        container.classList.add('urgent-pulse');
+                    }
+                }
+            };
+
+            countdownInterval = setInterval(tick, 1000);
+        }
+
+        function closeModal(isCompleted) {
+            const modal = document.getElementById('resultModal');
+            modal.style.display = 'none';
+            if (countdownInterval) clearInterval(countdownInterval);
+
+            if (isCompleted) {
+                answeredTotal++;
+                document.getElementById('answeredCount').innerText = answeredTotal;
+
+                const textToRemove = document.getElementById('resultText').innerText;
+                const lines = inputData.value.split('\n');
+                const newLines = lines.filter(line => line.trim() !== textToRemove);
+                inputData.value = newLines.join('\n');
+                updateWheel();
+            }
+        }
+
+        function resetStats() {
+            if(confirm('確定要重置作答數量嗎？')) {
+                answeredTotal = 0;
+                document.getElementById('answeredCount').innerText = 0;
+            }
+        }
+    </script>
+</body>
+</html>

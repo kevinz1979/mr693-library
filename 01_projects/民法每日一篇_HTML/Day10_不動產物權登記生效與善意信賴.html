@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 10 - 不動產物權登記生效與善意信賴</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #007bff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .subsection-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #17a2b8;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #dee2e6;
+            padding-bottom: 5px;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            padding: 20px;
+        }
+        .scenario-content {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #e9ecef;
+            border-left: 4px solid #007bff;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+            border-radius: 0.25rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-toggle {
+            background-color: #6c757d;
+            color: white;
+            border-radius: 0.25rem;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+        .btn-toggle:hover {
+            background-color: #5a6268;
+        }
+        .irac-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+        .irac-table th, .irac-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .irac-table th {
+            background-color: #e9ecef;
+            font-weight: 600;
+            color: #495057;
+        }
+        .irac-table tr:last-child td {
+            border-bottom: none;
+        }
+        .irac-table .col-law { width: 30%; }
+        .irac-table .col-facts { width: 40%; }
+        .irac-table .col-effect { width: 30%; }
+        .legal-tip-card {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .bottom-layer-model {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .quiz-question {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #0056b3;
+        }
+        .quiz-options label {
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: 8px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: #ffffff;
+        }
+        .quiz-options label:hover {
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+        }
+        .quiz-options label.correct {
+            background-color: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+            font-weight: bold;
+        }
+        .quiz-options label.incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+            color: #721c24;
+            font-weight: bold;
+        }
+        .feedback {
+            font-size: 0.9rem;
+            margin-top: 5px;
+            display: block;
+            font-weight: bold;
+        }
+        .feedback.correct { color: #28a745; }
+        .feedback.incorrect { color: #dc3545; }
+        .header-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .breadcrumb {
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+        .breadcrumb a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+        .tag-label {
+            background-color: #6c757d;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header-nav">
+            <a href="index.html" class="btn-primary flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i> 返回民法知識庫總覽
+            </a>
+            <div>
+                <span class="breadcrumb">
+                    Day 10 <span class="tag-label">物權</span>
+                </span>
+            </div>
+        </div>
+
+        <h1 class="section-title">Day 10 - 不動產物權登記生效與善意信賴</h1>
+        <p class="text-center text-muted mb-4">日期：2026-08-28 | 條文：§758, §759-1 | 編章：物權</p>
+
+        <div class="card">
+            <h2 class="subsection-title">經典案例情境：【買賣糾紛】老王賣房，一屋二賣的羅生門</h2>
+            <div id="scenario1" class="scenario-content">
+                <p>
+                    王先生（老王）名下有一間市價約 1500 萬的房子。今年初，他急需用錢，便將房子以 1200 萬的價格賣給了李先生。雙方簽訂了正式的買賣契約，李先生也支付了頭期款 200 萬。然而，在尚未辦理所有權移轉登記前，老王又看到張太太對這間房子表示高度興趣，且出價 1400 萬。老王見錢眼開，便假意與張太太洽談，並同時收取了張太太 300 萬的價金，同時也匆忙地將房子登記在張太太名下。
+                </p>
+                <p>
+                    李先生在得知此事後，氣炸了！他認為自己才是第一位買家，房子理應歸他所有。而張太太則認為，自己是合法買家，且不動產已經登記在她名下，房屋所有權自然是她的。
+                </p>
+                <p>
+                    請問，在這場「一屋二賣」的羅生門中，不動產的真正所有權應該歸屬於李先生還是張太太？老王該負什麼責任？
+                </p>
+            </div>
+            <div class="text-center mt-3">
+                <button class="btn-toggle" onclick="toggleSection('scenario1', this)">
+                    <i class="fas fa-chevron-down mr-2"></i> 檢視詳細解析
+                </button>
+            </div>
+            <div id="scenario1-details" class="hidden">
+                <h3 class="subsection-title">解析與爭點</h3>
+                <p>
+                    本案例涉及我國民法關於不動產物權變動的「登記生效原則」（§758）以及「善意受讓」等重要概念。核心爭點在於：1. 不動產物權變動是否需登記始生效？2. 張太太是否為「善意」且「信賴」登記的受讓人？
+                </p>
+                <p>
+                    民法第 758 條規定：「不動產物權，依法律行為而取得、喪失、變更者，非經登記，不生效力。」這確立了不動產物權變動的「登記生效主義」。也就是說，即使李先生與老王之間的買賣契約有效成立，該不動產物權的變動（所有權移轉）必須等到辦理登記後，才對李先生發生法律上的效力。
+                </p>
+                <p>
+                    然而，本案的複雜之處在於老王對張太太「一屋二賣」。這裡就需要考量到「善意受讓」的保護。民法第 759-1 條規定：「不動產物權經登記者，推定受讓人。」此規定在保護「善意」且「信賴」不動產登記的第三人。
+                </p>
+                <p>
+                    在判斷張太太是否能受到保護時，需要釐清她是否為「善意」。如果張太太對於老王已將房屋賣給李先生並不知情，且無從知悉，則可推定為善意。若她明知房屋已出售但仍購買，則非善意。進一步，她是否「信賴」了登記？也就是說，她是否基於不動產登記的公示效果，相信房屋所有權確屬老王，並因此與之交易？
+                </p>
+                <p>
+                    若張太太符合善意且信賴登記的要件，即使李先生主張其優先購買權，根據§759-1的推定，其權利可能會受到限制，而房屋所有權最終可能會歸屬於張太太。此時，李先生僅能向老王主張債務不履行（給付不能）的損害賠償。
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="subsection-title">三段論法 IRAC 拆解</h2>
+            <div class="overflow-x-auto">
+                <table class="irac-table">
+                    <thead>
+                        <tr>
+                            <th class="col-law">大前提 (Rule)</th>
+                            <th class="col-facts">小前提 (Facts)</th>
+                            <th class="col-effect">結論 (Conclusion)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-law">
+                                <p><strong>民法§758 條（不動產物權變動之登記生效）</strong></p>
+                                <p>不動產物權，依法律行為而取得、喪失、變更者，非經登記，不生效力。</p>
+                                <p><strong>民法§759-1 條（登記之推定力）</strong></p>
+                                <p>不動產物權經登記者，推定受讓人係依據不動產登記為準，故為善意取得。若有相反事實，需由舉證人提出證明。</p>
+                            </td>
+                            <td class="col-facts">
+                                <p>1. 老王將房屋賣給李先生，李先生支付頭期款，但未辦理所有權移轉登記。</p>
+                                <p>2. 老王隨後將房屋以更高價賣給張太太，並將房屋登記在張太太名下。</p>
+                                <p>3. 假設張太太對於老王已將房屋賣給李先生的狀況不知情，且無從知悉（善意），並且信賴了不動產登記簿上的資訊（信賴登記）。</p>
+                            </td>
+                            <td class="col-effect">
+                                <p><strong>針對李先生與老王的關係：</strong></p>
+                                <p>李先生與老王之間成立有效之買賣契約，惟不動產物權變動（所有權移轉）因未經登記，依§758，於登記前不生效力。李先生對老王主張所有權，在登記前無從主張。</p>
+                                <p><strong>針對張太太的權益：</strong></p>
+                                <p>張太太雖為第二買受人，但因其受讓時係善意且已完成所有權移轉登記，且無證據顯示張太太惡意或知情，依§759-1 條的推定，其受讓取得不動產所有權應受法律保護。</p>
+                                <p><strong>最終結論：</strong></p>
+                                <p>若張太太符合善意信賴登記之要件，不動產所有權將歸屬於張太太。李先生應向老王主張債務不履行（給付不能）的損害賠償。</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="subsection-title">生活與職場防禦錦囊</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="legal-tip-card">
+                    <h3 class="font-bold mb-2"><i class="fas fa-user-cog mr-2"></i> 買家自保</h3>
+                    <ul class="list-disc pl-5">
+                        <li><strong>確認產權：</strong> 購買不動產前，務必親自向地政事務所申請土地及建物謄本，仔細核對標示部（建物門牌、地號）、所有權部（現任所有權人、有無設定抵押或預告登記等），確認賣方是否為真正所有權人。</li>
+                        <li><strong>重視登記時程：</strong> 簽約後，務必催促儘快辦理所有權移轉登記。與銀行貸款配合時，確認登記程序不會延誤。</li>
+                        <li><strong>預告登記：</strong> 若買賣金額龐大，可考慮在簽約後，先辦理「預告登記」，以防止賣方在登記完成前將不動產出售或為其他處分。</li>
+                        <li><strong>資金撥付：</strong> 簽訂買賣契約時，載明價金支付階段，例如頭期款、工程款、尾款等，並在完成驗屋、取得權狀後再支付尾款。</li>
+                    </ul>
+                </div>
+                <div class="legal-tip-card">
+                    <h3 class="font-bold mb-2"><i class="fas fa-handshake mr-2"></i> 賣家注意事項</h3>
+                    <ul class="list-disc pl-5">
+                        <li><strong>誠實義務：</strong> 嚴禁「一屋二賣」。一旦涉及欺詐，將面臨法律責任，包括刑事詐欺罪及民事損害賠償。</li>
+                        <li><strong>確保產權：</strong> 在簽訂買賣契約前，務必確認自己是房屋的真正所有權人，且無任何查封、假扣押、禁押等限制登記。</li>
+                        <li><strong>釐清款項：</strong> 確保買家支付的價金無誤，並於款項全數入帳或銀行保證後，再配合辦理所有權移轉登記。</li>
+                        <li><strong>債務處理：</strong> 若因賣房產生的款項有其他債務問題，應妥善處理，以免房屋所有權移轉登記後，又被其他債權人追討。</li>
+                    </ul>
+                </div>
+                <!-- 若有職場簽約等情境，可在此新增卡片 -->
+                <!-- <div class="legal-tip-card">
+                    <h3 class="font-bold mb-2"><i class="fas fa-briefcase mr-2"></i> 職場簽約</h3>
+                    <ul class="list-disc pl-5">
+                        <li>...</li>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="subsection-title">底層思維模型：風險分配與交易安全</h2>
+            <div class="bottom-layer-model">
+                <p>
+                    民法§758 和 §759-1 的設計，核心在於追求「交易安全」與「效率」之間的平衡。
+                </p>
+                <p>
+                    <strong>交易安全 (Transaction Security)：</strong> 不動產是重要資產，其變動影響深遠。登記制度就像不動產的「身份證」，公開揭示所有權的歸屬。當交易關係複雜，且當事人之間互不認識時，登記就成為最可靠的公示方法。法律保護「善意」且「信賴」登記的第三人，是為了讓社會大眾敢於依賴公開的登記資訊進行交易，降低因資訊不對稱而產生的交易風險。這可以想像成，如果每次交易都要去查證前一手、前二手的交易過程，那交易成本會多高？
+                </p>
+                <p>
+                    <strong>風險分配 (Risk Allocation)：</strong>
+                    <ul>
+                        <li>
+                            第一買受人（李先生）的風險：在未登記完成前，他承擔了賣方（老王）任意處分房屋的風險。雖然契約有效，但他並非不動產的「物權」持有人。
+                        </li>
+                        <li>
+                            第二買受人（張太太）的保護：如果她是善意且信賴登記，法律便將風險（即賣方一屋二賣的欺詐行為）轉嫁給了第一買受人，保護了交易的順暢。這也鼓勵買家要盡快辦理登記。
+                        </li>
+                        <li>
+                            賣方（老王）的責任：無論如何，老王因違反契約義務（交付房屋、移轉所有權）而對李先生負有債務不履行的損害賠償責任。他面臨的是雙重的法律後果。
+                        </li>
+                    </ul>
+                </p>
+                <p>
+                    總之，登記制度透過「公示」來確立權利狀態，並在一定條件下保護信賴公示的第三人，是現代不動產交易不可或缺的基石。它在保障權利人權益的同時，也大大提升了不動產交易的效率與安全性。
+                </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="subsection-title">牛刀小試・考點隨堂測驗</h2>
+            <form id="quizForm">
+                <div class="quiz-question">
+                    1. 關於不動產物權變動的登記生效原則，下列敘述何者正確？
+                </div>
+                <div class="quiz-options">
+                    <label>
+                        <input type="radio" name="q1" value="a"> A. 僅需買賣契約成立，物權即生效力。
+                        <span class="feedback"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="b"> B. 不動產物權的變動，非經登記不得生效。
+                        <span class="feedback"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="c"> C. 登記僅為公示方法，非生效要件。
+                        <span class="feedback"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="d"> D. 只要付了價金，即使未登記，物權也已移轉。
+                        <span class="feedback"></span>
+                    </label>
+                </div>
+
+                <div class="quiz-question mt-4">
+                    2. 民法第 759-1 條關於不動產登記的推定力，旨在保護何種對象？
+                </div>
+                <div class="quiz-options">
+                    <label>
+                        <input type="radio" name="q2" value="a"> A. 任何不動產交易的當事人。
+                        <span class="feedback"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="b"> B. 惡意的不動產受讓人。
+                        <span class="feedback"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="c"> C. 善意且信賴不動產登記的受讓人。
+                        <span class="feedback"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="d"> D. 僅保護已持有不動產權狀的人。
+                        <span class="feedback"></span>
+                    </label>
+                </div>
+
+                <div class="quiz-question mt-4">
+                    3. 甲將房屋賣給乙，但未辦理登記。嗣後甲又將房屋賣給丙，並辦妥登記。若丙在購買時，明知甲已賣給乙，則關於丙取得該房屋所有權的敘述，下列何者正確？
+                </div>
+                <div class="quiz-options">
+                    <label>
+                        <input type="radio" name="q3" value="a"> A. 丙因已辦妥登記，故推定為善意取得。
+                        <span class="feedback"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="b"> B. 丙惡意，不得主張善意取得，房屋所有權應歸乙。
+                        <span class="feedback"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="c"> C. 乙可對丙主張所有權，因其為第一買受人。
+                        <span class="feedback"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="d"> D. 丙只能向甲主張損害賠償，無法取得房屋。
+                        <span class="feedback"></span>
+                    </label>
+                </div>
+
+                <div class="quiz-question mt-4">
+                    4. 若乙（第一買受人）在與甲簽約後，擔心甲將房屋賣給他人，他可以採取何種法律手段來保障權益？
+                </div>
+                <div class="quiz-options">
+                    <label>
+                        <input type="radio" name="q4" value="a"> A. 立即將房屋出租給第三人。
+                        <span class="feedback"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="b"> B. 向法院聲請強制執行。
+                        <span class="feedback"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="c"> C. 辦理「預告登記」。
+                        <span class="feedback"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="d"> D. 尋求媒體報導，引起社會關注。
+                        <span class="feedback"></span>
+                    </label>
+                </div>
+
+                <div class="text-center mt-6">
+                    <button type="button" class="btn-primary" onclick="checkAnswers()">提交測驗</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <script>
+        function toggleSection(sectionId, button) {
+            const section = document.getElementById(sectionId + '-details');
+            if (section.classList.contains('hidden')) {
+                section.classList.remove('hidden');
+                button.innerHTML = '<i class="fas fa-chevron-up mr-2"></i> 收起解析';
+            } else {
+                section.classList.add('hidden');
+                button.innerHTML = '<i class="fas fa-chevron-down mr-2"></i> 檢視詳細解析';
+            }
+        }
+
+        function checkAnswers() {
+            const answers = {
+                q1: 'b',
+                q2: 'c',
+                q3: 'b',
+                q4: 'c'
+            };
+
+            const feedbackMessages = {
+                q1: {
+                    a: '錯誤！契約成立僅發生債權效力，不動產物權變動需登記才生效。',
+                    b: '正確！這是民法§758關於不動產物權變動的明確規定。',
+                    c: '錯誤！登記不僅是公示方法，更是生效要件（登記生效主義）。',
+                    d: '錯誤！未辦理登記，物權不生效力，無法主張所有權移轉。'
+                },
+                q2: {
+                    a: '錯誤！§759-1 保護的是基於信賴登記而為交易的第三人。',
+                    b: '錯誤！法律不保護惡意的不動產受讓人。',
+                    c: '正確！保護善意且信賴登記的受讓人，以維護交易安全。',
+                    d: '錯誤！持有權狀僅是權利的一種證明，關鍵在於是否為善意受讓並信賴登記。'
+                },
+                q3: {
+                    a: '錯誤！丙惡意，無法享有§759-1的推定力。',
+                    b: '正確！丙非善意，因此不能主張善意取得，乙的權利（契約債權）優於丙的登記（惡意取得）。',
+                    c: '錯誤！乙雖為第一買受人，但債權效力不及於善意受讓的第三人，乙僅能向甲主張損害賠償。',
+                    d: '錯誤！乙的權利在於向甲請求損害賠償，而非直接主張房屋所有權給丙。'
+                },
+                q4: {
+                    a: '錯誤！將房屋出租給第三人並不能阻止甲再將房屋出售。',
+                    b: '錯誤！強制執行通常是基於金錢債權，於此情況下尚無法直接聲請。',
+                    c: '正確！預告登記具有阻止不動產權利變動（例如出售）的效果，可暫時保全乙的權利。',
+                    d: '錯誤！媒體關注無法產生法律上的直接保全效果。'
+                }
+            };
+
+            let allCorrect = true;
+            for (const question in answers) {
+                const selectedOption = document.querySelector(`input[name="${question}"]:checked`);
+                const feedbackElement = document.querySelector(`input[name="${question}"]:checked + .feedback`);
+
+                if (!selectedOption) {
+                    alert('請作答所有問題！');
+                    return;
+                }
+
+                const userAnswer = selectedOption.value;
+                const correctAnswer = answers[question];
+
+                // Reset previous styling
+                document.querySelectorAll(`input[name="${question}"]`).forEach(input => {
+                    input.closest('label').classList.remove('correct', 'incorrect');
+                    input.closest('label').querySelector('.feedback').textContent = '';
+                });
+
+                if (userAnswer === correctAnswer) {
+                    selectedOption.closest('label').classList.add('correct');
+                    selectedOption.closest('label').querySelector('.feedback').textContent = '✓ 正確';
+                    selectedOption.closest('label').querySelector('.feedback').className = 'feedback correct';
+                } else {
+                    selectedOption.closest('label').classList.add('incorrect');
+                    selectedOption.closest('label').querySelector('.feedback').textContent = `✗ 錯誤！ ${feedbackMessages[question][userAnswer]}`;
+                    selectedOption.closest('label').querySelector('.feedback').className = 'feedback incorrect';
+                    allCorrect = false;
+                }
+            }
+
+            if (allCorrect) {
+                alert('恭喜您，所有題目都答對了！');
+            } else {
+                alert('請檢視您的答案，有些題目答錯了。');
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>民法精解 - Day 06 侵權行為責任與過失相抵原則</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .shadow-card {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .btn-primary {
+            background-color: #3b82f6; /* Tailwind indigo-600 */
+            color: white;
+        }
+        .btn-secondary {
+            background-color: #6b7280; /* Tailwind gray-500 */
+            color: white;
+        }
+        .correct {
+            background-color: #10b981; /* Tailwind green-500 */
+            color: white;
+        }
+        .incorrect {
+            background-color: #ef4444; /* Tailwind red-500 */
+            color: white;
+        }
+        .feedback {
+            display: none;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+        .feedback.show {
+            display: block;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        .three-column-table th, .three-column-table td {
+            min-width: 200px; /* Ensure columns have a decent minimum width */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+    <div class="container mx-auto px-4 py-8">
+
+        <!-- Navigation Bar -->
+        <div class="flex justify-between items-center mb-6">
+            <a href="index.html" class="text-xl font-bold text-blue-600 hover:underline flex items-center">
+                <i class="fas fa-arrow-left mr-2"></i> 返回民法知識庫總覽
+            </a>
+            <span class="px-3 py-1 bg-indigo-500 text-white rounded-md text-sm">Day 06</span>
+        </div>
+
+        <h1 class="text-4xl font-extrabold text-center text-gray-800 mb-4">侵權行為責任與過失相抵原則</h1>
+        <p class="text-xl text-center text-gray-600 mb-8">債編 | 2026-08-24</p>
+
+        <!-- 區塊一：經典案例情境 -->
+        <section class="mb-12">
+            <div class="bg-white rounded-xl shadow-card p-6">
+                <h2 class="text-3xl font-bold text-blue-700 mb-4">The Scenario 經典案例情境</h2>
+                <p class="text-lg leading-relaxed mb-6">
+                    小明是一家物流公司的外送員，在一次送貨過程中，為了趕時間，他無視交通號誌，闖了紅燈，結果不慎撞上了一位騎機車的李媽媽。李媽媽因此受傷，機車也嚴重損壞，需要支付醫療費及維修費。小明雖然道歉，但李媽媽認為這是小明的疏忽造成的損害，要求小明賠償。然而，在調查過程中，也發現李媽媽當時騎車時未依規定戴安全帽，且稍有分心。
+                </p>
+                <button onclick="toggleSection('scenario-answer')" class="btn-primary px-5 py-2 rounded-md text-lg font-semibold hover:bg-blue-700 transition duration-300 flex items-center">
+                    <i class="fas fa-lightbulb mr-2"></i> 點我展開情境解析
+                </button>
+                <div id="scenario-answer" class="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-md hidden">
+                    <h3 class="text-2xl font-semibold text-blue-700 mb-3">情境解析：</h3>
+                    <p class="text-lg leading-relaxed">
+                        本案例涉及小明因闖紅燈而撞傷李媽媽，構成侵權行為的基礎。小明有過失（違反交通規則），且此過失與李媽媽的損害（受傷、機車損壞）之間有因果關係。因此，小明應負侵權行為損害賠償責任。
+                        <br><br>
+                        然而，本案的關鍵在於「過失相抵」原則。李媽媽在事故發生時，未依規定戴安全帽且稍有分心，這也可能是導致損害擴大或加劇的因素。依據民法第217條的規定，被害人的過失，法院得減輕或免除賠償責任。因此，雖然小明有責任，但李媽媽的過失也可能影響最終的賠償金額。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊二：三段論法拆解 -->
+        <section class="mb-12">
+            <div class="bg-white rounded-xl shadow-card p-6">
+                <h2 class="text-3xl font-bold text-blue-700 mb-4">IRAC 三段論法拆解</h2>
+                <p class="text-lg leading-relaxed mb-6">
+                    運用 IRAC (Issue, Rule, Application, Conclusion) 方法，系統性解析本案民法爭點。
+                </p>
+                <div class="table-container">
+                    <table class="min-w-full divide-y divide-gray-200 three-column-table">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/3">
+                                    大前提 (Rule)
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/3">
+                                    小前提 (Application)
+                                </th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-1/3">
+                                    結論 (Conclusion)
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-base font-medium text-gray-900">
+                                    <p class="font-semibold">民法第 184 條第 1 項前段</p>
+                                    <p>「因故意或過失，不法侵害他人之權利者，負損害賠償之責任。」</p>
+                                    <p class="mt-2 font-semibold">要件：</p>
+                                    <ul class="list-disc list-inside ml-2">
+                                        <li>侵害他人之權利（例如：身體、健康、財產）</li>
+                                        <li>有故意或過失</li>
+                                        <li>不法侵害</li>
+                                        <li>有損害</li>
+                                        <li>過失與損害間有因果關係</li>
+                                    </ul>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">
+                                    <p>小明為了趕時間，無視交通號誌闖紅燈，顯然違反交通規則，此行為具有過失。此過失導致李媽媽受傷（侵害身體健康權）及機車損壞（侵害財產權）。小明的過失行為與李媽媽的損害之間具有相當因果關係。</p>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-base font-semibold text-green-600">
+                                    <p>小明因過失侵害李媽媽之權利，應負民法第 184 條第 1 項前段之侵權行為損害賠償責任。</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-6 py-4 whitespace-nowrap text-base font-medium text-gray-900">
+                                    <p class="font-semibold">民法第 217 條第 1 項</p>
+                                    <p>「損害之發生或擴大，被害人與有過失者，法院得依聲請減輕或免除賠償義務。」</p>
+                                    <p class="mt-2 font-semibold">要件：</p>
+                                    <ul class="list-disc list-inside ml-2">
+                                        <li>有損害發生或擴大</li>
+                                        <li>被害人與有過失</li>
+                                        <li>法院得依聲請（或職權）為之</li>
+                                    </ul>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-base text-gray-700">
+                                    <p>李媽媽於事故發生時，未依規定戴安全帽（可能使受傷更嚴重），且有分心行為（可能影響其對車流的判斷或反應）。這些行為屬於被害人的過失，且可能導致其受損害的發生或擴大。</p>
+                                </td>
+                                <td class="px-6 py-4 whitespace-nowrap text-base font-semibold text-blue-600">
+                                    <p>法院在審理時，得依據李媽媽的過失，減輕小明的賠償責任。減輕的比例，法院會考量雙方過失的程度、損害發生的原因等因素綜合判斷。</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊三：生活與職場防禦錦囊 -->
+        <section class="mb-12">
+            <div class="bg-white rounded-xl shadow-card p-6">
+                <h2 class="text-3xl font-bold text-blue-700 mb-4">生活與職場防禦錦囊 🛡️</h2>
+                <p class="text-lg leading-relaxed mb-6">
+                    無論是個人生活，或是職場簽約，了解侵權責任與過失相抵，能有效降低風險。
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- 錦囊 1 -->
+                    <div class="p-6 bg-green-50 border border-green-200 rounded-lg shadow-inner">
+                        <h3 class="text-2xl font-bold text-green-800 mb-3 flex items-center">
+                            <i class="fas fa-user-shield mr-3"></i> 個人生活自保
+                        </h3>
+                        <ul class="list-disc list-inside text-lg space-y-2">
+                            <li><strong>遵守交通規則：</strong> 這是避免構成侵權行為最基本且重要的一環。</li>
+                            <li><strong>注意公共安全：</strong> 在自家或營業場所，應確保環境安全，避免潛在的危險。</li>
+                            <li><strong>妥善保管財物：</strong> 借給他人使用前，應謹慎評估其使用能力與風險。</li>
+                            <li><strong>確保自身安全：</strong> 參與活動或使用他人提供之服務時，應留意自身安全，並遵守相關規定（如：戴安全帽）。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 錦囊 2 -->
+                    <div class="p-6 bg-orange-50 border border-orange-200 rounded-lg shadow-inner">
+                        <h3 class="text-2xl font-bold text-orange-800 mb-3 flex items-center">
+                            <i class="fas fa-handshake mr-3"></i> 職場簽約與風險
+                        </h3>
+                        <ul class="list-disc list-inside text-lg space-y-2">
+                            <li><strong>契約條款審慎：</strong> 簽訂任何契約前，務必仔細審閱「責任歸屬」、「損害賠償」等條款，必要時尋求法律專業意見。</li>
+                            <li><strong>注意附隨義務：</strong> 契約履行過程中，可能有附隨義務，例如提醒對方注意風險，避免因疏忽造成侵權。</li>
+                            <li><strong>保險機制：</strong> 考量購買責任保險，轉嫁潛在的侵權風險。</li>
+                            <li><strong>離職與資遣：</strong> 員工離職或公司資遣，應謹慎處理，避免因不當行為（如：散佈不實資訊、妨礙名譽）而構成侵權。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊四：底層思維模型提煉 -->
+        <section class="mb-12">
+            <div class="bg-white rounded-xl shadow-card p-6">
+                <h2 class="text-3xl font-bold text-blue-700 mb-4">底層思維模型提煉 🧠</h2>
+                <p class="text-lg leading-relaxed mb-6">
+                    侵權行為法與過失相抵原則背後的邏輯，是關於「風險分配」與「效率」的思考。
+                </p>
+                <div class="bg-purple-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-2xl font-bold text-purple-800 mb-3 flex items-center">
+                        <i class="fas fa-chart-line mr-3"></i> 法律經濟學視角：預防損失的誘因
+                    </h3>
+                    <p class="text-lg leading-relaxed mb-4">
+                        侵權行為責任的設計，旨在讓造成損害的一方（加害人）負起賠償責任，目的是讓潛在的加害人有足夠的誘因去採取預防措施，降低發生損害的機率。例如，酒駕肇事者需負賠償責任，即是促使駕駛人不要酒駕。
+                    </p>
+                    <h3 class="text-2xl font-bold text-purple-800 mb-3 flex items-center">
+                        <i class="fas fa-balance-scale mr-3"></i> 過失相抵的公平與效率
+                    </h3>
+                    <p class="text-lg leading-relaxed mb-4">
+                        過失相抵原則（民法§217）則是在考量「公平」與「效率」。
+                    </p>
+                    <ul class="list-disc list-inside text-lg ml-4">
+                        <li><strong>公平性：</strong> 如果被害人自身也有過失，完全由加害人負擔所有責任，似乎有失公平。過失相抵能將一部分責任歸由被害人自行承擔，更符合公平原則。</li>
+                        <li><strong>效率性：</strong> 如果加害人知道即使被害人有過失，自己仍需負擔全部責任，他可能沒有足夠的動機去盡最大努力預防。反之，如果被害人也知道自己的過失會影響求償權益，他也會更有動機去採取必要的安全措施。這樣能促進整體社會的損失預防效率。</li>
+                    </ul>
+                    <p class="text-lg leading-relaxed mt-4">
+                        簡單來說，侵權行為法要求行為人謹慎，以預防損害；過失相抵則提醒我們，在追求他人責任的同時，也應檢視自身行為是否導致或加劇了損失，以達更公平與高效的風險分配。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊五：牛刀小試・考點隨堂測驗 -->
+        <section>
+            <div class="bg-white rounded-xl shadow-card p-6">
+                <h2 class="text-3xl font-bold text-blue-700 mb-4">牛刀小試・考點隨堂測驗 📝</h2>
+                <p class="text-lg leading-relaxed mb-6">
+                    以下測驗題，請選擇最適合的答案，測試您對侵權行為與過失相抵的理解程度。
+                </p>
+
+                <!-- Question 1 -->
+                <div class="mb-6 p-5 border border-gray-300 rounded-lg bg-gray-50">
+                    <p class="text-xl font-semibold mb-4">1. 關於民法第 184 條第 1 項規定之侵權行為責任，下列敘述何者錯誤？</p>
+                    <div class="space-y-3">
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="false">
+                            A. 侵權行為成立，不問被害人是否有過失，加害人皆應負擔全部損害賠償責任。
+                        </button>
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="true">
+                            B. 侵權行為成立，除法律另有規定外，其責任成立須以加害人有故意或過失為必要。
+                        </button>
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="false">
+                            C. 侵權行為之「過失」，指行為人違反保護他人之法律，致生損害於他人者，即便無過失亦應負責任。
+                        </button>
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="false">
+                            D. 侵權行為責任之成立，須行為人之行為與損害之間有相當因果關係。
+                        </button>
+                    </div>
+                    <div class="feedback feedback-q1 text-sm font-medium mt-3 rounded-md"></div>
+                </div>
+
+                <!-- Question 2 -->
+                <div class="mb-6 p-5 border border-gray-300 rounded-lg bg-gray-50">
+                    <p class="text-xl font-semibold mb-4">2. 關於民法第 217 條規定之「過失相抵」，下列敘述何者正確？</p>
+                    <div class="space-y-3">
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="false">
+                            A. 僅限於加害人有過失，被害人也有過失時，才能適用過失相抵。
+                        </button>
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="true">
+                            B. 審酌被害人過失比例時，法院應綜合考量損害之發生或擴大，與被害人過失之關聯性。
+                        </button>
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="false">
+                            C. 過失相抵的結果，僅能減輕賠償義務，不能免除。
+                        </button>
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="false">
+                            D. 被害人即使完全沒有過失，法院仍得依職權減輕加害人的賠償責任。
+                        </button>
+                    </div>
+                    <div class="feedback feedback-q2 text-sm font-medium mt-3 rounded-md"></div>
+                </div>
+
+                <!-- Question 3 -->
+                <div class="mb-6 p-5 border border-gray-300 rounded-lg bg-gray-50">
+                    <p class="text-xl font-semibold mb-4">3. 甲騎車時未注意前方，追撞了正在違規穿越馬路的乙，導致乙受傷。關於此案例，下列何種情況，法院最有可能依過失相抵原則減輕甲的賠償責任？</p>
+                    <div class="space-y-3">
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="false">
+                            A. 乙僅因受到驚嚇而暫時無法行走。
+                        </button>
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="true">
+                            B. 乙當時未攜帶證件，且因受傷後處理不當，導致傷勢加重。
+                        </button>
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="false">
+                            C. 乙事後有向甲道歉。
+                        </button>
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="false">
+                            D. 乙當時正在打電話，未注意來車。
+                        </button>
+                    </div>
+                    <div class="feedback feedback-q3 text-sm font-medium mt-3 rounded-md"></div>
+                </div>
+
+                <!-- Question 4 -->
+                <div class="mb-6 p-5 border border-gray-300 rounded-lg bg-gray-50">
+                    <p class="text-xl font-semibold mb-4">4. 承上題，若乙的損害共計 10 萬元，法院認為乙對損害的發生或擴大與有過失，且應負擔 30% 的過失比例，則甲應賠償乙多少金額？</p>
+                    <div class="space-y-3">
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="false">
+                            A. 10 萬元
+                        </button>
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="false">
+                            B. 8 萬元
+                        </button>
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="true">
+                            C. 7 萬元
+                        </button>
+                        <button class="block w-full text-left px-4 py-3 rounded-md bg-white border border-gray-300 hover:bg-gray-100 transition duration-200 option" data-correct="false">
+                            D. 3 萬元
+                        </button>
+                    </div>
+                    <div class="feedback feedback-q4 text-sm font-medium mt-3 rounded-md"></div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function toggleSection(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('hidden');
+        }
+
+        function checkAnswer(event) {
+            const button = event.target.closest('.option');
+            if (!button) return;
+
+            const questionContainer = button.closest('div.p-5');
+            const options = questionContainer.querySelectorAll('.option');
+            const feedbackDiv = questionContainer.querySelector('.feedback');
+            const questionNumber = questionContainer.querySelector('p.text-xl').innerText.split('.')[0];
+
+            options.forEach(opt => {
+                opt.classList.add('pointer-events-none', 'opacity-70'); // Disable further clicks
+                if (opt.getAttribute('data-correct') === 'true') {
+                    opt.classList.add('correct');
+                    opt.innerHTML += ' <i class="fas fa-check-circle ml-2"></i>';
+                } else {
+                    opt.classList.add('incorrect');
+                    opt.innerHTML += ' <i class="fas fa-times-circle ml-2"></i>';
+                }
+            });
+
+            const isCorrect = button.getAttribute('data-correct') === 'true';
+            feedbackDiv.classList.add('show');
+            let feedbackText = '';
+
+            switch (parseInt(questionNumber)) {
+                case 1:
+                    feedbackText = isCorrect
+                        ? '正確！侵權行為責任成立，若被害人與有過失，法院得減輕或免除賠償責任，故 A 錯誤。'
+                        : '錯誤。侵權行為成立，若被害人與有過失，法院得減輕或免除賠償責任，故 A 錯誤。';
+                    break;
+                case 2:
+                    feedbackText = isCorrect
+                        ? '正確！過失相抵強調公平與效率，法院會審酌雙方過失比例。'
+                        : '錯誤。過失相抵不以加害人有過失為前提，且法院得依職權審酌，故 A, C, D 錯誤。';
+                    break;
+                case 3:
+                    feedbackText = isCorrect
+                        ? '正確！乙的未攜帶證件與傷勢處理不當，更有可能導致損害擴大，與損害有更強的關聯性，故法院較可能依過失相抵減輕責任。'
+                        : '錯誤。乙當時未攜帶證件，且因受傷後處理不當，導致傷勢加重，此更符合損害擴大與被害人過失的連結，故 B 為最佳答案。';
+                    break;
+                case 4:
+                    feedbackText = isCorrect
+                        ? '正確！總損害 10 萬元，乙負擔 30% 過失，則甲應賠償 10 萬 * (1 - 30%) = 7 萬元。'
+                        : '錯誤。總損害 10 萬元，乙負擔 30% 過失，甲應賠償 10 萬 * (1 - 30%) = 7 萬元。';
+                    break;
+            }
+
+            feedbackDiv.innerHTML = (isCorrect ? '<i class="fas fa-check-circle text-green-500 mr-2"></i>' : '<i class="fas fa-times-circle text-red-500 mr-2"></i>') + feedbackText;
+            feedbackDiv.classList.add(isCorrect ? 'bg-green-100 text-green-800 border border-green-300' : 'bg-red-100 text-red-800 border border-red-300');
+        }
+
+        document.querySelectorAll('.option').forEach(button => {
+            button.addEventListener('click', checkAnswer);
+        });
+    </script>
+
+</body>
+</html>

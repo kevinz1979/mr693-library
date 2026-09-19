@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MR693 智慧圖書館・線上專欄與教材庫</title>
+  <meta name="theme-color" content="#1e1e24">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MR693知識庫">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260920_02">
+</head>
+<body>
+  <div class="app-container">
+    <!-- 移動端側邊欄遮罩 -->
+    <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+
+    <!-- 左側邊欄：名人與分類 -->
+    <aside class="sidebar" id="appSidebar">
+      <div class="sidebar-header">
+        <div class="logo">
+          <span class="logo-icon">🏛️</span>
+          <div>
+            <h2>MR693 智慧圖書館</h2>
+            <p class="subtitle">PARA 知識中樞 · 線上隨行版</p>
+          </div>
+        </div>
+        <button id="closeSidebarBtn" class="mobile-close-sidebar" aria-label="關閉選單">✕</button>
+      </div>
+
+      <!-- 核心專案教材快速導航 -->
+      <div class="pillar-nav-section">
+        <h3>核心專案與教材庫</h3>
+        <div class="pillar-links">
+          <a href="#" class="pillar-link active" id="pillarHubLink">
+            <span class="pillar-icon">🎙️</span>
+            <div class="pillar-info">
+              <span class="pillar-title">名人訪談專欄庫</span>
+              <span class="pillar-desc">516篇精華知識</span>
+            </div>
+          </a>
+          <a href="01_projects/民法每日一篇_HTML/index.html" class="pillar-link" id="pillarCivilLink">
+            <span class="pillar-icon">⚖️</span>
+            <div class="pillar-info">
+              <span class="pillar-title">民法每日一篇</span>
+              <span class="pillar-desc">Day01~16 + 法感測驗</span>
+            </div>
+            <span class="pillar-badge">NEW</span>
+          </a>
+          <a href="https://kevinz1979.github.io/ipas-ai-study/" target="_blank" class="pillar-link" id="pillarIpasLink">
+            <span class="pillar-icon">🤖</span>
+            <div class="pillar-info">
+              <span class="pillar-title">iPas AI 應用規劃師</span>
+              <span class="pillar-desc">雙證照線上備考站 ↗</span>
+            </div>
+          </a>
+          <a href="https://kevinz1979.github.io/my-kanban/" target="_blank" class="pillar-link" id="pillarKanbanLink">
+            <span class="pillar-icon">📋</span>
+            <div class="pillar-info">
+              <span class="pillar-title">MR693 全局看板</span>
+              <span class="pillar-desc">戰略中樞看板 ↗</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- 統計數據 -->
+      <div class="stats-box">
+        <div class="stat-item">
+          <span class="stat-num" id="totalCount">0</span>
+          <span class="stat-lbl">篇專欄</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" id="catCount">0</span>
+          <span class="stat-lbl">個人物/主題</span>
+        </div>
+      </div>
+
+      <!-- 操作按鈕 -->
+      <div class="sidebar-actions">
+        <button id="rescanBtn" class="btn-secondary" title="增量掃描最新加入的 HTML 檔案">
+          🔄 重新整理索引
+        </button>
+      </div>
+
+      <!-- 分類清單 -->
+      <div class="category-section">
+        <h3>人物與分類導航</h3>
+        <div id="categoryList" class="category-list">
+          <div class="cat-item active" data-cat="ALL">
+            <span class="cat-name">📚 全部專欄</span>
+            <span class="cat-badge" id="catAllBadge">-</span>
+          </div>
+          <!-- 動態載入分類 -->
+        </div>
+      </div>
+    </aside>
+
+    <!-- 中間主內容區：雜誌卡片流 -->
+    <main class="main-content">
+      <!-- 頂部導航與搜尋 -->
+      <header class="top-nav">
+        <div class="nav-left">
+          <button id="mobileSidebarToggle" class="mobile-toggle-btn" title="開啟選單與分類">
+            <span class="hamburger-icon">☰</span>
+            <span class="btn-text">選單</span>
+          </button>
+          <div class="top-pillar-chips">
+            <span class="chip-item active">🎙️ 名人專欄</span>
+            <a href="01_projects/民法每日一篇_HTML/index.html" class="chip-item" id="topChipCivil">⚖️ 民法每日一篇</a>
+            <a href="https://kevinz1979.github.io/ipas-ai-study/" target="_blank" class="chip-item">🤖 iPas 備考站 ↗</a>
+            <a href="https://kevinz1979.github.io/my-kanban/" target="_blank" class="chip-item">📋 戰略看板 ↗</a>
+          </div>
+        </div>
+
+        <div class="search-bar">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" placeholder="搜尋名人、主題、核心觀點關鍵字..." autocomplete="off">
+          <button id="clearSearchBtn" class="clear-btn" style="display:none;">✕</button>
+        </div>
+
+        <div class="nav-controls">
+          <span id="modeBadge" class="mode-badge" title="運作模式">⚡ 雲端版</span>
+          <button id="toggleAiDrawerBtn" class="btn-primary">
+            ✨ Gemini 助理 (<span id="selectedCount">0</span>)
+          </button>
+        </div>
+      </header>
+
+      <!-- 目前篩選標籤與排序控制 -->
+      <div class="filter-status-bar">
+        <div class="current-filter">
+          目前分類：<strong id="activeCatName">全部專欄</strong>
+          <span id="searchStatusText" class="search-indicator" style="display:none;"></span>
+        </div>
+        <div class="filter-controls-right">
+          <div class="sort-control-group">
+            <span class="sort-icon">⇅</span>
+            <label for="sortSelect" class="sort-label">排序：</label>
+            <select id="sortSelect" class="sort-select">
+              <option value="auto" selected>⚡ 智能預設 (股癌/EP優先升冪)</option>
+              <option value="date_desc">📅 日期：由新到舊 (最新優先)</option>
+              <option value="date_asc">📅 日期：由舊到新 (歷史回溯)</option>
+              <option value="ep_asc">🔢 集數：EP 小到大 (EP01 → 99)</option>
+              <option value="ep_desc">🔢 集數：EP 大到小 (EP99 → 01)</option>
+              <option value="title_asc">🔤 標題：A 到 Z (字母/筆畫遞增)</option>
+              <option value="title_desc">🔤 標題：Z 到 A (字母/筆畫遞減)</option>
+            </select>
+          </div>
+          <div class="selection-tools">
+            <button id="selectAllBtn" class="text-btn">選取本頁</button>
+            <button id="clearSelectBtn" class="text-btn">清除</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 卡片瀑布流網格 -->
+      <div class="article-grid" id="articleGrid">
+        <div class="loading-state">載入專欄中...</div>
+      </div>
+
+      <!-- 分頁控制 -->
+      <footer class="pagination-bar" id="paginationBar">
+        <button id="prevPageBtn" class="btn-page" disabled>上一頁</button>
+        <span id="pageIndicator" class="page-indicator">第 1 / 1 頁</span>
+        <button id="nextPageBtn" class="btn-page">下一頁</button>
+      </footer>
+    </main>
+
+    <!-- 右側抽屜：Gemini 智能問答 -->
+    <aside class="ai-drawer closed" id="aiDrawer">
+      <div class="drawer-header">
+        <div class="drawer-title">
+          <span class="ai-badge">Gemini 2.5 Flash</span>
+          <h3>專欄智慧問答</h3>
+        </div>
+        <button id="closeAiDrawerBtn" class="icon-close">✕</button>
+      </div>
+
+      <!-- API Key 設定 -->
+      <div class="api-key-box">
+        <label>Google Gemini API Key</label>
+        <div class="key-input-row">
+          <input type="password" id="apiKeyInput" placeholder="請輸入你的 AI Studio API Key">
+          <button id="saveKeyBtn" class="btn-small">儲存</button>
+        </div>
+        <small class="key-hint">Key 僅存於瀏覽器本地（LocalStorage），安全無虞</small>
+      </div>
+
+      <!-- 選定專欄預覽 -->
+      <div class="selected-summary">
+        <h4>已選定參考專欄（<span id="drawerSelectedCount">0</span> 篇）</h4>
+        <p class="drawer-tip">💡 勾選左側卡片可針對特定訪談精準提問，未勾選時將自動搜尋最相關 5 篇。</p>
+        <div id="selectedPills" class="selected-pills"></div>
+      </div>
+
+      <!-- 對話區 -->
+      <div class="chat-history" id="chatHistory">
+        <div class="chat-msg ai-welcome">
+          👋 你好！我是你的專屬專欄智慧分析助手。<br>
+          你可以問我任何關於名人觀點、投資策略、心態思維的問題，我會為你綜合解答並標註出處！
+        </div>
+      </div>
+
+      <!-- 輸入區 -->
+      <div class="chat-input-box">
+        <textarea id="questionInput" rows="3" placeholder="輸入你想詢問的問題... (例如：股癌與瓦基對長期投資的心態是什麼？)"></textarea>
+        <div class="chat-controls">
+          <select id="modelSelect">
+            <option value="gemini-2.5-flash" selected>Gemini 2.5 Flash (推薦)</option>
+            <option value="gemini-1.5-flash">Gemini 1.5 Flash</option>
+          </select>
+          <button id="sendQuestionBtn" class="btn-primary">發送問題 ✨</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- 單篇專欄快速檢視模態框 -->
+  <div class="modal-overlay" id="previewModal" style="display:none;">
+    <div class="modal-card">
+      <div class="modal-header">
+        <div>
+          <span class="modal-cat" id="mCat">分類</span>
+          <h2 id="mTitle">標題</h2>
+        </div>
+        <button class="modal-close-btn" id="closeModalBtn">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-meta-row">
+          <a id="mOriginalBtn" class="btn-secondary" target="_blank">📄 在新分頁開啟原始 HTML</a>
+          <a id="mVideoBtn" class="btn-secondary" target="_blank" style="display:none;">🎥 前往 YouTube 原片</a>
+        </div>
+        <div id="mTakeawaysSection" class="modal-section">
+          <h3>🎯 Key Takeaways (核心重點)</h3>
+          <div id="mTakeaways" class="takeaways-content"></div>
+        </div>
+        <div id="mSummarySection" class="modal-section">
+          <h3>📖 Summary (完整摘要)</h3>
+          <div id="mSummary" class="summary-content"></div>
+        </div>
+        <div id="mActionsSection" class="modal-section">
+          <h3>⚡ Action Items (關鍵行動)</h3>
+          <div id="mActions" class="actions-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js?v=20260920_02"></script>
+</body>
+</html>

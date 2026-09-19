@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Antigravity 跨裝置無縫同步與多電腦歷史整合指南</title>
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <style>
+    /* 適用於獨立瀏覽器開啟時的兜底變數，Antigravity 主題注入時會自動覆蓋 */
+    body {
+      --background: #0b0f19;
+      --foreground: #f1f5f9;
+      --card: #131b2e;
+      --border: #243049;
+      --muted-foreground: #94a3b8;
+      --primary: #38bdf8;
+      --primary-foreground: #0b0f19;
+      --accent: #6366f1;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    .code-block {
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid var(--border);
+    }
+    .badge-cloud {
+      background: rgba(56, 189, 248, 0.15);
+      color: #38bdf8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+    .badge-local {
+      background: rgba(168, 85, 247, 0.15);
+      color: #c084fc;
+      border: 1px solid rgba(168, 85, 247, 0.3);
+    }
+  </style>
+</head>
+<body class="bg-[var(--background)] text-[var(--foreground)] antialiased min-h-screen p-4 md:p-8">
+
+  <!-- Header Section -->
+  <header class="max-w-5xl mx-auto mb-8 text-center md:text-left border-b border-[var(--border)] pb-6">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold badge-cloud mb-3">
+      <span>🚀 跨裝置無縫接關工作流</span>
+    </div>
+    <h1 class="text-2xl md:text-4xl font-bold tracking-tight text-[var(--foreground)] mb-2">
+      Antigravity 跨裝置雲端同步與對話整合指南
+    </h1>
+    <p class="text-[var(--muted-foreground)] text-sm md:text-base leading-relaxed">
+      手把手帶您利用雲端硬碟（Google Drive / OneDrive）實現雙電腦無縫漫遊，並將兩台電腦既有的分散對話歷史安全合併。
+    </p>
+  </header>
+
+  <main class="max-w-5xl mx-auto space-y-8">
+
+    <!-- Section 1: 核心本質對比 -->
+    <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-md">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-2xl">🧠</span>
+        <h2 class="text-xl font-bold">1. 核心本質差異：雲端 Agent vs. 本地優先 (Local-First)</h2>
+      </div>
+      <p class="text-[var(--muted-foreground)] text-sm mb-4 leading-relaxed">
+        為什麼像 ChatGPT / Claude 可以開網頁就繼續，而 Antigravity 需要同步機制？
+      </p>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+        <div class="border border-[var(--border)] rounded-xl p-4 bg-black/20">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-base">ChatGPT / Claude (Cloud-First)</h3>
+            <span class="text-xs px-2 py-0.5 rounded badge-cloud">雲端運算</span>
+          </div>
+          <ul class="space-y-2 text-[var(--muted-foreground)]">
+            <li>• 對話紀錄、上下文皆存放在 OpenAI / Anthropic 伺服器資料庫。</li>
+            <li>• 任何裝置登入同一帳號即可無感漫遊。</li>
+            <li>• 缺乏對開發者本地終端機、本地檔案與私有硬體的直接原生控制。</li>
+          </ul>
+        </div>
+
+        <div class="border border-[var(--border)] rounded-xl p-4 bg-black/20">
+          <div class="flex items-center justify-between mb-2">
+            <h3 class="font-bold text-base">Antigravity (Local-First)</h3>
+            <span class="text-xs px-2 py-0.5 rounded badge-local">本機運作</span>
+          </div>
+          <ul class="space-y-2 text-[var(--muted-foreground)]">
+            <li>• 直接運行於本地主機，擁有完整的本機終端、檔案讀寫與編譯能力。</li>
+            <li>• 思考過程與對話記憶儲存在本機的 <code class="text-[var(--primary)]">brain/</code> 目錄中。</li>
+            <li>• <b>只需同步本機資料夾，就能獲得媲美雲端產品的跨裝置體驗！</b></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: 資料結構拆解 -->
+    <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-md">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-2xl">📂</span>
+        <h2 class="text-xl font-bold">2. Antigravity 本地資料結構拆解</h2>
+      </div>
+      <p class="text-[var(--muted-foreground)] text-sm mb-4">
+        要達成跨電腦同步，我們只需要針對以下兩個關鍵核心資料夾做處理：
+      </p>
+
+      <div class="space-y-3 text-sm">
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-black/20 flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div>
+            <div class="font-semibold text-[var(--primary)] flex items-center gap-2">
+              <span>🗂 對話歷史與大腦記憶 (Brain)</span>
+            </div>
+            <div class="text-xs text-[var(--muted-foreground)] mt-1 font-mono">
+              C:\Users\&lt;使用者&gt;\.gemini\antigravity\brain\&lt;UUID&gt;\
+            </div>
+            <p class="text-xs text-[var(--muted-foreground)] mt-1">
+              存放每個對話的 <code class="text-white">transcript.jsonl</code>、計畫 <code class="text-white">implementation_plan.md</code> 與暫存檔案。
+            </p>
+          </div>
+          <span class="text-xs px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 whitespace-nowrap self-start md:self-auto">
+            最關鍵：必同步
+          </span>
+        </div>
+
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-black/20 flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div>
+            <div class="font-semibold text-purple-400 flex items-center gap-2">
+              <span>⚙️ 全域技能與外掛設定 (Config)</span>
+            </div>
+            <div class="text-xs text-[var(--muted-foreground)] mt-1 font-mono">
+              C:\Users\&lt;使用者&gt;\.gemini\config\
+            </div>
+            <p class="text-xs text-[var(--muted-foreground)] mt-1">
+              存放自訂 Skills、MCP 工具整合設定（<code class="text-white">mcp_config.json</code>）與客製 Prompt。
+            </p>
+          </div>
+          <span class="text-xs px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 border border-blue-500/20 whitespace-nowrap self-start md:self-auto">
+            建議同步
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: 雲端硬碟實作步驟（以 Google Drive 電腦版為例） -->
+    <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-md">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="text-2xl">🛠️</span>
+        <h2 class="text-xl font-bold">3. 實作：利用 Google 雲端硬碟 + 目錄聯結 (mklink)</h2>
+      </div>
+
+      <!-- Google Drive 模式選擇提示框 -->
+      <div class="p-4 rounded-xl bg-blue-950/20 border border-blue-500/30 mb-6 space-y-3">
+        <div class="text-blue-300 font-bold text-sm flex items-center gap-2">
+          <span>💡 Google 雲端硬碟電腦版設定：串流檔案 vs. 雙向同步 (鏡像檔案)</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs leading-relaxed">
+          <div class="p-3 rounded-lg bg-black/30 border border-emerald-500/30">
+            <div class="font-bold text-emerald-400 mb-1 flex items-center gap-1">
+              <span>🌟 首選推薦：雙向同步 (即 鏡像檔案 / Mirror files)</span>
+            </div>
+            <p class="text-[var(--muted-foreground)]">
+              於 Google Drive 偏好設定中選擇「雙向同步」（部分版本翻譯為鏡像檔案），並指定本地硬碟路徑（例如 <code class="text-white">C:\Users\Kevin\我的雲端硬碟\</code> 或自訂磁碟）。<br>
+              <span class="text-emerald-300 font-semibold">優點：</span>檔案已 100% 存在本機實體 NTFS 硬碟，<b>天然免設離線、無占位符問題</b>，且 <code class="text-white">mklink /J</code> 保證 100% 成功！
+            </p>
+          </div>
+          <div class="p-3 rounded-lg bg-black/30 border border-sky-500/30">
+            <div class="font-bold text-sky-400 mb-1 flex items-center gap-1">
+              <span>⚡ 次選方案：串流檔案 (Stream files)</span>
+            </div>
+            <p class="text-[var(--muted-foreground)]">
+              若使用虛擬磁區代號（例如 <code class="text-white">H:\我的雲端硬碟\</code>）：<br>
+              <span class="text-sky-300 font-semibold">必須設定：</span>在資料夾點右鍵 ➔ <b>「離線存取」➔ 勾選「可供離線使用」</b>。<br>
+              <span class="text-amber-300">注意：</span>虛擬磁區可能不支援 Junction，若報錯請改用符號連結 <code class="text-white">mklink /D</code>。
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <!-- Step 1 -->
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] flex items-center justify-center font-bold text-sm">1</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-base mb-1">在 Google 雲端硬碟建立中央同步資料夾</h3>
+            <p class="text-[var(--muted-foreground)] text-sm mb-2">
+              在 Google Drive 中建立專屬存放目錄，例如：
+            </p>
+            <div class="code-block p-3 rounded-lg font-mono text-xs text-slate-300 mb-3">
+              D:\GoogleDrive\AntigravitySync\<br>
+              ├── brain\<br>
+              └── config\
+            </div>
+            
+            <div class="p-3 rounded-lg bg-amber-500/10 border border-amber-500/30 text-xs text-amber-300 space-y-1.5">
+              <div class="font-bold flex items-center gap-1.5">
+                <span>⚠️ 關鍵設定：如何避免檔案變成即時下載的「占位符」？</span>
+              </div>
+              <ul class="space-y-1 text-slate-300 list-disc list-inside">
+                <li><b>若為雙向同步 / 鏡像模式</b>：所有檔案已自動存於本機實體硬碟，<b>不需任何額外設定</b>，最省心！</li>
+                <li><b>若為串流模式 (Stream)</b>：在該資料夾點右鍵 ➔ 選擇 <b>「離線存取 (Offline access)」➔ 勾選「可供離線使用 (Available offline)」</b>。</li>
+                <li class="text-amber-300"><b>Windows 11 使用者請注意</b>：新版右鍵選單若找不到，請點最下方<b>「顯示其他選項」</b>（或直接按快捷鍵 <kbd class="px-1.5 py-0.5 rounded bg-black/50 text-white font-mono">Shift + F10</kbd>）即可展開 Google Drive 選單！</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] flex items-center justify-center font-bold text-sm">2</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-base mb-1">將電腦 A 的本機目錄連結到 Google 雲端</h3>
+            <p class="text-[var(--muted-foreground)] text-sm mb-2">
+              完全關閉 Antigravity，將本地現有的 <code class="text-white">brain</code> 與 <code class="text-white">config</code> 內容搬移至 Google Drive 雲端目錄後，以<b>系統管理員身分</b>開啟 Windows CMD 執行：
+            </p>
+            <div class="code-block p-3 rounded-lg relative font-mono text-xs text-emerald-300 overflow-x-auto space-y-2">
+              <div>:: 【首選：雙向同步 (鏡像) / 實體本機路徑 (如 C:\Users\Kevin\我的雲端硬碟\... 或 D:\GoogleDrive\...)】使用 /J (Junction)</div>
+              <div>mklink /J "C:\Users\&lt;你的用戶名&gt;\.gemini\antigravity\brain" "C:\Users\&lt;你的用戶名&gt;\我的雲端硬碟\AntigravitySync\brain"</div>
+              <div>mklink /J "C:\Users\&lt;你的用戶名&gt;\.gemini\config" "C:\Users\&lt;你的用戶名&gt;\我的雲端硬碟\AntigravitySync\config"</div>
+              <div class="pt-2 text-slate-400">:: 【備選：串流模式 / 虛擬磁區 (如 H:\我的雲端硬碟\...)】若 /J 提示不支援磁區，請改用 /D (軟連結)</div>
+              <div class="text-sky-300">mklink /D "C:\Users\&lt;你的用戶名&gt;\.gemini\antigravity\brain" "H:\我的雲端硬碟\AntigravitySync\brain"</div>
+              <div class="text-sky-300">mklink /D "C:\Users\&lt;你的用戶名&gt;\.gemini\config" "H:\我的雲端硬碟\AntigravitySync\config"</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex gap-4">
+          <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--primary)]/20 text-[var(--primary)] flex items-center justify-center font-bold text-sm">3</div>
+          <div class="flex-1">
+            <h3 class="font-bold text-base mb-1">在電腦 B 設定相同的目錄連結</h3>
+            <p class="text-[var(--muted-foreground)] text-sm mb-2">
+              電腦 B 也登入同一個 Google 帳號並同步完畢後，同樣在電腦 B 以管理員 CMD 建立連結指向同一個 Google Drive 目錄。此時電腦 B 與電腦 A 即可共享所有對話記憶與客製技能！
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: 雙機已有歷史對話如何整合 -->
+    <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-md">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-2xl">🔄</span>
+        <h2 class="text-xl font-bold">4. 電腦 A 與電腦 B 已有分散歷史對話？如何整合！</h2>
+      </div>
+      <p class="text-[var(--muted-foreground)] text-sm mb-4 leading-relaxed">
+        若兩台電腦在過去這段時間各自獨立產生了大量對話，請放心：<b>完全不會發生檔名覆蓋與衝突！</b>
+      </p>
+
+      <div class="p-4 rounded-xl bg-sky-950/20 border border-sky-500/30 mb-5">
+        <div class="text-sky-300 font-bold text-sm mb-1">💡 為什麼能無痛合併？</div>
+        <p class="text-xs text-[var(--muted-foreground)] leading-relaxed">
+          Antigravity 的每一個 Conversation 都是以全域唯一的 <b>UUID 識別碼</b>（如 <code class="text-white">ae9c96a0-e682-465b...</code>）作為資料夾名稱。電腦 A 與電腦 B 所產生的 UUID 絕不會相同，因此對話歷史本質上是<b>自然聯集 (Union)</b>。
+        </p>
+      </div>
+
+      <!-- 整合 4 步驟 -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-black/20">
+          <div class="font-bold text-sm text-[var(--foreground)] mb-2 flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded bg-white/10 text-white">步驟 A</span> 先備份兩台電腦原始檔
+          </div>
+          <p class="text-[var(--muted-foreground)] leading-relaxed">
+            在電腦 A 與 B 分別複製 <code class="text-white">.gemini</code> 資料夾作為安全備份（如命名為 <code class="text-white">.gemini_backup</code>），並退出 Antigravity。
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-black/20">
+          <div class="font-bold text-sm text-[var(--foreground)] mb-2 flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded bg-white/10 text-white">步驟 B</span> 合併 Brain (大腦對話)
+          </div>
+          <p class="text-[var(--muted-foreground)] leading-relaxed">
+            先將電腦 A 的 <code class="text-white">brain/</code> 內所有 UUID 資料夾複製到雲端；接著將電腦 B 的 <code class="text-white">brain/</code> 內所有資料夾也複製進同一個雲端目錄（兩者聯集）。
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-black/20">
+          <div class="font-bold text-sm text-[var(--foreground)] mb-2 flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded bg-white/10 text-white">步驟 C</span> 手動合併 Config 設定
+          </div>
+          <p class="text-[var(--muted-foreground)] leading-relaxed">
+            比對兩邊的 <code class="text-white">skills/</code> 將特有技能合流；若兩邊都有修改 <code class="text-white">mcp_config.json</code>，手動將 MCP Server 項目整合成同一份 JSON。
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl border border-[var(--border)] bg-black/20">
+          <div class="font-bold text-sm text-[var(--foreground)] mb-2 flex items-center gap-2">
+            <span class="px-2 py-0.5 rounded bg-white/10 text-white">步驟 D</span> 清理並掛載 Junction
+          </div>
+          <p class="text-[var(--muted-foreground)] leading-relaxed">
+            刪除兩台電腦原地的 <code class="text-white">brain</code> 與 <code class="text-white">config</code>，執行 <code class="text-emerald-400">mklink /J</code> 指向已合流的雲端總目錄。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: 無縫接關小撇步 -->
+    <section class="bg-[var(--card)] border border-[var(--border)] rounded-2xl p-6 shadow-md">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="text-2xl">🎯</span>
+        <h2 class="text-xl font-bold">5. 跨電腦切換與「接關」最佳實踐</h2>
+      </div>
+
+      <div class="space-y-4 text-sm">
+        <div class="border-l-4 border-amber-500 pl-4 py-1">
+          <h4 class="font-semibold text-amber-300 mb-1">心法 1：避免兩台電腦同時開啟寫入</h4>
+          <p class="text-[var(--muted-foreground)] text-xs leading-relaxed">
+            在電腦 A 結束工作時，關閉 Antigravity，等待雲端硬碟同步圖示打勾（約 10~30 秒），再於電腦 B 開啟。可徹底避免日誌寫入時的雲端衝突檔。
+          </p>
+        </div>
+
+        <div class="border-l-4 border-[var(--primary)] pl-4 py-1">
+          <h4 class="font-semibold text-[var(--primary)] mb-1">心法 2：路徑適應提示（最重要的接關咒語）</h4>
+          <p class="text-[var(--muted-foreground)] text-xs leading-relaxed mb-2">
+            電腦 A 上的專案可能是 <code class="text-slate-300">C:\Users\A\Projects\App</code>，而電腦 B 可能是 <code class="text-slate-300">D:\Work\App</code>。當你在電腦 B 點開電腦 A 的歷史對話時，第一句話請傳送：
+          </p>
+          <div class="code-block p-3 rounded-lg text-xs font-mono text-emerald-300">
+            「我現在換到了電腦 B，當前專案工作目錄路徑為 D:\Work\App，請基於這個路徑與先前的討論進度繼續執行。」
+          </div>
+        </div>
+
+        <div class="border-l-4 border-purple-500 pl-4 py-1">
+          <h4 class="font-semibold text-purple-300 mb-1">心法 3：程式碼專案採用 Git 協同</h4>
+          <p class="text-[var(--muted-foreground)] text-xs leading-relaxed">
+            程式碼本體透過 Git 進行 <code class="text-white">git push / pull</code>；Antigravity 產生的 <code class="text-white">implementation_plan.md</code> 與專案規範 <code class="text-white">.agents/</code> 也納入版本控制，達到雙保險。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center text-xs text-[var(--muted-foreground)] pb-12 pt-4">
+      <p> Antigravity Cross-Device Sync Guide • 支援 Windows / macOS / Linux 本地同步架構</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>

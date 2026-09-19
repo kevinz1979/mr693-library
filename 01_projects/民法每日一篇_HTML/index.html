@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>民法每日一篇・法感精解知識庫 | MR693</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans TC", sans-serif;
+    }
+    .serif-title {
+      font-family: 'Noto Serif TC', serif;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col">
+
+  <!-- 頂部導航列 -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <a href="../../knowledge_hub/static/index.html" id="backToHubBtn" class="inline-flex items-center px-3 py-1.5 rounded-lg text-sm font-medium text-indigo-700 bg-indigo-50 hover:bg-indigo-100 transition">
+          <i class="fa-solid fa-arrow-left mr-2"></i> 返回智慧圖書館
+        </a>
+        <div class="hidden sm:block h-4 w-px bg-slate-300"></div>
+        <span class="text-xs text-slate-500 hidden sm:inline-block">MR693 · 核心法律專案</span>
+      </div>
+      <div class="flex items-center space-x-2">
+        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-800">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-1.5 animate-pulse"></span> 20 篇精華已上線
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主視覺看板 -->
+  <section class="bg-gradient-to-r from-indigo-900 via-indigo-800 to-slate-900 text-white py-10 px-4 shadow-md">
+    <div class="max-w-6xl mx-auto">
+      <div class="max-w-3xl space-y-3">
+        <div class="inline-flex items-center space-x-2 text-indigo-300 text-xs tracking-wider uppercase font-semibold">
+          <i class="fa-solid fa-scale-balanced"></i>
+          <span>Civil Law Micro-Learning Engine</span>
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight serif-title">
+          民法每日一篇・核心法感精解庫
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          以「經典案例情境 ➔ 爭點解構 ➔ 核心法條 ➔ 隨堂測驗」四步三段論法，打造深層法感直覺。
+          專為手機、平板與筆電多裝置隨行閱讀設計。
+        </p>
+      </div>
+
+      <!-- 快捷統計條 -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 pt-6 border-t border-white/15 text-sm">
+        <div class="bg-white/10 backdrop-blur rounded-xl p-3">
+          <div class="text-slate-400 text-xs">總主題進度</div>
+          <div class="text-xl font-bold text-white mt-0.5">Day 01 - 16</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur rounded-xl p-3">
+          <div class="text-slate-400 text-xs">法感思維演練</div>
+          <div class="text-xl font-bold text-emerald-400 mt-0.5">3 篇實戰</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur rounded-xl p-3">
+          <div class="text-slate-400 text-xs">涵蓋民法編章</div>
+          <div class="text-xl font-bold text-amber-300 mt-0.5">總則・債・物權・親屬</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur rounded-xl p-3">
+          <div class="text-slate-400 text-xs">學習模式</div>
+          <div class="text-xl font-bold text-indigo-300 mt-0.5">情境測驗互動</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 篩選與搜尋列 -->
+  <main class="max-w-6xl mx-auto px-4 py-8 flex-1 w-full space-y-6">
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+      <!-- 篩選按鈕群 -->
+      <div class="flex flex-wrap gap-2 text-xs font-medium" id="filterContainer">
+        <button data-cat="all" class="filter-btn active px-3 py-1.5 rounded-lg bg-indigo-600 text-white font-semibold shadow-sm transition">全部篇章</button>
+        <button data-cat="總則" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition">總則編</button>
+        <button data-cat="債編" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition">債編 (契約/侵權/不當得利)</button>
+        <button data-cat="物權" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition">物權編 (登記/抵押/善意受讓)</button>
+        <button data-cat="親屬繼承" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition">親屬・繼承</button>
+        <button data-cat="法感訓練" class="filter-btn px-3 py-1.5 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 transition">法感實戰題</button>
+      </div>
+
+      <!-- 關鍵字搜尋 -->
+      <div class="relative min-w-[240px]">
+        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+        <input type="text" id="searchInput" placeholder="搜尋主題、關鍵法條或案由..." class="w-full pl-9 pr-3 py-1.5 text-sm bg-slate-50 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition">
+      </div>
+    </div>
+
+    <!-- 篇章卡片格網 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="articleList">
+
+      <!-- Day 01 -->
+      <a href="Day01_無權處分與善意受讓.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="總則 物權" data-text="Day 01 無權處分 善意受讓 動態交易安全 118 801 948 345">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 01</span>
+            <span class="text-slate-400 font-medium">總則編 / 物權編</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">無權處分與善意受讓</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            甲借乙專業相機，擅以自己名義市價賣給善意丙。靜態所有權保護 vs. 動態交易安全之核心平衡。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§118, §801, §948</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- Day 02 -->
+      <a href="Day02_意思表示錯誤與詐欺脅迫.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="總則" data-text="Day 02 意思表示 錯誤 詐欺 脅迫 撤銷 88 92 93">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 02</span>
+            <span class="text-slate-400 font-medium">總則編</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">意思表示錯誤與詐欺脅迫</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            內心真意與外部表示不一致之法律救濟。錯誤撤銷之除斥期間與信賴利益損害賠償。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§88, §92, §93</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- Day 03 -->
+      <a href="Day03_消滅時效與除斥期間之差異.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="總則" data-text="Day 03 消滅時效 除斥期間 抗辯權 125 126 144">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 03</span>
+            <span class="text-slate-400 font-medium">總則編</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">消滅時效與除斥期間之差異</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            時效完成僅生抗辯權 vs. 除斥期間屆滿形成權直接消滅之精密法理對比。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§125, §126, §144</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- Day 04 -->
+      <a href="Day04_無因管理與適法性要件.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="債編" data-text="Day 04 無因管理 適法性 費用償還 172 176 177">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 04</span>
+            <span class="text-slate-400 font-medium">債編總論</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">無因管理與適法性要件</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            未受委任且無義務而為他人管理事務。適法無因管理之要件與必要費用償還請求權。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§172, §176, §177</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- Day 05 -->
+      <a href="Day05_不當得利之成立要件與返還客體.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="債編" data-text="Day 05 不當得利 成立要件 返還客體 無法律上原因 179 181 182">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 05</span>
+            <span class="text-slate-400 font-medium">債編總論</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">不當得利之成立要件與返還客體</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            無法律上之原因而受利益，致他人受損害。給付型 vs. 非給付型不當得利之精準認定。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§179, §181, §182</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- Day 06 -->
+      <a href="Day06_侵權行為責任與過失相抵原則.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="債編" data-text="Day 06 侵權行為 過失相抵 損害賠償 184 217">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 06</span>
+            <span class="text-slate-400 font-medium">債編總論</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">侵權行為責任與過失相抵原則</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            民法 §184 三層次結構剖析：權利侵權、利益侵權與保護他人法律。與被害人與有過失責任減輕。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§184, §216, §217</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- Day 07 -->
+      <a href="Day07_違約金之性質與法院酌減權限.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="債編" data-text="Day 07 違約金 賠償總額預定 懲罰性違約金 法院酌減 250 252">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 07</span>
+            <span class="text-slate-400 font-medium">債編總論</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">違約金之性質與法院酌減權限</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            賠償額預定性違約金 vs. 懲罰性違約金之定性區分，以及約定過高時法院職權酌減之法理基準。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§250, §251, §252</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- Day 08 -->
+      <a href="Day08_物之瑕疵擔保與不完全給付.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="債編" data-text="Day 08 物之瑕疵擔保 不完全給付 買賣 解除契約 減少價金 354 359 227">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 08</span>
+            <span class="text-slate-400 font-medium">債編各論</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">物之瑕疵擔保與不完全給付</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            買賣標的物有瑕疵時，買受人之檢查通知義務與解除契約、減少價金及債務不履行請求權之競合。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§354, §359, §227</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- Day 09 -->
+      <a href="Day09_租賃契約之買賣不破租賃原則.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="債編 物權" data-text="Day 09 買賣不破租賃 租賃契約 占有 公證 425">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 09</span>
+            <span class="text-slate-400 font-medium">債編各論</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">買賣不破租賃原則（§425）</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            出租人於承租人占有中交付其所有權予第三人時，租賃契約之法定承受要件與例外除外規定。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§425, §425-1</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- Day 10 -->
+      <a href="Day10_不動產物權登記生效與善意信賴.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="物權" data-text="Day 10 不動產 物權登記 生效要件 善意信賴 公信力 758 759 759-1">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 10</span>
+            <span class="text-slate-400 font-medium">物權編</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">不動產物權登記生效與善意信賴</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            不動產物權變動之設權登記主義 vs. 宣示登記主義，以及土地法第43條與民法 §759-1 之公信力防護。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§758, §759, §759-1</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- Day 11 -->
+      <a href="Day11_抵押權之從屬性與不可分性.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="物權" data-text="Day 11 抵押權 從屬性 不可分性 物上保證人 860 870 869">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 11</span>
+            <span class="text-slate-400 font-medium">物權編</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">抵押權之從屬性與不可分性</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            抵押權不得由債權分離而為讓與或為其他債權之擔保；債權分割或讓與對抵押權之效力影響。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§860, §869, §870</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- Day 12 -->
+      <a href="Day12_婚前財產與婚後財產之剩餘財產分配.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="親屬繼承" data-text="Day 12 剩餘財產分配 婚前財產 婚後財產 夫妻財產制 1030-1">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 12</span>
+            <span class="text-slate-400 font-medium">親屬編</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">婚前與婚後財產剩餘財產分配</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            法定財產制關係消滅時，雙方剩餘財產之差額平均分配；繼承、無償取得之財產扣除要件與實務計算。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§1030-1, §1017</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- Day 13 -->
+      <a href="Day13_特留分之扣減與遺產分割.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="親屬繼承" data-text="Day 13 特留分 扣減權 遺產分割 應繼分 1223 1225 1164">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 13</span>
+            <span class="text-slate-400 font-medium">繼承編</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">特留分之扣減與遺產分割</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            遺囑自由與繼承人法定保障之平衡。特留分受侵害時之物權性或債權性扣減權行使與分割效力。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§1223, §1225, §1164</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- Day 14 -->
+      <a href="Day14_無權處分與善意受讓.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="總則 物權" data-text="Day 14 無權處分 善意受讓 進階實戰案例 118 801 948">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 14</span>
+            <span class="text-slate-400 font-medium">進階實務</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">無權處分與善意受讓 (實戰演練)</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            複習與進階題型解構：連環交易中的善意取得認定與盜贓物回復請求權之界限。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§118, §949, §950</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- Day 15 -->
+      <a href="Day15_意思表示錯誤與詐欺脅迫.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="總則" data-text="Day 15 意思表示 錯誤 詐欺 脅迫 判例實務 88 92">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 15</span>
+            <span class="text-slate-400 font-medium">進階實務</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">意思表示錯誤與詐欺脅迫 (判例精析)</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            最高法院重要判決研討：第三人詐欺在相對人明知與可得而知時之法律效果對照。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§88, §92 第1項但書</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- Day 16 -->
+      <a href="Day16_消滅時效與除斥期間之差異.html" class="item-card group bg-white border border-slate-200 hover:border-indigo-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="總則" data-text="Day 16 消滅時效 除斥期間 時效中斷 不完成 129 139">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-indigo-50 text-indigo-700 font-bold rounded-md">Day 16</span>
+            <span class="text-slate-400 font-medium">進階實務</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-indigo-600 transition mb-2">消滅時效與除斥期間 (時效障礙篇)</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            時效中斷與時效不完成事由深度解析：請求、起訴、天災等特殊障礙事由之法律效果。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+          <span class="font-mono bg-slate-100 px-2 py-0.5 rounded text-[11px]">§129, §130, §139</span>
+          <span class="text-indigo-600 group-hover:translate-x-1 transition font-semibold">開始研讀 →</span>
+        </div>
+      </a>
+
+      <!-- 法感訓練 003 -->
+      <a href="民法法感訓練_003.html" class="item-card group bg-emerald-50/50 border border-emerald-200 hover:border-emerald-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="法感訓練" data-text="法感訓練 003 測驗 判斷 實戰題">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 font-bold rounded-md">專題 003</span>
+            <span class="text-emerald-600 font-medium">法感實戰演練</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">民法法感訓練・實戰解析 003</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            多重法律關係綜合題型，快速梳理當事人請求權基礎與抗辯攻防。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-emerald-100 flex items-center justify-between text-xs text-emerald-700">
+          <span class="font-mono">模擬測驗</span>
+          <span class="font-semibold group-hover:translate-x-1 transition">進入測驗 →</span>
+        </div>
+      </a>
+
+      <!-- 法感訓練 004 -->
+      <a href="民法法感訓練_004.html" class="item-card group bg-emerald-50/50 border border-emerald-200 hover:border-emerald-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="法感訓練" data-text="法感訓練 004 測驗 判斷 實戰題">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 font-bold rounded-md">專題 004</span>
+            <span class="text-emerald-600 font-medium">法感實戰演練</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">民法法感訓練・實戰解析 004</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            聚焦定性與利益衡量，深化概念記憶，杜絕考場混淆盲點。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-emerald-100 flex items-center justify-between text-xs text-emerald-700">
+          <span class="font-mono">模擬測驗</span>
+          <span class="font-semibold group-hover:translate-x-1 transition">進入測驗 →</span>
+        </div>
+      </a>
+
+      <!-- 法感訓練 005 -->
+      <a href="民法法感訓練_005.html" class="item-card group bg-emerald-50/50 border border-emerald-200 hover:border-emerald-500 rounded-2xl p-5 shadow-sm hover:shadow-md transition flex flex-col justify-between" data-cat="法感訓練" data-text="法感訓練 005 測驗 判斷 實戰題">
+        <div>
+          <div class="flex items-center justify-between text-xs mb-3">
+            <span class="px-2.5 py-1 bg-emerald-100 text-emerald-800 font-bold rounded-md">專題 005</span>
+            <span class="text-emerald-600 font-medium">法感實戰演練</span>
+          </div>
+          <h2 class="text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition mb-2">民法法感訓練・實戰解析 005</h2>
+          <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed mb-3">
+            實務高頻考點三段論法拆解，快速建立直覺性法律邏輯。
+          </p>
+        </div>
+        <div class="pt-3 border-t border-emerald-100 flex items-center justify-between text-xs text-emerald-700">
+          <span class="font-mono">模擬測驗</span>
+          <span class="font-semibold group-hover:translate-x-1 transition">進入測驗 →</span>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- 無搜尋結果提示 -->
+    <div id="noResults" class="hidden text-center py-16 text-slate-400">
+      <i class="fa-regular fa-folder-open text-4xl mb-3"></i>
+      <p>未找到符合條件的民法篇章，請嘗試其他關鍵字或切換分類。</p>
+    </div>
+  </main>
+
+  <!-- 頁尾 -->
+  <footer class="bg-white border-t border-slate-200 py-6 text-center text-xs text-slate-500">
+    <p>MR693 核心知識庫 · 民法每日一篇・法感精解庫</p>
+    <p class="mt-1">專為行動化與個人深度學習打造</p>
+  </footer>
+
+  <script>
+    // 智慧動態返回按鈕路徑適配
+    const backBtn = document.getElementById('backToHubBtn');
+    if (window.location.pathname.includes('/01_projects/')) {
+      // 本地檔案或直出目錄
+      backBtn.href = '../../index.html';
+    } else {
+      backBtn.href = '../index.html';
+    }
+
+    // 分類篩選與搜尋
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('searchInput');
+    const cards = document.querySelectorAll('.item-card');
+    const noResults = document.getElementById('noResults');
+
+    let currentFilter = 'all';
+    let currentQuery = '';
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-indigo-600', 'text-white', 'font-semibold', 'shadow-sm', 'active');
+          b.classList.add('bg-slate-100', 'text-slate-700');
+        });
+        btn.classList.add('bg-indigo-600', 'text-white', 'font-semibold', 'shadow-sm', 'active');
+        btn.classList.remove('bg-slate-100', 'text-slate-700');
+        currentFilter = btn.getAttribute('data-cat');
+        filterCards();
+      });
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      currentQuery = e.target.value.trim().toLowerCase();
+      filterCards();
+    });
+
+    function filterCards() {
+      let visibleCount = 0;
+      cards.forEach(card => {
+        const cat = card.getAttribute('data-cat') || '';
+        const text = (card.getAttribute('data-text') || '') + ' ' + card.innerText;
+        const matchFilter = (currentFilter === 'all') || cat.includes(currentFilter);
+        const matchQuery = !currentQuery || text.toLowerCase().includes(currentQuery);
+
+        if (matchFilter && matchQuery) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      noResults.classList.toggle('hidden', visibleCount > 0);
+    }
+  </script>
+</body>
+</html>

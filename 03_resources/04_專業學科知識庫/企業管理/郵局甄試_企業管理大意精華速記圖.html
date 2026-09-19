@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>郵局甄試：企業管理大意精華速記圖鑑</title>
+    <style>
+        :root {
+            --primary: #007A48; /* 郵局綠 */
+            --secondary: #222;
+            --highlight: #FFFDE7; /* 考點灰底強調色改為淡黃高亮 */
+            --border: #DDD;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--secondary);
+            margin: 0;
+            padding: 10px;
+            background-color: #F9F9F9;
+        }
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 24px;
+            border-bottom: 3px solid var(--primary);
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: var(--primary);
+            font-size: 18px;
+            border-left: 5px solid var(--primary);
+            padding-left: 8px;
+            margin-top: 25px;
+        }
+        h3 {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .notice {
+            background-color: #E8F5E9;
+            border: 1px solid var(--primary);
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+            background: #FFF;
+        }
+        th, td {
+            border: 1px solid var(--border);
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #F4F4F4;
+        }
+        .important {
+            background-color: var(--highlight);
+            font-weight: bold;
+            border-bottom: 1px dashed #FF9800;
+        }
+        .keyword {
+            text-decoration: underline;
+            color: #D32F2F;
+        }
+        ul {
+            margin: 5px 0 15px 0;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+        pre {
+            background: #2D3748;
+            color: #F7FAFC;
+            padding: 12px;
+            border-radius: 6px;
+            overflow-x: auto;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        .diagram-container {
+            margin: 15px 0;
+        }
+		/* 手機優化圖卡專用樣式 */
+        .theory-card {
+            background: #FFF;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        .mobile-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        @media(min-width: 600px) { .mobile-grid { grid-template-columns: 1fr 1fr; } }
+        .grid-box {
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 5px solid #ccc;
+        }
+        .grid-box h4 { margin: 0 0 5px 0; }
+        .grid-box p { margin: 0; font-size: 13px; color: #555; }
+        .high-light { background: #E3F2FD; border-left-color: #2196F3; }
+        .question-light { background: #FFF3E0; border-left-color: #FF9800; }
+        .cow-light { background: #E8F5E9; border-left-color: #4CAF50; }
+        .dog-light { background: #FFEBEE; border-left-color: #F44336; }
+        .badge { display: inline-block; padding: 2px 6px; font-size: 11px; color: white; border-radius: 3px; font-weight: bold; margin-bottom: 5px; }
+        .badge-high { background: #2196F3; } .badge-question { background: #FF9800; } .badge-cow { background: #4CAF50; } .badge-dog { background: #F44336; }
+        
+        .support-activity { background: #ECEFF1; border: 1px dashed #607D8B; padding: 10px; border-radius: 5px; text-align: center; margin-bottom: 10px; }
+        .support-activity p { margin: 5px 0 0 0; font-size: 13px; color: #455A64; }
+        .arrow-flow { display: flex; flex-direction: column; align-items: center; }
+        .flow-step { width: 100%; max-width: 300px; background: #F5F5F5; border: 1px solid #CCC; text-align: center; padding: 8px; border-radius: 4px; font-size: 13px; }
+        .flow-step span { background: #666; color: white; border-radius: 50%; padding: 1px 6px; font-size: 11px; margin-right: 5px; font-weight: bold; }
+        .primary-step { border-color: var(--primary); background: #E8F5E9; font-weight: bold; }
+        .primary-step span { background: var(--primary); }
+        .flow-arrow { color: var(--primary); font-size: 12px; margin: 3px 0; font-weight: bold; }
+        
+        .list-flow { display: flex; flex-direction: column; gap: 8px; }
+        .list-item { background: #FAFAFA; border: 1px solid #E0E0E0; padding: 10px; border-radius: 5px; font-size: 13px; }
+        .coord { display: inline-block; background: #37474F; color: white; padding: 1px 5px; border-radius: 3px; font-family: monospace; font-size: 12px; margin-right: 5px; }
+        
+        .slt-container { display: flex; flex-direction: column; gap: 8px; }
+        .slt-row { display: flex; align-items: stretch; border: 1px solid #E0E0E0; border-radius: 5px; overflow: hidden; font-size: 13px; }
+        .slt-m { background: #546E7A; color: white; padding: 10px; width: 80px; min-width: 80px; text-align: center; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+        .slt-s { padding: 10px; flex-grow: 1; background: #FFF; }
+        .style-t { border-left: 4px solid #E53935; } .style-s { border-left: 4px solid #FB8C00; } .style-p { border-left: 4px solid #43A047; } .style-d { border-left: 4px solid #1E88E5; }
+    </style>
+</head>
+<body>
+
+    <h1>企業管理大意及核心理論速記圖鑑</h1>
+
+    <div class="notice">
+        <strong>🎯 實幹派考前叮嚀：</strong><br>
+        * 郵局企管已改與洗錢防制合併考 30 題，題型趨向<strong>考大觀念、簡化細節</strong>。<br>
+        * 每日密集衝刺 3 小時，善用「錯題標記法」，考前只複習錯題，投報率最高。
+    </div>
+
+    <h2>第一章 企業管理概論</h2>
+    
+    <h3>1. 企業組織類型對比</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>類型</th>
+                <th>出資/清償責任</th>
+                <th>優點</th>
+                <th>缺點</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>獨資</strong></td>
+                <td>個人出資 / <span class="important">無限清償責任</span></td>
+                <td><span class="important">自己當老闆</span>、成果獨享</td>
+                <td>規模受限、<span class="important">事業生命有限</span>（受業主壽命影響）</td>
+            </tr>
+            <tr>
+                <td><strong>合夥</strong></td>
+                <td>2人以上出資 / <span class="important">無限清償責任</span></td>
+                <td>財務來源較多、生命週期較長</td>
+                <td>合夥人壓力大、結束經營困難</td>
+            </tr>
+            <tr>
+                <td><strong>公司</strong></td>
+                <td>依公司法成立 / <span class="important">有限清償責任</span></td>
+                <td>資金來源廣、企業存續時間長</td>
+                <td>組織複雜、決策慢、機動性差</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>2. 管理的核心定義</h3>
+    <ul>
+        <li><span class="important">效率 (Efficiency)</span>：強調<strong>方法</strong>，<span class="keyword">把事情做對</span>。用最少投入換取最大產出，焦點在<span class="important">降低資源浪費</span>。</li>
+        <li><span class="important">效能 (Effectiveness)</span>：強調<strong>結果</strong>，<span class="keyword">做對的事情</span>。焦點在<span class="important">目標是否達成</span>。</li>
+    </ul>
+
+    <h3>3. 管理四大功能（管理循環）</h3>
+    <ul>
+        <li><strong>規劃</strong>：定義目標、策略與計畫。</li>
+        <li><strong>組織</strong>：分派、協調任務與<span class="keyword">職權責</span>。</li>
+        <li><strong>領導</strong>：<span class="important">激勵員工</span>達成組織目標、指導他人活動。</li>
+        <li><strong>控制</strong>：<span class="important">監控、比較、修正</span>實際執行情形與預定目標的偏差。</li>
+    </ul>
+
+    <h3>4. 經理人三大能力與階層重要性</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>能力類型</th>
+                <th>核心說明</th>
+                <th>高階主管</th>
+                <th>基層（第一線）主管</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>概念化能力</strong></td>
+                <td>將複雜情境系統化歸納、抽象思考未來方向</td>
+                <td><span class="important">最重要</span></td>
+                <td>最不重要</td>
+            </tr>
+            <tr>
+                <td><strong>人際能力</strong></td>
+                <td>與他人相處、溝通與引導的能力</td>
+                <td><span class="important">同樣重要</span></td>
+                <td><span class="important">同樣重要</span></td>
+            </tr>
+            <tr>
+                <td><strong>技術能力</strong></td>
+                <td>特定領域的專業知識或技能</td>
+                <td>最不重要</td>
+                <td><span class="important">最重要</span>（通常由優秀作業員晉升）</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>第二章 管理理論與學派發展</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>時期/學派</th>
+                <th>代表人物</th>
+                <th>核心精華與考點</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3"><strong>傳統理論時期</strong><br>(科學/一般行政)</td>
+                <td><strong>泰勒 (Taylor)</strong></td>
+                <td><span class="important">科學管理之父</span>。主張<span class="keyword">3S原則</span>（標準化、專業化、簡單化）、<span class="important">論件計酬制</span>、例外管理。工作專業化最早由亞當斯密《國富論》提出。</td>
+            </tr>
+            <tr>
+                <td><strong>費堯 (Fayol)</strong></td>
+                <td><span class="important">現代經營管理之父</span>。提出<span class="important">14點管理原則</span>（包含統一指揮、指揮鏈、分工、集權等）。</td>
+            </tr>
+            <tr>
+                <td><strong>韋伯 (Weber)</strong></td>
+                <td>提出理想型組織：<span class="important">官僚組織（科層組織）</span>。基於理性與法規，特徵為層級明確、強調正式規範、不講私人關係。缺點為不知變通。</td>
+            </tr>
+            <tr>
+                <td rowspan="2"><strong>修正理論時期</strong><br>(組織行為)</td>
+                <td><strong>梅岳 (Mayo)</strong></td>
+                <td>主持<span class="important">霍桑研究</span>。發現<span class="keyword">霍桑效應</span>：當員工自覺受到管理階層關注時，生產力會傾向大幅提升。</td>
+            </tr>
+            <tr>
+                <td><strong>巴納德 (Barnard)</strong></td>
+                <td>提出<span class="important">職權接受論</span>。員工接受命令前提：不違背個人與組織利益、命令具可行性、清楚了解。</td>
+            </tr>
+            <tr>
+                <td><strong>新進理論時期</strong></td>
+                <td><strong>權變學派</strong></td>
+                <td>主張<span class="important">沒有任何一個管理原則可以普遍適用任何情況</span>，必須視情境（環境、規模）而定。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>第三章 組織環境、全球化與組織文化</h2>
+    <h3>1. 國家文化五大構面（Hofstede 核心理論）</h3>
+    <ul>
+        <li><span class="important">權力距離</span>：社會對頭銜、身份、地位不均等現象的容忍度。<span class="keyword">權力距離越高，基層員工越不敢給主管建議。</span></li>
+        <li><strong>不確定性規避</strong>：對非結構性、模糊事物的排斥程度。規避程度越高，代表越不喜歡風險與變革。</li>
+        <li><strong>個人主義 vs 群體主義</strong>：重視個人獨立行動，或希望以群體身分行動。</li>
+        <li><strong>生活量（物質追求）vs 生活質（關心他人）</strong>與 <strong>長期取向 vs 短期取向</strong>。</li>
+    </ul>
+
+    <h3>2. 創新組織文化的環境特徵</h3>
+    <ul>
+        <li><span class="important">接受模糊性</span>與高度對風險、衝突的容忍度。</li>
+        <li><span class="important">低度外部控制</span>（過多規章法令會嚴重限制創意）。</li>
+        <li><span class="keyword">著重結果而非手段</span>，採取開放式系統與授權領導。</li>
+    </ul>
+
+    <h2>第五章 決策情境與報償矩陣準則</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>決策準則</th>
+                <th>別稱</th>
+                <th>核心操作思維</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>樂觀準則</strong></td>
+                <td>極大極大準則 (大中取大)</td>
+                <td>思考各方案能帶來的最大利益，並挑選其中利益最高者。</td>
+            </tr>
+            <tr>
+                <td><strong>悲觀準則</strong></td>
+                <td>極大極小準則 (<span class="important">小中取大</span>)</td>
+                <td>思考各方案在最差情境下的最小收益，並從中<span class="keyword">選出一個報酬相對最好（傷害最低）的方案</span>。</td>
+            </tr>
+            <tr>
+                <td><strong>機會損失準則</strong></td>
+                <td>極小極大遺憾準則 (大中取小)</td>
+                <td>計算各方案的最大遺憾值（損失），並選擇最大遺憾值最小的方案。</td>
+            </tr>
+            <tr>
+                <td><strong>拉普拉斯準則</strong></td>
+                <td>等機率期望值準則</td>
+                <td>假設各情境發生機率完全相同，求出各方案期望值後選最高者。</td>
+            </tr>
+        </tbody>
+    </table>
+
+<h2>核心策略管理理論（手機速讀版）</h2>
+    
+    <div class="theory-card">
+        <h3>📊 必考一：BCG 矩陣（市場成長率 vs 市占率）</h3>
+        <p style="font-size: 13px; color: #666; margin: 0 0 10px 0;">🎯 考點直擊：金牛事業提供穩定現金流，落水狗應緊縮清算。</p>
+        
+        <div class="mobile-grid">
+            <div class="grid-box high-light">
+                <span class="badge badge-high">高成長 / 高市占</span>
+                <strong>🌟 明星事業</strong>
+                <p>具備極高發展潛力，需要持續投入資源維持優勢。</p>
+            </div>
+            <div class="grid-box question-light">
+                <span class="badge badge-question">高成長 / 低市占</span>
+                <strong>❓ 問題事業 (問號)</strong>
+                <p>市場前景好但自身市占低，需投入大筆資金進攻爭奪。</p>
+            </div>
+            <div class="grid-box cow-light">
+                <span class="badge badge-cow">低成長 / 高市占</span>
+                <strong>🐄 金牛事業 (Cash Cow)</strong>
+                <p class="important">成長飽和但市占高，能為企業帶來穩定且大量的現金流。</p>
+            </div>
+            <div class="grid-box dog-light">
+                <span class="badge badge-dog">低成長 / 低市占</span>
+                <strong>🐕 落水狗事業</strong>
+                <p>成長與市占雙低，組織應考慮緊縮、轉型或清算淘汰。</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="theory-card">
+        <h3>📊 必考二：麥可波特 價值鏈分析 (Value Chain)</h3>
+        <p style="font-size: 13px; color: #666; margin: 0 0 10px 0;">🎯 考點直擊：區分「主要活動（產銷直線）」與「支援活動（幕僚）」。</p>
+        
+        <div class="support-activity">
+            <strong>🛠️ 支援活動 (幕僚支援功能)</strong>
+            <p>公司基礎架構、人力資源管理、研究與技術發展、採購</p>
+        </div>
+        
+        <div class="arrow-flow">
+            <div class="flow-step"><span>1</span> 內部後勤 (進貨倉儲)</div>
+            <div class="flow-arrow">▼</div>
+            <div class="flow-step primary-step"><span>2</span> 生產製造 (<span class="important">直線功能</span>)</div>
+            <div class="flow-arrow">▼</div>
+            <div class="flow-step"><span>3</span> 外部後勤 (出貨配送)</div>
+            <div class="flow-arrow">▼</div>
+            <div class="flow-step primary-step"><span>4</span> 行銷銷售 (產銷核心)</div>
+            <div class="flow-arrow">▼</div>
+            <div class="flow-step"><span>5</span> 售後服務 (維持滿意)</div>
+        </div>
+    </div>
+
+    <div class="theory-card">
+        <h3>📊 必考三：管理方格理論（關心員工 vs 關心生產）</h3>
+        <p style="font-size: 13px; color: #666; margin: 0 0 10px 0;">🎯 考點直擊：記熟 5 大極端座標別稱，(9,9) 最理想。</p>
+        
+        <div class="list-flow">
+            <div class="list-item"><b class="coord">(9,9) 團隊管理</b> <span class="important">最理想風格</span>。員工與組織目標凝聚，兼顧人際與生產。</div>
+            <div class="list-item"><b class="coord">(1,9) 鄉村俱樂部</b> 重視員工需求與氣氛，<span class="keyword">不重視生產績效</span>。</div>
+            <div class="list-item"><b class="coord">(5,5) 中庸管理</b> 中間路線。在關心員工與生產間取得妥協與平衡。</div>
+            <div class="list-item"><b class="coord">(9,1) 任務管理</b> 權威管理。視員工為工具，<span class="keyword">極度重視任務不看人情</span>。</div>
+            <div class="list-item"><b class="coord">(1,1) 放任管理</b> 赤貧管理。投入最少努力，只求保住職位，效率最低。</div>
+        </div>
+    </div>
+
+    <div class="theory-card">
+        <h3>📊 必考四：Hersey & Blanchard 情境領導理論 (SLT)</h3>
+        <p style="font-size: 13px; color: #666; margin: 0 0 10px 0;">🎯 考點直擊：依「成員成熟度」動態調整領導風格。</p>
+        
+        <div class="slt-container">
+            <div class="slt-row">
+                <div class="slt-m"><b>M1</b> 沒能力 / 沒意願</div>
+                <div class="slt-s style-t">👉 <b>告知型 / 指導型 leadership</b> (明確給予指示與方向)</div>
+            </div>
+            <div class="slt-row">
+                <div class="slt-m"><b>M2</b> 沒能力 / 有意願</div>
+                <div class="slt-s style-s">👉 <b>銷售型 / 教導型 leadership</b> (給予指導並協助建立信心)</div>
+            </div>
+            <div class="slt-row">
+                <div class="slt-m"><b>M3</b> 有能力 / 沒意願</div>
+                <div class="slt-s style-p">👉 <span class="important">參與型領導</span> (共同制定決策、給予關懷激勵)</div>
+            </div>
+            <div class="slt-row">
+                <div class="slt-m"><b>M4</b> 有能力 / 有意願</div>
+                <div class="slt-s style-d">👉 <span class="keyword">授權型領導</span> (主管放手讓部屬自行決策負責)</div>
+            </div>
+        </div>
+    </div>
+	
+    <h2>第七章 管理循環（規劃、組織、領導、控制）</h2>
+    
+    <h3>1. 機械式組織與有機式組織結構對比</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>結構特徵</th>
+                <th>機械式組織（官僚體制）</th>
+                <th>有機式組織</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>核心目的</strong></td>
+                <td>追求卓越的效率與高度控制</td>
+                <td>追求面對環境變動時的高度彈性</td>
+            </tr>
+            <tr>
+                <td><strong>分工與部門化</strong></td>
+                <td><span class="important">高專業分工</span>、嚴格部門化（本位主義）</td>
+                <td>低專業分工、跨階層團隊、彈性化</td>
+            </tr>
+            <tr>
+                <td><strong>控制幅度/層級</strong></td>
+                <td><span class="important">控制幅度小</span>、層級多（高聳結構）</td>
+                <td><span class="important">控制幅度大</span>、層級少（扁平結構）</td>
+            </tr>
+            <tr>
+                <td><strong>權力配置/溝通</strong></td>
+                <td>決策權<span class="keyword">高度集權化</span>、正式指揮鏈</td>
+                <td>決策權<span class="keyword">分權化（賦權）</span>、非正式橫向溝通</td>
+            </tr>
+            <tr>
+                <td><strong>人性假設前提</strong></td>
+                <td>符合 <strong>X 理論</strong>（員工逃避責任、被動）</td>
+                <td>符合 <strong>Y 理論</strong>（員工主動積極、尋求責任）</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="diagram-container">
+        <h3>📊 核心理論三：管理方格理論 (Managerial Grid)</h3>
+        <p>由關心員工、關心生產劃分出 9x9 矩陣，其中 5 個極端座標為郵局甄試必考點！</p>
+        <pre>
+關 高 ▲
+心    │ (1,9) 鄉村俱樂部管理       (9,9) 團隊管理
+員    │ * 極度重視員工需求與氣氛     * 員工與組織目標凝聚
+工    │ * 不重視生產績效與產出       * <span class="important">最理想的領導風格</span>
+      │
+      │              (5,5) 中庸管理 / 中間路線
+      │              * 在兩者間取得妥協與平衡
+      │
+      │ (1,1) 放任管理 / 赤貧管理  (9,1) 任務管理 / 權威管理
+      │ * 投入最少努力，只求保住職位 * 極度重視生產與任務
+低    │ * 效率低落、放任員工自主     * <span class="keyword">視員工為工具，不關心其需求</span>
+ ───┴─────────────────────────────────────────────►
+      低                       關心生產                        高
+        </pre>
+    </div>
+
+    <div class="diagram-container">
+        <h3>📊 核心理論四：Hersey & Blanchard 情境領導理論 (SLT)</h3>
+        <p>核心概念：<span class="important">有效的領導方法視目前情況而定</span>，且應隨「<span class="keyword">成員成熟度</span>」動態調整風格。</p>
+        <pre>
+【高關係、低任務】                    【高關係、高任務】
+ 💡 <strong>M3：有能力、沒意願</strong>                 💡 <strong>M2：沒能力、有意願</strong>
+ ──► 採取【<span class="important">參與型領導</span>】                ──► 採取【<span class="important">銷售型/教導型領導</span>】
+ (主管與部屬共同制定決策、給予激勵)       (給予指導並協助建立信心)
+──────────────────────────────────────────────────────────────────
+【低關係、低任務】                    【低關係、高任務】
+ 💡 <strong>M4：有能力、有意願</strong>                 💡 <strong>M1：沒能力、沒意願</strong>
+ ──► 採取【<span class="important">授權型領導</span>】                ──► 採取【<span class="important">告知型/指導型領導</span>】
+ (主管放手讓部屬自行決策與負責)           (<span class="keyword">主管明確給予指示與方向</span>)
+        </pre>
+    </div>
+
+    <h2>第八章 人性、激勵與溝通理論</h2>
+    <h3>1. 赫茲伯格 (Herzberg) 雙因子理論</h3>
+    <ul>
+        <li><span class="important">保健因子 (Hygiene Factors)</span>：工作環境、薪水福利、人際關係、監督制度。<strong>存在時只能「讓員工不會產生不滿」，但無法帶來激勵；不存在時則會引發強烈不滿。</strong>（注意：<span class="keyword">缺乏激勵因子時，只是沒有滿足感，並不一定會引發不滿足。</span>）</li>
+        <li><span class="important">激勵因子 (Motivators)</span>：工作成就感、認同感、責任、個人成長。<strong>存在時能大幅提高員工滿意度與生產力。</strong></li>
+    </ul>
+
+    <h3>2. 操作制約（增強理論）四種行為塑造工具</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>工具名稱</th>
+                <th>實施手段</th>
+                <th>郵局考題實例說明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>正增強</strong></td>
+                <td>表現好，就給予<span class="important">想要的獎勵</span></td>
+                <td>業務員當月銷售業績達標，公司即<span class="keyword">發給績效獎金</span>。</td>
+            </tr>
+            <tr>
+                <td><strong>負增強</strong></td>
+                <td>表現好，就<span class="important">免除討厭的後果</span></td>
+                <td>員工只要每天準時上班，就<span class="keyword">不會被取消全勤獎金</span>。</td>
+            </tr>
+            <tr>
+                <td><strong>懲罰</strong></td>
+                <td>表現差，就給予<span class="important">討厭的後果</span></td>
+                <td>員工無故上班遲到，隨即遭到<span class="keyword">主管嚴厲責罵</span>。</td>
+            </tr>
+            <tr>
+                <td><strong>廢除 (消滅)</strong></td>
+                <td>表現差，就<span class="important">取消想要的獎勵</span></td>
+                <td>員工因遲到不符合資格，而被<span class="keyword">取消發放全勤獎金</span>。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>第十章 企業機能（產、銷、人、發、財）精華</h2>
+    <h3>1. 甄選工具的關鍵：信度與效度</h3>
+    <ul>
+        <li><span class="important">信度 (Reliability)</span>：指甄選工具的<strong>一致性</strong>。衡量同樣事物時，是否每次都能測出相同的結果。</li>
+        <li><span class="important">效度 (Validity)</span>：指甄選工具的<strong>有效性/關聯性</strong>。能確實證明甄選工具的分數，和應徵者<span class="keyword">日後實際工作績效具有顯著關聯</span>。</li>
+    </ul>
+
+    <h3>2. 核心財務分析比率速記公式</h3>
+    <ul>
+        <li><strong>流動比率</strong>（衡量短期償債能力）：$$\text{流動比率} = \frac{\text{流動資產}}{\text{流動負債}}$$</li>
+        <li><strong>速動比率</strong>（扣除變現慢的資產）：$$\text{速動比率} = \frac{\text{流動資產} - \text{存貨} - \text{預付費用}}{\text{流動負債}}$$</li>
+        <li><strong>本益比</strong>（每賺1元，股東願意付出的市價）：$$\text{本益比} = \frac{\text{每股市價}}{\text{每股盈餘 (EPS)}}$$</li>
+        <li><span class="important">現金流量允當比率</span>：衡量營業活動所創造的現金，能否滿足公司資本支出、存貨增加與發放現金股利的能力。</li>
+    </ul>
+
+    <h3>3. 行銷 STP 策略與 4P 組合</h3>
+    <ul>
+        <li><strong>STP 步驟</strong>：市場區隔 (Segmentation) ──► 目標市場 (Targeting) ──► 產品定位 (Positioning)。<span class="keyword">教育程度、年齡屬於人口特徵變數。</span></li>
+        <li><strong>行銷 4P 組合</strong>：產品 (Product)、定價 (Price)、通路 (Place)、促銷 (Promotion)。<span class="important">郵局推出「i郵箱」提供自助寄件，屬於 4P 中的「通路」與「產品/服務」體現。</span></li>
+    </ul>
+
+</body>
+</html>

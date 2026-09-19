@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 12 - 婚前財產與婚後財產之剩餘財產分配</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 8px;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .quiz-option:hover {
+            cursor: pointer;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800 p-8">
+
+    <div class="max-w-7xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+
+        <!-- 返回按鈕與標籤 -->
+        <div class="flex justify-between items-center mb-6">
+            <a href="index.html" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                <i class="fas fa-arrow-left mr-2"></i> 返回民法知識庫總覽
+            </a>
+            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                親屬編・Day 12・2026-08-31
+            </span>
+        </div>
+
+        <h1 class="text-4xl font-bold text-center text-blue-800 mb-8">婚前財產與婚後財產之剩餘財產分配 (§1030-1)</h1>
+
+        <!-- 區塊一：經典案例情境 -->
+        <section id="scenario" class="mb-10">
+            <h2 class="text-3xl font-semibold text-indigo-700 mb-4 border-b-2 pb-2">經典案例情境：【職場達人 VS 職場小白，離婚財產怎麼分？】</h2>
+            <div class="bg-blue-50 p-6 rounded-lg shadow-inner">
+                <p class="text-lg leading-relaxed">
+                    阿強與小雅在大學時期相戀，畢業後各自努力。阿強憑藉過人的商業頭腦，在短短五年內成立了一家科技公司，並於婚前就累積了價值上億元的股份和數百萬的現金存款。小雅則在一家外商公司擔任行銷專員，婚前薪資穩定，但財富累積相對較少，婚前僅有數十萬元的定存。
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    兩人結婚後，阿強持續拓展公司業務，公司市值蒸蒸日上，個人財富也大幅增長。小雅則因為家庭開銷、照顧長輩等責任，逐漸減少工作時間，甚至一度辭職在家專心處理家務。
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    六年後，雙方因價值觀不合協議離婚。此時，阿強名下除了婚前的大筆股份外，還有婚後公司發展帶來的新增價值，以及婚後購買的豪宅、名車等。小雅則在婚後除了薪資收入外，並未有顯著的財富增長。
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    離婚時，小雅主張阿強婚後財富大幅增加，希望能就剩餘財產進行分配。阿強則認為，其婚後財富主要來自於婚前創業的成果，以及個人專業能力，不應與小雅分享。
+                </p>
+                <p class="text-lg font-semibold mt-4 text-red-600">
+                    在這種情況下，離婚時的剩餘財產分配，究竟該如何計算？小雅能主張分到阿強婚後增加的財產嗎？
+                </p>
+            </div>
+            <div class="text-center mt-4">
+                <button onclick="toggleSection('scenario-answer')" class="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <i class="fas fa-question-circle mr-2"></i> 展開法律解析
+                </button>
+            </div>
+            <div id="scenario-answer" class="mt-6 p-6 bg-indigo-50 border-l-4 border-indigo-400 rounded-md hidden">
+                <h3 class="text-2xl font-semibold text-indigo-700 mb-4">法律解析：</h3>
+                <p class="text-lg leading-relaxed">
+                    這起離婚案件的核心爭點，在於「婚前財產」與「婚後財產」的界定，以及「剩餘財產分配請求權」的適用。我國民法在 <a href="#law-section" class="text-blue-600 underline">§1030-1</a> 規定了法定財產制下的剩餘財產分配原則。
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    簡單來說，在法定財產制下，夫妻各自擁有的財產，在婚姻關係消滅時（如離婚），可以依「計算」的方式，將雙方婚後各自所增加的財產進行平均分配。而阿強的案例，就牽涉到婚前財產的增值、婚後取得的財產，以及這些財產的來源是否屬於「法定財產制」的計算範圍。
+                </p>
+                <p class="text-lg leading-relaxed mt-4">
+                    重點在於，阿強婚前持有的公司股份，其婚後因公司營運所產生的「孳息」（如股利）及「增值」，在許多情況下會被視為婚後財產。而小雅即使婚後因家庭因素減少工作，其對家庭的付出，對於配偶能安心創業、累積財富，亦有間接貢獻，這也是法院在判斷剩餘財產分配時會考量的因素。因此，小雅是有可能依據 §1030-1 請求分配阿強婚後剩餘財產的。
+                </p>
+            </div>
+        </section>
+
+        <!-- 區塊二：三段論法拆解 -->
+        <section id="irac-section" class="mb-10">
+            <h2 class="text-3xl font-semibold text-purple-700 mb-4 border-b-2 pb-2">三段論法 IRAC 拆解</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- 大前提 -->
+                <div class="bg-purple-50 p-6 rounded-lg shadow-inner border border-purple-200">
+                    <h3 class="text-2xl font-semibold text-purple-800 mb-3">大前提 (Rule)</h3>
+                    <p class="text-lg leading-relaxed">
+                        <strong class="text-purple-700">民法 §1030-1：</strong>
+                        法定財產制關係存續中，夫妻一方死亡時，其Remaining Property（剩餘財產）由其繼承人繼承。
+                        <br><br>
+                        法定財產制關係消滅時（例如：離婚），法定財產制原有財產（婚後財產）扣除婚姻關係存續中所負債務後，如有剩餘，其Remaining Property（剩餘財產）屬於夫妻共有，由夫妻Remaining Property（剩餘財產）較少之一方，請求Remaining Property（剩餘財產）較多之一方，就其Remaining Property（剩餘財產）差額，平均分配。
+                        <br><br>
+                        前項Remaining Property（剩餘財產）之計算，以婚姻關係存續中，夫妻一方Source of Wealth（原有財產）減去Remaining Property（剩餘財產）時，其Source of Wealth（原有財產）之剩餘價值，加上Remaining Property（剩餘財產）時，其Source of Wealth（原有財產）之剩餘價值。
+                        <br><br>
+                        夫或妻一方，對於婚姻關係存續中所負債務，應依其Remaining Property（剩餘財產）狀況，平均分配。
+                    </p>
+                </div>
+
+                <!-- 小前提 -->
+                <div class="bg-green-50 p-6 rounded-lg shadow-inner border border-green-200">
+                    <h3 class="text-2xl font-semibold text-green-800 mb-3">小前提 (Facts)</h3>
+                    <p class="text-lg leading-relaxed">
+                        阿強與小雅婚姻關係於2026年8月31日消滅（離婚）。
+                        <br><br>
+                        <strong class="text-green-700">阿強：</strong>
+                        婚前擁有價值上億元公司股份及數百萬現金。
+                        婚後公司持續發展，個人財富大幅增長，並購買豪宅、名車。
+                        <br><br>
+                        <strong class="text-green-700">小雅：</strong>
+                        婚前累積數十萬元定存。
+                        婚後因家庭責任減少工作，財富未顯著增長。
+                        <br><br>
+                        <strong class="text-green-700">關鍵爭點：</strong>
+                        阿強婚後財富的增加，有多少比例屬於「婚後財產」？是否能排除婚前財產的孳息或增值？
+                    </p>
+                </div>
+
+                <!-- 結論 -->
+                <div class="bg-yellow-50 p-6 rounded-lg shadow-inner border border-yellow-200">
+                    <h3 class="text-2xl font-semibold text-yellow-800 mb-3">結論 (Conclusion)</h3>
+                    <p class="text-lg leading-relaxed">
+                        依據民法 §1030-1，原則上應計算夫妻雙方婚後財產扣除債務後的剩餘價值。
+                        <br><br>
+                        阿強婚前持有的公司股份，若在婚後有顯著的「增值」，且此增值並非僅因其個人技能，而是公司營運良好所致，則該增值部分可能被認定為婚後財產，應計入剩餘財產分配。
+                        <br><br>
+                        小雅的家庭付出，也可能被法院考量，認定為對阿強財富累積的間接貢獻。
+                        <br><br>
+                        因此，小雅有權請求依其與阿強婚後剩餘財產的差額，平均分配。具體分配比例，需由法院審酌個案情況（包括財產增加的比例、雙方對家庭的貢獻等）決定。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊三：生活與職場防禦錦囊 -->
+        <section id="defense-tips" class="mb-10">
+            <h2 class="text-3xl font-semibold text-teal-700 mb-4 border-b-2 pb-2">生活與職場防禦錦囊</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-teal-50 p-6 rounded-lg shadow-md border border-teal-200">
+                    <h3 class="text-2xl font-semibold text-teal-800 mb-4">給「阿強們」的建議（財富累積者）：</h3>
+                    <ul class="list-disc list-inside space-y-2 text-lg">
+                        <li><strong class="text-teal-700">婚前財產嚴格區分：</strong> 務必將婚前財產與婚後財產分開管理、獨立帳戶，並妥善保存證明文件（如：購置證明、收益證明）。</li>
+                        <li><strong class="text-teal-700">婚後財產的「孽生」：</strong> 婚前財產的「孳息」（如股利、利息、租金）若持續投入並產生「增值」，在法律上恐被認定為婚後財產。除非能證明孳息未用於共同生活並保持獨立性，否則應審慎處理。</li>
+                        <li><strong class="text-teal-700">創業風險規劃：</strong> 若為創業家，考慮設立「有限公司」或「股份有限公司」，將個人與公司財產作區隔，降低個人債務風險。</li>
+                        <li><strong class="text-teal-700">預立協議：</strong> 考慮透過「婚姻契約」，事先約定財產制，或約定剩餘財產分配的比例，避免日後爭議。</li>
+                    </ul>
+                </div>
+                <div class="bg-indigo-50 p-6 rounded-lg shadow-md border border-indigo-200">
+                    <h3 class="text-2xl font-semibold text-indigo-800 mb-4">給「小雅們」的建議（家庭付出者/財富累積較少者）：</h3>
+                    <ul class="list-disc list-inside space-y-2 text-lg">
+                        <li><strong class="text-indigo-700">記錄家庭貢獻：</strong> 即使未直接獲得財富，對於家庭的照顧、育兒、長輩扶養等「勞務貢獻」，對配偶能安心工作累積財富有直接或間接幫助，應適時記錄並可作為日後談判的籌碼。</li>
+                        <li><strong class="text-indigo-700">關注婚後財產：</strong> 了解並參與家庭財務決策，關注婚後共同或個別累積的財產，這些都是未來剩餘財產分配的基礎。</li>
+                        <li><strong class="text-indigo-700">尋求專業協助：</strong> 若面臨離婚，立即尋求專業律師協助，釐清自身權益，計算應得的剩餘財產分配額。</li>
+                        <li><strong class="text-indigo-700">了解法定財產制：</strong> 明白法定財產制是預設的財產制度，除非有特殊約定，否則離婚時即適用 §1030-1 的分配原則。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊四：底層思維模型提煉 -->
+        <section id="mindset-models" class="mb-10">
+            <h2 class="text-3xl font-semibold text-red-700 mb-4 border-b-2 pb-2">底層思維模型提煉</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-red-50 p-6 rounded-lg shadow-inner border border-red-200">
+                    <h3 class="text-2xl font-semibold text-red-800 mb-4">思維模型一：風險與收益的分擔</h3>
+                    <p class="text-lg leading-relaxed">
+                        婚姻關係在法律上，不僅是情感的結合，也是一種「經濟共同體」。剩餘財產分配的設計，背後的核心邏輯是「風險與收益的分擔」。
+                        <br><br>
+                        即使一方在婚後專心家庭，另一方在外努力工作，家庭經濟的穩定與成長，是雙方共同努力的成果。法律認為，婚後財產的增加，無論是直接的經濟貢獻，還是間接的家庭支持，都應由共同體內的成員共同分享。這是一種對「無酬家務勞動」的經濟價值肯定，也是為了避免一方因退出職場而導致經濟上的重大損失，確保婚姻關係的公平性。
+                    </p>
+                </div>
+                <div class="bg-blue-50 p-6 rounded-lg shadow-inner border border-blue-200">
+                    <h3 class="text-2xl font-semibold text-blue-800 mb-4">思維模型二：交易成本的最小化與預防原則</h3>
+                    <p class="text-lg leading-relaxed">
+                        法律規定剩餘財產分配，也是一種「交易成本」的考量。如果沒有明確的分配規則，每一次離婚都可能引發漫長且昂貴的訴訟，去證明婚前、婚後財產的劃分，以及各自的貢獻。
+                        <br><br>
+                        §1030-1 雖然有其複雜性，但提供了一個相對明確的「預設」規則。這鼓勵了伴侶在婚前或婚後，主動去「協商」或「約定」財產分配方式（如簽訂婚姻契約），從而「預防」未來可能發生的爭議，降低整體社會的「交易成本」。同時，也促使人們在婚姻關係中，更清晰地認識到財產的歸屬與分配問題。
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 區塊五：牛刀小試・考點隨堂測驗 -->
+        <section id="quiz-section">
+            <h2 class="text-3xl font-semibold text-orange-700 mb-6 border-b-2 pb-2">牛刀小試・考點隨堂測驗</h2>
+            <div class="bg-orange-50 p-8 rounded-lg shadow-lg border border-orange-200">
+                <h3 class="text-2xl font-bold text-orange-800 mb-4">題目一：</h3>
+                <p class="text-xl font-medium mb-4">
+                    關於我國夫妻法定財產制下之剩餘財產分配，下列敘述何者正確？
+                </p>
+                <div class="space-y-3">
+                    <button class="quiz-option block w-full text-left p-4 rounded-lg border text-lg font-medium transition-colors duration-200" data-correct="false" data-answer="A">
+                        A. 僅限於婚後所取得之財產，婚前財產及其孳息均不列入計算。
+                    </button>
+                    <button class="quiz-option block w-full text-left p-4 rounded-lg border text-lg font-medium transition-colors duration-200" data-correct="false" data-answer="B">
+                        B. 剩餘財產之計算，僅考量婚後積極財產，不包含婚後所負債務。
+                    </button>
+                    <button class="quiz-option block w-full text-left p-4 rounded-lg border text-lg font-medium transition-colors duration-200" data-correct="true" data-answer="C">
+                        C. 夫妻一方對家庭之勞務貢獻，雖未直接增加其個人財產，亦可能影響剩餘財產之分配。
+                    </button>
+                    <button class="quiz-option block w-full text-left p-4 rounded-lg border text-lg font-medium transition-colors duration-200" data-correct="false" data-answer="D">
+                        D. 剩餘財產分配請求權，自離婚時起，不得超過五年不行使而消滅。
+                    </button>
+                </div>
+                <div id="feedback-1" class="mt-4 hidden text-lg font-medium p-3 rounded-md"></div>
+
+                <h3 class="text-2xl font-bold text-orange-800 mt-8 mb-4">題目二：</h3>
+                <p class="text-xl font-medium mb-4">
+                    阿華婚前擁有A公司股份100萬股，市價1000萬元。婚後，A公司經營有成，股價飆漲，至離婚時阿華的股份市值已達5000萬元。若無特別約定，下列何者最可能是法院認定之剩餘財產分配基礎？
+                </p>
+                <div class="space-y-3">
+                    <button class="quiz-option block w-full text-left p-4 rounded-lg border text-lg font-medium transition-colors duration-200" data-correct="false" data-answer="A">
+                        A. 僅以婚後阿華名下額外增加之現金及房產計算。
+                    </button>
+                    <button class="quiz-option block w-full text-left p-4 rounded-lg border text-lg font-medium transition-colors duration-200" data-correct="true" data-answer="B">
+                        B. 以婚後A公司股份市值增加部分（5000萬元 - 1000萬元 = 4000萬元）列入計算。
+                    </button>
+                    <button class="quiz-option block w-full text-left p-4 rounded-lg border text-lg font-medium transition-colors duration-200" data-correct="false" data-answer="C">
+                        C. 僅以婚前1000萬元之股價計算，婚後增值不予考慮。
+                    </button>
+                    <button class="quiz-option block w-full text-left p-4 rounded-lg border text-lg font-medium transition-colors duration-200" data-correct="false" data-answer="D">
+                        D. 除非其配偶對A公司有直接經營貢獻，否則婚後增值皆屬阿華婚前財產。
+                    </button>
+                </div>
+                <div id="feedback-2" class="mt-4 hidden text-lg font-medium p-3 rounded-md"></div>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        function toggleSection(id) {
+            const element = document.getElementById(id);
+            element.classList.toggle('hidden');
+        }
+
+        function checkAnswer(button, questionNumber) {
+            const options = button.parentElement.querySelectorAll('.quiz-option');
+            const feedbackDiv = document.getElementById(`feedback-${questionNumber}`);
+            let correctAnswer = null;
+            let questionText = '';
+
+            // 找到正確答案
+            options.forEach(opt => {
+                if (opt.dataset.correct === 'true') {
+                    correctAnswer = opt;
+                }
+                if (opt.dataset.answer === button.dataset.answer) {
+                    questionText = opt.textContent.trim();
+                }
+            });
+
+            // 禁用所有按鈕，防止重複點擊
+            options.forEach(opt => opt.disabled = true);
+
+            // 檢查點擊的按鈕是否正確
+            if (button.dataset.correct === 'true') {
+                button.classList.add('correct');
+                feedbackDiv.innerHTML = `<i class="fas fa-check-circle mr-2"></i> 答對了！ ${button.textContent.trim()} 是正確答案。`;
+                feedbackDiv.classList.add('bg-green-100', 'text-green-800');
+            } else {
+                button.classList.add('incorrect');
+                correctAnswer.classList.add('correct');
+                feedbackDiv.innerHTML = `<i class="fas fa-times-circle mr-2"></i> 答錯了！您選擇的是 "${button.textContent.trim()}"。正確答案是： ${correctAnswer.textContent.trim()}。`;
+                feedbackDiv.classList.add('bg-red-100', 'text-red-800');
+            }
+            feedbackDiv.classList.remove('hidden');
+        }
+
+        // 為所有 quiz-option 按鈕綁定點擊事件
+        document.querySelectorAll('.quiz-option').forEach(button => {
+            button.addEventListener('click', function() {
+                const questionNumber = this.closest('.space-y-3').previousElementSibling.textContent.replace('題目', '').replace('：', '').trim();
+                checkAnswer(this, questionNumber);
+            });
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>You’re Not Behind (Yet): Learn AI Agents in 13 Minutes</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>You’re Not Behind (Yet): Learn AI Agents in 13 Minutes</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                    <span>•</span>
+                    <a href="https://youtu.be/P5sKKnWCvzk?si=WewFwMKgAl-QBgHK" target="_blank" class="video-link">🔗 觀看原始影片</a>
+                    
+                </div>
+            </div>
+            
+            
+            <!-- 自動載入 YouTube 最高畫質封面圖，若失敗則降級載入標準畫質 -->
+            <img src="https://img.youtube.com/vi/P5sKKnWCvzk/maxresdefault.jpg" alt="Video Thumbnail" class="hero-image" onerror="this.src='https://img.youtube.com/vi/P5sKKnWCvzk/hqdefault.jpg';">
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li><strong>AI Agent（代理人）與 Chatbot 的本質差異：</strong>Chatbot 只是在預測下一個字並等待下一個提示詞，而 <strong>AI Agent 則是自主決定下一步行動</strong>，並能像「受僱司機」一樣獨立完成整趟任務。</li>
+    <li><strong>ARR 篩選框架：</strong>只有符合 <strong>自主性（Autonomous）、重複性（Recurring）、可審查性（Reviewable）</strong> 的任務，才適合交給 AI Agent 執行；單次或需要即時判斷的任務則使用 Prompt 即可。</li>
+    <li><strong>Agent 內部的四種工作角色：</strong>AI Agent 以 LLM 為核心，結合了<strong>分析師（Analyst，找規律）、規劃師（Planner，定計畫）、執行者（Operator，做工作）、審計員（Auditor，查結果）</strong>四個協同角色。</li>
+    <li><strong>OODA Loop 適應力：</strong>借鑑 1970 年代美國空軍上校 John Boyd 提出的 OODA Loop（觀察、定位、決策、行動），Agent 的真正價值在於<strong>當既定路徑受阻時，能自主即時調整並重新規劃路線</strong>，而非盲目遵守腳本。</li>
+    <li><strong>判斷力與品味成為最高價值：</strong>當產出與智慧變得極為廉價且近乎無限時，<strong>「判斷力（Judgment）」與「品味（Taste）」變得極度昂貴且稀缺</strong>。能精準定義何謂優秀工作的人，將取代單純執行的人。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>許多人仍停留在「得到不錯的 ChatGPT 回答就代表擅長使用 AI」的階段，但技術已邁入 <strong>AI Agent 的全新時代，理解與不理解者之間的差距將變得極其昂貴</strong>。提示詞（Prompt）就像坐在駕訓班學員旁需要隨時介入導正，而 Agent 則是你給予目的地與鑰匙後，它能自主處理路線與路況的專業司機。</p>
+  <p>AI Agent 的本質不是魔法，而是<strong>放大器與鏡子，它會忠實放大使用者的思維品質</strong>。多數 Agent 的失敗並非模型技術不足，而是<strong>人類給予了模糊的目標與指令</strong>，導致 Agent「以更快的速度、更大的自信開車去撞樹」。因此，在自動化前必須通過 <strong>GPS 檢驗（Goal 清楚目標、Proof 成果驗證標準、Steps 明確步驟）</strong>。</p>
+  <p>未來的商業與職涯致勝關鍵不在於追求泛用型智慧，而是<strong>極度專注於狹窄痛點（Narrow Ownership）</strong>。如同軟體公司展示針對工地現場資料收集的單一 Agent 獲得全場熱烈迴響，<strong>找出大眾討厭卻必須重複做的特定痛點，才是獲利所在</strong>。AI Agent 正在打破工時與收入的掛鉤，讓人類能將精準的判斷力進行規模化擴展，最終<strong>讓人類的工作與生活變得不再像機器人般機械化</strong>。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (待辦事項 / 關鍵行動)</h2>
+  <ul>
+    <li><strong>今晚立即行動：</strong>打開 ChatGPT 的 Agent 模式，<strong>指派一項具體的重複性任務</strong>，並觀察其在幕後同時展現分析、規劃、執行與審計的運作過程。</li>
+    <li><strong>執行 GPS 檢驗標準：</strong>在將任何工作自動化交給 Agent 之前，確認自己能<strong>用一句話定義目標（Goal）</strong>、<strong>明確指出優秀成果的長相與檢驗方式（Proof）</strong>，並<strong>毫無含糊地描述所有執行步驟（Steps）</strong>。</li>
+    <li><strong>尋找高價值切入點：</strong>在公司或個人職涯中，<strong>找出一個「人們極度討厭做、但又必須重複執行」的高特定性任務</strong>，將其打造成專業的 Agent 解決方案。</li>
+    <li><strong>轉變個人核心競爭力：</strong>將工作重心從機械化的內容產出，轉向<strong>「精準定義優質標準」、「辨識劣質產出」以及「判斷何時信任 Agent、何時信任人類」</strong>的決策能力。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

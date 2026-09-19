@@ -1,0 +1,184 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>How I'd build a one-person business (if I started over in 2026)</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>How I'd build a one-person business (if I started over in 2026)</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                    <span>•</span>
+                    <a href="https://youtu.be/VyR8nqD3sQ8?si=8jqscJQ92M55XEU1" target="_blank" class="video-link">🔗 觀看原始影片</a>
+                    
+                </div>
+            </div>
+            
+            
+            <!-- 自動載入 YouTube 最高畫質封面圖，若失敗則降級載入標準畫質 -->
+            <img src="https://img.youtube.com/vi/VyR8nqD3sQ8/maxresdefault.jpg" alt="Video Thumbnail" class="hero-image" onerror="this.src='https://img.youtube.com/vi/VyR8nqD3sQ8/hqdefault.jpg';">
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li>靜態資訊產品（如電子書、預錄線上課程）已達市場飽和期，<strong>90% 的購買者從未完成課程且未獲得成效</strong>，商業模式正全面轉向<strong>「微型 SaaS（Micro-SaaS）與互動式學習體驗」</strong>。</li>
+    <li>未來的教育產品將重現<strong>「現代數位學徒制」</strong>：不再是單向灌輸資訊，而是利用 AI 擔任隨身教練，提供<strong>即時回饋、邊做邊學（Learning by doing）的引導式體驗</strong>。</li>
+    <li>AI 工具普及使大眾產製內容的門檻歸零，個人真正的護城河來自 Naval Ravikant 所定義的<strong>「專屬知識（Specific Knowledge）」與獨特品味</strong>，這將決定提示詞與產品的深度。</li>
+    <li>市場迭代速度急遽加快：傳統資訊產品紅利維持了 10 至 15 年，但此波微型軟體化趨勢<strong>可能僅有 2 至 3 年的窗口期</strong>，單人創業者的核心優勢在於<strong>極致的敏捷度與迭代速度</strong>。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>邁入 2026 年，一人創業（One-Person Business）與創作者經濟正面臨關鍵轉折。依循 Eugene Schwartz 的市場成熟度理論，傳統的行銷話術、個人品牌與靜態課程已全面飽和。講者指出，教育需求永遠不會消失，但<strong>傳遞知識的載體必須從動輒 10 小時的影片資料庫，進化為軟體化的「互動學習體驗」</strong>。創業者不再只是販售資訊，而是<strong>將自己的大腦思維與專業架構封裝成 AI 系統</strong>，讓使用者能依據個人進度獲得客製化指引。</p>
+  <p>在技術實踐方面，創業者不應受限於「套殼軟體（Wrapper）」的迷思——諸如 Typeform 或 Cursor 等成功工具本質上皆為封裝。講者以自身軟體 Eden 建立說明中心為例，透過 Claude 在 <strong>2 小時內產出 30 篇高品質知識庫文章並串接 Intercom 的 Fin AI 代理人</strong>，大幅降低人力客服負擔。未來的一人創業者應將專業內容轉化為知識庫，並透過 Replit 或 Cursor 等工具開發出具備「學習、練習、創作」功能的專屬微型應用，<strong>在快速變動的技術浪潮中打造無法被輕易複製的利基產品</strong>。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (待辦事項 / 關鍵行動)</h2>
+  <ul>
+    <li><strong>創業者</strong>：將現有的專業技能與課程內容結構化為<strong>知識庫（Knowledge Base）</strong>，並撰寫涵蓋角色、步驟、知識邊界與語氣的<strong>系統提示詞（System Prompts）</strong>。</li>
+    <li><strong>創業者</strong>：開始學習運用 <strong>Replit、Cursor 或 Claude Code</strong> 進行輔助編程（Vibe Coding），設定以「學習（Learn）、練習（Practice）、創作（Create）」三標籤為架構，<strong>預計親手打造 3 至 4 款原型應用程式</strong>以累積開發手感。</li>
+    <li><strong>創業者</strong>：避開「全自動產出」的通用型 AI 工具紅海，專注於挖掘自身的<strong>專屬知識（Specific Knowledge）</strong>，打造能<strong>提供即時回饋與實作引導的利基型教育軟體</strong>。</li>
+    <li><strong>Eden 專案團隊（講者）</strong>：預計於 <strong>1 月下旬</strong>針對候補名單開放下一波 Eden 測試名額，並持續推進全公開發布計畫。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

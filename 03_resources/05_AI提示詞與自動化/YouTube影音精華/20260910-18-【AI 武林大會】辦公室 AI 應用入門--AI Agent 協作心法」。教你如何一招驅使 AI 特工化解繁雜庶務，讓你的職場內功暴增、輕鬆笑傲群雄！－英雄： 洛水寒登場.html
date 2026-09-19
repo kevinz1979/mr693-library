@@ -1,0 +1,180 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>【AI 武林大會】辦公室 AI 應用入門--AI Agent 協作心法」。教你如何一招驅使 AI 特工化解繁雜庶務，讓你的職場內功暴增、輕鬆笑傲群雄！－英雄： 洛水寒登場</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>【AI 武林大會】辦公室 AI 應用入門--AI Agent 協作心法」。教你如何一招驅使 AI 特工化解繁雜庶務，讓你的職場內功暴增、輕鬆笑傲群雄！－英雄： 洛水寒登場</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                </div>
+            </div>
+            
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li><strong>AI 不會取代人，但會被懂 AI 的人取代</strong>：善用 AI 的人工作效率可提升<strong>超過 2 倍</strong>，不懂工具與專業基本功者效率反而降至 <strong>0.5 倍</strong>；AI 本質是<strong>專業能力的放大器，而非替代品</strong>。</li>
+    <li><strong>常態性與非常態性工作的工具分流</strong>：固定流程與格式的「常態性工作」（如跨表合併、樞紐分析）應使用 <strong>VBA 自動化</strong>，成本低、結果穩定且本機端無資安風險（連 <strong>Office 2010</strong> 舊版本皆可支援）；一次性、報告撰寫等「非常態性工作」則交由 <strong>Claude</strong>（月費約 <strong>20 美元</strong>）等大型語言模型處理。</li>
+    <li><strong>個人知識管理與 Agent 協作工作流</strong>：推薦運用 <strong>PARA 法則</strong>（專案 Projects、領域 Areas、資源 Resources、封存 Archives）管理知識；講者採用 <strong>Hermes 搭配 Obsidian</strong> 進行跨裝置與純文字儲存，但對自主執行型 Agent（如訂票、寄信）目前<strong>保持觀望態度，避免因 Bug 造成亂刪檔案或執行失誤的風險</strong>。</li>
+    <li><strong>堅守資安紅線與防範幻覺</strong>：客戶資料、合約與財務報表<strong>嚴禁直接輸入雲端 AI</strong>，必須落實<strong>去識別化</strong>（模糊化姓名、替換假金額）；<strong>AI 產出的內容永遠只是初稿</strong>，使用者必須具備專業判斷力，必要時透過多個 LLM 進行<strong>交叉驗證</strong>。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>在 AI50 大會第三場線上分享中，講者落水和英雄分享了辦公室 AI 的落地應用與實戰心法。講者強調，導入 AI 的關鍵前提在於<strong>資料安全</strong>與<strong>防止模型幻覺</strong>。AI 無法幫使用者補足專業基本功，唯有具備本質專業與清楚的邏輯架構，AI 才能發揮<strong>放大專業人力</strong>的綜效；若缺乏基礎，反而會因不斷除錯與重做而浪費時間。</p>
+  <p>在工作流程的選擇上，講者提出明確的分流標準：針對每週或每月重複、格式與計算固定的<strong>常態性工作</strong>，最佳解是<strong>利用 LLM 輔助撰寫 VBA 巨集</strong>。VBA 具備<strong>零額外授權成本、輸出結果穩定且具備本機資安防護</strong>的優勢，提示詞引導時應拆解流程、單一步驟測試，切勿期望一步到位。而針對主管臨時交辦、內容變動大的<strong>非常態性專案</strong>，則可運用 <strong>Claude（包含 Opus、Sonnet 等模型）</strong>快速生成簡報架構、潤稿或公式輔助；若遇到每日額度限流，則搭配 <strong>Gemini</strong> 交互支援。</p>
+  <p>在個人知識庫建構上，講者結合 <strong>PARA 架構</strong>與 <strong>Hermes + Obsidian</strong> 工作流，透過通訊軟體遠端收集資訊並自動歸檔至本機純文字 Markdown/HTML。針對當前熱門的自主 Agent 工具，講者提醒其現階段 <strong>Bug 依然偏多</strong>，在企業環境中存在誤刪資料或執行錯誤的風險，建議採取<strong>資料備份與保守觀望</strong>策略。最後，講者重申企業內部使用 AI 應恪守資安紅線，核心商務機密絕不外流，並隨時對 AI 產出的「初稿」保持懷疑與查證態度。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (關鍵行動與待辦事項)</h2>
+  <ul>
+    <li><strong>盤點辦公室常態性流程</strong>：列出部門內每週/每月固定重複的 Excel 資料搬運與報表彙整作業，<strong>利用 LLM 逐步引導生成 VBA 程式碼</strong>進行本機自動化。</li>
+    <li><strong>落實資安去識別化規範</strong>：凡涉及客戶個資、合約細節與財務數據，<strong>輸入 AI 前必須完成去識別化處理</strong>（替換為虛擬人名與假金額），或改以<strong>地端 VBA</strong> 處理。</li>
+    <li><strong>建立多模型交叉驗證機制</strong>：針對非自身專業領域的 AI 產出內容，<strong>同時使用 2 至 3 款不同的大型語言模型進行交叉比對</strong>，杜絕 AI 幻覺誤導。</li>
+    <li><strong>導入 PARA 知識管理法</strong>：將日常收集的筆記與參考資料依「專案、領域、資源、封存」分類歸檔，搭配本機筆記軟體確保<strong>資料自主性與跨裝置同步</strong>。</li>
+    <li><strong>執行 30 天 AI 工具覆盤</strong>：建立專屬的提示詞（Prompts）清單，於<strong>實踐 30 天後定期檢視工具效益</strong>，保留能實質提升效率的流程，捨棄成效不彰的工具。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

@@ -1,0 +1,180 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>iPAS AI應用規劃師(初級)考前叮嚀</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>iPAS AI應用規劃師(初級)考前叮嚀</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                </div>
+            </div>
+            
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li><strong>生成式 AI 屬於「弱 AI」的一種應用</strong>，絕非強 AI 的前身，此為極易混淆的命題陷阱。</li>
+    <li>機器學習三大分類情境：<strong>監督式學習</strong>（有標準答案）、<strong>非監督式學習</strong>（無標籤、AI 自行觀察分群，如客戶分群）、<strong>強化學習</strong>（從錯誤試錯中以獲得最高分為目標）。</li>
+    <li>模型評估指標判斷心法：<strong>精確率（Precision）核心在於「怕誤判、不冤枉好人」</strong>；<strong>召回率（Recall）核心在於「怕漏抓、不放過壞人」</strong>。</li>
+    <li>擬合狀態對比：<strong>過擬合（Overfitting）為「讀死書」</strong>（練習題滿分但遇到新題目就失靈）；<strong>欠擬合（Underfitting）則是「連基本規律都抓不到」</strong>（連練習題都無法掌握）。</li>
+    <li>AI 倫理與責任歸屬：若考題涉及 AI 產生損害或事故需要釐清責任歸屬，<strong>應優先選擇「問責性」原則</strong>。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>本報告聚焦於 iPAS 證照考試的考前核心作戰策略，核心精神在於<strong>掌握初題老師的命題邏輯與解題策略</strong>，將觀念精準轉化為考卷分數。整個作戰架構涵蓋考科一「AI 基礎核心」、考科二「生成式 AI 實戰」、四大關鍵題型拆解與常見陷阱避坑指南。</p>
+  <p>在考科一基礎觀念部分，考生須清楚區分弱 AI（如 Siri、推薦系統及生成式 AI）與強 AI（具備真人般智慧）。資料前處理可以「出國行李打包」為比喻：處理缺失值為補齊物品、<strong>資料標準化為統一尺寸規格</strong>、分類編碼則是分門別類讓機器理解。模型評估上，準確率並非唯一指標，應依情境切換關注 Precision（防誤診）或 Recall（防漏診）。</p>
+  <p>在考科二應用實戰部分，重點在於工具特性的精準對應：文字處理選 ChatGPT、圖像生成選 Midjourney / DALL-E、<strong>Office 深度整合（如 Excel 樞紐分析表）必選 Microsoft Copilot</strong>、影片生成選 Runway ML、流程自動化則選 Power Automate。此外，需特別注意 <strong>ChatGPT 在預設情況下不具備長期記憶</strong>。工具開發門檻上，<strong>No-Code 面向不懂程式碼的業務與行銷人員</strong>，而 <strong>Low-Code 則是 IT 開發人員的效率加速器</strong>。</p>
+  <p>面對整份試卷，題目主要由<strong>知識直問型、應用選擇型、概念比較型與情境判斷型</strong>四大題型構成。答題時務必緊扣核心判斷邏輯，精準破題以取得高分。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (待辦事項 / 關鍵行動)</h2>
+  <ul>
+    <li><strong>考生</strong>應依情境快速複習工具對照表：Office 整合選 <strong>Microsoft Copilot</strong>、流程自動化選 <strong>Power Automate</strong>、影像創作選 <strong>Midjourney / DALL-E / Runway ML</strong>。</li>
+    <li><strong>考生</strong>需熟記評估指標判斷口訣：情境<strong>怕漏抓（如癌症漏診）選 Recall</strong>；情境<strong>怕誤判（如冤枉好人）選 Precision</strong>。</li>
+    <li><strong>考生</strong>在複習 AI 倫理考點時，針對系統出錯與損害追責題目，<strong>直接鎖定「問責性」原則</strong>進行作答。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    

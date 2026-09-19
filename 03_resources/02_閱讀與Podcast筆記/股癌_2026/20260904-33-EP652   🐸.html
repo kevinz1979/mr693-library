@@ -1,0 +1,180 @@
+
+    <!DOCTYPE html>
+    <html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>EP652   🐸</title>
+        <!-- 引入 Noto Serif TC 明體字型增加專欄感 -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&display=swap" rel="stylesheet">
+        <style>
+            body {
+                font-family: 'Noto Serif TC', "Songti TC", "PMingLiU", Georgia, serif;
+                line-height: 1.8;
+                color: #222222;
+                background-color: #faf9f6;
+                margin: 0;
+                padding: 0;
+                -webkit-font-smoothing: antialiased;
+            }
+            .container {
+                max-width: 720px;
+                margin: 0 auto;
+                padding: 60px 20px;
+            }
+            .header {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .header h1 {
+                /* 標題保留無襯線字體，讓畫面有層次感 */
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 2.2rem;
+                font-weight: 800;
+                line-height: 1.3;
+                margin: 0 0 20px 0;
+            }
+            .video-meta {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                font-size: 0.95rem;
+                color: #666666;
+                margin-bottom: 30px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 15px;
+            }
+            .video-link {
+                color: #b32d2e;
+                text-decoration: none;
+                font-weight: 600;
+                border-bottom: 1px solid #b32d2e;
+                padding-bottom: 2px;
+                transition: opacity 0.2s;
+            }
+            .video-link:hover {
+                opacity: 0.7;
+            }
+            .hero-image {
+                width: 100%;
+                border-radius: 8px;
+                margin-bottom: 50px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            }
+            
+            /* 覆寫原本的 .card 樣式，變成無邊框的純文字段落 */
+            .content-section .card {
+                background: transparent;
+                border-radius: 0;
+                padding: 0;
+                margin-bottom: 50px;
+                box-shadow: none;
+            }
+            .content-section .card:hover {
+                transform: none;
+                box-shadow: none;
+            }
+            .content-section h2 {
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, sans-serif;
+                color: #111111;
+                font-size: 1.5rem;
+                font-weight: 700;
+                margin-top: 0;
+                margin-bottom: 1.5rem;
+                border-bottom: none;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+            }
+            /* 標題左側加入經典的深紅色短直線裝飾 */
+            .content-section h2::before {
+                content: '';
+                display: inline-block;
+                width: 4px;
+                height: 1.2em;
+                background-color: #b32d2e;
+                margin-right: 12px;
+                border-radius: 2px;
+            }
+            .content-section p {
+                margin-bottom: 1.5rem;
+                font-size: 1.15rem;
+                text-align: justify;
+            }
+            .content-section ul, .content-section ol {
+                margin-bottom: 1.5rem;
+                padding-left: 1.5rem;
+            }
+            .content-section li {
+                margin-bottom: 1rem;
+                font-size: 1.15rem;
+            }
+            .content-section li::marker {
+                color: #b32d2e;
+            }
+            /* 螢光筆改為低調的暖沙色背景 */
+            .content-section strong {
+                color: #111111;
+                background-color: #f2e8d5;
+                padding: 2px 4px;
+                font-weight: 700;
+                border-radius: 3px;
+            }
+            /* 區塊之間的 *** 分隔號 */
+            .content-section .card:not(:last-child)::after {
+                content: '***';
+                display: block;
+                text-align: center;
+                color: #cccccc;
+                font-size: 1.5rem;
+                letter-spacing: 15px;
+                margin-top: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>EP652   🐸</h1>
+                <div class="video-meta">
+                    <span>AI 摘要報告</span>
+                    
+                </div>
+            </div>
+            
+            
+
+            <div class="content-section">
+                <div class="card">
+  <h2>Key Takeaways (重點整理)</h2>
+  <ul>
+    <li><strong>AI 算力重心擴散至伺服器 CPU：</strong>市場焦點從 GPU 延伸至 CPU 與客製化 ASIC。Nvidia 入股 RISC-V 架構公司 SiFive，且 <strong>AWS 傳出 Graviton CPU 算力遭客戶爭相全包卻因自用不足而拒絕</strong>，預示 Amazon 將擴大投片，Intel 與 AMD 等通用 CPU 廠商亦將迎來強勁需求。</li>
+    <li><strong>被動元件迎來新一波結構性缺貨與漲價潮：</strong>鉭質電容（Tancap）與鋁電容（SPCAP）嚴重缺貨，高階 MLCC（如村田、SEMCO）逼近警戒線。<strong>龍頭廠國巨與旗下基美（KEMET）下季度持續調漲價格</strong>，產業邏輯類似 2017 年需求爆發期。</li>
+    <li><strong>AI 模型商行銷話術背後的核心真相是「算力嚴重不足」：</strong>Anthropic 宣稱新模型 Mythos 因「過於強大危險」暫不對外開放，實質原因是<strong>算力供給不足以支撐大規模調用</strong>，硬體供應鏈（台積電、先進封裝及晶片端）長線需求依然呈現無底洞狀態。</li>
+    <li><strong>光通訊極度缺產能引發台股「借殼代工」特殊現象：</strong>美系大客戶因擴廠不及，直接出資購買設備進駐台灣具備閒置 SMT 產能的廠商（如 LED 打件廠、網通廠）代工，<strong>目前台股已有約 4 檔標的出現此轉機題材</strong>，惟毛利偏低（約 10% 上下）且具抽單風險。</li>
+    <li><strong>大部位動能交易核心守則：</strong>當單一持股佔比拉高至 20%-30% 成最大分點時，<strong>「拉起不破、再軟必砍」是保護流動性與利潤的唯一法則</strong>，寧可賣在跌勢初期，絕不承擔流動性枯竭被鎖死跌停的風險。</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Summary (內容摘要)</h2>
+  <p>講者首先分享戒菸與生活觀察，指出吸菸帶來的快感本質上來自<strong>「高壓情境後的深呼吸與空間轉換」</strong>，若能抽離尼古丁、保留深呼吸習慣即可大幅降低戒斷痛苦；同時觀察到新世代（2000 年後）生活界線清晰、減少酒精依賴，展現更純粹的生活態度。</p>
+  <p>在美股與總體市場方面，第二季投資組合藉由資金輪動至 <strong>CPU、Marvell、光通訊及高速傳輸介面</strong>，績效迅速攻破新高。AI 運算除 GPU 算力外，需要大量 CPU 作為調度教練，加上 AWS Graviton 產能供不應求，確認<strong>伺服器 CPU 成為明確的結構性成長主線</strong>。針對近期 AI 軟體股遭到拋售與 Anthropic 暫緩釋出 Mythos 模型，講者直言<strong>市場過度充斥 FUD（恐懼、疑惑）情緒，模型商宣稱的危險性多為行銷包裝，核心瓶頸在於算力供給吃緊</strong>，這意味著晶圓代工與先進製程封裝等軍火商將持續受惠。</p>
+  <p>台股題材部分，<strong>被動元件產業交期（Lead Time）持續拉長</strong>，國巨法說會預期全面正向，高階 AI 應用帶動鉭電與鋁電嚴重缺料並啟動漲價；此外，光通訊強勁需求促使美系客戶<strong>自帶設備進駐台灣二線 SMT/LED 閒置產線代工</strong>，為低基期廠商帶來轉機，但投資人應留意驗證與訂單延續風險。最後，在動能操作上，講者強調<strong>「永遠以基本面為底氣、以破新高型態為進場訊號」</strong>，並在流動性風險浮現時果斷停損，切勿與市場硬碰硬。</p>
+</div>
+
+<div class="card">
+  <h2>Action Items (待辦事項 / 關鍵行動)</h2>
+  <ul>
+    <li><strong>追蹤國巨（Yageo）週三法說會：</strong>密切確認<strong>下季度產品報價調漲幅度</strong>、基美（KEMET）鉭電交期，以及高階 AI MLCC 產能利用率數據。</li>
+    <li><strong>佈局伺服器 CPU 與 ASIC 供應鏈：</strong>持續持有並關注 <strong>Server 端 CPU 相關標的</strong>（包括 Intel、AMD 及 RISC-V 概念），並檢視 AWS 供應鏈後續擴大投片之受惠廠商。</li>
+    <li><strong>嚴格執行技術面破線與流動性風控：</strong>當持股盤中出現<strong>「第一波下殺拉回無力、第二次轉弱破底」</strong>訊號時，必須即刻啟動減碼與停損，避免重倉陷入流動性陷阱。</li>
+    <li><strong>謹慎評估光通訊 SMT 外溢概念股：</strong>對於非本業接獲光通訊打件訂單的 4 檔轉機股，<strong>切勿盲目提前通靈佈局</strong>，應待股價轉強、確認實質營收與客戶驗證進度後，再列為次要順位參與。</li>
+  </ul>
+</div>
+            </div>
+        </div>
+    </body>
+    </html>
+    
